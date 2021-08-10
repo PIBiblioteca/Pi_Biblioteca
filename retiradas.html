@@ -1,81 +1,79 @@
 <!DOCTYPE html>
-<html lang="pt-br" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Solicitações</title>
-    <link rel="stylesheet" href="solicitacao.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  </head>
-  <body>
+    <link rel="stylesheet" href="teste.css">
+    <title>Teste</title>
+</head>
+<body>
     <header>
-        <div class="menu">
-          <img src="imagem/logo3.png" alt="logo" class="logo"></img>  
-          <img src="imagem/Imagem2.png" alt="marca" class="marca"></img>
-            <nav>
-              <ul>
-                <li><a href = "#">Solicitações</a></li>
-                <li><a href = "#">Livros</a></li>
-                <li><a href = "#">Avisos</a></li>
-              </ul>
-            </nav>
-            <div class="buscar">
-                <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
-                <a class="buscar-btn">
-                    <i class="fas fa-search"></i>
-                </a>
-            </div>
+        <div class="logo">FATEC</div>
+        <ul class="menu">
+             <li><a href="#">Solicitações</a></li>
+             <li><a href="#">Suspensões</a></li>
             <div>
                 <a href="login.html" class="sair">
-                    <i class="fas fa-sign-out-alt"></i>
+                <i class="fas fa-sign-out-alt"></i>
                 </a>
             </div>
-        </div>
+        </ul>
     </header>
-    <table class="content-table">
-      <thead>
-         <tr>
-              <tr>
-                <th>
-                  <h2> 
-                  <div  class="solicita">Solicitações</div>
-                  </h2>
-                  <th></th>
-                  <th></th> 
-                  <div class="buscar">
-                    <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
-                    <a class="buscar-btn">
-                        <i class="fas fa-search"></i>
-                    </a>
-                </div>       
-                </th>
-              </tr>
-            <th> Livro</th>
-            <th>RA</th>
-            <th>E-mail</th>
-        </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>O Conde de Monte Cristo</td>
-            <td>987654321</td>
-            <td>kevin@fatec.com</td>
-          </tr>
-          <tr>
-            <td>Ensaio sobre a cegueira</td>
-            <td>123456789</td>
-            <td>jean@fatec.com</td>
-          </tr>
-          <tr>
-            <td>O Pequeno Príncipe</td>
-            <td>321564987</td>
-            <td>juan@fatec.com</td>
-          </tr>
-          <tr>
-            <td>Meu Pé de Laranja Lima</td>
-            <td>1223564789</td>
-            <td>renan@fatec.com</td>
-          </tr>
-        </tbody>
-      </table>
-  </body>
+        <table>
+                <tr id="header">
+                    <th class="esquerda">Livro</th>
+                    <th>Solicitação</th>
+                    <th>RA/MP</th>
+                    <th>E-mail</th>
+                    <th>Empréstimo</th>
+                    <th>Devolução</th>
+                    <th>Envio</th>
+                    <th>Limpar</th>
+                </tr>
+
+                <tr> 
+                    <td>GARAMO - DIFICIL SUSTENTABILIDADE, A - POLITICA ENERGETICA E CONFLITOS AMBIENTAIS 1
+                        CMOD - LED: A LUZ DOS NOVOS PROJETOS 1 Ed 2012</td>
+                    <td>123456</td>
+                    <td>1234567890SP</td>
+                    <td>kevin@fatec.com</td>
+                    <th>10/01/2021</th>
+                    <th>10/01/2021</th>
+                    <th><button class="button1">ENVIAR</button></th>
+                    <th><button class="button2">DEVOLUÇÃO</button></th>
+                </tr>
+                <tr>
+                    <td>SARAIV - ADMINISTRACAO DE RECURSOS HUMANOS - DO OPERACIONAL DO ESTRATEGICO 15 Ed 201</td>
+                    <td>123456</td>
+                    <td>1234567890SP</td>
+                    <td>jean@fatec.com</td>
+                    <th>10/01/2021</th>
+                    <th>10/01/2021</th>
+                    <th><button class="button1">ENVIAR</button></th>
+                    <th><button class="button2">DEVOLUÇÃO</button></th>
+                </tr>
+                <tr>
+                    <td>CENGAG - ADMINISTRACAO ESTRATEGICA - TRADUCAO DA 10 EDICAO NORTE-AMERICANA 3 Ed 2015</td>
+                    <td>123456</td>
+                    <td>1234567890SP</td>
+                    <td>juan@fatec.com</td>
+                    <th>10/01/2021</th>
+                    <th>10/01/2021</th>
+                    <th><button class="button1">ENVIAR</button></th>
+                    <th><button class="button2">DEVOLUÇÃO</button></th>
+                </tr>
+                <tr>
+                    <td>GARAMO - DIFICIL SUSTENTABILIDADE, A - POLITICA ENERGETICA E CONFLITOS AMBIENTAIS 1</td>
+                    <td>123456</td>
+                    <td>1124567890SP</td>
+                    <td>renan@fatec.com</td>
+                    <th>10/01/2021</th>
+                    <th>10/01/2021</th>
+                    <th><button class="button1">ENVIAR</button></th>
+                    <th><button class="button2">DEVOLUÇÃO</button></th>
+                </tr>
+        </table>
+</body>
 </html>
