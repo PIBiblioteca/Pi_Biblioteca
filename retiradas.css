@@ -50,8 +50,8 @@ header{  /**Cabeçalho  **/
     color:white;
     display: block;
     text-decoration: none;
-    padding: 10px;
-    transform: translate( -200%, 0%);
+    padding: 20px;
+    transform: translate(-100%, 0%);
 }
 
 .menu li a:hover{
