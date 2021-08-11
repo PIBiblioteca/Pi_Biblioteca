@@ -86,13 +86,13 @@ header{  /**Cabeçalho  **/
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -30%);
     border-collapse: collapse;
-    width: 95%;
+    width: 1250px;
     height: 200px;
     background-color:#93a3d8;
     box-shadow: 0 0 20px rgb(0, 0, 0);
-
+    
 }
 
 tr {
