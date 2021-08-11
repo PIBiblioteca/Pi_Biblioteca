@@ -164,7 +164,7 @@ tr:hover {
     background-color: #ca3838;
     color: white;
   } 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-device-width: 768px) {
     table, menu {
         width: 90%;
 
