@@ -86,7 +86,7 @@ header{  /**Cabeçalho  **/
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -30%);
+    transform: translate(-50%, -40%);
     border-collapse: collapse;
     width: 1250px;
     height: 200px;
