@@ -110,6 +110,10 @@ th,td {
     
 }
 
+.tabl{
+    width: 250px;
+}
+
 .esquerda{
     text-align: left;
 }
@@ -146,7 +150,7 @@ tr:hover {
   }
   
   .button1:hover {
-    background-color: #ca3838;
+    background-color: #38ca38;
     color: white;
   }
   
