@@ -68,7 +68,7 @@ header{  /**Cabeçalho  **/
 }
 
 .sair{
-    position: relative;
+    position: absolute;
     top: 12%;
     left: 95%;
     border: 2px solid #ffffff;
@@ -182,3 +182,58 @@ tr:hover {
     color: #630e0e;
     background-color: #630e0e;
 }
+
+.buscar {
+  position: absolute;
+  top: 11%;
+  left: 63%;
+  transform: translate(-70%, 0%);
+  background: #2f3640;
+  height: 40px;
+  width: 500px;
+  border-radius: 40px;
+  padding: 0px;
+ }
+ 
+ .buscar:hover > .buscar-txt {
+    width: 240px;
+    padding: 0 6px;
+   }
+   
+   .buscar:hover > .buscar-btn {
+    background: white;
+    color: #7c2b2b;
+   }
+  
+   .buscar-btn {
+    color: #666666;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    color: #7c2b2b;
+    cursor: pointer;
+   }
+   
+   .buscar-btn > i {
+    font-size: 30px;
+   }
+  
+   .buscar-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+    font-weight: bold;
+   }
