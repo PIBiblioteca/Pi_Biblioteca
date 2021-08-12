@@ -36,15 +36,20 @@ footer{  /**Cabeçalho  **/
     height: 12%;
     background-color: #2f3640;
 
-    box-shadow: 0px 5px 20px #000; /** Sombreamento **/
+    display: flex; /*itens lado a lado*/
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+
+    box-shadow: 0px -5px 20px #000; /** Sombreamento **/
     
     z-index: 2; /** cabeçalho fica por cima do conteúdo **/
 }
 
 
 .menu{
-    list-style:none; /** list-style permite mudar as bolinhas a frente da classe **/
-    display:flex; 
+    list-style: none; /** list-style permite mudar as bolinhas a frente da classe **/
+    display: flex; 
     color: white;
     font-size: 20px;
     font-weight: bold;
@@ -60,7 +65,6 @@ footer{  /**Cabeçalho  **/
 
 .menu li a:hover{
     color:#ca3838;
-
 }
 
 .sair{
@@ -221,9 +225,7 @@ tr:hover {
      }
      .logo{ 
         left: 50px;
-        width: 250px; 
+        width: 200px; 
         padding: 10px;
-        transform: translate(0%, -8%); 
-
     }
     
