@@ -1,3 +1,11 @@
+@media only screen and (max-width: 768px) {
+    .table, .menu {
+        width: 90%;
+        top: 70%;
+        left: 100%;
+
+    }    
+}
 *{
     padding: 0;
     margin: 0;
@@ -12,8 +20,8 @@ body{
 }
 
 header{  /**Cabeçalho  **/ 
-    width: 100%;  /**dimensão horizontal **/
-    height: 12%;
+    width: 1350px;  /**dimensão horizontal **/
+    height: 70px;
     background-color: #2f3640;
 
     box-shadow: 0px 5px 20px #000; /** Sombreamento **/
@@ -31,10 +39,11 @@ header{  /**Cabeçalho  **/
 }
 
 .logo{
+    position: relative;
     color: #ca3838;
     font-size: 170%;
     left: 5%;
-    transform: translate(80%, 0%);
+    transform: translate(10%, 0%);
     font-weight: bold;
 }
 
@@ -47,6 +56,7 @@ header{  /**Cabeçalho  **/
 }
 
 .menu li a{
+    position: relative;
     color:white;
     display: block;
     text-decoration: none;
@@ -84,10 +94,10 @@ header{  /**Cabeçalho  **/
 
    table {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -40%);
     border-collapse: collapse;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 100px;
     width: 1250px;
     height: 200px;
     background-color:#93a3d8;
@@ -163,10 +173,4 @@ tr:hover {
   .button2:hover {
     background-color: #ca3838;
     color: white;
-  } 
-@media only screen and (max-width: 768px) {
-    table, menu {
-        width: 90%;
-
-    }    
-}
+  }
