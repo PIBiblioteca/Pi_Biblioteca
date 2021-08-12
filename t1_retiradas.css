@@ -124,6 +124,12 @@ th,td {
     width: 250px;
 }
 
+.destaque{
+    background-color: #2a313a;
+    box-shadow: 1px 1px 1px 1px #37414d;
+    color: #555555;
+}
+
 .esquerda{
     text-align: left;
 }
