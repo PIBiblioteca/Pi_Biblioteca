@@ -179,22 +179,32 @@ tr:hover {
     color: white;
   }
   @media screen and (max-width: 768px) {
+    .tr-max {
+        display:none;
+    }
+    .tr-min {
+        display:table;
+    }
     table {
-        position: absolute;
-        border-collapse: collapse;
-        margin-left: 50px;
-        margin-right: 50px;
-        margin-top: 100px;
-        width: 125px;
-        height: 200px;
-        background-color:#93a3d8;
-        box-shadow: 0 0 20px rgb(0, 0, 0);
+        width: 80%;
+        height: 10%;
         
     }
+
     th,td {
-        padding: 12px;
-        text-align: centro;
-        border-bottom: 1px solid #ddd;
-        
+        padding: 10px;
+        font-size: 12px;
     }
+    
+    .menu li a, .destaque{
+        padding: 10px;
+        font-size: 12px;
+        margin-right: auto;
+    }
+
+    .button1, .button2 {
+        padding: 8px 16px;
+        font-size: 7px;
+        margin: 4px 2px;
+      }
 }
