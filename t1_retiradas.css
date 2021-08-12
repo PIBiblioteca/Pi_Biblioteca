@@ -31,7 +31,7 @@ header{  /**Cabeçalho  **/
     display: flex;
     align-items: center;
 
-    text-align: center;
+    text-align: left;
     justify-content:space-between;
     position: fixed;
 
@@ -53,6 +53,7 @@ header{  /**Cabeçalho  **/
     color: white;
     font-size: 20px;
     font-weight: bold;
+    margin-right: 70px;
 }
 
 .menu li a{
@@ -61,7 +62,6 @@ header{  /**Cabeçalho  **/
     display: block;
     text-decoration: none;
     padding: 20px;
-    transform: translate(-100%, 0%);
 }
 
 .menu li a:hover{
