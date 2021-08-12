@@ -50,6 +50,10 @@ a:hover {
   display: none;
 }
 
+body{
+    background-color: rgba(117, 114, 114, 0.829);
+}
+
 @media (max-width: 600px) {
   #menu {
     display: block;
