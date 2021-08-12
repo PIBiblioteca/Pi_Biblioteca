@@ -66,11 +66,12 @@ a:hover {
     
   }
   a:hover {
-    background: rgba(128, 126, 126, 0.301);
+    background: rgba(51, 51, 51, 0.158);
+    
   }
 
   #nav.active #menu {
-    height: calc(30vh - 70px);
+    height: calc(100vh - 70px);
     visibility: visible;
     overflow-y: auto;
     background-color: #b43333;
