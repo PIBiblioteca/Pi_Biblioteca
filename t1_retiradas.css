@@ -191,4 +191,10 @@ tr:hover {
         box-shadow: 0 0 20px rgb(0, 0, 0);
         
     }
+    th,td {
+        padding: 12px;
+        text-align: centro;
+        border-bottom: 1px solid #ddd;
+        
+    }
 }
