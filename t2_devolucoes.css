@@ -10,11 +10,7 @@
     margin: auto;
 }
 
-.rTable{
-    width: 100%;
-    text-align: center;    
-}
-
+.
 body{
     width: 100%;
     height: 1000vh;
@@ -92,11 +88,11 @@ header{  /**Cabeçalho  **/
 
    table {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     border-collapse: collapse;
-    width: 1500px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 100px;
+    width: 1250px;
     height: 200px;
     background-color:#93a3d8;
     box-shadow: 0 0 20px rgb(0, 0, 0);
@@ -179,8 +175,9 @@ tr:hover {
 
 }
 .destaque{
-    color: #630e0e;
+    
     background-color: #630e0e;
+    
 }
 
 .buscar {

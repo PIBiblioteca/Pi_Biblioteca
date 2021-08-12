@@ -86,6 +86,9 @@ header{  /**Cabeçalho  **/
     position: absolute;
     left: 50%;
     top: 50%;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 100px;
     transform: translate(-50%, -40%);
     border-collapse: collapse;
     width: 1250px;
@@ -250,6 +253,8 @@ tr:hover {
 }
 
 footer{  /**Cabeçalho  **/ 
+    position: absolute;
+
     width: 100%;  /**dimensão horizontal **/
     height: 12%;
     background-color: #2f3640;
@@ -263,9 +268,8 @@ footer{  /**Cabeçalho  **/
 
     text-align: center;
     justify-content:space-between;
-    position: fixed;
-
-    z-index: 1; /** cabeçalho fica por cima do conteúdo **/
+    
+    z-index: 2; /** cabeçalho fica por cima do conteúdo **/
 }
 
     }
