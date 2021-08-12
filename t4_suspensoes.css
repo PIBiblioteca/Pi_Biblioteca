@@ -230,5 +230,43 @@ tr:hover {
         width: 250px; 
         padding: 10px;
         transform: translate(0%, -8%);        
-  }
+  header{  /**Cabeçalho  **/ 
+    width: 100%;  /**dimensão horizontal **/
+    height: 12%;
+    background-color: #2f3640;
+
+    box-shadow: 0px 5px 20px #000; /** Sombreamento **/
+
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+
+    text-align: center;
+    justify-content:space-between;
+    position: fixed;
+
+    z-index: 1; /** cabeçalho fica por cima do conteúdo **/
+}
+
+footer{  /**Cabeçalho  **/ 
+    width: 100%;  /**dimensão horizontal **/
+    height: 12%;
+    background-color: #2f3640;
+
+    box-shadow: 0px 5px 20px #000; /** Sombreamento **/
+
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+
+    text-align: center;
+    justify-content:space-between;
+    position: fixed;
+
+    z-index: 1; /** cabeçalho fica por cima do conteúdo **/
+}
+
+    }
     
