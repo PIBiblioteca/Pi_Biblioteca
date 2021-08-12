@@ -51,7 +51,7 @@ a:hover {
 }
 
 body{
-    background-color: rgba(117, 114, 114, 0.829);
+    background-color: rgb(92, 91, 91);
 }
 
 @media (max-width: 600px) {
