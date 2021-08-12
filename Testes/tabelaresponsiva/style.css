@@ -1,0 +1,14 @@
+*(margin:0; padding: 0; box-sizing: border-box;)
+
+.content{display: flex; margin: auto}
+
+.rTable{width: 100%; text-align: center;}
+    .rTable thead{background: black; font-weight: bold; color: #fff;}
+
+@media screen an (max-width: 480px){
+
+}
+
+@media only screen and (min-width: 1200pox){
+    .content{width: 100%; }
+}
