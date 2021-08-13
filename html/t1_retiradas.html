@@ -5,25 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link rel="stylesheet" href="t1_retiradas.css">
+    <link rel="stylesheet" href="../Oficial/style.css">
     <title>Bibliofateca - Retiradas</title>
 </head>
 
 <body>
-    <header>
-        <div class="logo">FATEC</div>
-        <ul class="menu">
-             <a class="destaque" href="#">Retiradas</a>
-             <li><a href="#">Devoluções</a></li>
-             <li><a href="#">Livros</a></li>
-             <li><a href="#">Suspensões</a></li>
-             <li><a href="#">Recados</a></li>
-             <a href="index.html" class="sair">
-                <i class="fas fa-sign-out-alt"></i></a>
-        </ul>
-    </header>
+    <header id="header">
+        <a class="logo"id="logo" href="">FATEC</a>
+        <nav id="nav">
+          <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+            <span id="hamburger"></span>
+          </button>
+          <ul id="menu" role="menu">
+            <li><a href="/">Livros</a></li>
+            <li><a href="/">Recados</a></li>
+            <li><a href="/">Sobre</a></li>
+            <li class="sair"><a href="/">Sair</a></li>
+          </ul>
+        </nav>
+      </header>
+      <script src="../Oficial/menu.js"></script>
+
         <table>
-                <tr id="header">
+                <tr class="cabecalho">
                     <th class="esquerda">Livro</th>
                     <th>N° da Solicitação</th>
                     <th>RA/MP</th>
