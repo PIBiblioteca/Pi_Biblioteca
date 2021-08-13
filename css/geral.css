@@ -178,7 +178,6 @@ tr:hover {
         color: white;
         font-size: 16px;
         box-shadow: 1px 1px 5px rgb(0, 0, 0);
-        float: left;
     }
     .button-Editar:hover{
         background-color: white;
@@ -196,7 +195,6 @@ tr:hover {
         color: white;
         font-size: 16px;
         box-shadow: 1px 1px 5px rgb(0, 0, 0);
-        float: right;
     }
     .button-Excluir:hover{
         background-color: white;
@@ -216,7 +214,6 @@ tr:hover {
         color: white;
         font-size: 16px;
         box-shadow: 1px 1px 5px rgb(0, 0, 0);
-        float: right;
     }
     .button-Adicionar:hover{
         background-color: white;
