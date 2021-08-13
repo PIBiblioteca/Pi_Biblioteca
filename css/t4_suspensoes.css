@@ -53,7 +53,6 @@ footer{  /**Cabeçalho  **/
     z-index: 2; /** cabeçalho fica por cima do conteúdo **/
 }
 
-
 .menu{
     list-style: none; /** list-style permite mudar as bolinhas a frente da classe **/
     display: flex; 
@@ -112,18 +111,12 @@ footer{  /**Cabeçalho  **/
 tr {
     transition: all .0.1s ease-in;
     cursor: pointer;
-    
 }
 
 th,td {
     padding: 12px;
     text-align: centro;
     border-bottom: 1px solid #ddd;
-    
-}
-
-.esquerda{
-    text-align: left;
 }
 
 #header {
@@ -131,6 +124,7 @@ th,td {
     background-color: #2f3640;
     color:white;
     font-size: 21px;
+    text-align: left;
 }
 
 tr:hover {
@@ -172,8 +166,62 @@ tr:hover {
     background-color: #ca3838;
     color: white;
   } 
+    /*BOTÃO EDITAR*/
+    .button-Editar{
+        border: none;
+        background-color: #2f3640;
+        padding: 4px 8px;
+        margin-left: 4px;
+        margin-right: 12px;
+        border-radius: 45px;  
+        font-weight: bold;
+        color: white;
+        font-size: 16px;
+        box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    }
+    .button-Editar:hover{
+        background-color: white;
+        color: #2f3640;
+    }
+    /*BOTÃO EXCLUIR*/
+    .button-Excluir{
+        border: none;
+        background-color: #630e0e;
+        padding: 4px 8px;
+        margin-left: 4px;
+        margin-right: 12px;
+        border-radius: 45px;  
+        font-weight: bold;
+        color: white;
+        font-size: 16px;
+        box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    }
+    .button-Excluir:hover{
+        background-color: white;
+        color: #2f3640;
+    }
 
-    /*TABELA T2*/
+
+ /*BOTÃO ADICIONAR*/
+    .button-Adicionar{
+        border: none;
+        background-color: #2f3640;
+        padding: 4px 8px;
+        margin-left: 4px;
+        margin-right: 12px;
+        border-radius: 45px;  
+        font-weight: bold;
+        color: white;
+        font-size: 16px;
+        box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    }
+    .button-Adicionar:hover{
+        background-color: white;
+        color: #2f3640;
+    }
+      
+    
+    /*TABELA Tela2*/
     .button1-Tela2, .button2-Tela2 {
         border: none;
         color: #7d95e4;
@@ -242,7 +290,7 @@ tr:hover {
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: rgb(255, 255, 255);
+      background: rgb(248, 228, 228);
       display: flex;
       justify-content: center;
       align-items: center;
