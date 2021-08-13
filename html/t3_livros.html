@@ -5,27 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link rel="stylesheet" href="/css/geral.css">
+    <link rel="stylesheet" href="../Oficial/stylebiblio.css">
     <title>BiblioFateca - Livros</title>
 </head>
 <body>
-    <header>
-
-        <img src="imagem/logo3.png" alt="Logotipo Bibliofateca" class="logo">
-        
-        <ul class="menu">
+    <header id="header">
+        <a class="logo"id="logo" href="">FATEC</a>
+        <nav id="nav">
+          <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+            <span id="hamburger"></span>
+          </button>
+          <ul id="menu" role="menu">
             <li><a href="/html/t1_retiradas.html">Retiradas</a></li>
-            <li><a class="destaque" href="/html/t2_devolucoes.html">Devoluções</a></li>
-            <li><a href="t3_livros.html">Livros</a></li>
-            <li><a href="t4_suspensoes.html">Suspensões</a></li>
-            <li><a href="t5_recados.html">Recados</a></li>
-           <div>
-                <a href="/html/t0_index.html" class="sair">
-                <i class="fas fa-sign-out-alt"></i>
-                </a>
-            </div>
-        </ul>
-    </header>
+            <li><a href="/html/t2_devolucoes.html">Devoluções</a></li>
+            <li><a class="destaque" href="/html/t3_livros.html">Livros</a></li>
+            <li><a href="/html/t4_suspensoes.html">Suspensões</a></li>
+            <li><a href="/html/t5_recados.html">Recados</a></li>
+            <li class="sair"><a href="/html/t0_index.html">Sair</a></li>
+          </ul>
+        </nav>
+      </header>
+      <script src="../Oficial/menubiblio.js"></script>
     <!--PESQUISAR-->
 
     <th> <div class="buscar">
@@ -37,7 +37,7 @@
     <!--FIM PESQUISAR-->
 
         <table>
-            <tr id="header">
+            <tr class="cabecalho">
                 <th>Livro</th>
                 <th>Quantidade</th>
                 <th>Emprestados</th>

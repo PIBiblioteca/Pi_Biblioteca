@@ -64,7 +64,7 @@ body{
     background:linear-gradient(0deg,#7d95e4, #bebebe);
 }
 
-/* Estilo dos conteúdos */
+/****** Estilo dos conteúdos ******/
 
 table {
   position: absolute;
@@ -150,7 +150,9 @@ td, th {
   color: white;
 }
 
-/*FIM Estilo dos conteúdos FIM*/
+/****** FIM Estilo dos conteúdos FIM ******/
+
+/****** Para dispositivos móveis ******/
 
 @media (max-width: 600px) {
   #menu {
