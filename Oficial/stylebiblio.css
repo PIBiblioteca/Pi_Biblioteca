@@ -154,7 +154,7 @@ td, th {
 
 /****** Para dispositivos móveis ******/
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .button1, .button2 {
     border: none;
     padding: 16px 16px;
