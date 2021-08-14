@@ -155,6 +155,27 @@ td, th {
 /****** Para dispositivos móveis ******/
 
 @media (max-width: 600px) {
+  .button1, .button2 {
+    border: none;
+    padding: 16px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px 1px;
+    cursor: pointer;
+    width: 60px;
+  }
+
+  table {
+    margin: 0px;
+    
+  }  
+  
+  th, td {
+    font-size: 70%;
+  }
+
   #menu {
     display: block;
     position: absolute;
