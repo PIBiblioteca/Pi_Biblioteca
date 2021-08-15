@@ -1,27 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabelas Responsivas</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        table{
-            border-collapse: collapse;
-        }
-        table th. table td{
-            font-family: sans-serif;
-            padding: 10px
-        }
-    </style>
-</head>
-<body>
-    <div class="content">
-        <table class="rTable">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Tabelas Responsivas</title>
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        <table>
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Nome</th>
                     <th>Sobrenome</th>
                     <th>Email</th>
@@ -33,7 +22,6 @@
 
             <tbody>
                 <tr>
-                    <td>1</td>
                     <td>Josefa</td>
                     <td>Silvia</td>
                     <td>jsilva@gmail.com</td>
@@ -43,7 +31,6 @@
                 </tr>
 
                 <tr>
-                    <td>2</td>
                     <td>Joaquim</td>
                     <td>Pereira</td>
                     <td>joaquim@gmail.com</td>
@@ -53,7 +40,16 @@
                 </tr>
             </tbody>
         </table>
-    </div>
-</body>
+    </body>
+    <script>
+        window.addEventListener('load'.()=>{
+            let tbody=document.querySelector('tbody')
+            let t=''
+            for(let i=0;i<10;i++){
+                t+=tbody.innerHTML
+            }
+            tbody.innerHTML=t
+        })
+    </script>
 </html>
 

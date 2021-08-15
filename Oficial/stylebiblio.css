@@ -70,10 +70,10 @@ table {
   position: absolute;
   border-collapse: collapse;
   margin: 50px;
-  width: 1250px;
-  height: 200px;
   background-color:#93a3d8;
   box-shadow: 0 0 20px rgb(0, 0, 0);
+  overflow-x: auto;
+  border-color: #ca3838;
   
 }
 
@@ -272,7 +272,28 @@ td, th {
 
 /****** Para dispositivos móveis ******/
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .button1, .button2 {
+    border: none;
+    padding: 16px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px 1px;
+    cursor: pointer;
+    width: 60px;
+  }
+
+  table {
+    margin: 0px;
+    
+  }  
+  
+  th, td {
+    font-size: 70%;
+  }
+
   #menu {
     display: block;
     position: absolute;
