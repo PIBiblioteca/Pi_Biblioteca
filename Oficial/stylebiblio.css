@@ -150,6 +150,65 @@ td, th {
   color: white;
 }
 
+<<<<<<< Updated upstream
+=======
+/*adicões do Jean*/
+.buscar {
+  position: absolute;
+  background: #2f3640;
+  margin-top: 6px;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 40px;
+  width: 80%;
+  border-radius: 40px;
+ }
+ .buscar:hover > .buscar-txt {
+    width: 240px;
+    padding: 0 6px;
+   }
+   
+   .buscar:hover > .buscar-btn {
+    background: white;
+    color: #7c2b2b;
+   }
+  
+   .buscar-btn {
+    color: #666666;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgb(248, 228, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    color: #7c2b2b;
+    cursor: pointer;
+   }
+   
+   .buscar-btn > i {
+    font-size: 30px;
+   }
+  
+   .buscar-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+    font-weight: bold;
+   }
+
+
+/*FIM Estilo dos conteúdos FIM*/
+>>>>>>> Stashed changes
 
 /*BOTÃO ADICIONAR*/
 .button-Adicionar{
@@ -364,4 +423,7 @@ td, th {
     transform: rotate(-135deg);
     top: -7px;
   }
+
+
+  
 }
