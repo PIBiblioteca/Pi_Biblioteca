@@ -72,7 +72,7 @@ table {
   border-collapse: collapse;
   margin: 50px;
   background-color:#93a3d8;
-  box-shadow: 0 0 20px rgb(0, 0, 0);
+  box-shadow: 0 5px 20px rgb(0, 0, 0);
   overflow-x: auto;
   border-color: #ca3838;
   font-family: sans-serif;
