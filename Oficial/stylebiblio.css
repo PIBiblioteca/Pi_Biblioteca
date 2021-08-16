@@ -8,6 +8,7 @@ a {
   color: rgb(255, 255, 255);
   text-decoration: none;
   font-family: sans-serif;
+  font-weight: bold;
 }
 
 a:hover:not(#logo) {
@@ -74,6 +75,8 @@ table {
   box-shadow: 0 0 20px rgb(0, 0, 0);
   overflow-x: auto;
   border-color: #ca3838;
+  font-family: sans-serif;
+
 }
 
 td, th {
