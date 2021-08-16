@@ -199,7 +199,6 @@ td, th {
   color: #2f3640;
 }
 
-
 .buscar {
   position: absolute;
   background: #2f3640;
@@ -209,10 +208,11 @@ td, th {
   height: 40px;
   width: 93%;
   border-radius: 40px;
+
  }
  
  .buscar:hover > .buscar-txt {
-    width: 240px;
+    width: 93%;
     padding: 0 16px;
    }
    
