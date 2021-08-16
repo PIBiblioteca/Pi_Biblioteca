@@ -237,7 +237,7 @@ table {
   border-collapse: collapse;
   margin: 50px;
   background-color:#93a3d8;
-  box-shadow: 0 0 20px rgb(0, 0, 0);
+  box-shadow: 0 5px 20px rgb(0, 0, 0);
   overflow-x: auto;
   border-color: #ca3838;
   font-family: sans-serif;
@@ -283,14 +283,14 @@ td, th {
 .button1, .button2 {
   border: none;
   padding: 16px 16px;
-  text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
   margin: 4px 2px;
   cursor: pointer;
-  width: 90px;
+  width: 90px; 
 }
+
 
 .button1 {
   background-color: #2f3640;
@@ -299,7 +299,7 @@ td, th {
 }
 
 .button1:hover {
-  background-color: #a35e5e;
+  background-color: #4C9141;
   color: white;
 }
 
@@ -364,7 +364,6 @@ td, th {
   color: #2f3640;
 }
 
-
 .buscar {
   position: absolute;
   background: #2f3640;
@@ -374,10 +373,11 @@ td, th {
   height: 40px;
   width: 93%;
   border-radius: 40px;
+
  }
  
  .buscar:hover > .buscar-txt {
-    width: 240px;
+    width: 93%;
     padding: 0 16px;
    }
    
