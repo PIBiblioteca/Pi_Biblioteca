@@ -118,14 +118,14 @@ td, th {
 .button1, .button2 {
   border: none;
   padding: 16px 16px;
-  text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
   margin: 4px 2px;
   cursor: pointer;
-  width: 90px;
+  width: 90px; 
 }
+
 
 .button1 {
   background-color: #2f3640;
