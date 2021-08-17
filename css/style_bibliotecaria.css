@@ -80,10 +80,10 @@ body {
 }
 
 .login-form{
-  width: calc(100% - 20px);
+  width: calc(100%);
   max-width: 500px;
   background:linear-gradient(180deg, #A8C0FF,#2f3640);
-  padding: 50px 40px;
+  padding: 10px 40px;
   box-shadow: 0 0 20px rgb(0, 0, 0);
 }
 
@@ -201,7 +201,7 @@ body {
 }
 
 .login-form a{
-  display: block;
+  display: inline;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -318,7 +318,7 @@ td, th {
 
 /*BOTÃO ADICIONAR*/
 .button-Adicionar{
-  border: 1px solid white;
+  border: 2px solid white;
   background-color: #2f3640;
   padding: 4px 8px;
   margin-left: 4px;
@@ -336,7 +336,7 @@ td, th {
 
 /*BOTÃO EXCLUIR*/
 .button-Excluir{
-  border: 1px solid white;
+  border: 2px solid white;
   background-color: #630e0e;
   padding: 4px 8px;
   margin-left: 4px;
@@ -354,7 +354,7 @@ td, th {
 
 /*BOTÃO EDITAR*/
 .button-Editar{
-  border: 1px solid white;
+  border: 2px solid white;
   background-color: #2f3640;
   padding: 4px 8px;
   margin-left: 4px;
@@ -438,9 +438,15 @@ td, th {
       overflow-x: auto;
       border-color: #ca3838;
       font-family: sans-serif;
-    
     }
    
+    img{
+      width: 30%;
+      float: right
+      
+      vertical-align: top;
+      z-index: 9;
+    }
 
    /*
    .logo-bibliofateca{ 
