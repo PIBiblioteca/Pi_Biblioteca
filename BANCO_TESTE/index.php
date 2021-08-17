@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <?php 
 
-include("/XAMPP/htdocs/VSCODE/GitHub/PiBiblioteca/BANCO_TESTE/config.php");
+include("config.php");
 
 $consulta = "SELECT * FROM livros";
-$con = $mysqli->query($consulta) or die($mysqli->error);
+$conn = $mysqli->query($consulta) or die($mysqli->error);
 ?> 
 <html>
     <head>
@@ -18,14 +18,36 @@ $con = $mysqli->query($consulta) or die($mysqli->error);
                 <td>Titulo</td>
                 <td>Quantidade</td>
             </tr>
-            <?php while($dado = $con-> fetch_array()){ ?>
-            <tr>
-                <td><? echo $dado["curso"]; ?></td>
-                <td><? echo $dado["cod_livro"]; ?></td>
-                <td><? echo $dado["titulo"]; ?></td>
-                <td><? echo $dado["quantidade"]; ?></td>
-            </tr>
-            <?php } ?>
+            <?php 
+            
+            if ($conn->num_rows > 0){
+
+                while ( $dado = $conn->fetch_assoc()){            
+            
+                    echo '<tr>';
+                    echo '<td>'. $dado['curso'] .'</td>';
+                    echo '<td>'. $dado['cod_livro'] .'</td>';
+                    echo '<td>'. $dado['titulo'] .'</td>';
+                    echo '<td>'. $dado['quantidade'] .'</td>';
+                    echo '</tr>';
+                }
+            }
+            ?>
         </table>
     </body>
 </html>
+
+
+
+if ($resulta->num_rows > 0){
+
+while($dado = $conn->fetch_array()){ ?>
+<tr>
+    <td><? echo $dado["curso"]; ?></td>
+    <td><? echo $dado["cod_livro"]; ?></td>
+    <td><? echo $dado["titulo"]; ?></td>
+    <td><? echo $dado["quantidade"]; ?></td>
+</tr>
+}           
+}
+<?  
