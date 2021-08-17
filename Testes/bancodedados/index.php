@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
 
-include("C:\Users\Kevin\Documents\GitHub\PiBiblioteca\Testes\bancodedados/conexao.php");
+include("/Users/Jean/OneDrive/Documentos/GitHub/Pi_Biblioteca/Testes/bancodedados/conexao.php");
 
 $consulta = "SELECT * FROM usuario";
 $con = $mysqli->query($consulta) or die($mysqli->error);

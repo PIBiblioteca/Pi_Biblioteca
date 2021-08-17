@@ -241,7 +241,7 @@ table {
   overflow-x: auto;
   border-color: #ca3838;
   font-family: sans-serif;
-  min-width:  92%;
+  min-width:  93%;
 
 }
 
@@ -318,7 +318,7 @@ td, th {
 
 /*BOTÃO ADICIONAR*/
 .button-Adicionar{
-  border: 1px solid white;
+  border: 2px solid white;
   background-color: #2f3640;
   padding: 4px 8px;
   margin-left: 4px;
@@ -336,7 +336,7 @@ td, th {
 
 /*BOTÃO EXCLUIR*/
 .button-Excluir{
-  border: 1px solid white;
+  border: 2px solid white;
   background-color: #630e0e;
   padding: 4px 8px;
   margin-left: 4px;
@@ -354,7 +354,7 @@ td, th {
 
 /*BOTÃO EDITAR*/
 .button-Editar{
-  border: 1px solid white;
+  border: 2px solid white;
   background-color: #2f3640;
   padding: 4px 8px;
   margin-left: 4px;
@@ -381,7 +381,6 @@ td, th {
   height: 40px;
   width: 93%;
   border-radius: 40px;
-
  }
  
  .buscar:hover > .buscar-txt {
@@ -391,7 +390,7 @@ td, th {
    
    .buscar:hover > .buscar-btn {
     background: white;
-    color: #7c2b2b;
+    color: #e7bcbc;
    }
   
    .buscar-btn {
@@ -432,15 +431,15 @@ td, th {
       min-width: 93%;
       position: absolute;
       border-collapse: collapse;
-      margin: 50px;
+      
       background-color:#babdc9;
       box-shadow: 0 5px 20px rgb(0, 0, 0);
-      overflow-x: auto;
-      border-color: #ca3838;
-      font-family: sans-serif;
     
     }
    
+    img{
+      width: 50%;
+    }
 
    /*
    .logo-bibliofateca{ 

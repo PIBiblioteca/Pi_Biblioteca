@@ -65,13 +65,13 @@ body{
 /* Estilo dos conteúdos */
 
 table {
+  min-width: 93%;
   position: absolute;
   border-collapse: collapse;
-  margin: 50px;
-  width: 1250px;
-  height: 200px;
+  margin: 3.5%;
   background-color:#93a3d8;
   box-shadow: 0 0 20px rgb(0, 0, 0);
+  margin-top: 60px;
   
 }
 
@@ -145,6 +145,60 @@ td, th {
   text-decoration: none;
   
 }
+
+.buscar {
+  position: absolute;
+  background: #2f3640;
+  margin-top: 5px;
+  margin-left: 3.5%;
+  margin-right: 3.5%;
+  height: 40px;
+  width: 93%;
+  border-radius: 40px;
+ }
+ 
+ .buscar:hover > .buscar-txt {
+    width: 93%;
+    padding: 0 16px;
+   }
+   
+   .buscar:hover > .buscar-btn {
+    background: white;
+    color: #7c2b2b;
+   }
+  
+   .buscar-btn {
+    color: #666666;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgb(248, 228, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    color: #7c2b2b;
+    cursor: pointer;
+   }
+   
+   .buscar-btn > i {
+    font-size: 30px;
+   }
+  
+   .buscar-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+    font-weight: bold;
+   }
 
 
 /*FIM Estilo dos conteúdos FIM*/
