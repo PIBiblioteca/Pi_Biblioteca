@@ -1,35 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Teste banco de dados</title>
-</head>
+<?php 
 
-<body>
-    <?php
-    if(isset($_POST["cadastro"])):
+include("/XAMPP/htdocs/VSCODE/GitHub/PiBiblioteca/BANCO_TESTE/config.php");
 
-        $RA = $_POST["ra"];
-        $nome = $_POST["nome"];
-        $email = $_POST["email"];
+$consulta = "SELECT * FROM livros";
+$con = $mysqli->query($consulta) or die($mysqli->error);
+?> 
+<html>
+    <head>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td>Curso</td>
+                <td>Código Livro</td>
+                <td>Titulo</td>
+                <td>Quantidade</td>
+            </tr>
+            <?php while($dado = $con->fetch_array()){ ?>
+            <tr>
+                <td><? echo $dado["curso"]; ?></td>
+                <td><? echo $dado["cod_livro"]; ?></td>
+                <td><? echo $dado["titulo"]; ?></td>
+                <td><? echo $dado["quantidade"]; ?></td>
+            </tr>
+            <?php } ?>
+        </table>
 
-        $sql = $con->prepare("INSERT INTO alunos(ra, nome, email) VALUES('$ra', '$nome', '$email')");
-        $sql -> execute();
-        
-        if($sql):
-            echo"Cadastro realizado com sucesso";
-        endif;
-    endif;
-    ?>
-
-    <forms method="POST">
-        <input type="text" name="" placeholder="ra">    
-        <input type="text" name="nome" placeholder="nome">
-        <input type="text" name="email" placeholder="email">
-        <input type="submit" name="cadastrar" placeholder="cadastrar">
-    </forms>
-</body>
-
+    </body>
 </html>
