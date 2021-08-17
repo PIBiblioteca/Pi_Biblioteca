@@ -18,7 +18,7 @@ $con = $mysqli->query($consulta) or die($mysqli->error);
                 <td>Titulo</td>
                 <td>Quantidade</td>
             </tr>
-            <?php while($dado = $con->fetch_array()){ ?>
+            <?php while($dado = $con-> fetch_array()){ ?>
             <tr>
                 <td><? echo $dado["curso"]; ?></td>
                 <td><? echo $dado["cod_livro"]; ?></td>
@@ -27,6 +27,5 @@ $con = $mysqli->query($consulta) or die($mysqli->error);
             </tr>
             <?php } ?>
         </table>
-
     </body>
 </html>
