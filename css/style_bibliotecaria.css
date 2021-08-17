@@ -241,6 +241,7 @@ table {
   overflow-x: auto;
   border-color: #ca3838;
   font-family: sans-serif;
+  min-width:  92%;
 
 }
 
