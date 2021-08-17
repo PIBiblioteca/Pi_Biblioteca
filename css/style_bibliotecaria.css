@@ -80,10 +80,10 @@ body {
 }
 
 .login-form{
-  width: calc(100%);
+  width: calc(100% - 20px);
   max-width: 500px;
   background:linear-gradient(180deg, #A8C0FF,#2f3640);
-  padding: 10px 40px;
+  padding: 50px 40px;
   box-shadow: 0 0 20px rgb(0, 0, 0);
 }
 
@@ -201,7 +201,7 @@ body {
 }
 
 .login-form a{
-  display: inline;
+  display: block;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -241,7 +241,7 @@ table {
   overflow-x: auto;
   border-color: #ca3838;
   font-family: sans-serif;
-  min-width:  92%;
+  min-width:  93%;
 
 }
 
@@ -381,7 +381,6 @@ td, th {
   height: 40px;
   width: 93%;
   border-radius: 40px;
-
  }
  
  .buscar:hover > .buscar-txt {
@@ -391,7 +390,7 @@ td, th {
    
    .buscar:hover > .buscar-btn {
     background: white;
-    color: #7c2b2b;
+    color: #e7bcbc;
    }
   
    .buscar-btn {
@@ -432,20 +431,14 @@ td, th {
       min-width: 93%;
       position: absolute;
       border-collapse: collapse;
-      margin: 50px;
+      
       background-color:#babdc9;
       box-shadow: 0 5px 20px rgb(0, 0, 0);
-      overflow-x: auto;
-      border-color: #ca3838;
-      font-family: sans-serif;
+    
     }
    
     img{
-      width: 30%;
-      float: right
-      
-      vertical-align: top;
-      z-index: 9;
+      width: 50%;
     }
 
    /*
