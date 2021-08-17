@@ -1,9 +1,13 @@
 <?php
+
 $host = "localhost";
 $usuario = "root";
 $senha = "";
-$bd = "alunos";
+$bd = "bibliofateca";
 
-$mysqli = new mysqli($host, $usuario, $senha, $bd); array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
+$mysqli = new mysqli($host, $usuario, $senha, $bd);
+
+if($mysqli->connect_errno)
+    echo "Falha na conexão: (".$mysqli->connect_errno.") ".$mysqli->connect_error;
 
 ?>
