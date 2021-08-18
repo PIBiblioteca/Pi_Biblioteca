@@ -79,12 +79,4 @@ $conn = $mysqli->query($consulta) or die($mysqli->error);
         </footer>
         -->
 </body>
-</html>
-
-<tr>
-    <td><? echo $dado["curso"]; ?></td>
-    <td><? echo $dado["cod_livro"]; ?></td>
-    <td><? echo $dado["titulo"]; ?></td>
-    <td><? echo $dado["quantidade"]; ?></td>
-</tr>
-<?  
+</html> 
