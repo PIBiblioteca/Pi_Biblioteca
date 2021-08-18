@@ -1,8 +1,8 @@
-body,
-
-ul {
+body {
   margin: 0px;
   padding: 0px;
+  background-color:rgb(112, 112, 112);
+
 }
 
 a {
@@ -22,13 +22,16 @@ a:hover:not(#logo) {
 }
 
 #header {
+  position: fixed;
   box-sizing: border-box;
   height: 70px;
+  width: 100%;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #2f3640;
+  z-index: 1;
 }
 
 #menu {
@@ -62,8 +65,8 @@ a:hover:not(#logo) {
 
 body {
     width: 100%;
-    height: 1000px;
-    background:linear-gradient(0deg,#444444, #bebebe);
+    height: 100%;
+    background-color: #302f2f,
 }
 
 
@@ -232,16 +235,17 @@ body {
 
 /****** Estilo dos conteúdos ******/
 
-table {
+.tabela {
   position: absolute;
   border-collapse: collapse;
   margin: 50px;
-  background-color:#93a3d8;
   box-shadow: 0 5px 20px rgb(0, 0, 0);
   overflow-x: auto;
-  border-color: #ca3838;
+  border: 1px;
+  border-color: #000000;
   font-family: sans-serif;
   min-width:  93%;
+  margin-bottom: 50%;
 
 }
 
@@ -250,7 +254,7 @@ td, th {
 }
 
 .cabecalho {  /**Cabeçalho  **/ 
-  background-color: #2f3640;
+  background-color: #692020 ;
   color: #fff;
   font-family: Verdana;
 }
@@ -277,6 +281,10 @@ td, th {
 
 .maior {
   width: 300px;
+}
+
+.maior2 {
+  width: 100px;
 }
 
 .content{display: flex; margin: auto}
@@ -318,10 +326,11 @@ td, th {
 
 /*BOTÃO ADICIONAR*/
 .button-Adicionar{
-  border: 2px solid white;
+  border: 2px solid #692020;
   background-color: #2f3640;
   padding: 4px 8px;
-  margin-left: 4px;
+  margin-top: 7.5%;
+  margin-left: 50px;
   margin-right: 12px;
   border-radius: 45px;  
   color: white;
@@ -329,8 +338,8 @@ td, th {
   float: left;
 }
 .button-Adicionar:hover{
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  background-color: #692020;
+  color: white;
 }
 /*--------------------------------------------------*/
 
@@ -373,38 +382,41 @@ td, th {
 /*--------------------------------------------------*/
 
 .buscar {
-  position: absolute;
+  
+  border: 2px solid #692020;
   background: #2f3640;
-  margin-top: 5px;
+  margin-top: 7%;
   margin-left: 3.5%;
-  margin-right: 3.5%;
+  margin-right: 2.6%;
   height: 40px;
-  width: 93%;
+  width: 20%;
   border-radius: 40px;
+  float: right;
  }
  
  .buscar:hover > .buscar-txt {
-    width: 93%;
+    width: 80%;
     padding: 0 16px;
    }
    
    .buscar:hover > .buscar-btn {
-    background: white;
-    color: #e7bcbc;
+    background: #2f3640;
+    color: white;
+    background-color: #692020;
    }
   
    .buscar-btn {
-    color: #666666;
+    color: #2f3640;
     float: right;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgb(248, 228, 228);
+    background: #2f3640;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.4s;
-    color: #7c2b2b;
+    color: #ffffff;
     cursor: pointer;
    }
    
@@ -427,32 +439,52 @@ td, th {
    }
 
 
-    Table{
+    .tabela{
       min-width: 93%;
       position: absolute;
       border-collapse: collapse;
-      
-      background-color:#babdc9;
-      box-shadow: 0 5px 20px rgb(0, 0, 0);
-    
+      background-color:#313442;
+      color: #ffffff;
+      margin-top: 10%;
     }
    
     img{
       width: 50%;
     }
 
-   /*
+    footer {
+      position: fixed;
+      bottom: 0;
+      margin: 0;
+      padding: 0;
+      height: 70px;
+      background-color: #2f3640;
+      width: 100%;
+      list-style-type: none;
+      overflow: hidden;
+      text-align: right;
+      color: rgb(255, 255, 255);
+      font-size: 12px; 
+      text-align: center;  
+}
+
+  
    .logo-bibliofateca{ 
     left: 50px;
     width: 200px; 
     padding: 10px;
+    float: left;
 }
    .logo-fatec{ 
     left: 50px;
     width: 120px; 
     padding: 10px;
+    float: right;
 }
-/*
+
+.texto-rodape{
+  float: left;
+}
 /****** FIM Estilo dos conteúdos FIM ******/
 
 /****** Para dispositivos móveis ******/
@@ -470,7 +502,7 @@ td, th {
     width: 60px;
   }
 
-  table {
+  .tabela {
     margin: 5%;
     background: #a35e5e;
     margin-top: 8%;

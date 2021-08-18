@@ -16,7 +16,7 @@ $conn = $mysqli->query($consulta) or die($mysqli->error);
     <link rel="shortcut icon" href="/imagem/favicon_bibliofateca.png" type="image/x-icon">
     <title>BiblioFateca - Livros</title>
 </head>
-<body>
+<body class="fundo">
     <header id="header">
         <a class="logo"id="logo" href="">FATEC</a>
         <nav id="nav">
@@ -34,7 +34,10 @@ $conn = $mysqli->query($consulta) or die($mysqli->error);
         </nav>
       </header>
       <script src="/Oficial/menubiblio.js"></script>
-        
+            
+            <tr>
+                <td><button class="button-Adicionar"><i class="fas fa-plus"></i> Adicionar livro </button> </td>
+            </tr>
         <!--BUSCAR-->
         <th> <div class="buscar">
         <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
@@ -44,9 +47,9 @@ $conn = $mysqli->query($consulta) or die($mysqli->error);
         </div> </th> 
         <!--FIM BUSCAR-->
 
-        <table border="1">
+        <table class="tabela" border="1">
             <tr class="cabecalho">
-                <td>Curso</td>
+                <td class="maior2">Curso</td>
                 <td>Código Livro</td>
                 <td>Titulo</td>
                 <td>Quantidade</td>
@@ -66,27 +69,9 @@ $conn = $mysqli->query($consulta) or die($mysqli->error);
                 }
             }
             ?>
-            <tr>
-                <td><button class="button-Adicionar"><i class="fas fa-plus"></i> Adicionar livro </button> </td>
-            </tr>
         </table>
        
-        <!--
-        <footer>
-            <a> <img src="/imagem/logo_fatec.png" alt="Logotipo Fatec Franco da Rocha" class="logo-fatec"></a>
-            <a>Email: biblioteca@fatec.sp.gov.br</a>  
-            <a>Telefone: (xx) x xxxx - xxxx</a>
-        </footer>
-        -->
+     
+    
 </body>
-</html>
-
-<tr>
-    <td><? echo $dado["curso"]; ?></td>
-    <td><? echo $dado["cod_livro"]; ?></td>
-    <td><? echo $dado["titulo"]; ?></td>
-    <td><? echo $dado["quantidade"]; ?></td>
-</tr>
-}           
-}
-<?  
+</html> 
