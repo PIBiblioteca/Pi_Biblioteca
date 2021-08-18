@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php 
+
+include("config.php");
+
+$consulta = "SELECT * FROM livros";
+$conn = $mysqli->query($consulta) or die($mysqli->error);
+?> 
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -38,7 +45,7 @@
         <!--FIM BUSCAR-->
 
         <table border="1">
-            <tr>
+            <tr class="cabecalho">
                 <td>Curso</td>
                 <td>Código Livro</td>
                 <td>Titulo</td>
@@ -59,6 +66,9 @@
                 }
             }
             ?>
+            <tr>
+                <td><button class="button-Adicionar"><i class="fas fa-plus"></i> Adicionar livro </button> </td>
+            </tr>
         </table>
        
         <!--
@@ -70,3 +80,13 @@
         -->
 </body>
 </html>
+
+<tr>
+    <td><? echo $dado["curso"]; ?></td>
+    <td><? echo $dado["cod_livro"]; ?></td>
+    <td><? echo $dado["titulo"]; ?></td>
+    <td><? echo $dado["quantidade"]; ?></td>
+</tr>
+}           
+}
+<?  
