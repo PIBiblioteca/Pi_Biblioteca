@@ -12,7 +12,7 @@ $conn = $mysqli->query($consulta) or die($mysqli->error);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link rel="stylesheet" href="/PIBiblioteca/css/style_bibliotecaria.css">
+    <link rel="stylesheet" href="/GitHub/Pi_Biblioteca/css/style_bibliotecaria.css">
     <link rel="shortcut icon" href="/imagem/favicon_bibliofateca.png" type="image/x-icon">
     <title>BiblioFateca - Livros</title>
 </head>
