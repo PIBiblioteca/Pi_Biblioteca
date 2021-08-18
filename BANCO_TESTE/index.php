@@ -87,6 +87,4 @@ $conn = $mysqli->query($consulta) or die($mysqli->error);
     <td><? echo $dado["titulo"]; ?></td>
     <td><? echo $dado["quantidade"]; ?></td>
 </tr>
-}           
-}
 <?  
