@@ -73,6 +73,17 @@ body {
 /****** Estilo do login ******/
 
   
+
+img{
+  width: 15%;
+  position: absolute; 
+  top: 60px;
+  display: flex;
+  right: 820px;
+  align-items: center;
+  justify-content: center;
+}
+
 .login-body{
   background:linear-gradient(0deg,#7d95e4, #bebebe); 
   background-size: cover;
@@ -80,6 +91,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  right: auto;
+  left: auto;
+
 }
 
 .login-form{
@@ -448,9 +462,7 @@ td, th {
       margin-top: 10%;
     }
    
-    img{
-      width: 50%;
-    }
+  
 
     footer {
       position: fixed;
