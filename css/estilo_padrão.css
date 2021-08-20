@@ -208,6 +208,17 @@ td, th {
 /*----- Para dispositivos móveis -----*/
 
 @media (max-width: 768px) {
+  table {
+    margin: 2%;
+    background: #a35e5e;
+    margin-top: 25%;
+  }
+
+  .buscar {
+    margin-top: 15%;
+    width: 40%;
+  }
+
   .button1, .button2 {
     border: none;
     padding: 16px 16px;
@@ -219,12 +230,6 @@ td, th {
     cursor: pointer;
     width: 60px;
   }
-
-  table {
-    margin: 5%;
-    background: #a35e5e;
-    margin-top: 8%;
-      }
 
   th {
     display: none;
