@@ -40,7 +40,7 @@ $conn = $conexao->query($consulta) or die($conexao->error);
       <script src="/Oficial/menubiblio.js"></script>
             
             <tr>
-                <td><button class="button-Adicionar"><a href="cadastro.php"><i class="fas fa-plus"></i> Adicionar livro </a></button> </td>
+            <a href="cadastro.php" target="_blank"><td><button class="button-Adicionar"><i class="fas fa-plus"></i> Adicionar livro </button> </td></a>
             </tr>
         <!--BUSCAR-->
         <th> <div class="buscar">
