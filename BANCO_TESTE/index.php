@@ -4,18 +4,18 @@
 include("config.php");
 
 $consulta = "SELECT * FROM livros";
-$conn = $mysqli->query($consulta) or die($mysqli->error);
+$conn = $conexao->query($consulta) or die($conexao->error);
 ?> 
-<<<<<<< HEAD
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-
-    <link rel="stylesheet" href="/Testes/BANCO_TESTE/css/estilo_padrão.css">
-    <link rel="stylesheet" href="/Testes/BANCO_TESTE/css/menu.css">
+    
+    <link rel="stylesheet" href="../css/estilo_padrão.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/menu.css">
 
     <link rel="shortcut icon" href="/imagem/favicon_bibliofateca.png" type="image/x-icon">
     <title>BiblioFateca - Livros</title>
@@ -39,16 +39,21 @@ $conn = $mysqli->query($consulta) or die($mysqli->error);
       </header>
       <script src="/Oficial/menubiblio.js"></script>
             
-=======
-<html>
-    <head>
-        <meta charset="utf8">
-    </head>
-    <body>
-        <table border="1">
->>>>>>> parent of 30f7e61 (Organização dos testes)
             <tr>
-                <td>Curso</td>
+            <a href="cadastro.php" target="_blank"><td><button class="button-Adicionar"><i class="fas fa-plus"></i> Adicionar livro </button> </td></a>
+            </tr>
+        <!--BUSCAR-->
+        <th> <div class="buscar">
+        <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
+        <a class="buscar-btn">
+            <i class="fas fa-search"></i>
+        </a>
+        </div> </th> 
+        <!--FIM BUSCAR-->
+
+        <table class="tabela" border="1">
+            <tr class="cabecalho">
+                <td class="maior2">Curso</td>
                 <td>Código Livro</td>
                 <td>Titulo</td>
                 <td>Quantidade</td>
@@ -69,25 +74,8 @@ $conn = $mysqli->query($consulta) or die($mysqli->error);
             }
             ?>
         </table>
-<<<<<<< HEAD
+       
+     
+    
 </body>
 </html> 
-=======
-    </body>
-</html>
-
-
-
-if ($resulta->num_rows > 0){
-
-while($dado = $conn->fetch_array()){ ?>
-<tr>
-    <td><? echo $dado["curso"]; ?></td>
-    <td><? echo $dado["cod_livro"]; ?></td>
-    <td><? echo $dado["titulo"]; ?></td>
-    <td><? echo $dado["quantidade"]; ?></td>
-</tr>
-}           
-}
-<?  
->>>>>>> parent of 30f7e61 (Organização dos testes)
