@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/cadastro.css">    
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastrar Livro</title>
 </head>
 <body class="login-body">
     
@@ -43,7 +43,7 @@
             <option value="Cultura Geral">Cultura Geral</option>
         </select><br><br>
         <input type="text" autocomplete="off" class="form__field" name="titulo" placeholder="Titulo"><br><br>
-        <input type="number" autocomplete="off" scroll-behavior="inherit" class="form__field" name="quantidade" placeholder="Quantidade"><br><br><br><br>
+        <input type="number" autocomplete="off" class="form__field" name="quantidade" placeholder="Quantidade"><br><br><br><br>
         <input type="submit" class="form_field" name="cadastrar" placeholder="Cadastrar">
         <br><br><br>
     </form>
