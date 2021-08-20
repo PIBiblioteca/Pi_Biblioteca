@@ -37,16 +37,19 @@
 
         <h1> Cadastrar Livro </h1><br>
     
-        <select class="form__field" name="curso" placeholder="Curso">
+        <select class="form__field" name="curso" placeholder="Curso" required>
             <option value="GTI">GTI</option>
             <option value="G3E">G3E</option>
             <option value="Cultura Geral">Cultura Geral</option>
         </select><br><br>
-        <input type="text" autocomplete="off" class="form__field" name="titulo" placeholder="Titulo"><br><br>
-        <input type="number" autocomplete="off" class="form__field" name="quantidade" placeholder="Quantidade"><br><br><br><br>
-        <input type="submit" class="form_field" name="cadastrar" placeholder="Cadastrar">
+        <input type="text" autocomplete="off" class="form__field" name="titulo" placeholder="Titulo"required><br><br>
+        <input type="number" autocomplete="off" class="form__field" name="quantidade" placeholder="Quantidade" required><br><br><br><br>
+        <button type="submit" class="form_field" name="cadastrar" value="Cadastrar"> Cadastrar </button>
         <br><br><br>
     </form>
+
+
+
     </div>
     
 </body>
