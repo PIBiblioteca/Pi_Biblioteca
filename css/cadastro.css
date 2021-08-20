@@ -6,22 +6,30 @@
     align-items: center;
     min-height: 100vh;
     font-size: 1.5rem;
-    background-color: #62666d;
+    background: rgb(71,71,77);
+    background: linear-gradient(180deg, rgba(71,71,77,1) 4%, rgba(37,50,50,1) 92%);
   }
  
 
 .login-form{
     
-    border-bottom: 2px;
-    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border: solid;
+    border-width: 8px;
+    border-image: linear-gradient(to top, #11998e, #38ef7d);
     border-image-slice: 1;
   
     
-    background-color: #222222;
+    background-color: #272424;
     padding: 50px 40px;
     display: block;
     margin-left: auto;
     margin-right: auto
+  }
+
+  div{
+    border-width: 3px solid;
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
   }
 
   .login-form h1 {
@@ -31,7 +39,7 @@
     color: rgb(255, 255, 255);
     font-size: 36px;
     font-family: sans-serif;
-    font: bolder;
+    font: bold;
     
 }
 
