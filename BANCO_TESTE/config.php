@@ -1,13 +1,13 @@
 <?php
 
-$host = "localhost";
-$usuario = "root";
-$senha = "";
-$bd = "bibliofateca";
+$hostname = "localhost";
+$user = "root";
+$password = "";
+$database = "bibliofateca";
+$conexao = mysqli_connect($hostname, $user, $password, $database);
 
-$mysqli = new mysqli($host, $usuario, $senha, $bd);
-
-if($mysqli->connect_errno)
-    echo "Falha na conexão: (".$mysqli->connect_errno.") ".$mysqli->connect_error;
+if(!$conexao){
+    print "Falha na conexão com o Banco de Dados";
+}
 
 ?>

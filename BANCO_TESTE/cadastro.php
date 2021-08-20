@@ -15,12 +15,13 @@
     if(isset($_POST["cadastrar"])):
 
         $curso = $_POST['curso'];
-        $cod_livro = $_POST['cod_livro'];
         $titulo = $_POST['titulo'];
         $quantidade = $_POST['quantidade'];
 
-        $sql = $con->prepare("INSERT INTO livro(curso, cod_livro, titulo, quantidade) VALUES('$curso', NULL, '$titulo', '$quantidade' )");
-        $sql->execute();
+        $sql = "INSERT INTO livros(curso, cod_livro, titulo, quantidade) VALUES('$curso', NULL, '$titulo', '$quantidade' )";
+        $salvar = mysqli_query($conexao, $sql);
+
+        mysqli_close($conexao);
 
         if($sql):
             echo'Cadastro efetuado com sucesso! <br><br>';

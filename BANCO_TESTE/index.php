@@ -4,7 +4,7 @@
 include("config.php");
 
 $consulta = "SELECT * FROM livros";
-$conn = $mysqli->query($consulta) or die($mysqli->error);
+$conn = $conexao->query($consulta) or die($conexao->error);
 ?> 
 <html lang="pt-br">
 <head>
@@ -12,7 +12,11 @@ $conn = $mysqli->query($consulta) or die($mysqli->error);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link rel="stylesheet" href="/GitHub/Pi_Biblioteca/css/style_bibliotecaria.css">
+    
+    <link rel="stylesheet" href="../css/estilo_padrão.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/menu.css">
+
     <link rel="shortcut icon" href="/imagem/favicon_bibliofateca.png" type="image/x-icon">
     <title>BiblioFateca - Livros</title>
 </head>
@@ -36,7 +40,7 @@ $conn = $mysqli->query($consulta) or die($mysqli->error);
       <script src="/Oficial/menubiblio.js"></script>
             
             <tr>
-                <td><button class="button-Adicionar"><i class="fas fa-plus"></i> Adicionar livro </button> </td>
+                <td><button class="button-Adicionar"><a href="cadastro.php"><i class="fas fa-plus"></i> Adicionar livro </a></button> </td>
             </tr>
         <!--BUSCAR-->
         <th> <div class="buscar">
