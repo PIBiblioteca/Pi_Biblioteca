@@ -23,6 +23,10 @@ table {
 .maior2 {
   width: 100px;
 }
+
+.esquerda {
+  text-align: left;
+}
 /*----- FIM TABELA -----*/
 
 td, th {
@@ -30,7 +34,8 @@ td, th {
   color: #fff;
 }
 
-.cabecalho {  /**Cabeçalho  **/ 
+/*---Cabeçalho---*/ 
+.cabecalho {
   background-color: #692020 ;
   color: #fff;
   font-family: Verdana;
@@ -39,20 +44,7 @@ td, th {
 .cabecalho th {
   padding: 10px;
 }
-
-.esquerda {
-  text-align: left;
-}
-
-.destaque {
-  background-color: #2a313a;
-  box-shadow: 2px 0px 0px #37414d;
-  position: relative;
-  color:rgb(165, 165, 165);
-  display: block;
-  text-decoration: none;
-  padding: 20px;
-}
+/*---FIM Cabeçalho---*/
 
 .content{display: flex; margin: auto}
 
@@ -211,7 +203,7 @@ td, th {
 
 /*--- Fim Buscar ---*/ 
 
-/*----- FIM Estilo dos conteúdos FIM -----*/
+/*----- FIM Estilo dos conteúdos do site FIM -----*/
 
 /*----- Para dispositivos móveis -----*/
 

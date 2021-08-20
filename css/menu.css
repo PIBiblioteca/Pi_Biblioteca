@@ -67,6 +67,16 @@ body {
       background: rgb(0, 0, 0);
   }
 
+  .destaque {
+    background-color: #2a313a;
+    box-shadow: 2px 0px 0px #37414d;
+    position: relative;
+    color:rgb(165, 165, 165);
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+  }
+
 /****** Para dispositivos móveis ******/
 
 @media (max-width: 768px) {
