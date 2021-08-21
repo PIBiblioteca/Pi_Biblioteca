@@ -1,54 +1,89 @@
 /*----- Estilo padrão dos conteúdos do site -----*/
-
+body {
+  font-family: "Poppins", sans-serif;
+  background: #979696;
+  
+}
 /*----- TABELA -----*/
-table {
-  position: absolute;
+.tabela{
+  position: sticky;
+  display: grid;
+  overflow: auto;
   border-collapse: collapse;
   margin: 50px;
-  box-shadow: 0 5px 20px rgb(0, 0, 0);
   overflow-x: auto;
-  border: 1px;
+  border: 3px;
   border-color: #000000;
   font-family: sans-serif;
   min-width:  93%;
   margin-top: 155px;
-  background-color: #37414d;
+  background-color: #272424;
+  
+}
+
+.tabela:not(.cabecalho){
+  display: block;
+  height: 700px;
+  overflow-y: auto;
 
 }
 
-.maior {
-  width: 300px;
+.dados{
+  color: #ffffff;
 }
 
-.maior2 {
-  width: 100px;
+/* ---------------Scroll -------------- */
+
+/* width */
+::-webkit-scrollbar {
+  width: 13px;
 }
 
-.esquerda {
-  text-align: left;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
 }
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #38ef7d; 
+}
+
+/* ---------------Fim Scroll -------------- */
+
+
 /*----- FIM TABELA -----*/
 
-td, th {
+  th {
   padding: 5px;
-  color: #fff;
 }
 
 /*---Cabeçalho---*/ 
 .cabecalho {
-  background-color: #692020 ;
-  color: #fff;
+  background: #38ef7d;
   font-family: Verdana;
+  color: #000000;
+  font-weight: bolder;
+  
 }
 
 .cabecalho th {
   padding: 10px;
+  
+
 }
 /*---FIM Cabeçalho---*/
 
 .content{display: flex; margin: auto}
 
 /*--- Botão Comum ---*/
+
+/* 
 .button1, .button2 {
   border: none;
   padding: 16px 16px;
@@ -65,30 +100,34 @@ td, th {
   background-color: #2f3640;
   color: white;
   border: 2px solid white;
-}
+  }
 
 .button1:hover {
   background-color: #4C9141;
   color: white;
-}
+  }
 
 .button2 {
   background-color: #2f3640;
   color: white;
   border: 2px solid white;
-}
+  }
 
 .button2:hover {
   background-color: #ca3838;
   color: white;
-}
-/*--- FIM Botão Comum ---*/
+  }
+
+ */
+
+
+ /*--- FIM Botão Comum ---*/
 
 /*BOTÃO ADICIONAR*/
 .button-Adicionar{
   border: 2px solid #692020;
   background-color: #2f3640;
-  padding: 4px 8px;
+  padding: 4px 4px;
   margin-top: 7.2%;
   margin-left: 50px;
   margin-right: 12px;
@@ -115,6 +154,7 @@ td, th {
   color: white;
   font-size: 16px;
   float: right;
+  cursor: pointer;
 }
 .button-Excluir:hover{
   background-color: #ca3838;
@@ -126,18 +166,20 @@ td, th {
 .button-Editar{
   border: 2px solid white;
   background-color: #2f3640;
-  padding: 4px 8px;
+  padding: 4px 5px;
   margin-left: 4px;
   margin-right: 12px;
   border-radius: 45px;  
   color: white;
   font-size: 16px;
   float: right;
- 
+  cursor: pointer;
+  
 }
 .button-Editar:hover{
-  background-color: #15181d;
-  color: #ffffff;
+  background-color: #172b4d;
+  color: #38ef7d;
+  border: 2px solid #38ef7d;
 }
 
 /*--------------------------------------------------*/

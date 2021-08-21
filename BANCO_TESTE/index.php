@@ -57,25 +57,29 @@ $conn = $conexao->query($consulta) or die($conexao->error);
                 <td>Código Livro</td>
                 <td>Titulo</td>
                 <td>Quantidade</td>
+                <td>Editar</td>
+                <td> Excluir</td>
+                
             </tr>
+            
+           
             <?php 
             
             if ($conn->num_rows > 0){
 
                 while ( $dado = $conn->fetch_assoc()){            
             
-                    echo '<tr>';
+                    echo '<tr class="dados">';
                     echo '<td>'. $dado['curso'] .'</td>';
                     echo '<td>'. $dado['cod_livro'] .'</td>';
                     echo '<td>'. $dado['titulo'] .'</td>';
                     echo '<td>'. $dado['quantidade'] .'</td>';
+                    echo '<td><button class="button-Editar"> <i class="fas fa-pencil-alt"> <a href="editar_livro.php?codigo=<?php echo $dado["cod_livro"]; ?> </a></i></button></td> <td> <button class="button-Excluir"> <i class="fas fa-times"> <a href="excluir_livro.php?codigo=<?php echo $dado["cod_livro"]; ?> </a></i></button></td>';
                     echo '</tr>';
                 }
             }
             ?>
+      
         </table>
-       
-     
-    
 </body>
 </html> 

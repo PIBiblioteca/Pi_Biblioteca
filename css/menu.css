@@ -17,7 +17,7 @@ body {
   }
   
   a:hover:not(#logo) {
-    background: rgba(128, 126, 126, 0.301);
+    background: linear-gradient(to right, #11998e, #38ef7d);
   }
   
   #logo {
@@ -34,7 +34,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #2f3640;
+    background: linear-gradient(0deg, rgba(31,129,83,1) 4%, rgba(15,61,57,1) 90%, rgba(56,239,125,1) 100%);
     z-index: 1;
   }
   
@@ -60,15 +60,15 @@ body {
   }
   
   .sair {
-      background-color: #ca3838;
+    background: linear-gradient(to top, #0f3d39, #ca3838);
   }
   
   .sair:hover {
-      background: rgb(0, 0, 0);
+      background: linear-gradient(to right, #192221, #e94444);;
   }
 
   .destaque {
-    background-color: #2a313a;
+    background: linear-gradient(to top, #0f3d39, #38ef7d);
     box-shadow: 2px 0px 0px #37414d;
     position: relative;
     color:rgb(165, 165, 165);
