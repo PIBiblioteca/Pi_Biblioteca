@@ -27,7 +27,7 @@
         mysqli_close($conexao);
 
         if($sql):
-            echo'Cadastro efetuado com sucesso! <br><br>';
+            echo'Cadastro efetuado com sucesso!';
         endif;
     endif;
     ?>

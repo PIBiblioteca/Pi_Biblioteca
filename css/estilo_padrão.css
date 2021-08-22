@@ -1,7 +1,7 @@
 /*----- Estilo padrão dos conteúdos do site -----*/
 body {
   font-family: "Poppins", sans-serif;
-  background: #979696;
+  background: #444444;
   
 }
 /*----- TABELA -----*/
@@ -17,7 +17,7 @@ body {
   font-family: sans-serif;
   min-width:  93%;
   margin-top: 155px;
-  background-color: #272424;
+  background-color: #141429;
   
 }
 
@@ -25,7 +25,6 @@ body {
   display: block;
   height: 700px;
   overflow-y: auto;
-
 }
 
 .dados{
@@ -36,9 +35,8 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 13px;
+  width: 10px;
 }
-
 /* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1; 
@@ -51,7 +49,7 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #38ef7d; 
+  background: #fd7e14; 
 }
 
 /* ---------------Fim Scroll -------------- */
@@ -65,7 +63,7 @@ body {
 
 /*---Cabeçalho---*/ 
 .cabecalho {
-  background: #38ef7d;
+  background: #fd7e14;
   font-family: Verdana;
   color: #000000;
   font-weight: bolder;
@@ -125,21 +123,22 @@ body {
 
 /*BOTÃO ADICIONAR*/
 .button-Adicionar{
-  border: 2px solid #692020;
-  background-color: #2f3640;
+  border: 2px solid #ffffff;
+  background-color: #141429;
   padding: 4px 4px;
   margin-top: 7.2%;
   margin-left: 50px;
   margin-right: 12px;
-  border-radius: 45px;  
+  border-radius: 10px;  
   color: white;
   font-size: 16px;
   float: left;
   cursor: pointer;
 }
 .button-Adicionar:hover{
-  background-color: #692020;
+  background-color: #fd7e14;
   color: white;
+  border: 2px solid #fd7e14;
 }
 /*--------------------------------------------------*/
 
@@ -157,8 +156,9 @@ body {
   cursor: pointer;
 }
 .button-Excluir:hover{
-  background-color: #ca3838;
-  color: #ffffff;
+  background-color: #630e0e;
+  color: #ff0000;
+  border: 2px solid #ff0000;
 }
 /*--------------------------------------------------*/
 
@@ -178,8 +178,8 @@ body {
 }
 .button-Editar:hover{
   background-color: #172b4d;
-  color: #38ef7d;
-  border: 2px solid #38ef7d;
+  color: #fd7e14;
+  border: 2px solid #fd7e14;
 }
 
 /*--------------------------------------------------*/
@@ -189,35 +189,42 @@ body {
 
 .buscar {
   
-  border: 2px solid #692020;
-  background: #2f3640;
+  border: 2px solid #ffffff;
+  background: #141429;
   margin-top: 7%;
   margin-left: 3.5%;
   margin-right: 2.6%;
+  margin-bottom: 1%;
   height: 40px;
   width: 20%;
-  border-radius: 40px;
+  border-radius: 45px;
   float: right;
+  
+  
  }
  
+
+ .buscar:hover{
+  border-color: #fd7e14;
+
+ }
+
  .buscar:hover > .buscar-txt {
     width: 80%;
     padding: 0 16px;
    }
    
    .buscar:hover > .buscar-btn {
-    background: #2f3640;
+    background: #fd7e14;
     color: white;
-    background-color: #692020;
+    border: #fd7e14;
    }
   
    .buscar-btn {
-    color: #2f3640;
     float: right;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #2f3640;
     display: flex;
     justify-content: center;
     align-items: center;

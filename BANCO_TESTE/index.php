@@ -51,7 +51,7 @@ $conn = $conexao->query($consulta) or die($conexao->error);
         </div> </th> 
         <!--FIM BUSCAR-->
 
-        <table class="tabela" border="1">
+        <br><table class="tabela" border="1">
             <tr class="cabecalho">
                 <td class="maior2">Curso</td>
                 <td>Código Livro</td>
@@ -74,7 +74,9 @@ $conn = $conexao->query($consulta) or die($conexao->error);
                     echo '<td>'. $dado['cod_livro'] .'</td>';
                     echo '<td>'. $dado['titulo'] .'</td>';
                     echo '<td>'. $dado['quantidade'] .'</td>';
-                    echo '<td><button class="button-Editar"> <i class="fas fa-pencil-alt"> <a href="editar_livro.php?codigo=<?php echo $dado["cod_livro"]; ?> </a></i></button></td> <td> <button class="button-Excluir"> <i class="fas fa-times"> <a href="excluir_livro.php?codigo=<?php echo $dado["cod_livro"]; ?> </a></i></button></td>';
+                    echo '<td><button class="button-Editar"> <i class="fas fa-pencil-alt"> <a href="editar_livro.php?codigo=<?php echo $dado["cod_livro"]; ?> </a></i></button></td> 
+                    
+                    <td> <button class="button-Excluir"> <i class="fas fa-times"> <a href="excluir_livro.php?codigo=<?php echo $dado["cod_livro"]; ?> </a></i></button></td>';
                     echo '</tr>';
                 }
             }
