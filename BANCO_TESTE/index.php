@@ -43,6 +43,21 @@ $conn = $conexao->query($consulta) or die($conexao->error);
             <a href="cadastro.php" target="_blank"><td><button class="button-Adicionar"><i class="fas fa-plus"></i> Adicionar livro </button> </td></a>
             </tr>
         <!--BUSCAR-->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <form action="buscar.php" method="GET">
+            <label>Título</label>
+            <input type="text" name="titulo" size="50" placeholder="Buscar">
+            <button style="width: 100px;">Buscar</button>
+        </form>
+
         <th> <div class="buscar">
         <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
         <a class="buscar-btn">
@@ -51,37 +66,32 @@ $conn = $conexao->query($consulta) or die($conexao->error);
         </div> </th> 
         <!--FIM BUSCAR-->
 
-        <br><table class="tabela" border="1">
+        <table class="tabela" border="1">
             <tr class="cabecalho">
                 <td class="maior2">Curso</td>
                 <td>Código Livro</td>
                 <td>Titulo</td>
+                <td>Autor</td>
+                <td>Editora</td>
                 <td>Quantidade</td>
-                <td>Editar</td>
-                <td> Excluir</td>
-                
             </tr>
-            
-           
             <?php 
             
             if ($conn->num_rows > 0){
 
                 while ( $dado = $conn->fetch_assoc()){            
             
-                    echo '<tr class="dados">';
-                    echo '<td>'. $dado['curso'] .'</td>';
-                    echo '<td>'. $dado['cod_livro'] .'</td>';
+                    echo '<tr>';
+                    echo '<td>'. $dado['categoria'] .'</td>';
+                    echo '<td>'. $dado['id'] .'</td>';
                     echo '<td>'. $dado['titulo'] .'</td>';
+                    echo '<td>'. $dado['autor'] .'</td>';
+                    echo '<td>'. $dado['editora'] .'</td>';
                     echo '<td>'. $dado['quantidade'] .'</td>';
-                    echo '<td><button class="button-Editar"> <i class="fas fa-pencil-alt"> <a href="editar_livro.php?codigo=<?php echo $dado["cod_livro"]; ?> </a></i></button></td> 
-                    
-                    <td> <button class="button-Excluir"> <i class="fas fa-times"> <a href="excluir_livro.php?codigo=<?php echo $dado["cod_livro"]; ?> </a></i></button></td>';
                     echo '</tr>';
                 }
             }
             ?>
-      
         </table>
 </body>
 </html> 
