@@ -67,21 +67,20 @@ $conn = $conexao->query($consulta) or die($conexao->error);
             
             if ($conn->num_rows > 0){
 
-                while ( $dado = $conn->fetch_assoc()){            
+                while ($dado = $conn->fetch_assoc()){    ?>          
             
-                    echo '<tr class="dados">';
-                    echo '<td>'. $dado['curso'] .'</td>';
-                    echo '<td>'. $dado['cod_livro'] .'</td>';
-                    echo '<td>'. $dado['titulo'] .'</td>';
-                    echo '<td>'. $dado['quantidade'] .'</td>';
-                    echo '<td><button class="button-Editar"> <i class="fas fa-pencil-alt"> <a href="editar_livro.php?codigo=<?php echo $dado["cod_livro"]; ?> </a></i></button></td> 
+                    <tr class="dados">
+                     <td> <?php echo $dado['curso']; ?> </td>
+                     <td> <?php echo $dado['cod_livro']; ?> </td>
+                     <td> <?php echo $dado['titulo']; ?> </td>
+                     <td> <?php echo $dado['quantidade']; ?> </td>
                     
-                    <td> <button class="button-Excluir"> <i class="fas fa-times"> <a href="excluir_livro.php?codigo=<?php echo $dado["cod_livro"]; ?> </a></i></button></td>';
-                    echo '</tr>';
-                }
-            }
-            ?>
+                    <td> <a href="index.php?codigo=<?php echo $dado['cod_livro']; ?>"> <button class="button-Editar"> <i class="fas fa-pencil-alt"> </i></button></a></td>
+                    
+                     <td> <a href="index.php?p=deletar&codigo=<?php echo $dado['cod_livro']; ?>"> <button class="button-Excluir"> <i class="fas fa-times"> </i></button></a></td>
+                     </tr>
+                    <?php } } ?> 
       
         </table>
 </body>
-</html> 
+</html>
