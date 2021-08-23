@@ -79,19 +79,22 @@ $conn = $conexao->query($consulta) or die($conexao->error);
             
             if ($conn->num_rows > 0){
 
-                while ( $dado = $conn->fetch_assoc()){            
+                while ($dado = $conn->fetch_assoc()){    ?>          
             
-                    echo '<tr>';
-                    echo '<td>'. $dado['categoria'] .'</td>';
-                    echo '<td>'. $dado['id'] .'</td>';
-                    echo '<td>'. $dado['titulo'] .'</td>';
-                    echo '<td>'. $dado['autor'] .'</td>';
-                    echo '<td>'. $dado['editora'] .'</td>';
-                    echo '<td>'. $dado['quantidade'] .'</td>';
-                    echo '</tr>';
-                }
-            }
-            ?>
+                    <tr class="dados">
+                     <td> <?php echo $dado['categoria']; ?> </td>
+                     <td> <?php echo $dado['id']; ?> </td>
+                     <td> <?php echo $dado['titulo']; ?> </td>
+                     <td> <?php echo $dado['autor']; ?> </td>
+                     <td> <?php echo $dado['editora']; ?> </td>
+                     <td> <?php echo $dado['quantidade']; ?> </td>
+                    
+                    <td> <a href="index.php?codigo=<?php echo $dado['cod_livro']; ?>"> <button class="button-Editar"> <i class="fas fa-pencil-alt"> </i></button></a></td>
+                    
+                     <td> <a href="index.php?p=deletar&codigo=<?php echo $dado['cod_livro']; ?>"> <button class="button-Excluir"> <i class="fas fa-times"> </i></button></a></td>
+                     </tr>
+                    <?php } } ?> 
+      
         </table>
 </body>
-</html> 
+</html>
