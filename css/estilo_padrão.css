@@ -21,6 +21,8 @@ body {
   
 }
 
+
+
 .tabela:not(.cabecalho){
   display: block;
   height: 700px;
