@@ -53,12 +53,16 @@ $conn = $conexao->query($consulta) or die($conexao->error);
 
         <br><table class="tabela" border="1">
             <tr class="cabecalho">
-                <td class="maior2">Curso</td>
-                <td>Código Livro</td>
+                <td>ID</td>
+                <td>Categoria</td>
+                <td>isbn</td>
                 <td>Titulo</td>
+                <td>Autor</td>
                 <td>Quantidade</td>
+                <td>Editora</td>
+                <td>Edição</td>
                 <td>Editar</td>
-                <td> Excluir</td>
+                <td>Excluir</td>
                 
             </tr>
             
@@ -70,10 +74,15 @@ $conn = $conexao->query($consulta) or die($conexao->error);
                 while ($dado = $conn->fetch_assoc()){    ?>          
             
                     <tr class="dados">
-                     <td> <?php echo $dado['curso']; ?> </td>
-                     <td> <?php echo $dado['cod_livro']; ?> </td>
+                     <td> <?php echo $dado['id']; ?> </td>
+                     <td> <?php echo $dado['categoria']; ?> </td>
+                     <td> <?php echo $dado['isbn']; ?> </td>
                      <td> <?php echo $dado['titulo']; ?> </td>
+                     <td> <?php echo $dado['autor']; ?> </td>
                      <td> <?php echo $dado['quantidade']; ?> </td>
+                     <td> <?php echo $dado['editora']; ?> </td>
+                     <td> <?php echo $dado['edicao']; ?> </td>
+
                     
                     <td> <a href="index.php?codigo=<?php echo $dado['cod_livro']; ?>"> <button class="button-Editar"> <i class="fas fa-pencil-alt"> </i></button></a></td>
                     
