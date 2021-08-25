@@ -271,6 +271,10 @@ body {
     width: 40%;
   }
 
+  .buscar:hover > .buscar-txt {
+    width: 62%;
+   }
+
   .button1, .button2 {
     border: none;
     padding: 16px 16px;
