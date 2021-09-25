@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
 
-include("config.php");
+include("../../BANCO_TESTE/config.php");
 
 $consulta = "SELECT * FROM livros";
 $conn = $conexao->query($consulta) or die($conexao->error);
@@ -13,14 +13,15 @@ $conn = $conexao->query($consulta) or die($conexao->error);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     
-    <link rel="stylesheet" href="../css/estilo_padrão.css">
-    <link rel="stylesheet" href="../css/login.css">
-    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../../css/estilo_padrão.css">
+    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="../../css/menu.css">
 
     <link rel="shortcut icon" href="/imagem/favicon_bibliofateca.png" type="image/x-icon">
     <title>BiblioFateca - Livros</title>
-
 </head>
+
+<!-- Menu Estrutura -->
 <body class="fundo">
     <header id="header">
         <a class="logo"id="logo" href="">FATEC</a>
@@ -29,36 +30,22 @@ $conn = $conexao->query($consulta) or die($conexao->error);
             <span id="hamburger"></span>
           </button>
           <ul id="menu" role="menu">
-            <li><a href="/html/bibliotecaria/t1_retiradas.html">Retiradas</a></li>
-            <li><a href="/html/bibliotecaria/t2_devolucoes.html">Devoluções</a></li>
-            <li><a class="destaque" href="/html/bibliotecaria/t3_livros.html">Livros</a></li>
-            <li><a href="/html/bibliotecaria/t4_suspensoes.html">Suspensões</a></li>
-            <li><a href="/html/bibliotecaria/t5_recados.html">Recados</a></li>
-            <li class="sair"><a href="/html/bibliotecaria/t0_index.html">Sair</a></li>
+            <li><a href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t1_retiradas.html">Retiradas</a></li>
+            <li><a href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t2_devolucoes.html">Devoluções</a></li>
+            <li><a class="destaque" href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t3_livros.html">Livros</a></li>
+            <li><a href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t4_suspensoes.html">Suspensões</a></li>
+            <li><a href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t5_recados.html">Recados</a></li>
+            <li class="sair"><a href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t0_index.html">Sair</a></li>
           </ul>
         </nav>
       </header>
-      <script src="/Oficial/menubiblio.js"></script>
+      <script src="/GitHub/Pi_Biblioteca/Oficial/menubiblio.js"></script>
+<!-- FIM Menu Estrutura-->
             
             <tr>
             <a href="cadastro.php" target="_blank"><td><button class="button-Adicionar"><i class="fas fa-plus"></i> Adicionar livro </button> </td></a>
             </tr>
         <!--BUSCAR-->
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <form action="buscar.php" method="GET">
-            <label>Título</label>
-            <input type="text" name="titulo" size="50" placeholder="Buscar">
-            <button style="width: 100px;">Buscar</button>
-        </form>
-
         <th> <div class="buscar">
         <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
         <a class="buscar-btn">
@@ -67,7 +54,7 @@ $conn = $conexao->query($consulta) or die($conexao->error);
         </div> </th> 
         <!--FIM BUSCAR-->
 
-        <table class="tabela" border="1">
+        <br><table class="tabela" border="1">
             <tr class="cabecalho">
                 <td>ID</td>
                 <td>Categoria</td>
@@ -81,6 +68,8 @@ $conn = $conexao->query($consulta) or die($conexao->error);
                 <td>Excluir</td>
                 
             </tr>
+            
+           
             <?php 
             
             if ($conn->num_rows > 0){
@@ -105,6 +94,5 @@ $conn = $conexao->query($consulta) or die($conexao->error);
                     <?php } } ?> 
       
         </table>
-
 </body>
 </html>

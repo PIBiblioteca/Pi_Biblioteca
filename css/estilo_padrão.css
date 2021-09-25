@@ -21,6 +21,8 @@ body {
   
 }
 
+
+
 .tabela:not(.cabecalho){
   display: block;
   height: 700px;
@@ -70,8 +72,8 @@ body {
   
 }
 
-.cabecalho th {
-  padding: 10px;
+.cabecalho td {
+  padding: 3px;
   
 
 }
@@ -210,7 +212,7 @@ body {
  }
 
  .buscar:hover > .buscar-txt {
-    width: 80%;
+    width: 70%;
     padding: 0 16px;
    }
    
@@ -268,6 +270,10 @@ body {
     margin-top: 15%;
     width: 40%;
   }
+
+  .buscar:hover > .buscar-txt {
+    width: 62%;
+   }
 
   .button1, .button2 {
     border: none;
