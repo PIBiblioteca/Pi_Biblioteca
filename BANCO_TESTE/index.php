@@ -19,6 +19,7 @@ $conn = $conexao->query($consulta) or die($conexao->error);
 
     <link rel="shortcut icon" href="/imagem/favicon_bibliofateca.png" type="image/x-icon">
     <title>BiblioFateca - Livros</title>
+
 </head>
 <body class="fundo">
     <header id="header">
@@ -96,5 +97,6 @@ $conn = $conexao->query($consulta) or die($conexao->error);
                     <?php } } ?> 
       
         </table>
+
 </body>
 </html>
