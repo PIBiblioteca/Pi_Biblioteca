@@ -313,10 +313,18 @@ td, th {
     margin-top: 25%;
   }
 
+  .tabela{
+    margin-left: 3%;
+  }
+
   .buscar {
-    margin-top: 15%;
+    margin-top: 20%;
     width: 40%;
   }
+
+  .buscar:hover > .buscar-txt {
+    width: 50%;
+   }
 
   .button1, .button2 {
     border: none;
