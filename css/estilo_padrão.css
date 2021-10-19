@@ -43,6 +43,11 @@ body {
   color: #ffffff;
 }
 
+td, th {
+  padding: 5px;
+  color: #fff;
+}
+
 /* ---------------Scroll -------------- */
 
 /* width */
@@ -68,11 +73,6 @@ body {
 
 
 /*----- FIM TABELA -----*/
-
-td, th:not(.cabecalho) {
-  padding: 5px;
-  color: #fff;
-}
 
 /*---Cabeçalho---*/ 
 .cabecalho {
