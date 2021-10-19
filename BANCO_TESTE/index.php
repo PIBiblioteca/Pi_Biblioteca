@@ -31,10 +31,10 @@ $conn = $conexao->query($consulta) or die($conexao->error);
           <ul id="menu" role="menu">
             <li><a href="/html/bibliotecaria/t1_retiradas.html">Retiradas</a></li>
             <li><a href="/html/bibliotecaria/t2_devolucoes.html">Devoluções</a></li>
-            <li><a class="destaque" href="/html/bibliotecaria/t3_livros.html">Livros</a></li>
+            <li><a class="destaque" href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/">Livros</a></li>
             <li><a href="/html/bibliotecaria/t4_suspensoes.html">Suspensões</a></li>
             <li><a href="/html/bibliotecaria/t5_recados.html">Recados</a></li>
-            <li class="sair"><a href="/html/bibliotecaria/t0_index.html">Sair</a></li>
+            <li class="sair"><a href="/html/t0_index.html">Sair</a></li>
           </ul>
         </nav>
       </header>
