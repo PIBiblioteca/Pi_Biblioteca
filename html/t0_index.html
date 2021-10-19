@@ -7,13 +7,15 @@
   <title>Login</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
   <link rel="stylesheet" href="/css/login.css">
-  <link rel="shortcut icon" href="./img/favicon_bibliofateca.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../imagem/favicon_bibliofateca.png" type="image/x-icon">
 </head>
 
-<img src="img/logo_bibliofateca.png" class="logofatec" alt="logo">
+<img src="../imagem/logo_bibliofateca.png" class="logofatec" alt="logo">
 
 <body class="login-body">
-
+<div>
+  
+</div>
   <style>
     * {
       margin: 0;
@@ -50,17 +52,6 @@
   <script src="index.js"></script>
 
   <script>
-    function teste() {
-      $.ajax({
-        type: "POST",
-        url: "http://localhost:3000/login",
-        data: { "usuario": $( "#usuario" ).val(), "senha": $( "#senha" ).val() },
-        success: function (data) {
-          console.log(data)
-        }
-      });
-    }
-
      var fields = document.querySelectorAll(".textb input");
      var btn = document.querySelector(".btn");
      function check() {
