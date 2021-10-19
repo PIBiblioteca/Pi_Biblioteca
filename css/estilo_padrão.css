@@ -21,6 +21,18 @@ body {
   
 }
 
+.maior {
+  width: 300px;
+}
+
+.maior2 {
+  width: 100px;
+}
+
+.esquerda {
+  text-align: left;
+}
+
 .tabela:not(.cabecalho){
   display: block;
   height: 700px;
@@ -57,8 +69,9 @@ body {
 
 /*----- FIM TABELA -----*/
 
-  th {
+td, th {
   padding: 5px;
+  color: #fff;
 }
 
 /*---Cabeçalho---*/ 
@@ -120,6 +133,42 @@ body {
 
 
  /*--- FIM Botão Comum ---*/
+
+ /*--- Botão Comum ---*/
+.button1, .button2 {
+  border: none;
+  padding: 16px 16px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 130px; 
+}
+
+
+.button1 {
+  background-color: #2f3640;
+  color: white;
+  border: 2px solid white;
+}
+
+.button1:hover {
+  background-color: #4C9141;
+  color: white;
+}
+
+.button2 {
+  background-color: #2f3640;
+  color: white;
+  border: 2px solid white;
+}
+
+.button2:hover {
+  background-color: #ca3838;
+  color: white;
+}
+/*--- FIM Botão Comum ---*/
 
 /*BOTÃO ADICIONAR*/
 .button-Adicionar{
