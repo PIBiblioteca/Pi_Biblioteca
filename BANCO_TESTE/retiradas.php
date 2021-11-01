@@ -3,7 +3,7 @@
 
 include("config.php");
 
-$consulta = "SELECT * FROM livros";
+$consulta = "SELECT * FROM retiradas";
 $conn = $conexao->query($consulta) or die($conexao->error);
 ?> 
 <html lang="pt-br">
@@ -22,43 +22,28 @@ $conn = $conexao->query($consulta) or die($conexao->error);
 
 </head>
 <body class="fundo">
-    <header id="header">
-        <a class="logo"id="logo" href="">FATEC</a>
-        <nav id="nav">
-          <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
-            <span id="hamburger"></span>
-          </button>
-          <ul id="menu" role="menu">
-            <li><a href="/html/bibliotecaria/t1_retiradas.html">Retiradas</a></li>
-            <li><a href="/html/bibliotecaria/t2_devolucoes.html">Devoluções</a></li>
-            <li><a class="destaque" href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/">Livros</a></li>
-            <li><a href="/html/bibliotecaria/t4_suspensoes.html">Suspensões</a></li>
-            <li><a href="/html/bibliotecaria/t5_recados.html">Recados</a></li>
-            <li class="sair"><a href="/html/t0_index.html">Sair</a></li>
-          </ul>
-        </nav>
-      </header>
+<header id="header">
+    <a class="logo"id="logo" href="">FATEC</a>
+      <nav id="nav">
+        <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+          <span id="hamburger"></span>
+        </button>
+        <ul id="menu" role="menu">
+          <li><a class="destaque" href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/retiradas.php">Retiradas</a></li>
+          <li><a href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/devolucoes.php">Devoluções</a></li>
+          <li><a href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/livros.php">Livros</a></li>
+          <li><a href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/suspensoes.php">Suspensões</a></li>
+          <li><a href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/recados.php">Recados</a></li>
+          <li class="sair"><a href="/html/t0_index.html">Sair</a></li>
+        </ul>
+      </nav>
+  </header>
       <script src="/Oficial/menubiblio.js"></script>
             
             <tr>
             <a href="cadastro.php" target="_blank"><td><button class="button-Adicionar"><i class="fas fa-plus"></i> Adicionar livro </button> </td></a>
             </tr>
         <!--BUSCAR-->
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <form action="buscar.php" method="GET">
-            <label>Título</label>
-            <input type="text" name="titulo" size="50" placeholder="Buscar">
-            <button style="width: 100px;">Buscar</button>
-        </form>
-
         <th> <div class="buscar">
         <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
         <a class="buscar-btn">
@@ -70,16 +55,13 @@ $conn = $conexao->query($consulta) or die($conexao->error);
         <table class="tabela" border="1">
             <tr class="cabecalho">
                 <td>ID</td>
-                <td>Categoria</td>
-                <td>isbn</td>
-                <td>Titulo</td>
-                <td>Autor</td>
-                <td>Quantidade</td>
-                <td>Editora</td>
-                <td>Edição</td>
+                <td>livro</td>
+                <td>Usuário</td>
+                <td>Email</td>
+                <td>Saida</td>
+                <td>Devolução</td>
                 <td>Editar</td>
                 <td>Excluir</td>
-                
             </tr>
             <?php 
             
@@ -88,16 +70,12 @@ $conn = $conexao->query($consulta) or die($conexao->error);
                 while ($dado = $conn->fetch_assoc()){    ?>          
             
                     <tr class="dados">
-                     <td> <?php echo $dado['id']; ?> </td>
-                     <td> <?php echo $dado['categoria']; ?> </td>
-                     <td> <?php echo $dado['isbn']; ?> </td>
-                     <td> <?php echo $dado['titulo']; ?> </td>
-                     <td> <?php echo $dado['autor']; ?> </td>
-                     <td> <?php echo $dado['quantidade']; ?> </td>
-                     <td> <?php echo $dado['editora']; ?> </td>
-                     <td> <?php echo $dado['edicao']; ?> </td>
-
-                    
+                     <td> <?php echo $dado['id_solicitacao']; ?> </td>
+                     <td> <?php echo $dado['nome_livro']; ?> </td>
+                     <td> <?php echo $dado['id_usuario']; ?> </td>
+                     <td> <?php echo $dado['email']; ?> </td>
+                     <td> <?php echo $dado['saida']; ?> </td>
+                     <td> <?php echo $dado['devolucao']; ?> </td>
                     <td> <a href="index.php?codigo=<?php echo $dado['cod_livro']; ?>"> <button class="button-Editar"> <i class="fas fa-pencil-alt"> </i></button></a></td>
                     
                      <td> <a href="index.php?p=deletar&codigo=<?php echo $dado['cod_livro']; ?>"> <button class="button-Excluir"> <i class="fas fa-times"> </i></button></a></td>
