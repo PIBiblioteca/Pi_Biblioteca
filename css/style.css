@@ -2,7 +2,7 @@ body{
 	margin:0;
 	padding:20px;
 	font-family: sans-serif;
-	background-color: #ffffff;
+	background-color: #9e9c9c;
 }
 
 *{
@@ -34,7 +34,7 @@ body{
 }
 
 .table tbody tr:nth-child(even){
-	background-color: #ddd8d8;
+	background-color: #a7a7a7;
 }
 .maior {
 	width: 300px;
@@ -118,7 +118,7 @@ body{
     border: 2px solid #ffffff;
     background-color: #3a65f0;
     padding: 4px 4px;
-    margin-top: 7.2%;
+    margin-top: 1.2%;
     margin-left: 50px;
     margin-right: 12px;
     border-radius: 10px;  
@@ -164,7 +164,6 @@ body{
     border-radius: 45px;  
     color: white;
     font-size: 16px;
-    float: right;
     cursor: pointer;
     
   }
@@ -247,3 +246,10 @@ body{
 			right: 50%;
 		}
 	}
+	 
+
+
+
+
+
+

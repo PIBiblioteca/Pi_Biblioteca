@@ -8,77 +8,78 @@
     <link rel="stylesheet" href="../../css/estilo_padrão.css">
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="shortcut icon" href="/imagem/favicon_bibliofateca.png" type="image/x-icon">
-    <title>BiblioFateca - Suspensões</title>
+    <title>Bibliofateca - Suspensões</title>
 </head>
 
 <!-- Menu Estrutura -->
 <body>
-  <header id="header">
-      <a class="logo" id="logo" href="#"> FATEC </a>
-      <nav id="nav">
-        <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
-          <span id="hamburger"></span>
-        </button>
-        <ul id="menu" role="menu">
-          <li><a href="/html/bibliotecaria/t1_retiradas.html">Retiradas</a></li>
-          <li><a href="/html/bibliotecaria/t2_devolucoes.html">Devoluções</a></li>
-          <li><a href="/html/bibliotecaria/t3_livros.html">Livros</a></li>
-          <li><a class="destaque" href="/html/bibliotecaria/t4_suspensoes.html">Suspensões</a></li>
-          <li><a href="/html/bibliotecaria/t5_recados.html">Recados</a></li>
-          <li class="sair"><a href="/html/t0_index.html">Sair</a></li>
-        </ul>
-      </nav>
-    </header>
-    <script src="/Oficial/menubiblio.js"></script>
+<header id="header">
+  <a class="logo" id="logo" href="#"> FATEC </a>
+  <nav id="nav">
+    <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+      <span id="hamburger"></span>
+    </button>
+    <ul id="menu" role="menu">
+      <li><a class="destaque" href="/html/bibliotecaria/t1_retiradas.html">Retiradas</a></li>
+      <li><a href="/html/bibliotecaria/t2_devolucoes.html">Devoluções</a></li>
+      <li><a href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/">Livros</a></li>
+      <li><a href="/html/bibliotecaria/t4_suspensoes.html">Suspensões</a></li>
+      <li><a href="/html/bibliotecaria/t5_recados.html">Recados</a></li>
+      <li class="sair"><a href="/html/t0_index.html">Sair</a></li>
+    </ul>
+  </nav>
+</header>
+<script src="/Oficial/menubiblio.js"></script>
 <!-- FIM Menu Estrutura-->
 
         <!--BUSCAR-->
-      <th> <div class="buscar">
-        <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
-        <a class="buscar-btn">
-            <i class="fas fa-search"></i>
-        </a>
-        </div> </th> 
+        <th> 
+          <div class="buscar"> 
+              <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
+              <a class="buscar-btn">
+                  <i class="fas fa-search"></i>
+              </a>
+          </div> 
+      </th> 
         <!--FIM BUSCAR-->
 
         <table class="tabela">
-            <tr class="cabecalho">
-                <th>Identificação Usuário</th>
-                <th>Início</th>
-                <th>Fim</th>
-                <th>Porque</th>
-                <td>Excluir</td>
-            </tr>
+          <tr class="cabecalho">
+              <th class="esquerda">Identificação</th>
+              <th>Inicio</th>
+              <th>Fim</th>
+              <th>Motivo</th>
+              <th>Excluir</th>
+          </tr>
 
-            <tr> 
-                <td>1234567890SP</td>
-                <td>20/03/2021</td>
-                <td>20/04/2021</td>
-                <td>Atrasou 5 dias</td>
-                <td><button class="button-Excluir"> <i class="fas fa-times"></i></button></td>
-                
-            </tr>
-            <tr>
-                <td>1234567890SP</td>
-                <td>20/03/2021</td>
-                <td>*REPOSIÇÃO</td>
-                <td>Perdeu/Avariou o livro</td>
-                <td><button class="button-Excluir"> <i class="fas fa-times"></i></button></td>
-            </tr>
-            <tr>
-                <td>1234567890SP</td>
-                <td>25/03/2021</td>
-                <td>25/04/2021</td>
-                <td>Atrasou 7 dias</td>
-                <td><button class="button-Excluir"> <i class="fas fa-times"></i></button></td>
-            </tr>
-        </table>
-        <!--
-        <footer>
-            <a> <img src="/imagem/logo_fatec.png" alt="Logotipo Fatec Franco da Rocha" class="logo-fatec"></a>
-            <a>Email: biblioteca@fatec.sp.gov.br</a>  
-            <a>Telefone: (xx) x xxxx - xxxx</a>
-        </footer>
-        -->
+          <tr> 
+              <td>1234567890SP</td>
+              <td>__/__/__</td>
+              <td>__/__/__</td>
+              <th>Motivo</th>
+              <td><button class="button-Excluir"> <i class="fas fa-times"></i></button></td>
+          </tr>
+          <tr>
+            <td>1234567890SP</td>
+            <td>__/__/__</td>
+            <td>__/__/__</td>
+            <th>Motivo</th>
+            <td><button class="button-Excluir"> <i class="fas fa-times"></i></button></td>
+          </tr>
+          <tr>
+            <td>1234567890SP</td>
+            <td>__/__/__</td>
+            <td>__/__/__</td>
+            <th>Motivo</th>
+            <td><button class="button-Excluir"> <i class="fas fa-times"></i></button></td>
+          </tr>
+          <tr>
+            <td>1234567890SP</td>
+            <td>__/__/__</td>
+            <td>__/__/__</td>
+            <th>Motivo</th>
+            <td><button class="button-Excluir"> <i class="fas fa-times"></i></button></td>
+          </tr>
+      </table>
     </body>
 </html>
