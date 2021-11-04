@@ -37,7 +37,14 @@ $conn = $conexao->query($consulta) or die($conexao->error);
         </ul>
       </nav>
   </header>
-        <!--BUSCAR-->
+        
+          <tr>
+            <a href="cadastro.php" target="_blank"><td><button class="button-Adicionar"><i class="fas fa-plus"></i> Adicionar recado </button> </td></a>
+          </tr>
+  
+  
+  
+  <!--BUSCAR-->
         <th> <div class="buscar">
         <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
         <a class="buscar-btn">
