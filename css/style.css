@@ -1,0 +1,254 @@
+body{
+	margin:0;
+	padding:20px;
+	font-family: sans-serif;
+	background-color: #ffffff;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+.table{
+	width: 100%;
+	border-collapse: collapse;
+	align-items: center;
+	margin-top: 5%;
+
+}
+
+.table td,.table th{
+  padding:20px 15px;
+  border:1px solid rgb(0, 0, 0);
+  text-align: center;
+  font-size:16px;
+  
+}
+.table td{
+	padding: 10px;
+}
+
+.table th{
+	background-color: #5676a3;
+	color:#ffffff;
+}
+
+.table tbody tr:nth-child(even){
+	background-color: #a7a7a7;
+}
+.maior {
+	width: 300px;
+  }
+
+/*responsive*/
+
+@media(max-width: 500px){
+	.table thead{
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+	}
+	
+	.table tr{
+		margin-bottom:15px;
+	}
+	.table td{
+		text-align: right;
+		
+		text-align: right;
+		position: relative;
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+	
+}
+
+
+.button1, .button2 {
+    border: none;
+    padding: 10px 10px;
+    text-decoration: none;
+    
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100px; 
+  }
+  
+  
+  .button1 {
+    background-color: #358b24;
+    color: white;
+    border: 2px solid rgb(0, 0, 0);
+	width: 40%;
+	
+  }
+  
+  .button1:hover {
+    background-color: #3caa26;
+    color: white;
+  }
+  
+  .button2 {
+    background-color: #963535;
+    color: white;
+    border: 2px solid rgb(0, 0, 0);
+	width: 40%;
+  }
+  
+  .button2:hover {
+    background-color: #fc1515;
+    color: white;
+  }
+  /*--- FIM Botão Comum ---*/
+  
+  /*BOTÃO ADICIONAR*/
+  .button-Adicionar{
+    
+    background-color: #5676a3;
+    padding: 4px 4px;
+    margin-top: 8%;
+    margin-left: 5%;
+    margin-right: 12%;
+    border-radius: 10 px;  
+    color: white;
+    font-size: 16px;
+    float: left;
+    cursor: pointer;
+  }
+  .button-Adicionar:hover{
+    background-color: #405779;
+    color: white;
+    border: 2px solid #ffffff;
+  }
+  /*--------------------------------------------------*/
+  
+  /*BOTÃO EXCLUIR*/
+  .button-Excluir{
+    
+    background-color: #963535;
+    padding: 4px 8px;
+    margin-left: 4px;
+    margin-right: 12px;
+    border-radius: 45px;  
+    color: white;
+    font-size: 16px;
+    
+    cursor: pointer;
+  }
+  .button-Excluir:hover{
+    background-color: #fc1515;
+    color: #ffffff;
+    border: 2px solid #000000;
+  }
+  /*--------------------------------------------------*/
+  
+  /*BOTÃO EDITAR*/
+  .button-Editar{
+    border: 2px solid white;
+    background-color: #2f3640;
+    padding: 4px 5px;
+    margin-left: 4px;
+    margin-right: 12px;
+    border-radius: 45px;  
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    
+  }
+  .button-Editar:hover{
+    background-color: #7888a3;
+    color: #3a65f0;
+    border: 2px solid #3a65f0;
+  }
+  
+  /*--------------------------------------------------*/
+  
+  
+  /*--- Buscar ---*/
+  
+  .buscar {
+    
+    border: 2px solid #ffffff;
+    background: #5676a3;
+    margin-top: 7%;
+    margin-left: 3.5%;
+    margin-right: 4.0%;
+    margin-bottom: 1%;
+    height: 40px;
+    width: 20%;
+    border-radius: 45px;
+    float: right;
+   }
+   
+  
+   .buscar:hover{
+    border-color: #3a65f0;
+  
+   }
+  
+   .buscar:hover > .buscar-txt {
+      width: 70%;
+      padding: 0 16px;
+     }
+     
+     .buscar:hover > .buscar-btn {
+      background: #3a65f0;
+      color: white;
+      border: #3a65f0;
+     }
+    
+     .buscar-btn {
+      float: right;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.4s;
+      color: #ffffff;
+      cursor: pointer;
+     }
+     
+     .buscar-btn > i {
+      font-size: 30px;
+     }
+    
+     .buscar-txt {
+      border: none;
+      background: none;
+      outline: none;
+      float: left;
+      padding: 0;
+      color: white;
+      font-size: 16px;
+      transition: 0.4s;
+      line-height: 40px;
+      width: 0px;
+      font-weight: bold;
+     }
+
+	 @media(max-width: 500px){
+		.button-Excluir{
+			left: 50%;
+			right: 50%;
+		}
+	}
+	 
+
+
+
+
+
