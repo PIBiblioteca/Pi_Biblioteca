@@ -1,22 +1,8 @@
-/*----- Estilo padrão dos conteúdos do site -----*/
-body {
-  font-family: "Poppins", sans-serif;
-  background: #444444;
-  
-}
-/*----- TABELA -----*/
-.tabela{
-  position: sticky;
-  display: grid;
-  overflow: auto;
-  border-collapse: collapse;
-  margin: auto;
-  overflow-x: auto;
-  font-family: sans-serif;
-  width: 96%;
-  margin-top: 155px;
-  background-color: #141429;
-    
+body{
+	margin:0;
+	padding:20px;
+	font-family: sans-serif;
+	background-color: #ffffff;
 }
 
 *{
@@ -29,25 +15,14 @@ body {
 	align-items: center;
 	margin-top: 5%;
 
-.maior3 {
-  width: 70%;
 }
 
-.maior4 {
-  width: 10%;
-}
-
-.maior5 {
-  width: 14%;
-}
-
-.esquerda {
-  text-align: left;
-}
-
-.tabela:not(.cabecalho){
-  display: block;
-  overflow-y: auto;
+.table td,.table th{
+  padding:20px 15px;
+  border:1px solid rgb(0, 0, 0);
+  text-align: center;
+  font-size:16px;
+  
 }
 .table td{
 	padding: 10px;
@@ -59,35 +34,11 @@ body {
 }
 
 .table tbody tr:nth-child(even){
-	background-color: #ddd8d8;
+	background-color: #a7a7a7;
 }
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888; 
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #fd7e14; 
-}
-
-/* ---------------Fim Scroll -------------- */
-
-
-/*----- FIM TABELA -----*/
-
-/*---Cabeçalho---*/ 
-.cabecalho {
-  background: #fd7e14;
-  font-family: Verdana;
-  font-weight: bolder;
-  
-}
-
-.cabecalho th {
-  padding: 10px;
-  
+.maior {
+	width: 300px;
+  }
 
 /*responsive*/
 
@@ -134,106 +85,6 @@ body {
     cursor: pointer;
     width: 100px; 
   }
-
- */
-
-
- /*--- FIM Botão Comum ---*/
-
- /*--- Botão Comum ---*/
-
-.button1, .button2 {
-  border: none;
-  padding: 16px 16px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: auto;
-  cursor: pointer;
-  width: 130px; 
-}
-
-.button3 {
-  width: 70px;
-  margin: auto;
-}
-
-.button1 {
-  background-color: #2f3640;
-  color: white;
-  border: 2px solid white;
-}
-
-.button1:hover {
-  background-color: #4C9141;
-  color: white;
-}
-
-.button2 {
-  background-color: #2f3640;
-  color: white;
-  border: 2px solid white;
-}
-
-.button2:hover {
-  background-color: #ca3838;
-  color: white;
-}
-/*--- FIM Botão Comum ---*/
-
-/*BOTÃO ADICIONAR*/
-.button-Adicionar{
-  border: 2px solid #ffffff;
-  background-color: #141429;
-  padding: 4px 4px;
-  margin-top: 7.2%;
-  margin-left: 50px;
-  margin-right: 12px;
-  border-radius: 10px;  
-  color: white;
-  font-size: 16px;
-  float: left;
-  cursor: pointer;
-}
-.button-Adicionar:hover{
-  background-color: #fd7e14;
-  color: white;
-  border: 2px solid #fd7e14;
-}
-/*--------------------------------------------------*/
-
-/*BOTÃO EXCLUIR*/
-.button-Excluir{
-  border: 2px solid white;
-  background-color: #630e0e;
-  padding: 4px 8px;
-  margin-left: 4px;
-  margin-right: 12px;
-  border-radius: 45px;  
-  color: white;
-  font-size: 16px;
-  float: right;
-  cursor: pointer;
-}
-.button-Excluir:hover{
-  background-color: #630e0e;
-  color: #ff0000;
-  border: 2px solid #ff0000;
-}
-/*--------------------------------------------------*/
-
-/*BOTÃO EDITAR*/
-.button-Editar{
-  border: 2px solid white;
-  background-color: #2f3640;
-  padding: 4px 5px;
-  margin-left: 4px;
-  margin-right: 12px;
-  border-radius: 45px;  
-  color: white;
-  font-size: 16px;
-  float: right;
-  cursor: pointer;
   
   
   .button1 {
@@ -264,41 +115,22 @@ body {
   
   /*BOTÃO ADICIONAR*/
   .button-Adicionar{
-    border: 2px solid #ffffff;
-    background-color: #3a65f0;
+    
+    background-color: #5676a3;
     padding: 4px 4px;
-    margin-top: 7.2%;
-    margin-left: 50px;
-    margin-right: 12px;
-    border-radius: 10px;  
+    margin-top: 8%;
+    margin-left: 5%;
+    margin-right: 12%;
+    border-radius: 10 px;  
     color: white;
     font-size: 16px;
-    transition: 0.4s;
-    line-height: 40px;
-    width: 0px;
-    font-weight: bold;
-   }
-
-/*--- Fim Buscar ---*/ 
-
-/*----- FIM Estilo dos conteúdos do site FIM -----*/
-
-/*----- Para dispositivos móveis -----*/
-
-@media (max-width: 768px) {
-  table {
-    margin: 2%;
-    background: #a35e5e;
-    margin-top: 25%;
-  }
-
-  .tabela{
-    margin: auto;
+    float: left;
+    cursor: pointer;
   }
   .button-Adicionar:hover{
-    background-color: #3a65f0;
+    background-color: #405779;
     color: white;
-    border: 2px solid #3a65f0;
+    border: 2px solid #ffffff;
   }
   /*--------------------------------------------------*/
   
@@ -332,7 +164,6 @@ body {
     border-radius: 45px;  
     color: white;
     font-size: 16px;
-    float: right;
     cursor: pointer;
     
   }
@@ -415,3 +246,10 @@ body {
 			right: 50%;
 		}
 	}
+	 
+
+
+
+
+
+
