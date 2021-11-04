@@ -10,15 +10,13 @@ body {
   display: grid;
   overflow: auto;
   border-collapse: collapse;
-  margin: 50px;
+  margin: auto;
   overflow-x: auto;
-  border: 3px;
-  border-color: #000000;
   font-family: sans-serif;
-  width:  93%;
+  width: 96%;
   margin-top: 155px;
   background-color: #141429;
-  
+    
 }
 
 .maior {
@@ -29,13 +27,24 @@ body {
   width: 100px;
 }
 
+.maior3 {
+  width: 70%;
+}
+
+.maior4 {
+  width: 10%;
+}
+
+.maior5 {
+  width: 14%;
+}
+
 .esquerda {
   text-align: left;
 }
 
 .tabela:not(.cabecalho){
   display: block;
-  height: 700px;
   overflow-y: auto;
 }
 
@@ -78,7 +87,6 @@ td, th {
 .cabecalho {
   background: #fd7e14;
   font-family: Verdana;
-  color: #000000;
   font-weight: bolder;
   
 }
@@ -135,17 +143,22 @@ td, th {
  /*--- FIM Botão Comum ---*/
 
  /*--- Botão Comum ---*/
+
 .button1, .button2 {
   border: none;
   padding: 16px 16px;
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
-  margin: 4px 2px;
+  margin: auto;
   cursor: pointer;
   width: 130px; 
 }
 
+.button3 {
+  width: 70px;
+  margin: auto;
+}
 
 .button1 {
   background-color: #2f3640;
@@ -314,7 +327,7 @@ td, th {
   }
 
   .tabela{
-    margin-left: 3%;
+    margin: auto;
   }
 
   .buscar {

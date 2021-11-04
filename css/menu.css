@@ -18,6 +18,7 @@ a {
 
 a:hover:not(#logo, .sair) {
   background: #fd7e14;
+  color: white;
 }
 
 #logo {
@@ -45,7 +46,7 @@ a:hover:not(#logo, .sair) {
 }
 
 #logo{
-    color: #da2a2a;
+    color: white;
     font-size: 20px;
     font-weight: bold;
 }
@@ -69,9 +70,8 @@ a:hover:not(#logo, .sair) {
 
 .destaque {
   background: #17172e;
-  
   position: relative;
-  color:#949494;
+  color: #fd7e14;
   display: block;
   text-decoration: none;
   padding: 20px;
