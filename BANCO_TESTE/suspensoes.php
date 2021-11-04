@@ -30,7 +30,7 @@ $conn = $conexao->query($consulta) or die($conexao->error);
         <ul id="menu" role="menu">
           <li><a href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/retiradas.php">Retiradas</a></li>
           <li><a href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/devolucoes.php">Devoluções</a></li>
-          <li><a href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/livros.php">Livros</a></li>
+          <li><a href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/index.php">Livros</a></li>
           <li><a class="destaque" href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/suspensoes.php">Suspensões</a></li>
           <li><a href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/recados.php">Recados</a></li>
           <li class="sair"><a href="/html/t0_index.html">Sair</a></li>

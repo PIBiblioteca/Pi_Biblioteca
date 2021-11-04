@@ -13,8 +13,8 @@ $conn = $conexao->query($consulta) or die($conexao->error);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     
-    <link rel="stylesheet" href="../css/estilo_padrão.css">
-    <link rel="stylesheet" href="../css/login.css">
+    
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/menu.css">
 
     <link rel="shortcut icon" href="/imagem/favicon_bibliofateca.png" type="image/x-icon">
@@ -29,12 +29,12 @@ $conn = $conexao->query($consulta) or die($conexao->error);
             <span id="hamburger"></span>
           </button>
           <ul id="menu" role="menu">
-            <li><a href="/html/bibliotecaria/t1_retiradas.html">Retiradas</a></li>
-            <li><a href="/html/bibliotecaria/t2_devolucoes.html">Devoluções</a></li>
-            <li><a class="destaque" href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/">Livros</a></li>
-            <li><a href="/html/bibliotecaria/t4_suspensoes.html">Suspensões</a></li>
-            <li><a href="/html/bibliotecaria/t5_recados.html">Recados</a></li>
-            <li class="sair"><a href="/html/t0_index.html">Sair</a></li>
+          <li><a href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/retiradas.php">Retiradas</a></li>
+          <li><a href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/devolucoes.php">Devoluções</a></li>
+          <li><a href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/index.php">Livros</a></li>
+          <li><a href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/suspensoes.php">Suspensões</a></li>
+          <li><a class="destaque" href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/recados.php">Recados</a></li>
+          <li class="sair"><a href="/html/t0_index.html">Sair</a></li>
           </ul>
         </nav>
       </header>
@@ -44,22 +44,7 @@ $conn = $conexao->query($consulta) or die($conexao->error);
             <a href="cadastro.php" target="_blank"><td><button class="button-Adicionar"><i class="fas fa-plus"></i> Adicionar livro </button> </td></a>
             </tr>
         <!--BUSCAR-->
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <form action="buscar.php" method="GET">
-            <label>Título</label>
-            <input type="text" name="titulo" size="50" placeholder="Buscar">
-            <button style="width: 100px;">Buscar</button>
-        </form>
-
-        <th> <div class="buscar">
+        <th> <div  action="buscar.php" class="buscar" method="GET">
         <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
         <a class="buscar-btn">
             <i class="fas fa-search"></i>
