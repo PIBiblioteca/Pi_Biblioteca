@@ -13,8 +13,7 @@ $conn = $conexao->query($consulta) or die($conexao->error);
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
       
-      <link rel="stylesheet" href="../css/estilo_padrão.css">
-      <link rel="stylesheet" href="../css/login.css">
+      <link rel="stylesheet" href="../css/style.css">
       <link rel="stylesheet" href="../css/menu.css">
 
       <link rel="shortcut icon" href="/imagem/favicon_bibliofateca.png" type="image/x-icon">
@@ -38,10 +37,6 @@ $conn = $conexao->query($consulta) or die($conexao->error);
         </ul>
       </nav>
   </header>
-      <script src="/Oficial/menubiblio.js"></script>
-          <tr>
-          <a href="cadastro.php" target="_blank"><td><button class="button-Adicionar"><i class="fas fa-plus"></i> Adicionar livro </button> </td></a>
-          </tr>
         <!--BUSCAR-->
         <th> <div class="buscar">
         <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>

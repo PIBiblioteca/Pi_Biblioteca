@@ -13,9 +13,8 @@ $conn = $conexao->query($consulta) or die($conexao->error);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     
-    <link rel="stylesheet" href="../css/estilo_padrão.css">
-    <link rel="stylesheet" href="../css/login.css">
-    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet" href="../css/menu.css">
 
     <link rel="shortcut icon" href="/imagem/favicon_bibliofateca.png" type="image/x-icon">
     <title>BiblioFateca - Livros</title>
