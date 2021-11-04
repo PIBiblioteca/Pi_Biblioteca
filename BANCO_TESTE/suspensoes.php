@@ -46,8 +46,8 @@ $conn = $conexao->query($consulta) or die($conexao->error);
         </div> </th> 
         <!--FIM BUSCAR-->
 
-        <table class="tabela" border="1">
-            <tr class="cabecalho">
+        <table class="table">
+            <thead>
                 <td>ID</td>
                 <td>Usuário</td>
                 <td>inicio</td>
@@ -56,6 +56,8 @@ $conn = $conexao->query($consulta) or die($conexao->error);
                 <td>Editar</td>
                 <td>Excluir</td>
             </tr>
+            </thead>
+            <tbody>
             <?php 
             
             if ($conn->num_rows > 0){
@@ -68,9 +70,8 @@ $conn = $conexao->query($consulta) or die($conexao->error);
                   <td> <?php echo $dado['motivo']; ?> </td>
                   <td> <a href="index.php?codigo=<?php echo $dado['cod_livro']; ?>"> <button class="button-Editar"> <i class="fas fa-pencil-alt"> </i></button></a></td>
                   <td> <a href="index.php?p=deletar&codigo=<?php echo $dado['cod_livro']; ?>"> <button class="button-Excluir"> <i class="fas fa-times"> </i></button></a></td>
-                </tr>
             <?php } } ?> 
-      
+            <tbody>
         </table>
   </body>
 </html>
