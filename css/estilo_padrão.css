@@ -1,249 +1,370 @@
-body{
-	margin:0;
-	padding:20px;
-	font-family: sans-serif;
-	background-color: #ffffff;
-}
-
-*{
-	box-sizing: border-box;
-}
-
-.table{
-	width: 100%;
-	border-collapse: collapse;
-	align-items: center;
-	margin-top: 5%;
-
-}
-
-.table td,.table th{
-  padding:20px 15px;
-  border:1px solid rgb(0, 0, 0);
-  text-align: center;
-  font-size:16px;
+/*----- Estilo padrão dos conteúdos do site -----*/
+body {
+  font-family: "Poppins", sans-serif;
+  background: #444444;
   
 }
-.table td{
-	padding: 10px;
+/*----- TABELA -----*/
+.tabela{
+  position: sticky;
+  display: grid;
+  overflow: auto;
+  border-collapse: collapse;
+  margin: auto;
+  overflow-x: auto;
+  font-family: sans-serif;
+  width: 96%;
+  margin-top: 155px;
+  background-color: #141429;
+    
 }
 
-.table th{
-	background-color: #5676a3;
-	color:#ffffff;
-}
-
-.table tbody tr:nth-child(even){
-	background-color: #ddd8d8;
-}
 .maior {
-	width: 300px;
+  width: 300px;
+}
+
+.maior2 {
+  width: 100px;
+}
+
+.maior3 {
+  width: 70%;
+}
+
+.maior4 {
+  width: 10%;
+}
+
+.maior5 {
+  width: 14%;
+}
+
+.esquerda {
+  text-align: left;
+}
+
+.tabela:not(.cabecalho){
+  display: block;
+  overflow-y: auto;
+}
+
+.dados{
+  color: #ffffff;
+}
+
+td, th {
+  padding: 5px;
+  color: #fff;
+}
+
+/* ---------------Scroll -------------- */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fd7e14; 
+}
+
+/* ---------------Fim Scroll -------------- */
+
+
+/*----- FIM TABELA -----*/
+
+/*---Cabeçalho---*/ 
+.cabecalho {
+  background: #fd7e14;
+  font-family: Verdana;
+  font-weight: bolder;
+  
+}
+
+.cabecalho th {
+  padding: 10px;
+  
+
+}
+/*---FIM Cabeçalho---*/
+
+.content{display: flex; margin: auto}
+
+/*--- Botão Comum ---*/
+
+/* 
+.button1, .button2 {
+  border: none;
+  padding: 16px 16px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 130px; 
+}
+
+
+.button1 {
+  background-color: #2f3640;
+  color: white;
+  border: 2px solid white;
   }
 
-/*responsive*/
+.button1:hover {
+  background-color: #4C9141;
+  color: white;
+  }
 
-@media(max-width: 500px){
-	.table thead{
-		display: none;
-	}
+.button2 {
+  background-color: #2f3640;
+  color: white;
+  border: 2px solid white;
+  }
 
-	.table, .table tbody, .table tr, .table td{
-		display: block;
-		width: 100%;
-	}
-	
-	.table tr{
-		margin-bottom:15px;
-	}
-	.table td{
-		text-align: right;
-		
-		text-align: right;
-		position: relative;
-	}
-	.table td::before{
-		content: attr(data-label);
-		position: absolute;
-		left:0;
-		width: 50%;
-		padding-left:15px;
-		font-size:15px;
-		font-weight: bold;
-		text-align: left;
-	}
-	
-}
+.button2:hover {
+  background-color: #ca3838;
+  color: white;
+  }
 
+ */
+
+
+ /*--- FIM Botão Comum ---*/
+
+ /*--- Botão Comum ---*/
 
 .button1, .button2 {
-    border: none;
-    padding: 10px 10px;
-    text-decoration: none;
-    
-    font-size: 12px;
-    margin: 4px 2px;
-    cursor: pointer;
-    width: 100px; 
-  }
+  border: none;
+  padding: 16px 16px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: auto;
+  cursor: pointer;
+  width: 130px; 
+}
+
+.button3 {
+  width: 70px;
+  margin: auto;
+}
+
+.button1 {
+  background-color: #2f3640;
+  color: white;
+  border: 2px solid white;
+}
+
+.button1:hover {
+  background-color: #4C9141;
+  color: white;
+}
+
+.button2 {
+  background-color: #2f3640;
+  color: white;
+  border: 2px solid white;
+}
+
+.button2:hover {
+  background-color: #ca3838;
+  color: white;
+}
+/*--- FIM Botão Comum ---*/
+
+/*BOTÃO ADICIONAR*/
+.button-Adicionar{
+  border: 2px solid #ffffff;
+  background-color: #141429;
+  padding: 4px 4px;
+  margin-top: 7.2%;
+  margin-left: 50px;
+  margin-right: 12px;
+  border-radius: 10px;  
+  color: white;
+  font-size: 16px;
+  float: left;
+  cursor: pointer;
+}
+.button-Adicionar:hover{
+  background-color: #fd7e14;
+  color: white;
+  border: 2px solid #fd7e14;
+}
+/*--------------------------------------------------*/
+
+/*BOTÃO EXCLUIR*/
+.button-Excluir{
+  border: 2px solid white;
+  background-color: #630e0e;
+  padding: 4px 8px;
+  margin-left: 4px;
+  margin-right: 12px;
+  border-radius: 45px;  
+  color: white;
+  font-size: 16px;
+  float: right;
+  cursor: pointer;
+}
+.button-Excluir:hover{
+  background-color: #630e0e;
+  color: #ff0000;
+  border: 2px solid #ff0000;
+}
+/*--------------------------------------------------*/
+
+/*BOTÃO EDITAR*/
+.button-Editar{
+  border: 2px solid white;
+  background-color: #2f3640;
+  padding: 4px 5px;
+  margin-left: 4px;
+  margin-right: 12px;
+  border-radius: 45px;  
+  color: white;
+  font-size: 16px;
+  float: right;
+  cursor: pointer;
+  
+}
+.button-Editar:hover{
+  background-color: #172b4d;
+  color: #fd7e14;
+  border: 2px solid #fd7e14;
+}
+
+/*--------------------------------------------------*/
+
+
+/*--- Buscar ---*/
+
+.buscar {
+  
+  border: 2px solid #ffffff;
+  background: #141429;
+  margin-top: 7%;
+  margin-left: 3.5%;
+  margin-right: 2.6%;
+  margin-bottom: 1%;
+  height: 40px;
+  width: 20%;
+  border-radius: 45px;
+  float: right;
   
   
-  .button1 {
-    background-color: #358b24;
-    color: white;
-    border: 2px solid rgb(0, 0, 0);
-	width: 40%;
-	
-  }
-  
-  .button1:hover {
-    background-color: #3caa26;
-    color: white;
-  }
-  
-  .button2 {
-    background-color: #963535;
-    color: white;
-    border: 2px solid rgb(0, 0, 0);
-	width: 40%;
-  }
-  
-  .button2:hover {
-    background-color: #fc1515;
-    color: white;
-  }
-  /*--- FIM Botão Comum ---*/
-  
-  /*BOTÃO ADICIONAR*/
-  .button-Adicionar{
-    border: 2px solid #ffffff;
-    background-color: #3a65f0;
-    padding: 4px 4px;
-    margin-top: 7.2%;
-    margin-left: 50px;
-    margin-right: 12px;
-    border-radius: 10px;  
-    color: white;
-    font-size: 16px;
-    float: left;
-    cursor: pointer;
-  }
-  .button-Adicionar:hover{
-    background-color: #3a65f0;
-    color: white;
-    border: 2px solid #3a65f0;
-  }
-  /*--------------------------------------------------*/
-  
-  /*BOTÃO EXCLUIR*/
-  .button-Excluir{
-    
-    background-color: #963535;
-    padding: 4px 8px;
-    margin-left: 4px;
-    margin-right: 12px;
-    border-radius: 45px;  
-    color: white;
-    font-size: 16px;
-    
-    cursor: pointer;
-  }
-  .button-Excluir:hover{
-    background-color: #fc1515;
-    color: #ffffff;
-    border: 2px solid #000000;
-  }
-  /*--------------------------------------------------*/
-  
-  /*BOTÃO EDITAR*/
-  .button-Editar{
-    border: 2px solid white;
-    background-color: #2f3640;
-    padding: 4px 5px;
-    margin-left: 4px;
-    margin-right: 12px;
-    border-radius: 45px;  
-    color: white;
-    font-size: 16px;
-    float: right;
-    cursor: pointer;
-    
-  }
-  .button-Editar:hover{
-    background-color: #7888a3;
-    color: #3a65f0;
-    border: 2px solid #3a65f0;
-  }
-  
-  /*--------------------------------------------------*/
-  
-  
-  /*--- Buscar ---*/
-  
-  .buscar {
-    
-    border: 2px solid #ffffff;
-    background: #5676a3;
-    margin-top: 7%;
-    margin-left: 3.5%;
-    margin-right: 4.0%;
-    margin-bottom: 1%;
-    height: 40px;
-    width: 20%;
-    border-radius: 45px;
-    float: right;
+ }
+ 
+
+ .buscar:hover{
+  border-color: #fd7e14;
+
+ }
+
+ .buscar:hover > .buscar-txt {
+    width: 70%;
+    padding: 0 16px;
    }
    
-  
-   .buscar:hover{
-    border-color: #3a65f0;
-  
+   .buscar:hover > .buscar-btn {
+    background: #fd7e14;
+    color: white;
+    border: #fd7e14;
    }
   
-   .buscar:hover > .buscar-txt {
-      width: 70%;
-      padding: 0 16px;
-     }
-     
-     .buscar:hover > .buscar-btn {
-      background: #3a65f0;
-      color: white;
-      border: #3a65f0;
-     }
-    
-     .buscar-btn {
-      float: right;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: 0.4s;
-      color: #ffffff;
-      cursor: pointer;
-     }
-     
-     .buscar-btn > i {
-      font-size: 30px;
-     }
-    
-     .buscar-txt {
-      border: none;
-      background: none;
-      outline: none;
-      float: left;
-      padding: 0;
-      color: white;
-      font-size: 16px;
-      transition: 0.4s;
-      line-height: 40px;
-      width: 0px;
-      font-weight: bold;
-     }
+   .buscar-btn {
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    color: #ffffff;
+    cursor: pointer;
+   }
+   
+   .buscar-btn > i {
+    font-size: 30px;
+   }
+  
+   .buscar-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+    font-weight: bold;
+   }
 
-	 @media(max-width: 500px){
-		.button-Excluir{
-			left: 50%;
-			right: 50%;
-		}
-	}
+/*--- Fim Buscar ---*/ 
+
+/*----- FIM Estilo dos conteúdos do site FIM -----*/
+
+/*----- Para dispositivos móveis -----*/
+
+@media (max-width: 768px) {
+  table {
+    margin: 2%;
+    background: #a35e5e;
+    margin-top: 25%;
+  }
+
+  .tabela{
+    margin: auto;
+  }
+
+  .buscar {
+    margin-top: 20%;
+    width: 40%;
+  }
+
+  .buscar:hover > .buscar-txt {
+    width: 50%;
+   }
+
+  .button1, .button2 {
+    border: none;
+    padding: 16px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px 1px;
+    cursor: pointer;
+    width: 60px;
+  }
+
+  th {
+    display: none;
+  }
+
+  td {
+    display: flex; flex-direction: column;
+    color: rgb(255, 255, 255);
+    font-family: sans-serif;
+  }
+
+tr:nth-child(even) {background: #2f3640}
+tr:nth-child(odd) {background: rgba(54, 53, 53, 0.13)}
+
+  th, td {
+    font-size: 70%;
+  }
+}

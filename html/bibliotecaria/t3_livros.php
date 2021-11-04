@@ -13,8 +13,9 @@ $conn = $conexao->query($consulta) or die($conexao->error);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     
+    <link rel="stylesheet" href="../../css/estilo_padrão.css">
+    <link rel="stylesheet" href="../../css/login.css">
     <link rel="stylesheet" href="../../css/menu.css">
-    <link rel="stylesheet" href="../../css/style.css">
 
     <link rel="shortcut icon" href="/imagem/favicon_bibliofateca.png" type="image/x-icon">
     <title>BiblioFateca - Livros</title>
@@ -29,12 +30,12 @@ $conn = $conexao->query($consulta) or die($conexao->error);
             <span id="hamburger"></span>
           </button>
           <ul id="menu" role="menu">
-            <li><a href="/GitHub/PI_certo/bibliotecaria/retirada.html">Retiradas</a></li>
-            <li><a href="/GitHub/PI_certo/bibliotecaria/devoluções.html">Devoluções</a></li>
-            <li><a class="destaque" href="/GitHub/PI_certo/bibliotecaria/livros.html">Livros</a></li>
-            <li><a href="/GitHub/PI_certo/bibliotecaria/suspensão.html">Suspensões</a></li>
-            <li><a href="/GitHub/PI_certo/bibliotecaria/recados.html">Recados</a></li>
-            <li class="sair"><a href="/GitHub/PI_certo/bibliotecaria/login.html">Sair</a></li>
+            <li><a href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t1_retiradas.html">Retiradas</a></li>
+            <li><a href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t2_devolucoes.html">Devoluções</a></li>
+            <li><a class="destaque" href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t3_livros.html">Livros</a></li>
+            <li><a href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t4_suspensoes.html">Suspensões</a></li>
+            <li><a href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t5_recados.html">Recados</a></li>
+            <li class="sair"><a href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t0_index.html">Sair</a></li>
           </ul>
         </nav>
       </header>
@@ -53,8 +54,8 @@ $conn = $conexao->query($consulta) or die($conexao->error);
         </div> </th> 
         <!--FIM BUSCAR-->
 
-        <table class="table">
-        <thead>
+        <br><table class="tabela" border="1">
+            <tr class="cabecalho">
                 <td>ID</td>
                 <td>Categoria</td>
                 <td>isbn</td>
@@ -67,8 +68,8 @@ $conn = $conexao->query($consulta) or die($conexao->error);
                 <td>Excluir</td>
                 
             </tr>
-            </thead>
-            <tbody>
+            
+           
             <?php 
             
             if ($conn->num_rows > 0){
@@ -91,7 +92,7 @@ $conn = $conexao->query($consulta) or die($conexao->error);
                      <td> <a href="index.php?p=deletar&codigo=<?php echo $dado['cod_livro']; ?>"> <button class="button-Excluir"> <i class="fas fa-times"> </i></button></a></td>
                      </tr>
                     <?php } } ?> 
-              </tbody>
+      
         </table>
 </body>
 </html>
