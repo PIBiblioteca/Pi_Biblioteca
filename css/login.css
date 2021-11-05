@@ -1,15 +1,12 @@
 /****** Estilo do login ******/
 .logofatec{
-  width: 15%;
+  width: 19%;
   position: absolute; 
-  top: 40px;
+  top: 80px;  
   display: flex;
-  right: 42%;
   align-items: center;
   justify-content: center;
 }
-
-
 
 .login-body{
   background: linear-gradient(180deg, rgba(71,71,77,1) 4%, rgba(37,50,50,1) 92%);
@@ -20,16 +17,15 @@
   justify-content: center;
   right: auto;
   left: auto;
-
 }
 
 .login-form{
   width: calc(100% - 20px);
-  max-width: 500px;
+  margin-left: 30%;
+  margin-right: 30%;
   background: linear-gradient(180deg, rgba(71,71,77,1) 4%, rgba(37,50,50,1) 92%);
-  padding: 50px 40px;
+  padding: 100px 50px 40px;
   box-shadow: 0 0 20px rgb(0, 0, 0);
-
   border: solid;
     border-width: 8px;
     border-image: linear-gradient(to top, #11998e, #38ef7d);
@@ -39,13 +35,10 @@
 .login-form h1{
   text-align: center;
   margin: 48px 0;
-  font-size: 36px;
+  font-size: 28px;
   font-weight: bold;
   color: rgb(255, 255, 255);
-  font-size: 36px;
   text-shadow: 0 0 20px rgb(0, 0, 0);
-
-  
 }
 
 .textb{
@@ -55,7 +48,7 @@
 
 .textb input{
   width: 100%;
-  height: 70px;
+  height: 60px;
   border: none;
   background-color: #ededed;
   border-radius: 4px;
@@ -70,7 +63,7 @@
   font-size: 14px;
   font-weight: 700;
   position: absolute;
-  line-height: 70px;
+  line-height: 60px;
   top: 0;
   left: 20px;
   color: #9d9d9d;
@@ -118,7 +111,7 @@
 .checkbox .fa-check{
   position: absolute;
   color: rgb(0, 0, 0);
-  font-size: 14px;
+  font-size: 12px;
   width: 24px;
   text-align: center;
   user-select: none;
@@ -136,31 +129,29 @@
 
 .btn{
   display: block;
-  width: 100px;
-  height: 100px;
-  margin: 40px auto;
+  width: 80px;
+  height: 80px;
+  margin: 10px auto;
+  margin-bottom: 30px;
   background: linear-gradient(to top, #11998e, #38ef7d);
   color: white;
-  font-size: 40px;
+  font-size: 34px;
   border: none;
-  border-radius: 30px;
+  border-radius: 20px;
   cursor: pointer;
   transition: .3s linear;
 }
-
-
 
 .login-form a{
   display: block;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
   color: rgb(255, 255, 255);
   text-transform: none;
   font-weight: 500;
   margin-bottom: 8px;
-  transition: .2s linear;
-  
+  transition: .2s linear; 
 }
 
 .login-form a:hover{

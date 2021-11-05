@@ -24,18 +24,18 @@ $conn = $conexao->query($consulta) or die($conexao->error);
 <!-- Menu Estrutura -->
 <body class="fundo">
     <header id="header">
-        <a class="logo"id="logo" href="">FATEC</a>
+        <img src="/imagem/logo_bibliofateca.png" alt="Logo Fatec" class = logo_bibliofateca>
         <nav id="nav">
           <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
             <span id="hamburger"></span>
           </button>
           <ul id="menu" role="menu">
-            <li><a href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t1_retiradas.html">Retiradas</a></li>
-            <li><a href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t2_devolucoes.html">Devoluções</a></li>
-            <li><a class="destaque" href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t3_livros.html">Livros</a></li>
-            <li><a href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t4_suspensoes.html">Suspensões</a></li>
-            <li><a href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t5_recados.html">Recados</a></li>
-            <li class="sair"><a href="/GitHub/Pi_Biblioteca/html/bibliotecaria/t0_index.html">Sair</a></li>
+            <li><a href="/html/bibliotecaria/t1_retiradas.html">Retiradas</a></li>
+            <li><a class="destaque" href="/html/bibliotecaria/t2_devolucoes.html">Devoluções</a></li>
+            <li><a href="/html/bibliotecaria/t3_livros.html">Livros</a></li>
+            <li><a href="/html/bibliotecaria/t4_suspensoes.html">Suspensões</a></li>
+            <li><a href="/html/bibliotecaria/t5_recados.html">Recados</a></li>
+            <li><a href="/html/t0_index.html" class="sair">Sair</a></li>
           </ul>
         </nav>
       </header>
@@ -54,12 +54,12 @@ $conn = $conexao->query($consulta) or die($conexao->error);
         </div> </th> 
         <!--FIM BUSCAR-->
 
-        <br><table class="tabela" border="1">
+        <table class="tabela" border="1">
             <tr class="cabecalho">
                 <td>ID</td>
                 <td>Categoria</td>
-                <td>isbn</td>
-                <td>Titulo</td>
+                <td>ISBN</td>
+                <td>Título</td>
                 <td>Autor</td>
                 <td>Quantidade</td>
                 <td>Editora</td>
