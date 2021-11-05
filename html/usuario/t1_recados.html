@@ -7,12 +7,18 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="../../css/estilo_padrão.css">
     <link rel="shortcut icon" href="/img/favicon_bibliofateca.png" type="image/x-icon">
-    <title>Bibliofateca - Home</title>
+    <title>Bibliofateca - Recados</title>
 </head>
 
 <!-- Menu Estrutura -->
 <body>
     <header id="header_usuario">         
+  
+      <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
+      <a class="buscar-btn" href="/html/usuario/t1_home.html">
+          <i class="fas fa-arrow-left"></i>
+      </a>
+
       <img src="/img/logo_bibliofateca.png" alt="Logo Fatec" class = logo_bibliofateca_usuario>    
     </header>
 <!-- FIM Menu Estrutura-->
@@ -21,10 +27,32 @@
 <div class="login-form">
   
   <div><a href="/html/usuario/t2_livros.html"><button class="button-Livros"> LIVROS </button></a> 
-  <div><a href="/html/usuario/t1_recados.html"><button class="Recados"> RECADOS </button></a>
-  <div><a href="/html/usuario/t1_recados.html"><button class="button-Recados"><i class="fas fa-plus"></i> </button></a>
+  <div><a href="/html/usuario/t1_home.html"><button class="Recados"> RECADOS </button></a>
+  <div><a href="/html/usuario/t1_home.html"><button class="button-Recados"><i class="fas fa-minus"></i> </button></a>
+
+    <table class="tabela">
+      <tr class="cabecalho">
+          <th>RECADOS</th>
+      </tr>
+
+      <tr> 
+          <td class="maior4">Novo livro disponível: Nome_do_livro</td>
+      </tr>
+
+      <tr>
+          <td>Dia XX/XX a biblioteca estará indisponível devido ao feriado</td>
+      </tr>
+
+      <tr>
+          <td>Livro excluído: Nome_do_livro </td>
+      </tr>
+      
+  </table>
+
+
 
 </div>
+
 
 <footer class="footer_usuario">
   <img src="/img/logo_fatec.png" alt="Logo Fatec" class = logo_fatec>    

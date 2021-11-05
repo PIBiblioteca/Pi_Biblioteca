@@ -17,7 +17,7 @@ $conn = $conexao->query($consulta) or die($conexao->error);
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/menu.css">
 
-    <link rel="shortcut icon" href="/imagem/favicon_bibliofateca.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon_bibliofateca.png" type="image/x-icon">
     <title>BiblioFateca - Livros</title>
 
 </head>
