@@ -22,16 +22,24 @@ $conn = $conexao->query($consulta) or die($conexao->error);
 </head>
 
 <!-- Menu Estrutura -->
-<body>
-    <header id="header_usuario">     
-        
-        <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
-        <a class="buscar-btn" href="/html/usuario/t1_home.html">
-            <i class="fas fa-arrow-left"></i>
-        </a>
-
-      <img src="/img/logo_bibliofateca.png" alt="Logo Fatec" class = logo_bibliofateca_usuario>    
-    </header>
+<body class="fundo">
+    <header id="header">
+        <img src="/img/logo_bibliofateca.png" alt="Logo Fatec" class = logo_bibliofateca>
+        <nav id="nav">
+          <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+            <span id="hamburger"></span>
+          </button>
+          <ul id="menu" role="menu">
+            <li><a href="/php/bibliotecaria/t1_retiradas.html">Retiradas</a></li>
+            <li><a href="/php/bibliotecaria/t2_devolucoes.html">Devoluções</a></li>
+            <li><a class="destaque" href="/php/bibliotecaria/t3_livros.html">Livros</a></li>
+            <li><a href="/php/bibliotecaria/t4_suspensoes.html">Suspensões</a></li>
+            <li><a href="/php/bibliotecaria/t5_recados.html">Recados</a></li>
+            <li><a href="/html/t0_index.html" class="sair">Sair</a></li>
+          </ul>
+        </nav>
+      </header>
+      <script src="/GitHub/Pi_Biblioteca/Oficial/menubiblio.js"></script>
 <!-- FIM Menu Estrutura-->
             
             <tr>
@@ -50,13 +58,18 @@ $conn = $conexao->query($consulta) or die($conexao->error);
             <tr class="cabecalho">
                 <td>ID</td>
                 <td>Categoria</td>
-                <td class="maior4">Título</td>
+                <td>ISBN</td>
+                <td>Título</td>
                 <td>Autor</td>
                 <td>Quantidade</td>
                 <td>Editora</td>
                 <td>Edição</td>
+                <td>Editar</td>
+                <td>Excluir</td>
+                
             </tr>
-                     
+            
+           
             <?php 
             
             if ($conn->num_rows > 0){
@@ -66,20 +79,20 @@ $conn = $conexao->query($consulta) or die($conexao->error);
                     <tr class="dados">
                      <td> <?php echo $dado['id']; ?> </td>
                      <td> <?php echo $dado['categoria']; ?> </td>
+                     <td> <?php echo $dado['isbn']; ?> </td>
                      <td> <?php echo $dado['titulo']; ?> </td>
                      <td> <?php echo $dado['autor']; ?> </td>
                      <td> <?php echo $dado['quantidade']; ?> </td>
                      <td> <?php echo $dado['editora']; ?> </td>
                      <td> <?php echo $dado['edicao']; ?> </td>
 
+                    
+                    <td> <a href="index.php?codigo=<?php echo $dado['cod_livro']; ?>"> <button class="button-Editar"> <i class="fas fa-pencil-alt"> </i></button></a></td>
+                    
+                     <td> <a href="index.php?p=deletar&codigo=<?php echo $dado['cod_livro']; ?>"> <button class="button-Excluir"> <i class="fas fa-times"> </i></button></a></td>
+                     </tr>
                     <?php } } ?> 
       
         </table>
-
-        
-<footer class="footer_usuario">
-  <img src="/img/logo_fatec.png" alt="Logo Fatec" class = logo_fatec>    
-</footer>
-
 </body>
 </html>
