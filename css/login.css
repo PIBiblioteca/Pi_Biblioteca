@@ -1,11 +1,10 @@
 /****** Estilo do login ******/
 .logofatec{
-  width: 19%;
-  position: absolute; 
-  top: 80px;  
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
 }
 
 .login-body{
@@ -24,7 +23,7 @@
   margin-left: 30%;
   margin-right: 30%;
   background: linear-gradient(180deg, rgba(71,71,77,1) 4%, rgba(37,50,50,1) 92%);
-  padding: 100px 50px 40px;
+  padding: 50px 50px 40px;
   box-shadow: 0 0 20px rgb(0, 0, 0);
   border: solid;
     border-width: 8px;
@@ -90,7 +89,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: rgb(255, 255, 255);
   margin: 20px 0;

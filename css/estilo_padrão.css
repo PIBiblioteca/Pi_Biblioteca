@@ -183,6 +183,19 @@ td, th {
 
 /*BOTÃO ADICIONAR*/
 
+.buscar-btn {
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  color: #ffffff;
+  cursor: pointer;
+ }
+
 .button-Adicionar{
   border: 2px solid #ffffff;
   background-color: #141429;
@@ -198,6 +211,7 @@ td, th {
   float: left;
   cursor: pointer;
 }
+
 .button-Adicionar:hover{
   background-color: #fd7e14;
   color: white;
@@ -366,7 +380,6 @@ tr:nth-child(odd) {background: rgba(54, 53, 53, 0.13)}
 }
 
 /*--- Parte do USUÁRIO ---*/ 
-
 
 .logo_bibliofateca_usuario {
   width: 120px;
