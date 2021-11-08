@@ -72,7 +72,7 @@ $conn = $conexao->query($consulta) or die($conexao->error);
                      <td> <?php echo $dado['quantidade']; ?> </td>
                      <td> <?php echo $dado['editora']; ?> </td>
                      <td> <?php echo $dado['edicao']; ?> </td>
-                     <td>  <button class="button1">Solicitar Empréstimo </button> </td>
+                     <td>  <a href="/GitHub/Pi_Biblioteca/php/usuario/t3_concluido.html"><button class="button1">Solicitar Empréstimo </button></a> </td>
                     
                  <?php } } ?> 
       
