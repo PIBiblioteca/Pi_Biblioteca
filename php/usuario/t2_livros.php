@@ -72,9 +72,9 @@ $conn = $conexao->query($consulta) or die($conexao->error);
                      <td> <?php echo $dado['quantidade']; ?> </td>
                      <td> <?php echo $dado['editora']; ?> </td>
                      <td> <?php echo $dado['edicao']; ?> </td>
-                     <td> <?php echo $dado['<button class="button1">SOLICITAR EMPRÉSTIMO</button>']; ?> </td>
-
-                    <?php } } ?> 
+                     <td>  <button class="button1">Solicitar Empréstimo </button> </td>
+                    
+                 <?php } } ?> 
       
         </table>
 
