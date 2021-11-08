@@ -93,9 +93,9 @@ $conn = $conexao->query($consulta) or die($conexao->error);
           <td> <?php echo $dado['edicao']; ?> </td>
 
 
-          <td> <a href="index.php?codigo=<?php echo $dado['cod_livro']; ?>"> <button class="button-Editar"> <i class="fas fa-pencil-alt"> </i></button></a></td>
+          <td> <button class="button-Editar"> <i class="fas fa-pencil-alt"> </i></button></td>
 
-          <td> <a href="index.php?p=deletar&codigo=<?php echo $dado['cod_livro']; ?>"> <button class="button-Excluir"> <i class="fas fa-times"> </i></button></a></td>
+          <td> <button class="button-Excluir"> <i class="fas fa-times"> </i></button></td>
         </tr>
     <?php }
     } ?>
