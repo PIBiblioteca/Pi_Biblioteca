@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
 
-include("../../BANCO_TESTE/config.php");
+include("../config.php");
 
 $consulta = "SELECT * FROM livros";
 $conn = $conexao->query($consulta) or die($conexao->error);
@@ -17,29 +17,21 @@ $conn = $conexao->query($consulta) or die($conexao->error);
     <link rel="stylesheet" href="../../css/login.css">
     <link rel="stylesheet" href="../../css/menu.css">
 
-    <link rel="shortcut icon" href="/img/favicon_bibliofateca.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/GitHub/Pi_Biblioteca/img/favicon_bibliofateca.png" type="image/x-icon">
     <title>BiblioFateca - Livros</title>
 </head>
 
 <!-- Menu Estrutura -->
-<body class="fundo">
-    <header id="header">
-        <img src="/img/logo_bibliofateca.png" alt="Logo Fatec" class = logo_bibliofateca>
-        <nav id="nav">
-          <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
-            <span id="hamburger"></span>
-          </button>
-          <ul id="menu" role="menu">
-            <li><a href="/php/bibliotecaria/t1_retiradas.html">Retiradas</a></li>
-            <li><a href="/php/bibliotecaria/t2_devolucoes.html">Devoluções</a></li>
-            <li><a class="destaque" href="/php/bibliotecaria/t3_livros.html">Livros</a></li>
-            <li><a href="/php/bibliotecaria/t4_suspensoes.html">Suspensões</a></li>
-            <li><a href="/php/bibliotecaria/t5_recados.html">Recados</a></li>
-            <li><a href="/html/t0_index.html" class="sair">Sair</a></li>
-          </ul>
-        </nav>
-      </header>
-      <script src="/GitHub/Pi_Biblioteca/Oficial/menubiblio.js"></script>
+<body>
+    <header id="header_usuario">     
+        
+        <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
+        <a class="buscar-btn" href="/GitHub/Pi_Biblioteca/php/usuario/t1_home.html">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+
+      <img src="/GitHub/Pi_Biblioteca/img/logo_bibliofateca.png" alt="Logo Fatec" class = logo_bibliofateca_usuario>    
+    </header>
 <!-- FIM Menu Estrutura-->
             
             <tr>
@@ -54,22 +46,18 @@ $conn = $conexao->query($consulta) or die($conexao->error);
         </div> </th> 
         <!--FIM BUSCAR-->
 
-        <table class="tabela" border="1">
+        <table class="tabela">
             <tr class="cabecalho">
-                <td>ID</td>
+                
                 <td>Categoria</td>
-                <td>ISBN</td>
-                <td>Título</td>
+                <td class="maior4">Título</td>
                 <td>Autor</td>
                 <td>Quantidade</td>
                 <td>Editora</td>
                 <td>Edição</td>
-                <td>Editar</td>
-                <td>Excluir</td>
-                
+                <td></td>
             </tr>
-            
-           
+                     
             <?php 
             
             if ($conn->num_rows > 0){
@@ -77,22 +65,23 @@ $conn = $conexao->query($consulta) or die($conexao->error);
                 while ($dado = $conn->fetch_assoc()){    ?>          
             
                     <tr class="dados">
-                     <td> <?php echo $dado['id']; ?> </td>
+                     
                      <td> <?php echo $dado['categoria']; ?> </td>
-                     <td> <?php echo $dado['isbn']; ?> </td>
                      <td> <?php echo $dado['titulo']; ?> </td>
                      <td> <?php echo $dado['autor']; ?> </td>
                      <td> <?php echo $dado['quantidade']; ?> </td>
                      <td> <?php echo $dado['editora']; ?> </td>
                      <td> <?php echo $dado['edicao']; ?> </td>
+                     <td> <?php echo $dado['<button class="button1">SOLICITAR EMPRÉSTIMO</button>']; ?> </td>
 
-                    
-                    <td> <a href="index.php?codigo=<?php echo $dado['cod_livro']; ?>"> <button class="button-Editar"> <i class="fas fa-pencil-alt"> </i></button></a></td>
-                    
-                     <td> <a href="index.php?p=deletar&codigo=<?php echo $dado['cod_livro']; ?>"> <button class="button-Excluir"> <i class="fas fa-times"> </i></button></a></td>
-                     </tr>
                     <?php } } ?> 
       
         </table>
+
+        
+<footer class="footer_usuario">
+  <img src="/GitHub/Pi_Biblioteca/img/logo_fatec.png" alt="Logo Fatec" class = logo_fatec>    
+</footer>
+
 </body>
 </html>

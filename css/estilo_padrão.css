@@ -3,6 +3,7 @@ body {
   font-family: "Poppins", sans-serif;
   background: #444444;
 }
+
 /*----- TABELA -----*/
 .tabela{
   position: sticky;
@@ -36,6 +37,10 @@ body {
 .maior5 {
   width: 14%;
 }
+.maior6 {
+  width: 88.5%;
+}
+
 
 .esquerda {
   text-align: left;

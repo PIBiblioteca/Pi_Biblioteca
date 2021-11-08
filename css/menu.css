@@ -19,14 +19,10 @@ a {
 }
 
 a:hover:not(#logo, .sair) {
-  background: #fd7e14;
+  background: linear-gradient(to top, #11998e, #38ef7d);;
   color: white;
 }
 
-#logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
 
 .logo_bibliofateca {
   width: 120px;

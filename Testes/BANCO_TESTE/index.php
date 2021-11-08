@@ -17,7 +17,7 @@ $conn = $conexao->query($consulta) or die($conexao->error);
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/menu.css">
 
-    <link rel="shortcut icon" href="/img/favicon_bibliofateca.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/GitHub/Pi_Biblioteca/img/favicon_bibliofateca.png" type="image/x-icon">
     <title>BiblioFateca - Livros</title>
 
 </head>
@@ -29,12 +29,12 @@ $conn = $conexao->query($consulta) or die($conexao->error);
             <span id="hamburger"></span>
           </button>
           <ul id="menu" role="menu">
-            <li><a href="/php/bibliotecaria/t1_retiradas.html">Retiradas</a></li>
-            <li><a href="/php/bibliotecaria/t2_devolucoes.html">Devoluções</a></li>
+            <li><a href="/GitHub/Pi_Biblioteca/php/bibliotecaria/t1_retiradas.php">Retiradas</a></li>
+            <li><a href="/GitHub/Pi_Biblioteca/php/bibliotecaria/t2_devolucoes.php">Devoluções</a></li>
             <li><a class="destaque" href="http://localhost:8080/GitHub/Pi_Biblioteca/BANCO_TESTE/">Livros</a></li>
-            <li><a href="/php/bibliotecaria/t4_suspensoes.html">Suspensões</a></li>
-            <li><a href="/php/bibliotecaria/t5_recados.html">Recados</a></li>
-            <li class="sair"><a href="/html/t0_index.html">Sair</a></li>
+            <li><a href="/GitHub/Pi_Biblioteca/php/bibliotecaria/t4_suspensoes.php">Suspensões</a></li>
+            <li><a href="/GitHub/Pi_Biblioteca/php/bibliotecaria/t5_recados.php">Recados</a></li>
+            <li class="sair"><a href="/GitHub/Pi_Biblioteca/php/t0_index.html">Sair</a></li>
           </ul>
         </nav>
       </header>
