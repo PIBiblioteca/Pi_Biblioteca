@@ -18,7 +18,7 @@
 <body>
     <header id="header">
 
-    <img src="/GitHub/Pi_Biblioteca/img/logo_bibliofateca.png" alt="Logo Fatec" class=logo_bibliofateca>
+        <img src="/GitHub/Pi_Biblioteca/img/logo_bibliofateca.png" alt="Logo Fatec" class=logo_bibliofateca>
 
         <nav id="nav">
 
@@ -59,7 +59,7 @@
 
     <table class="tabela">
         <tr class="cabecalho">
-        <th>ID</th>
+            <th>ID</th>
             <th class="esquerda">Livro</th>
             <th>RA/MP</th>
             <th>E-mail</th>
@@ -80,7 +80,7 @@
             <th><button class="button1 button3">SIM</button> <button class="button2 button3">NÃO</button></th>
         </tr>
         <tr>
-        <td>2</td>
+            <td>2</td>
             <td>SARAIV - ADMINISTRACAO DE RECURSOS HUMANOS - DO OPERACIONAL DO ESTRATEGICO 15 Ed 201</td>
             <td>1234567891SP</td>
             <td>jean@fatec.com</td>
@@ -89,7 +89,7 @@
             <th><button class="button1 button3">SIM</button> <button class="button2 button3">NÃO</button></th>
         </tr>
         <tr>
-        <td>3</td>
+            <td>3</td>
             <td>CENGAG - ADMINISTRACAO ESTRATEGICA - TRADUCAO DA 10 EDICAO NORTE-AMERICANA 3 Ed 2015</td>
             <td>1234567892SP</td>
             <td>juan@fatec.com</td>
@@ -98,7 +98,7 @@
             <th><button class="button1 button3">SIM</button> <button class="button2 button3">NÃO</button></th>
         </tr>
         <tr>
-        <td>4</td>
+            <td>4</td>
             <td>GARAMO - DIFICIL SUSTENTABILIDADE, A - POLITICA ENERGETICA E CONFLITOS AMBIENTAIS 1</td>
             <td>1124567893SP</td>
             <td>ronaldo@fatec.com</td>

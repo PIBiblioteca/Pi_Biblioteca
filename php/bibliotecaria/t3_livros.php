@@ -66,7 +66,7 @@ $conn = $conexao->query($consulta) or die($conexao->error);
       <td>Categoria</td>
       <td>ISBN</td>
       <td>Título</td>
-      <td>Autor</td>
+      <td class="maior4">Autor</td>
       <td>Quantidade</td>
       <td>Editora</td>
       <td>Edição</td>

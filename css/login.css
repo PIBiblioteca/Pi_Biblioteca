@@ -26,9 +26,9 @@
   padding: 50px 50px 40px;
   box-shadow: 0 0 20px rgb(0, 0, 0);
   border: solid;
-    border-width: 8px;
-    border-image: linear-gradient(to top, #11998e, #38ef7d);
-    border-image-slice: 1;
+    
+    border-image:#fd7e14; 
+    
 }
 
 .login-form h1{
@@ -104,7 +104,7 @@
   margin-right: 10px;
   cursor: pointer;
   border: 1px solid;
-  border-color: linear-gradient(to top, #11998e, #38ef7d);;
+  border-color: #fd7e14; 
 }
 
 .checkbox .fa-check{
@@ -119,7 +119,7 @@
 }
 
 .checkbox input:checked{
-  background: linear-gradient(to top, #11998e, #38ef7d);
+  background: #fd7e14; 
 }
 
 .checkbox input:checked + .fa-check{
@@ -132,7 +132,7 @@
   height: 80px;
   margin: 10px auto;
   margin-bottom: 30px;
-  background: linear-gradient(to top, #11998e, #38ef7d);
+  background:#fd7e14; 
   color: white;
   font-size: 34px;
   border: none;

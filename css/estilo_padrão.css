@@ -1,7 +1,7 @@
 /*----- Estilo padrão dos conteúdos do site -----*/
 body {
   font-family: "Poppins", sans-serif;
-  background: #444444;
+  background: lightgray;
 }
 
 /*----- TABELA -----*/
@@ -15,7 +15,7 @@ body {
   font-family: sans-serif;
   width: 96%;
   margin-top: 155px;
-  background-color: #141429;
+  background-color: gray;
 }
 
 .maior {
@@ -78,7 +78,7 @@ td, th {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #fd7e14; 
+  background: #202040; 
 }
 
 /* ---------------Fim Scroll -------------- */
@@ -88,7 +88,7 @@ td, th {
 
 /*---Cabeçalho---*/ 
 .cabecalho {
-  background: #fd7e14;
+  background: #202040;
   font-family: Verdana;
   font-weight: bolder;
   
@@ -102,48 +102,6 @@ td, th {
 /*---FIM Cabeçalho---*/
 
 .content{display: flex; margin: auto}
-
-/*--- Botão Comum ---*/
-
-/* 
-.button1, .button2 {
-  border: none;
-  padding: 16px 16px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 4px 2px;
-  cursor: pointer;
-  width: 130px; 
-}
-
-
-.button1 {
-  background-color: #2f3640;
-  color: white;
-  border: 2px solid white;
-  }
-
-.button1:hover {
-  background-color: #4C9141;
-  color: white;
-  }
-
-.button2 {
-  background-color: #2f3640;
-  color: white;
-  border: 2px solid white;
-  }
-
-.button2:hover {
-  background-color: #ca3838;
-  color: white;
-  }
-
- */
-
-
- /*--- FIM Botão Comum ---*/
 
  /*--- Botão Comum ---*/
 
@@ -197,7 +155,7 @@ td, th {
   justify-content: center;
   align-items: center;
   transition: 0.4s;
-  color: #ffffff;
+  color: white;
   cursor: pointer;
  }
 
@@ -218,8 +176,8 @@ td, th {
 }
 
 .button-Adicionar:hover{
-  background-color: #fd7e14;
-  color: white;
+  background-color: #202040;
+  color: #fd7e14;
   border: 2px solid #fd7e14;
 }
 /*--------------------------------------------------*/
@@ -239,8 +197,8 @@ td, th {
 }
 .button-Excluir:hover{
   background-color: #630e0e;
-  color: #ff0000;
-  border: 2px solid #1a0e0e;
+  color: #fd7e14;
+  border: 2px solid #fd7e14;
 }
 /*--------------------------------------------------*/
 
@@ -270,7 +228,7 @@ td, th {
 /*--- Buscar ---*/
 
 .buscar {
-  border: 2px solid #ffffff;
+  border: 2px solid white;
   background: #141429;
   margin-top: 5%;
   margin-left: 3.5%;
@@ -292,9 +250,9 @@ td, th {
    }
    
    .buscar:hover > .buscar-btn {
-    background: #fd7e14;
+    background: #202040;
     color: white;
-    border: #fd7e14;
+    border: #202040;
    }
   
    .buscar-btn {
@@ -306,7 +264,7 @@ td, th {
     justify-content: center;
     align-items: center;
     transition: 0.4s;
-    color: #ffffff;
+    color: white;
     cursor: pointer;
    }
    
@@ -425,6 +383,7 @@ tr:nth-child(odd) {background: rgba(54, 53, 53, 0.13)}
   background-color: #141429;
   border-radius: 10px;  
   color: white;
+  font-weight: normal;
   font-size: 16px;
   float: auto;
   cursor: pointer;
@@ -438,8 +397,9 @@ tr:nth-child(odd) {background: rgba(54, 53, 53, 0.13)}
   top: 140px; 
   left:50%;
   border: #302f2f;
+  font-weight: normal;
   background-color: transparent;
-  color: white;
+  color: #141429;
   font-size: 16px;
   cursor: pointer;
 }
@@ -512,4 +472,3 @@ tr:nth-child(odd) {background: rgba(54, 53, 53, 0.13)}
 }
 
 /*--- Fim parte do usuário ---*/ 
-

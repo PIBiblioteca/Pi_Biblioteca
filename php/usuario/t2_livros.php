@@ -50,8 +50,8 @@ $conn = $conexao->query($consulta) or die($conexao->error);
             <tr class="cabecalho">
                 
                 <td>Categoria</td>
-                <td class="maior4">Título</td>
-                <td>Autor</td>
+                <td>Título</td>
+                <td class="maior4">Autor</td>
                 <td>Quantidade</td>
                 <td>Editora</td>
                 <td>Edição</td>
