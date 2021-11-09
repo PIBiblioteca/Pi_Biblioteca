@@ -93,9 +93,9 @@ $conn = $conexao->query($consulta) or die($conexao->error);
           <td> <?php echo $dado['edicao']; ?> </td>
 
 
-          <td> <button class="button-Editar"> <i class="fas fa-pencil-alt"> </button></a></td>
+          <td> <button class="button-Editar"> <i class="fas fa-pencil-alt"> </i></button></td>
 
-          <td> <button class="button-Excluir"> <i class="fas fa-times"> </button></a></td>
+          <td> <button class="button-Excluir"> <i class="fas fa-times"> </i></button></td>
         </tr>
     <?php }
     } ?>
