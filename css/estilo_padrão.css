@@ -167,6 +167,7 @@ td, th {
   background-color: #2f3640;
   color: white;
   border: 2px solid white;
+  margin-right:1%;
 }
 
 .button1:hover {
@@ -284,6 +285,7 @@ td, th {
  
  .buscar:hover{
   border-color: #fd7e14;
+  color: #fff;
  }
 
  .buscar:hover > .buscar-txt {
