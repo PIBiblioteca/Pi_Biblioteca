@@ -48,7 +48,7 @@
 
   <table class="tabela">
     <tr class="cabecalho">
-    <th>ID</th>
+      <th>ID</th>
       <th>RA/MP</th>
       <th>Início</th>
       <th>Fim</th>
