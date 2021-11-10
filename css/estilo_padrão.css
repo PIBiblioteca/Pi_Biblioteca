@@ -391,6 +391,12 @@ tr:nth-child(odd) {background: rgba(54, 53, 53, 0.13)}
   cursor: pointer;
 }
 
+.button-Livros:hover{
+  
+  border: 2px solid #fd7e14;
+  color: #fd7e14;
+}
+
 .Recados{
   height:20px; 
   width:100px; 
@@ -404,6 +410,10 @@ tr:nth-child(odd) {background: rgba(54, 53, 53, 0.13)}
   color: #141429;
   font-size: 16px;
   cursor: pointer;
+}
+
+.Recados:hover{
+  color: #fd7e14;
 }
 
 .button-Recados{
@@ -420,6 +430,11 @@ tr:nth-child(odd) {background: rgba(54, 53, 53, 0.13)}
   color: white;
   font-size: 11px;
   cursor: pointer;
+}
+
+.button-Recados:hover{
+  border: 2px solid #fd7e14;
+  color: #fd7e14;
 }
 
 .button-Retornar{
