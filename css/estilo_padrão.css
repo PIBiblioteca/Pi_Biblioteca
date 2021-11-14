@@ -41,6 +41,10 @@ body {
   width: 88.5%;
 }
 
+.maior7 {
+  width: 6%;
+  padding: 1rem;
+}
 
 .esquerda {
   text-align: left;
@@ -348,9 +352,8 @@ tr:nth-child(odd) {background: rgba(54, 53, 53, 0.13)}
 
 .logo_bibliofateca_usuario {
   width: 120px;
-  
   margin-left: auto;
-  margin-right: 41%;
+  margin-right: auto;
 }
 
 .login-form{
@@ -487,6 +490,10 @@ tr:nth-child(odd) {background: rgba(54, 53, 53, 0.13)}
 
 .logo_fatec {
   width: 60px;
+}
+
+.menu_usuario {
+  width: 100%;
 }
 
 /*--- Fim parte do usuário ---*/ 

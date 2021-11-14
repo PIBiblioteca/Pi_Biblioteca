@@ -12,26 +12,47 @@ $conn = $conexao->query($consulta) or die($conexao->error);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    
     <link rel="stylesheet" href="../../css/estilo_padrão.css">
     <link rel="stylesheet" href="../../css/login.css">
     <link rel="stylesheet" href="../../css/menu.css">
-
     <link rel="shortcut icon" href="/GitHub/Pi_Biblioteca/img/favicon_bibliofateca.png" type="image/x-icon">
     <title>BiblioFateca - Livros</title>
 </head>
 
 <!-- Menu Estrutura -->
 <body>
-    <header id="header_usuario">     
+
+<header id="header_usuario"> 
+    <table border="1" class="menu_usuario">
+      <tr>
+        <th class="maior7">
+        <a class="buscar-btn" href="/GitHub/Pi_Biblioteca/php/usuario/t1_home.html">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        </th>
+        <th>
+            <img src="/GitHub/Pi_Biblioteca/img/logo_bibliofateca.png" alt="Logo Fatec" class = logo_bibliofateca_usuario>
+        </th>
+        <th class="maior7">
+          <nav id="nav">
+            <ul id="menu" role="menu">
+          <li><a href="/GitHub/Pi_Biblioteca/php/t0_index.html" class="sair">Sair</a></li></th>
+          </nav>
+      </tr>
+    </table>
+    
+  </header>
+
+    <!-- <header id="header_usuario">     
         
-        <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>
+        
         <a class="buscar-btn" href="/GitHub/Pi_Biblioteca/php/usuario/t1_home.html">
             <i class="fas fa-arrow-left"></i>
         </a>
 
       <img src="/GitHub/Pi_Biblioteca/img/logo_bibliofateca.png" alt="Logo Fatec" class = logo_bibliofateca_usuario>    
-    </header>
+    </header> -->
+    
 <!-- FIM Menu Estrutura-->
             
             <tr>
