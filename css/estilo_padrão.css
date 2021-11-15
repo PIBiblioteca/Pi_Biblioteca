@@ -1,4 +1,6 @@
 /*----- Estilo padrão dos conteúdos do site -----*/
+
+
 body {
   font-family: "Poppins", sans-serif;
   background: lightgray;
@@ -42,10 +44,13 @@ body {
 }
 
 .maior7 {
-  width: 6%;
+  width: 5%;
   padding: 1rem;
 }
 
+.maior8{
+  width: 5%;
+}
 .esquerda {
   text-align: left;
 }
@@ -494,6 +499,10 @@ tr:nth-child(odd) {background: rgba(54, 53, 53, 0.13)}
 
 .menu_usuario {
   width: 100%;
+}
+
+#remover_padding {
+  padding: 0;
 }
 
 /*--- Fim parte do usuário ---*/ 

@@ -23,20 +23,23 @@ $conn = $conexao->query($consulta) or die($conexao->error);
 <body>
 
 <header id="header_usuario"> 
-    <table border="1" class="menu_usuario">
+    <table class="menu_usuario">
       <tr>
-        <th class="maior7">
+        <th class="maior8">
         <a class="buscar-btn" href="/GitHub/Pi_Biblioteca/php/usuario/t1_home.html">
             <i class="fas fa-arrow-left"></i>
         </a>
+        </th>
+        <th class="maior8">
+
         </th>
         <th>
             <img src="/GitHub/Pi_Biblioteca/img/logo_bibliofateca.png" alt="Logo Fatec" class = logo_bibliofateca_usuario>
         </th>
         <th class="maior7">
-          <nav id="nav">
+          <nav id="nav ">
             <ul id="menu" role="menu">
-          <li><a href="/GitHub/Pi_Biblioteca/php/t0_index.html" class="sair">Sair</a></li></th>
+          <li id="remover_padding"><a href="/GitHub/Pi_Biblioteca/php/t0_index.html" class="sair">Sair</a></li></th>
           </nav>
       </tr>
     </table>
