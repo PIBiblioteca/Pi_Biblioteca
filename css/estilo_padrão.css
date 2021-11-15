@@ -468,19 +468,19 @@ tr:nth-child(odd) {background: rgba(54, 53, 53, 0.13)}
 }
 
 .button-Solicitação{
-  height: 250px; 
-  width: 400px; 
+  height: 300px; 
+  width: 300px; 
   display: block;
   position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -60%);
   border: 2px solid #ffffff;
   background-color: #141429;
   border-radius: 10px;  
   color: white;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
 }
 
