@@ -63,7 +63,7 @@
             <th class="esquerda">Livro</th>
             <th>RA/MP</th>
             <th>E-mail</th>
-            <th>Saída</th>
+            <th>Retirada</th>
             <th>Devolução</th>
             <th class="maior5">Livro retirado?</th>
         </tr>
@@ -77,7 +77,7 @@
             <td>kevin@fatec.com</td>
             <th>10/12/2021</th>
             <th>25/12/2021</th>
-            <th><button class="button1 button3">SIM</button> <button class="button2 button3">NÃO</button></th>
+            <th><button class="button1">CONFIRMAR</button></th>
         </tr>
         <tr>
             <td>2</td>
@@ -86,7 +86,7 @@
             <td>jean@fatec.com</td>
             <th>10/12/2021</th>
             <th>25/12/2021</th>
-            <th><button class="button1 button3">SIM</button> <button class="button2 button3">NÃO</button></th>
+            <th><button class="button1">CONFIRMAR</button></th>
         </tr>
         <tr>
             <td>3</td>
@@ -95,7 +95,7 @@
             <td>juan@fatec.com</td>
             <th>10/12/2021</th>
             <th>25/12/2021</th>
-            <th><button class="button1 button3">SIM</button> <button class="button2 button3">NÃO</button></th>
+            <th><button class="button1">CONFIRMAR</button></th>
         </tr>
         <tr>
             <td>4</td>
@@ -104,7 +104,7 @@
             <td>ronaldo@fatec.com</td>
             <th>10/12/2021</th>
             <th>25/12/2021</th>
-            <th><button class="button1 button3">SIM</button> <button class="button2 button3">NÃO</button></th>
+            <th><button class="button1">CONFIRMAR</button></th>
         </tr>
     </table>
 </body>

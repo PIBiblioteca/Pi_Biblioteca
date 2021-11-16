@@ -468,8 +468,9 @@ tr:nth-child(odd) {background: rgba(54, 53, 53, 0.13)}
 }
 
 .button-Solicitação{
-  height: 300px; 
-  width: 300px; 
+  height: 250px; 
+  width: 200px; 
+  padding-bottom: 20px;
   display: block;
   position: absolute;
   top: 50%;
@@ -480,7 +481,7 @@ tr:nth-child(odd) {background: rgba(54, 53, 53, 0.13)}
   background-color: #141429;
   border-radius: 10px;  
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -509,6 +510,11 @@ tr:nth-child(odd) {background: rgba(54, 53, 53, 0.13)}
 
 #remover_padding {
   padding: 0;
+}
+
+.livros {
+  margin-left: 46%;
+  margin-top: 200px;
 }
 
 /*--- Fim parte do usuário ---*/ 
