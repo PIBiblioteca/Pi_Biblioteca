@@ -58,9 +58,6 @@ $conn = $conexao->query($consulta) or die($conexao->error);
     
 <!-- FIM Menu Estrutura-->
             
-            <tr>
-            <a href="cadastro.php" target="_blank"><td><button class="button-Adicionar"><i class="fas fa-plus"></i> Adicionar livro </button> </td></a>
-            </tr>
         <!--BUSCAR-->
         <th> <div class="buscar">
         <input type="text" name="" class="buscar-txt" placeholder="Buscar..."/>

@@ -2,7 +2,7 @@
 
 <?php
 
-include("../config.php");
+include("../conexao.php");
 
 $consulta = "SELECT * FROM devolucoes";
 $conn = $conexao->query($consulta) or die($conexao->error);

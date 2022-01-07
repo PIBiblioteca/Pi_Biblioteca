@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 
-include("../config.php");
+include("../conexao.php");
 
 $consulta = "SELECT * FROM livros";
 $conn = $conexao->query($consulta) or die($conexao->error);
