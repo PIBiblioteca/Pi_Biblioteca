@@ -18,11 +18,33 @@ $query_cadastros = mysqli_query($conexao, $buscar_cadastros);
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- -->
+        <?php //PROGRAMAÇÃO DO FILTRO
+    $parametro = filter_input(INPUT_GET, "parametro");
+    $mysqllink = mysqli_connect("localhost", "root", "");
+    mysqli_select_db("recados");
+
+    if($parametro) {
+        $dados = mysqli_query("SELECT * FROM recado WHERE recado LIKE '$parametro%' ORDER BY recado");
+    } else {
+        $dados = mysqli_query("SELECT * FROM recado ORDER BY recado");
+    }
+
+    $linha = mysqli_fetch_assoc($dados);
+    $total = mysql_num_rows($dados);
+    ?> 
 </head>
 
 <body>
 
     <div class="container">
+        <h1>Tabela de teste CRUD</h1>
+        <p> <!-- FILTRO -->
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <input type="text" name="parametro"/>
+                <input type="submit" value="Buscar">
+            </form>
+        </p>
         <table class="table">
             <thead>
                 <!-- cabeçalho da tabela -->
