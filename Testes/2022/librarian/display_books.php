@@ -33,12 +33,47 @@ include "header.php";
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
+                                <form name="form1" action="" method="post">
+                                    <input type="text" name="t1" class="form-control" placeholder="enter books name">
+                                    <input type="submit" name="submit1" id="search books" class="btn btn-default">
+                                </form>
                                 <?php 
+
+                                if(isset($_POST["submit1"])) {
+                                    $res=mysqli_query($link, "SELECT * FROM add_books WHERE books_name LIKE('%$_POST[t1]%')");
+                                    echo "<table class='table table-bordered'>";
+                                    echo "<tr>";
+                                    echo "<th>"; echo "books image"; echo "</th>";
+                                    echo "<th>"; echo "books name"; echo "</th>";
+                                    echo "<th>"; echo "author name"; echo "</th>";
+                                    echo "<th>"; echo "publication name"; echo "</th>";
+                                    echo "<th>"; echo "purchase date"; echo "</th>";
+                                    echo "<th>"; echo "books price"; echo "</th>";
+                                    echo "<th>"; echo "books quantity"; echo "</th>";
+                                    echo "<th>"; echo "available quantity"; echo "</th>";
+                                    echo "</tr>";
+                                    while($row = mysqli_fetch_array($res)) {
+                                        echo "<tr>";
+                                        echo "<td>"; ?> <img src="<?php echo $row["books_image"]; ?>" height="100" width="100"> <?php echo "</td>";
+                                        echo "<td>"; echo $row["books_name"]; echo "</td>";
+                                        echo "<td>"; echo $row["books_author_name"]; echo "</td>";
+                                        echo "<td>"; echo $row["books_publication_name"]; echo "</td>";
+                                        echo "<td>"; echo $row["books_purchase_date"]; echo "</td>";
+                                        echo "<td>"; echo $row["books_price"]; echo "</td>";
+                                        echo "<td>"; echo $row["books_qty"]; echo "</td>";
+                                        echo "<td>"; echo $row["available_qty"]; echo "</td>";
+                                        echo "</tr>";
+                                    }
+                                    echo "</table>";
+                                }
+                                else
+                                { 
+
                                 $res=mysqli_query($link, "SELECT * FROM add_books");
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
-                                echo "<th>"; echo "books name"; echo "</th>";
                                 echo "<th>"; echo "books image"; echo "</th>";
+                                echo "<th>"; echo "books name"; echo "</th>";
                                 echo "<th>"; echo "author name"; echo "</th>";
                                 echo "<th>"; echo "publication name"; echo "</th>";
                                 echo "<th>"; echo "purchase date"; echo "</th>";
@@ -48,8 +83,8 @@ include "header.php";
                                 echo "</tr>";
                                 while($row = mysqli_fetch_array($res)) {
                                     echo "<tr>";
-                                    echo "<td>"; echo $row["books_name"]; echo "</td>";
                                     echo "<td>"; ?> <img src="<?php echo $row["books_image"]; ?>" height="100" width="100"> <?php echo "</td>";
+                                    echo "<td>"; echo $row["books_name"]; echo "</td>";
                                     echo "<td>"; echo $row["books_author_name"]; echo "</td>";
                                     echo "<td>"; echo $row["books_publication_name"]; echo "</td>";
                                     echo "<td>"; echo $row["books_purchase_date"]; echo "</td>";
@@ -59,6 +94,7 @@ include "header.php";
                                     echo "</tr>";
                                 }
                                 echo "</table>";
+                                }
                                 ?>
                             </div>
                         </div>
