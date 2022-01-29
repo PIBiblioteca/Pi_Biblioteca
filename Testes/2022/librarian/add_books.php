@@ -41,7 +41,7 @@ include "header.php";
                                     </tr>
                                     <tr>
                                         books image
-                                        <td><input type="file" placeholder="Books Name" required=""></td>
+                                        <td><input type="file" name="f1" required=""></td>
                                     </tr>
                                     <tr>
                                         <td><input type="text" class="form-control" placeholder="Books Author Name" name="bauthorname" required=""></td>
@@ -62,7 +62,7 @@ include "header.php";
                                         <td><input type="text" class="form-control" placeholder="Available Quantity" name="aqty" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="submit" name="submit1" class="btn btn-default submit" value="insert books details" style="background-color: blue; color: white; "></td>
+                                        <td><input type="submit" name="submit1" class="btn btn-default submit" value="insert books details" style="background-color: blue; color: white"></td>
                                     </tr>
                                 </table>
                                 </form>
@@ -79,8 +79,8 @@ include "header.php";
     {
         $tm=md5 (time());
         $fnm=$_FILES["f1"]["name"];
-        $dst="./books/image/".$tm.$fnm;
-        $dstl="/books/image/".$tm.$fnm;
+        $dst="./books_image/".$tm.$fnm;
+        $dst1="books_image/".$tm.$fnm;
         move_uploaded_file($_FILES["f1"]["tmp_name"],$dst);
 
         mysqli_query($link, "INSERT INTO add_books VALUES('','$_POST[booksname]','$dst1','$_POST[bauthorname]','$_POST[pname]','$_POST[bpurchasedt]','$_POST[bprice]','$_POST[bqty]','$_POST[aqty]','$_SESSION[librarian]')");
