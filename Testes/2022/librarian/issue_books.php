@@ -143,6 +143,7 @@ include "connection.php"
                             if(isset($_POST["submit2"]))
                             {
                                 mysqli_query($link, "INSERT INTO issue_books VALUES('','$_SESSION[enrollment]','$_POST[studentname]','$_POST[studentsem]','$_POST[studentcontact]','$_POST[studentemail]','$_POST[booksname]','$_POST[booksissuedate]','','$_SESSION[susername]')");
+                                mysqli_query($link, "UPDATE add_books SET available_qty=available_qty-1 WHERE books_name='$_POST[booksname]'"); //função diminuir quantidade disponível
                                 ?>
                                 <script type="text/javascritp">
                                     alert("books issued sucessfully");
