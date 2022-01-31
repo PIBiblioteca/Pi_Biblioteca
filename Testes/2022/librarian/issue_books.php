@@ -142,14 +142,35 @@ include "connection.php"
                             <?php
                             if(isset($_POST["submit2"]))
                             {
-                                mysqli_query($link, "INSERT INTO issue_books VALUES('','$_SESSION[enrollment]','$_POST[studentname]','$_POST[studentsem]','$_POST[studentcontact]','$_POST[studentemail]','$_POST[booksname]','$_POST[booksissuedate]','','$_SESSION[susername]')");
-                                mysqli_query($link, "UPDATE add_books SET available_qty=available_qty-1 WHERE books_name='$_POST[booksname]'"); //função diminuir quantidade disponível
-                                ?>
-                                <script type="text/javascritp">
-                                    alert("books issued sucessfully");
-                                    window.location.href=windows.location.href;
-                                </script>
-                                <?php
+
+                                $qty=0;
+                                $res=mysqli_query($link, "SELECT * FROM add_books WHERE books_name='$_POST[booksname]'");
+                                while($row=mysqli_fetch_array($res))
+                                {
+                                    $qty=$row["available_qty"];
+                                }
+
+                                if($qty==0)
+                                {
+                                    ?>
+                                    <div class="alert alert-danger col-lg-6 col-lg-push-3">
+                                        <strong style="...">this book is not available in stock</strong> 
+                                    </div>
+                                    <?php
+                                }
+                                else
+                                {
+                                    mysqli_query($link, "INSERT INTO issue_books VALUES('','$_SESSION[enrollment]','$_POST[studentname]','$_POST[studentsem]','$_POST[studentcontact]','$_POST[studentemail]','$_POST[booksname]','$_POST[booksissuedate]','','$_SESSION[susername]')");
+                                    mysqli_query($link, "UPDATE add_books SET available_qty=available_qty-1 WHERE books_name='$_POST[booksname]'"); //função diminuir quantidade disponível
+                                    ?>
+                                    <script type="text/javascript">
+                                        alert("books issued sucessfully");
+                                        window.location.href=window.location.href;
+                                    </script>
+                                    <?php
+                                }
+
+                                
                             }
                             ?>
                             </div>
