@@ -1,4 +1,13 @@
 <?php
+session_start();
+if(!isset($_SESSION["username"]))
+{
+    ?>
+    <script type="text/javascript">
+        window.location="login.php";
+    </script>
+    <?php
+}
 include "header.php";
 include "connection.php";
 mysqli_query($link, "UPDATE messages SET read1='y' WHERE dusername='$_SESSION[username]'");

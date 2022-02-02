@@ -35,7 +35,7 @@
                     <div class="profile_info">
                         <span>Welcome,</span>
 
-                        <h2>John Doe</h2>
+                        <h2><?php echo $_SESSION["librarian"]; ?></h2>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -61,7 +61,11 @@
                             <li><a href="issue_books.php"><i class="fa fa-table"></i> Issue Books <span class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span
+                            <li><a href="return_book.php"><i class="fa fa-bar-chart-o"></i> Return Book <span
+                                    class="fa fa-chevron-down"></span></a>
+
+                            </li>
+                            <li><a href="books_details_with_student.php"><i class="fa fa-bar-chart-o"></i> Books With All Info <span
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>
@@ -91,11 +95,11 @@
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="images/img.jpg" alt="">John Doe
+                                <img src="images/img.jpg" alt=""><?php echo $_SESSION["librarian"]; ?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                             </ul>
                         </li>
 

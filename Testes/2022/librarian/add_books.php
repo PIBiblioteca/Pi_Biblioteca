@@ -1,5 +1,16 @@
 <?php
 session_start();
+// código de segurança para impossibilitar o acesso à essa página sem fazer login
+if(!isset($_SESSION["librarian"])) 
+{
+    ?>
+    <script type="text/javascript">
+        window.location="login.php";
+
+    </script>
+    <?php
+}
+// fim do código de segurança para impossibilitar o acesso à essa página sem fazer login
 include "connection.php";
 include "header.php";
 ?>

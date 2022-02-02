@@ -1,5 +1,14 @@
 <?php
 session_start();
+if(!isset($_SESSION["librarian"]))
+{
+    ?>
+    <script type="text/javascript">
+        window.location="login.php";
+
+    </script>
+    <?php
+}
 include "header.php";
 include "connection.php"
 ?>
@@ -154,7 +163,7 @@ include "connection.php"
                                 {
                                     ?>
                                     <div class="alert alert-danger col-lg-6 col-lg-push-3">
-                                        <strong style="...">this book is not available in stock</strong> 
+                                        <strong>this book is not available in stock</strong> 
                                     </div>
                                     <?php
                                 }
