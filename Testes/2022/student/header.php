@@ -1,3 +1,11 @@
+<?php
+session_start();
+include "connection.php";
+$tot=0;
+$res=mysqli_query($link, "SELECT * FROM messages WHERE dusername='$_SESSION[username]' && read1='n'");
+$tot=mysqli_num_rows($res);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -96,10 +104,10 @@
                         </li>
 
                         <li role="presentation" class="dropdown">
-                            <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown"
+                            <a href="message_from_librarian.php" class="dropdown-toggle info-number" data-toggle="dropdown"
                                aria-expanded="false">
                                 <i class="fa fa-envelope-o"></i>
-                                <span class="badge bg-green">6</span>
+                                <span class="badge bg-green" onclick="window.location='message_from_librarian.php'"><?php echo $tot; ?></span>
                             </a>
 
                         </li>

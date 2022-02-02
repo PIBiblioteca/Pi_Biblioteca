@@ -65,6 +65,10 @@
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>
+                            <li><a href="send_notification_student.php"><i class="fa fa-mail-forward"></i> Send Message To Student <span
+                                    class="fa fa-chevron-down"></span></a>
+
+                            </li>
 
                         </ul>
                     </div>
