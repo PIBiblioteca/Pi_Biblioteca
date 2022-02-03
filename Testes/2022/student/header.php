@@ -58,7 +58,7 @@ $tot=mysqli_num_rows($res);
                             <li><a href="my_issued_books.php"><i class="fa fa-home"></i> My Issued Books <span class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a><i class="fa fa-edit"></i> Search Books <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="search_books.php"><i class="fa fa-edit"></i> Search Books <span class="fa fa-chevron-down"></span></a>
 
                             </li>
                         </ul>

@@ -68,7 +68,9 @@ include "connection.php"
                                     echo "<br>";
                                     echo "<b>". "available: ".$row["available_qty"]."</b>";
                                     echo "</td>";
+                                    ?>
                                     
+                                    <?php
                                     if($i==5)
                                     {
                                         echo "</tr>";
@@ -84,7 +86,7 @@ include "connection.php"
                             else // código de exibir livros
                             {
                                 $i=0;
-                                $res=mysqli_query($link, "SELECT * FROM add_books WHERE available_qty>0"); //função de exibir somente livros disponíveis: WHERE available_qty>0
+                                $res=mysqli_query($link, "SELECT * FROM add_books"); //função de exibir somente livros disponíveis: SELECT * FROM add_books WHERE available_qty>0
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
                                 while($row = mysqli_fetch_array($res))
@@ -95,6 +97,16 @@ include "connection.php"
                                     echo "<b>".$row["books_name"]."</b>";
                                     echo "<br>";
                                     echo "<b>". "available: ".$row["available_qty"]."</b>";
+                                    
+                                    $qtdzero=$row["available_qty"];
+                                    if($qtdzero==0){
+                                        echo "<br>";
+                                        echo "LIVRO INDISPONÍVEL";
+                                    }              
+                                    else {
+                                        echo "<br>";
+                                    echo "<b>"; ?> <a href="issue_books.php?id=<?php echo $row["id"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
+                                    }      
                                     echo "</td>";
                                     
                                     if($i==5)
@@ -103,6 +115,7 @@ include "connection.php"
                                         echo "<tr>";
                                         $i=0;
                                     }
+
                                 }
                                 echo "</tr>";
                                 echo "</table>";

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["librarian"]))
+if(!isset($_SESSION["username"]))
 {
     ?>
     <script type="text/javascript">
@@ -45,32 +45,10 @@ include "connection.php"
                             <div class="x_content">
                                 
                             <form name="form1" action="" method="post">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <select name="enr" class="form-control selectpicker">
-                                                <?php
-                                                $res=mysqli_query($link, "SELECT enrollment FROM student_registration"); while($row=mysqli_fetch_array($res))
-                                                {
-                                                    echo "<option>";
-                                                    echo $row["enrollment"];
-                                                    echo "</option>";
-                                                }
-                                                ?>
-                                             
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <input type="submit" value="search" name="submit1" class="form-control btn btn-display" style="margin-top: 5px;">
-                                        </td>
-                                    </tr>
-                                </table>
 
-                            
                             <?php
-                            if(isset($_POST["submit1"])) {
-
-                                $res5=mysqli_query($link, "SELECT * FROM student_registration WHERE enrollment='$_POST[enr]'");
+                                $date=date("d-M-Y");
+                                $res5=mysqli_query($link, "SELECT * FROM student_registration");
                                 while($row5=mysqli_fetch_array($res5))
                                 {
                                     $firstname=$row5["firstname"];
@@ -84,6 +62,13 @@ include "connection.php"
                                     $_SESSION["susername"]=$username;
                                 }
 
+                                $id=$_GET["id"];
+                                $res6=mysqli_query($link, "SELECT books_name FROM add_books WHERE id=$id");
+                                while ($row6 = mysqli_fetch_array($res6))
+                                {           
+                                    $booksname=$row6["books_name"];  
+                                }
+                                                                
                                 ?>
                                 <table class="table table-bordered">
                                 <tr>
@@ -93,48 +78,46 @@ include "connection.php"
                                 </tr>
                                 <tr>
                                      <td>
-                                        <input type="text" class="form-control" placeholder="studentname" name="studentname" value="<?php echo $firstname.' '.$lastname; ?>"required>
+                                        <input type="text" class="form-control" placeholder="studentname" name="studentname" value="<?php echo $firstname.' '.$lastname; ?>" disabled>
                                      </td>
                                 </tr>
                                 <tr>
                                      <td>
-                                        <input type="text" class="form-control" placeholder="studentsem" name="studentsem" value="<?php echo $sem; ?>" required>
+                                        <input type="text" class="form-control" placeholder="studentsem" name="studentsem" value="<?php echo $sem; ?>" disabled>
                                      </td>
                                 </tr>
                                 <tr>
                                      <td>
-                                        <input type="text" class="form-control" placeholder="studentcontact" name="studentcontact" value="<?php echo $contact; ?>" required>
+                                        <input type="text" class="form-control" placeholder="studentcontact" name="studentcontact" value="<?php echo $contact; ?>" disabled>
                                      </td>
                                 </tr>
                                 <tr>
                                      <td>
-                                        <input type="text" class="form-control" placeholder="studentemail" name="studentemail" value="<?php echo $email; ?>"required>
+                                        <input type="text" class="form-control" placeholder="studentemail" name="studentemail" value="<?php echo $email; ?>" disabled>
                                      </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <select name="booksname" class="form-control selectpicker">
-                                            <?php 
-                                            $res = mysqli_query($link, "SELECT books_name FROM add_books");
-                                            while ($row = mysqli_fetch_array($res))
-                                            {
-                                                echo "<option>";
-                                                echo $row["books_name"];
-                                                echo "</option>";
-                                            }
-                                            ?>
+                                        <input type="text" class="form-control" placeholder="booksname" name="booksname" value="<?php echo $booksname; ?>" disabled>
+                                           
                                         </select>
                                     </td>
-                                </tr>
+                                </tr> 
                                 <tr>
                                      <td>
-                                        <input type="text" class="form-control" placeholder="booksissuedate" name="booksissuedate" value="<?php echo date("d-M-Y"); ?>" required>
+                                        <input type="text" class="form-control" placeholder="booksissuedate" name="booksissuedate" value="<?php echo date("d-M-Y"); ?>" disabled>
                                      </td>
                                 </tr>
                                 <tr>
                                      <td>
                                         <input type="text" class="form-control" placeholder="studentusername" name="studentusername" value="<?php echo $username; ?>" disabled>
                                      </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="submit" value="Cancelar" 
+                                        name="submit3" class="form-control btn btn-default" style="background-color: brown; color: white">
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -145,14 +128,25 @@ include "connection.php"
                                 </table>
                                 
                                 <?php
-                            }
+                            
                             ?>
                             </form>
                             <?php
+                            
+                            if(isset($_POST["submit3"]))
+                            {
+                                ?>
+                            <script type="text/javascript">
+                                window.location="search_books.php";
+                            </script>
+                            
+                            <?php
+                            }
                             if(isset($_POST["submit2"]))
                             {
+                                $id=$_GET["id"];
                                 $qty=0;
-                                $res=mysqli_query($link, "SELECT * FROM add_books WHERE books_name='$_POST[booksname]'");
+                                $res=mysqli_query($link, "SELECT * FROM add_books WHERE id=$id");
                                 while($row=mysqli_fetch_array($res))
                                 {
                                     $qty=$row["available_qty"];
@@ -168,13 +162,14 @@ include "connection.php"
                                 }
                                 else
                                 {
-                                    mysqli_query($link, "INSERT INTO issue_books VALUES('','$_SESSION[enrollment]','$_POST[studentname]','$_POST[studentsem]','$_POST[studentcontact]','$_POST[studentemail]','$_POST[booksname]','$_POST[booksissuedate]','','$_SESSION[susername]')");
-                                    mysqli_query($link, "UPDATE add_books SET available_qty=available_qty-1 WHERE books_name='$_POST[booksname]'"); //função diminuir quantidade disponível
+                                    mysqli_query($link, "INSERT INTO issue_books VALUES('','$_SESSION[enrollment]','$firstname $lastname','$sem','$contact','$email','$booksname','$date','','$_SESSION[susername]')");
+                                    mysqli_query($link, "UPDATE add_books SET available_qty=available_qty-1 WHERE id=$id"); //função diminuir quantidade disponível
                                     ?>
                                     <script type="text/javascript">
                                         alert("books issued sucessfully");
                                         window.location.href=window.location.href;
                                     </script>
+                                    
                                     <?php
                                 }
 
