@@ -56,40 +56,43 @@ include "header.php";
                                 $booksname=$row["books_name"];
                                 $dst=$row["books_image"];
                                 $bauthorname=$row["books_author_name"];
-                                $pname=$row["books_author_name"];
-                                $bpurchasedt=$row["books_publication_name"];
+                                $pname=$row["books_publication_name"];
+                                $bpurchasedt=$row["books_purchase_date"];
                                 $bprice=$row["books_price"];
                                 $bqty=$row["books_qty"];
                                 $aqty=$row["available_qty"];
                                 
                             }
                             ?>
-                            <img src="<?php echo $dst; ?>" height="100" width="100">
+                            
                                 <form name="form1" action="" method="post" class="col-lg-6" enctype="multipart/form-data">
                                 <table class="table table-bordered">
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Name" name="booksname" value="<?php echo $booksname; ?>" required=""></td>
+                                        <td>Books Name<input type="text" class="form-control" placeholder="Books Name" name="booksname" value="<?php echo $booksname; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td>books image<input type="file" name="f1" value="<?php echo $booksname; ?>"></td>
+                                        <td>imagem atual <br><img src="<?php echo $dst; ?>" height="100" width="100">
+                                    <br>
+                                    <br>
+                                    escolher imagem nova<input type="file" name="f1" value=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Author Name" name="bauthorname" value="<?php echo $bauthorname; ?>"required=""></td>
+                                        <td>Books Author Name<input type="text" class="form-control" placeholder="Books Author Name" name="bauthorname" value="<?php echo $bauthorname; ?>"required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Publication Name" name="pname" value="<?php echo $pname; ?>" required=""></td>
+                                        <td>Publication Name<input type="text" class="form-control" placeholder="Publication Name" name="pname" value="<?php echo $pname; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Purchase Date" name="bpurchasedt" value="<?php echo $bpurchasedt; ?>" required=""></td>
+                                        <td>Books Purchase Date<input type="text" class="form-control" placeholder="Books Purchase Date" name="bpurchasedt" value="<?php echo $bpurchasedt; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Price" name="bprice" value="<?php echo $bprice; ?>" required=""></td>
+                                        <td>Books Price<input type="text" class="form-control" placeholder="Books Price" name="bprice" value="<?php echo $bprice; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Quantity" name="bqty" value="<?php echo $bqty; ?>" required=""></td>
+                                        <td>Books Quantity<input type="text" class="form-control" placeholder="Books Quantity" name="bqty" value="<?php echo $bqty; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Available Quantity" name="aqty" value="<?php echo $aqty; ?>" required=""></td>
+                                        <td>Available Quantity<input type="text" class="form-control" placeholder="Available Quantity" name="aqty" value="<?php echo $aqty; ?>" required=""></td>
                                     </tr>
                                     <tr>
                                         <td><input type="submit" name="submit1" class="btn btn-default submit" value="insert books details" style="background-color: blue; color: white"></td>

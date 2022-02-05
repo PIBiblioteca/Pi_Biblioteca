@@ -1,7 +1,7 @@
 <?php
 session_start();
 // código de segurança para impossibilitar o acesso à essa página sem fazer login
-if(!isset($_SESSION["librarian"])) 
+if(!isset($_SESSION["username"])) 
 {
     ?>
     <script type="text/javascript">
@@ -40,43 +40,55 @@ include "header.php";
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Edit Books Info</h2>
+                                <h2>Editar informações da conta</h2>
 
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
 
                             <?php
-                            $id=$_GET['id'];
-                            $res=mysqli_query($link,"SELECT * FROM add_books WHERE id='$id'");
-
+                            
+                            $username=$_SESSION['username'];
+                            $res=mysqli_query($link,"SELECT * FROM student_registration WHERE username='$username'");
+                            while($row=mysqli_fetch_array($res))
+                            {                                
+                                $firstname=$row["firstname"];
+                                $lastname=$row["lastname"];
+                                $username=$row["username"];
+                                $image=$row["profile_image"];
+                                $password=$row["password"];
+                                $email=$row["email"];
+                                $contact=$row["contact"];                              
+                            }
+                            
                             ?>
                             
                                 <form name="form1" action="" method="post" class="col-lg-6" enctype="multipart/form-data">
                                 <table class="table table-bordered">
+                                
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Name" name="booksname" required=""></td>
+                                        <td>First Name<input type="text" class="form-control" placeholder="First Name" name="firstname" value="<?php echo $firstname; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td>books image<input type="file" name="f1" required=""></td>
+                                        <td>Last Name<input type="text" class="form-control" placeholder="Last Name" name="lastname" value="<?php echo $lastname; ?>"required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Author Name" name="bauthorname" disabled=""></td>
+                                        <td>User Name<input type="text" class="form-control" placeholder="User Name" name="username" value="<?php echo $username; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Publication Name" name="pname" disabled=""></td>
+                                        <td>imagem atual <br><img src="<?php echo $image; ?>" height="100" width="100">
+                                    <br>
+                                    <br>
+                                    escolher imagem nova<input type="file" name="f1" value=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Purchase Date" name="bpurchasedt" disabled=""></td>
+                                        <td>Password<input type="password" class="form-control" placeholder="Password" name="password" value="<?php echo $password; ?>" required=""><button class="btn btn-default">mudar senha</button></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Price" name="bprice" disabled=""></td>
+                                        <td>E-mail<input type="text" class="form-control" placeholder="E-mail" name="email" value="<?php echo $email; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Quantity" name="bqty" disabled=""></td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" class="form-control" placeholder="Available Quantity" name="aqty" disabled=""></td>
+                                        <td>Contact<input type="text" class="form-control" placeholder="Contact" name="contact" value="<?php echo $contact; ?>" required=""></td>
                                     </tr>
                                     <tr>
                                         <td><input type="submit" name="submit1" class="btn btn-default submit" value="insert books details" style="background-color: blue; color: white"></td>
@@ -92,28 +104,32 @@ include "header.php";
         <!-- /page content -->
 
 <?php
-    $id=$_GET['id'];
-    
+   
 
     if(isset($_POST["submit1"]))
-    {
+    {        
         
-        echo "$id";
-        echo "$_POST[booksname]";
-
         $tm=md5 (time());
         $fnm=$_FILES["f1"]["name"];
-        $dst="./books_image/".$tm.$fnm;
-        $dst1="./books_image/".$tm.$fnm;
+        $dst="./profile_image/".$tm.$fnm;
+        $dst1="./profile_image/".$tm.$fnm;
         move_uploaded_file($_FILES["f1"]["tmp_name"],$dst);
 
-        mysqli_query($link, "UPDATE add_books SET books_name='$_POST[booksname]', books_image='$dst1' WHERE id='$id'");
+        if($fnm =='') //verifica se o campo de imagem está vazio
+        {
+            mysqli_query($link, "UPDATE student_registration SET firstname='$_POST[firstname]', lastname ='$_POST[lastname]', username ='$_POST[usernam]', password ='$_POST[password]', email ='$_POST[email]', contact ='$_POST[contact]' WHERE username='$username'");
+        }
+        else
+        {
+        mysqli_query($link, "UPDATE student_registration SET firstname='$_POST[firstname]', lastname ='$_POST[lastname]', username ='$_POST[username]', profile_image='$dst', password ='$_POST[password]', email ='$_POST[email]', contact ='$_POST[contact]' WHERE username='$username'");
+        }
     ?>
-    <!--
+    
         <script type="text/javascript">
-            alert("books insert sucessfully");
+            alert("books edit sucessfully");
+            window.location="editar_perfil.php";
         </script>
-    -->
+    
     <?php
     
     }
@@ -123,5 +139,3 @@ include "header.php";
 <?php
 include "footer.php";
 ?>
-
-       

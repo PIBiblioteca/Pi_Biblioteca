@@ -3,6 +3,13 @@ include "connection.php";
 $tot=0;
 $res=mysqli_query($link, "SELECT * FROM messages WHERE dusername='$_SESSION[username]' && read1='n'");
 $tot=mysqli_num_rows($res);
+
+$username=$_SESSION['username'];
+$res=mysqli_query($link,"SELECT * FROM student_registration WHERE username='$username'");
+                            while($row=mysqli_fetch_array($res))
+                            {                                
+                                $image=$row["profile_image"];
+                            }
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +44,7 @@ $tot=mysqli_num_rows($res);
                 <!-- menu profile quick info -->
                 <div class="profile clearfix">
                     <div class="profile_pic">
-                        <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                        <img src="<?php echo $image; ?>" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
@@ -82,12 +89,14 @@ $tot=mysqli_num_rows($res);
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="images/img.jpg" alt=""><?php echo $_SESSION["username"]; ?>
+                                <img src="<?php echo $image; ?>" alt=""><?php echo $_SESSION["username"]; ?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                <li><a href="editar_perfil.php?id=<?php echo $_SESSION["username"]; ?>"><i class="fa fa-sign-out pull-right"></i> Editar perfil</a></li>
                                 <li><a href="login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                             </ul>
+                            
                         </li>
 
                         <li role="presentation" class="dropdown">

@@ -59,7 +59,7 @@ include "connection.php";
                     <input type="text" class="form-control" placeholder="SEM" name="sem" required="" />
                 </div>
                 <div>
-                    <input type="text" class="form-control" placeholder="Enrollment No" name="enrollmentno" required="" />
+                    <input type="text" class="form-control" placeholder="Enrollment No" name="enrollment" required="" />
                 </div>
                 <div class="col-lg-12  col-lg-push-3">
                     <input class="btn btn-default submit " type="submit" name="submit1" value="Register">
@@ -71,7 +71,7 @@ include "connection.php";
         <?php
         if(isset($_POST["submit1"])) 
         {
-            mysqli_query($link, "INSERT INTO student_registration VALUES('','$_POST[firstname]','$_POST[lastname]','$_POST[username]','$_POST[password]','$_POST[email]','$_POST[contact]','$_POST[sem]','$_POST[enrollment]','no')");
+            mysqli_query($link, "INSERT INTO student_registration VALUES('','$_POST[firstname]','$_POST[lastname]','$_POST[username]','','$_POST[password]','$_POST[email]','$_POST[contact]','$_POST[sem]','$_POST[enrollment]','no')");
             
         ?>
             <div class="alert alert-success col-lg-12 col-lg-push-0">
