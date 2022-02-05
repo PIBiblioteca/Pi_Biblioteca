@@ -40,11 +40,18 @@ include "header.php";
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Add Books Info</h2>
+                                <h2>Edit Books Info</h2>
 
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
+
+                            <?php
+                            $id=$_GET['id'];
+                            $res=mysqli_query($link,"SELECT * FROM add_books WHERE id='$id'");
+
+                            ?>
+                            
                                 <form name="form1" action="" method="post" class="col-lg-6" enctype="multipart/form-data">
                                 <table class="table table-bordered">
                                     <tr>
@@ -54,22 +61,22 @@ include "header.php";
                                         <td>books image<input type="file" name="f1" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Author Name" name="bauthorname" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Books Author Name" name="bauthorname" disabled=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Publication Name" name="pname" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Publication Name" name="pname" disabled=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Purchase Date" name="bpurchasedt" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Books Purchase Date" name="bpurchasedt" disabled=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Price" name="bprice" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Books Price" name="bprice" disabled=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Quantity" name="bqty" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Books Quantity" name="bqty" disabled=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Available Quantity" name="aqty" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Available Quantity" name="aqty" disabled=""></td>
                                     </tr>
                                     <tr>
                                         <td><input type="submit" name="submit1" class="btn btn-default submit" value="insert books details" style="background-color: blue; color: white"></td>
@@ -85,20 +92,28 @@ include "header.php";
         <!-- /page content -->
 
 <?php
+    $id=$_GET['id'];
+    
+
     if(isset($_POST["submit1"]))
     {
+        
+        echo "$id";
+        echo "$_POST[booksname]";
+
         $tm=md5 (time());
         $fnm=$_FILES["f1"]["name"];
         $dst="./books_image/".$tm.$fnm;
         $dst1="./books_image/".$tm.$fnm;
         move_uploaded_file($_FILES["f1"]["tmp_name"],$dst);
 
-        mysqli_query($link, "INSERT INTO add_books VALUES('','$_POST[booksname]','$dst1','$_POST[bauthorname]','$_POST[pname]','$_POST[bpurchasedt]','$_POST[bprice]','$_POST[bqty]','$_POST[aqty]','$_SESSION[librarian]')");
+        mysqli_query($link, "UPDATE add_books SET books_name='$_POST[booksname]', books_image='$dst1' WHERE id='$id'");
     ?>
+    <!--
         <script type="text/javascript">
             alert("books insert sucessfully");
-            window.location="add_books.php";
         </script>
+    -->
     <?php
     
     }

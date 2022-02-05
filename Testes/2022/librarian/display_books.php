@@ -62,6 +62,7 @@ include "header.php";
                                     echo "<th>"; echo "books quantity"; echo "</th>";
                                     echo "<th>"; echo "available quantity"; echo "</th>";
                                     echo "<th>"; echo "Delete Books"; echo "</th>";
+                                    echo "<th>"; echo "Edit Book"; echo "</th>";
                                     echo "</tr>";
                                     while($row = mysqli_fetch_array($res)) {
                                         echo "<tr>";
@@ -74,6 +75,7 @@ include "header.php";
                                         echo "<td>"; echo $row["books_qty"]; echo "</td>";
                                         echo "<td>"; echo $row["available_qty"]; echo "</td>";
                                         echo "<td>"; ?> <a href="delete_books.php?id=<?php echo $row["id"]; ?>">Delete Books</a> <?php echo "</td>";
+                                        echo "<td>"; ?> <a href="edit_book.php?id=<?php echo $row["id"]; ?>">Edit Book</a> <?php echo "</td>";
                                         echo "</tr>";
                                     }
                                     echo "</table>";
@@ -93,6 +95,7 @@ include "header.php";
                                 echo "<th>"; echo "books quantity"; echo "</th>";
                                 echo "<th>"; echo "available quantity"; echo "</th>";
                                 echo "<th>"; echo "Delete Books"; echo "</th>";
+                                echo "<th>"; echo "Edit Book"; echo "</th>";
                                 echo "</tr>";
                                 while($row = mysqli_fetch_array($res)) {
                                     echo "<tr>";
@@ -105,6 +108,7 @@ include "header.php";
                                     echo "<td>"; echo $row["books_qty"]; echo "</td>";
                                     echo "<td>"; echo $row["available_qty"]; echo "</td>";
                                     echo "<td>"; ?> <a href="delete_books.php?id=<?php echo $row["id"]; ?>">Delete Books</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a href="edit_book.php?id=<?php echo $row["id"]; ?>">Edit Book</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</table>";

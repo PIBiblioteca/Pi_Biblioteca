@@ -126,10 +126,7 @@ include "connection.php"
                                     </td>
                                 </tr>
                                 </table>
-                                
-                                <?php
-                            
-                            ?>
+
                             </form>
                             <?php
                             

@@ -40,36 +40,56 @@ include "header.php";
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Add Books Info</h2>
+                                <h2>Edit Books Info</h2>
 
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
+
+                            <?php
+                            
+                            
+                            $id=$_GET['id'];
+                            $res=mysqli_query($link,"SELECT * FROM add_books WHERE id='$id'");
+                            while($row=mysqli_fetch_array($res))
+                            {                                
+                                $booksname=$row["books_name"];
+                                $dst=$row["books_image"];
+                                $bauthorname=$row["books_author_name"];
+                                $pname=$row["books_author_name"];
+                                $bpurchasedt=$row["books_publication_name"];
+                                $bprice=$row["books_price"];
+                                $bqty=$row["books_qty"];
+                                $aqty=$row["available_qty"];
+                                
+                            }
+                            ?>
+                            <img src="<?php echo $dst; ?>" height="100" width="100">
                                 <form name="form1" action="" method="post" class="col-lg-6" enctype="multipart/form-data">
                                 <table class="table table-bordered">
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Name" name="booksname" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Books Name" name="booksname" value="<?php echo $booksname; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td>books image<input type="file" name="f1" required=""></td>
+                                        <td>books image<input type="file" name="f1" value="<?php echo $booksname; ?>"></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Author Name" name="bauthorname" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Books Author Name" name="bauthorname" value="<?php echo $bauthorname; ?>"required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Publication Name" name="pname" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Publication Name" name="pname" value="<?php echo $pname; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Purchase Date" name="bpurchasedt" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Books Purchase Date" name="bpurchasedt" value="<?php echo $bpurchasedt; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Price" name="bprice" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Books Price" name="bprice" value="<?php echo $bprice; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Quantity" name="bqty" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Books Quantity" name="bqty" value="<?php echo $bqty; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Available Quantity" name="aqty" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Available Quantity" name="aqty" value="<?php echo $aqty; ?>" required=""></td>
                                     </tr>
                                     <tr>
                                         <td><input type="submit" name="submit1" class="btn btn-default submit" value="insert books details" style="background-color: blue; color: white"></td>
@@ -85,20 +105,34 @@ include "header.php";
         <!-- /page content -->
 
 <?php
+    $id=$_GET['id'];
+    
+    
+
     if(isset($_POST["submit1"]))
-    {
+    {        
+        
         $tm=md5 (time());
         $fnm=$_FILES["f1"]["name"];
         $dst="./books_image/".$tm.$fnm;
         $dst1="./books_image/".$tm.$fnm;
         move_uploaded_file($_FILES["f1"]["tmp_name"],$dst);
 
-        mysqli_query($link, "INSERT INTO add_books VALUES('','$_POST[booksname]','$dst1','$_POST[bauthorname]','$_POST[pname]','$_POST[bpurchasedt]','$_POST[bprice]','$_POST[bqty]','$_POST[aqty]','$_SESSION[librarian]')");
+        if($fnm =='') //verifica se o campo de imagem está vazio
+        {
+            mysqli_query($link, "UPDATE add_books SET books_name='$_POST[booksname]', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', books_purchase_date ='$_POST[bpurchasedt]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id='$id'");
+        }
+        else
+        {
+        mysqli_query($link, "UPDATE add_books SET books_name='$_POST[booksname]', books_image='$dst1', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', books_purchase_date ='$_POST[bpurchasedt]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id='$id'");
+        }
     ?>
+    
         <script type="text/javascript">
-            alert("books insert sucessfully");
-            window.location="add_books.php";
+            alert("books edit sucessfully");
+            window.location="display_books.php";
         </script>
+    
     <?php
     
     }
