@@ -44,8 +44,34 @@ include "header.php";
                             </div>
                             <div class="x_content">
 
+                            <form name="form1" action="" method="post">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td><select name="enr" class="form-control">
+                                           
+                                           <?php
+                                            $res=mysqli_query($link, "SELECT student_enrollment FROM issue_books WHERE books_return_date=''");
+                                            while($row=mysqli_fetch_array($res))
+                                            {
+                                                echo "<option>";
+                                                echo $row["student_enrollment"];
+                                                echo "</option>";
+                                            }
+                                            ?>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="submit" name="submit1" value="search" class="form-control" style="background-color: blue; color: white">
+                                        </td>
+                                    </tr>
+                                </table>
+
+                             </form>
+                                
                                 <?php
-                                    $res = mysqli_query($link, "SELECT * FROM issue_books");
+                                if(isset($_POST["submit1"]))
+                                {
+                                    $res = mysqli_query($link, "SELECT * FROM issue_books WHERE student_enrollment='$_POST[enr]'");
                                     echo "<table class='table table-bordered'>";
                                     echo "<tr>";
                                     echo "<th>"; echo "student enrollment"; echo "</th>";
@@ -68,12 +94,12 @@ include "header.php";
                                         echo "<td>"; echo $row["student_email"]; echo "</td>";
                                         echo "<td>"; echo $row["books_name"]; echo "</td>";
                                         echo "<td>"; echo $row["books_issue_date"]; echo "</td>";
-                                        echo "<td>"; ?> <a href="return.php?enrollment=<?php echo $row["student_enrollment"]; ?>">Return Books</a> <?php echo "</td>";
-                                        echo "<td>"; ?> <a href="perda_avaria.php?enrollment=<?php echo $row["student_enrollment"]; ?>">perda/avaria</a> <?php echo "</td>";
+                                        echo "<td>"; ?> <a href="return.php?id=<?php echo $row["id"]; ?>">Return Books</a> <?php echo "</td>";
+                                        echo "<td>"; ?> <a href="perda_avaria.php?id=<?php echo $row["id"]; ?>">perda/avaria</a> <?php echo "</td>";
                                         echo "</tr>";
                                     }
                                     echo "</table>";
-                                
+                                }
                                 ?>   
                             </div> 
                         </div>

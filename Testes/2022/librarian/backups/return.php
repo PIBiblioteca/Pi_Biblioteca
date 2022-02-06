@@ -1,13 +1,11 @@
 <?php
 include "connection.php";
-
-$enrollment=$_GET["enrollment"];
-echo $enrollment;
+$id=$_GET["id"];
 $a=date ("d-M-Y");
-$res=mysqli_query($link, "UPDATE issue_books SET books_return_date='$a' WHERE student_enrollment=$enrollment");
+$res=mysqli_query($link, "UPDATE issue_books SET books_return_date='$a' WHERE id=$id");
 
 $books_name="";
-$res=mysqli_query($link, "SELECT * FROM issue_books WHERE student_enrollment=$enrollment");
+$res=mysqli_query($link, "SELECT * FROM issue_books WHERE id=$id");
 while($row=mysqli_fetch_array($res))
 {
     $books_name=$row["books_name"];
