@@ -50,7 +50,10 @@ include "header.php";
                                         Books Name
                                     </th>
                                     <th>
-                                        Boks Issue Date 
+                                        Books Issue Date 
+                                    </th>
+                                    <th>
+                                        Books Return Date 
                                     </th>
                                     <?php
                                     $res=mysqli_query($link, "SELECT * FROM issue_books WHERE student_username='$_SESSION[username]'");
@@ -66,6 +69,10 @@ include "header.php";
                                         echo "<td>";
                                         echo $row["books_issue_date"];
                                         echo "</td>";
+                                        echo "<td>";
+                                        echo $row["books_return_date"];
+                                        echo "</td>";
+                                        
                                         echo "</tr>";
 
                                     }

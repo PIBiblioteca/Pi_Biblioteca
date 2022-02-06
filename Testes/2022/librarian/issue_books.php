@@ -68,6 +68,11 @@ include "connection.php"
 
                             
                             <?php
+
+//echo date('d/m/Y', strtotime("+15 days")); TESTE DE DATA + 15 DIAS
+//$data=date('d/m/Y', strtotime("+15 days"));
+//echo $data;
+
                             if(isset($_POST["submit1"])) {
 
                                 $res5=mysqli_query($link, "SELECT * FROM student_registration WHERE enrollment='$_POST[enr]'");
@@ -128,7 +133,12 @@ include "connection.php"
                                 </tr>
                                 <tr>
                                      <td>
-                                        <input type="text" class="form-control" placeholder="booksissuedate" name="booksissuedate" value="<?php echo date("d-M-Y"); ?>" required>
+                                        <input type="text" class="form-control" placeholder="booksissuedate" name="booksissuedate" value="<?php echo date("d/m/Y"); ?>" required>
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <td>
+                                        <input type="text" class="form-control" placeholder="booksreturndate" name="booksreturndate" value="<?php echo date('d/m/Y', strtotime("+2 weeks")); ?>" required>
                                      </td>
                                 </tr>
                                 <tr>
@@ -148,6 +158,7 @@ include "connection.php"
                             }
                             ?>
                             </form>
+
                             <?php
                             if(isset($_POST["submit2"]))
                             {
@@ -168,7 +179,7 @@ include "connection.php"
                                 }
                                 else
                                 {
-                                    mysqli_query($link, "INSERT INTO issue_books VALUES('','$_SESSION[enrollment]','$_POST[studentname]','$_POST[studentsem]','$_POST[studentcontact]','$_POST[studentemail]','$_POST[booksname]','$_POST[booksissuedate]','','$_SESSION[susername]')");
+                                    mysqli_query($link, "INSERT INTO issue_books VALUES('','$_SESSION[enrollment]','$_POST[studentname]','$_POST[studentsem]','$_POST[studentcontact]','$_POST[studentemail]','$_POST[booksname]','$_POST[booksissuedate]','$_POST[booksreturndate]','$_SESSION[susername]')");
                                     mysqli_query($link, "UPDATE add_books SET available_qty=available_qty-1 WHERE books_name='$_POST[booksname]'"); //função diminuir quantidade disponível
                                     ?>
                                     <script type="text/javascript">

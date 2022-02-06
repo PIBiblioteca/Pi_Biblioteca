@@ -47,8 +47,10 @@ include "connection.php"
                             <form name="form1" action="" method="post">
 
                             <?php
+                            
                                 $date=date("d-M-Y");
-                                $res5=mysqli_query($link, "SELECT * FROM student_registration");
+                                // SELECIONAR DADOS DO ESTUDANTE
+                                $res5=mysqli_query($link, "SELECT * FROM student_registration WHERE username='$_SESSION[username]'");
                                 while($row5=mysqli_fetch_array($res5))
                                 {
                                     $firstname=$row5["firstname"];
@@ -61,76 +63,87 @@ include "connection.php"
                                     $_SESSION["enrollment"]=$enrollment;
                                     $_SESSION["susername"]=$username;
                                 }
-
+                                
+                                // SELECIONAR DADOS DO LIVRO
                                 $id=$_GET["id"];
-                                $res6=mysqli_query($link, "SELECT books_name FROM add_books WHERE id=$id");
+                                $qty=0;
+                                $res6=mysqli_query($link, "SELECT * FROM add_books WHERE id=$id");
                                 while ($row6 = mysqli_fetch_array($res6))
                                 {           
                                     $booksname=$row6["books_name"];  
-                                }
-                                                                
+                                    $qty=$row6["available_qty"];
+                                }   
+                                
+                                $issuedate=date("d/m/Y");
+                                $returndate=date('d/m/Y', strtotime("+2 weeks"));
                                 ?>
+
+                                
                                 <table class="table table-bordered">
                                 <tr>
-                                    <td>
-                                        <input type="text" class="form-control" placeholder="enrollmentno" name="enrollment" value="<?php echo $enrollment; ?>" disabled>
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <td>
-                                        <input type="text" class="form-control" placeholder="studentname" name="studentname" value="<?php echo $firstname.' '.$lastname; ?>" disabled>
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <td>
-                                        <input type="text" class="form-control" placeholder="studentsem" name="studentsem" value="<?php echo $sem; ?>" disabled>
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <td>
-                                        <input type="text" class="form-control" placeholder="studentcontact" name="studentcontact" value="<?php echo $contact; ?>" disabled>
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <td>
-                                        <input type="text" class="form-control" placeholder="studentemail" name="studentemail" value="<?php echo $email; ?>" disabled>
-                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>
+                                    <td>booksname
                                         <input type="text" class="form-control" placeholder="booksname" name="booksname" value="<?php echo $booksname; ?>" disabled>
                                            
                                         </select>
                                     </td>
                                 </tr> 
                                 <tr>
-                                     <td>
-                                        <input type="text" class="form-control" placeholder="booksissuedate" name="booksissuedate" value="<?php echo date("d-M-Y"); ?>" disabled>
+                                    <td> Enrollment
+                                        <input type="text" class="form-control" placeholder="enrollmentno" name="enrollment" value="<?php echo $enrollment; ?>" disabled>
                                      </td>
                                 </tr>
                                 <tr>
-                                     <td>
+                                     <td> studentname
+                                        <input type="text" class="form-control" placeholder="studentname" name="studentname" value="<?php echo $firstname.' '.$lastname; ?>" disabled>
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <td> studentsem
+                                        <input type="text" class="form-control" placeholder="studentsem" name="studentsem" value="<?php echo $sem; ?>" disabled>
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <td> studentcontact
+                                        <input type="text" class="form-control" placeholder="studentcontact" name="studentcontact" value="<?php echo $contact; ?>" disabled>
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <td>studentemail
+                                        <input type="text" class="form-control" placeholder="studentemail" name="studentemail" value="<?php echo $email; ?>" disabled>
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <td>booksissuedate
+                                        <input type="text" class="form-control" placeholder="booksissuedate" name="booksissuedate" value="<?php echo date("d/m/Y"); ?>" disabled>
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <td>booksreturndate
+                                        <input type="text" class="form-control" placeholder="booksreturndate" name="booksreturndate" value="<?php echo date('d/m/Y', strtotime("+2 weeks")); ?>" disabled>
+                                     </td>
+                                </tr>
+                                <tr>
+                                     <td>studentusername
                                         <input type="text" class="form-control" placeholder="studentusername" name="studentusername" value="<?php echo $username; ?>" disabled>
                                      </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <input type="submit" value="Cancelar" 
-                                        name="submit3" class="form-control btn btn-default" style="background-color: brown; color: white">
+                                        name="submit2" class="form-control btn btn-default" style="background-color: brown; color: white">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <input type="submit" value="issue books" 
-                                        name="submit2" class="form-control btn btn-default" style="background-color: blue; color: white">
+                                        name="submit3" class="form-control btn btn-default" style="background-color: blue; color: white">
                                     </td>
                                 </tr>
                                 </table>
-
                             </form>
+
                             <?php
-                            
-                            if(isset($_POST["submit3"]))
+                            if(isset($_POST["submit2"]))
                             {
                                 ?>
                             <script type="text/javascript">
@@ -139,16 +152,9 @@ include "connection.php"
                             
                             <?php
                             }
-                            if(isset($_POST["submit2"]))
+                            if(isset($_POST["submit3"]))
                             {
                                 $id=$_GET["id"];
-                                $qty=0;
-                                $res=mysqli_query($link, "SELECT * FROM add_books WHERE id=$id");
-                                while($row=mysqli_fetch_array($res))
-                                {
-                                    $qty=$row["available_qty"];
-                                }
-
                                 if($qty==0)
                                 {
                                     ?>
@@ -159,12 +165,12 @@ include "connection.php"
                                 }
                                 else
                                 {
-                                    mysqli_query($link, "INSERT INTO issue_books VALUES('','$_SESSION[enrollment]','$firstname $lastname','$sem','$contact','$email','$booksname','$date','','$_SESSION[susername]')");
+                                    mysqli_query($link, "INSERT INTO issue_books VALUES('','$_SESSION[enrollment]','$firstname $lastname','$sem','$contact','$email','$booksname','$issuedate','$returndate','$_SESSION[susername]')");
                                     mysqli_query($link, "UPDATE add_books SET available_qty=available_qty-1 WHERE id=$id"); //função diminuir quantidade disponível
                                     ?>
                                     <script type="text/javascript">
                                         alert("books issued sucessfully");
-                                        window.location.href=window.location.href;
+                                        window.location.href="search_books.php";
                                     </script>
                                     
                                     <?php

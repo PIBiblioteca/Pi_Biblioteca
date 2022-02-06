@@ -6,10 +6,14 @@ $tot=mysqli_num_rows($res);
 
 $username=$_SESSION['username'];
 $res=mysqli_query($link,"SELECT * FROM student_registration WHERE username='$username'");
-                            while($row=mysqli_fetch_array($res))
-                            {                                
-                                $image=$row["profile_image"];
-                            }
+        while($row=mysqli_fetch_array($res))
+        {                                
+            $image=$row["profile_image"];
+        }
+if($image==''){
+    $image="teste";
+}
+
 ?>
 
 <!DOCTYPE html>
