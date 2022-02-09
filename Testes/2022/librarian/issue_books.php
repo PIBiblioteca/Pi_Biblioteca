@@ -121,7 +121,7 @@ include "connection.php"
                                         <select name="booksname" class="form-control selectpicker">
                                             <?php 
                                             $res = mysqli_query($link, "SELECT books_name FROM add_books");
-                                             ($row = mysqli_fetch_array($res))
+                                             ($row = mysqli_fetch_array($res));
                                             {
                                                 echo "<option>";
                                                 echo $row["books_name"];

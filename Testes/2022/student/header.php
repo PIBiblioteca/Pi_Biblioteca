@@ -25,7 +25,7 @@ if($image==''){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Plain Page | LMS </title>
+    <title>BiblioFateca </title>
 
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +40,7 @@ if($image==''){
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="#" class="site_title"><i class="fa fa-book"></i> <span>LMS</span></a>
+                    <a href="#" class="site_title"><i class="fa fa-book"></i> <span>BiblioFateca</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -51,7 +51,7 @@ if($image==''){
                         <img src="<?php echo $image; ?>" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
-                        <span>Welcome,</span>
+                        <span>Olá,</span>
 
                         <h2><?php echo $_SESSION["username"]; ?></h2>
                     </div>
@@ -64,12 +64,12 @@ if($image==''){
                 <!-- sidebar menu -->
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                     <div class="menu_section">
-                        <h3>General</h3>
+                        <h3>Menu</h3>
                         <ul class="nav side-menu">
-                            <li><a href="my_issued_books.php"><i class="fa fa-home"></i> My Issued Books <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="my_issued_books.php"><i class="fa fa-home"></i> Meus empréstimos <span class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a href="search_books.php"><i class="fa fa-edit"></i> Search Books <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="search_books.php"><i class="fa fa-edit"></i> Buscar livros <span class="fa fa-chevron-down"></span></a>
 
                             </li>
                         </ul>
@@ -98,7 +98,7 @@ if($image==''){
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
                                 <li><a href="editar_perfil.php?id=<?php echo $_SESSION["username"]; ?>"><i class="fa fa-sign-out pull-right"></i> Editar perfil</a></li>
-                                <li><a href="login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                <li><a href="login.php"><i class="fa fa-sign-out pull-right"></i> Sair </a></li>
                             </ul>
                             
                         </li>

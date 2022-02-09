@@ -80,8 +80,8 @@ include "header.php";
                                         echo $status;
                                         
                                          echo "</td>";
-                                        echo "<td>"; ?> <a href="return.php?enrollment=<?php echo $row["student_enrollment"]; ?>">Return Books</a> <?php echo "</td>";
-                                        echo "<td>"; ?> <a href="perda_avaria.php?enrollment=<?php echo $row["student_enrollment"]; ?>">perda/avaria</a> <?php echo "</td>";
+                                        echo "<td>"; ?> <a href="return.php?id=<?php echo $row["id"]; ?>">Return Books</a> <?php echo "</td>";
+                                        echo "<td>"; ?> <a href="perda_avaria.php?id=<?php echo $row["id"]; ?>">perda/avaria</a> <?php echo "</td>";
                                         echo "</tr>";
                                     }
                                     echo "</table>";

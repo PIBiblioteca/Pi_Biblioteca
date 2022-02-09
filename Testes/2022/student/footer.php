@@ -1,7 +1,7 @@
  <!-- footer content -->
  <footer>
             <div class="pull-right">
-                Library Management System
+                Fatec Franco da Rocha
             </div>
             <div class="clearfix"></div>
         </footer>

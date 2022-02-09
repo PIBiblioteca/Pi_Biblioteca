@@ -13,7 +13,7 @@ while($row=mysqli_fetch_array($res))
 
 mysqli_query($link, "UPDATE add_books SET available_qty=available_qty+1 WHERE books_name='$books_name'"); //função aumentar quantidade disponível
 ?>
-
+<!--
 <script type="text/javascript">
     window.location="return_book.php";
 

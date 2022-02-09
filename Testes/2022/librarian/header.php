@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Plain Page | LMS </title>
+    <title> BiblioFateca </title>
 
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -22,7 +22,7 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="#" class="site_title"><i class="fa fa-book"></i> <span>LMS</span></a>
+                    <a href="#" class="site_title"><i class="fa fa-book"></i> <span>BiblioFateca</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -33,7 +33,7 @@
                         <img src="images/img.jpg" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
-                        <span>Welcome,</span>
+                        <span>Olá,</span>
 
                         <h2><?php echo $_SESSION["librarian"]; ?></h2>
                     </div>
@@ -46,30 +46,30 @@
                 <!-- sidebar menu -->
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                     <div class="menu_section">
-                        <h3>General</h3>
+                        <h3>Menu</h3>
                         <ul class="nav side-menu">
-                            <li><a href="display_student_info.php"><i class="fa fa-home"></i> All Students Info <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="display_student_info.php"><i class="fa fa-home"></i> Aprovar cadastros <span class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a href="add_books.php"><i class="fa fa-edit"></i> Add Books <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="add_books.php"><i class="fa fa-edit"></i> Adicionar livros <span class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a href="display_books.php"><i class="fa fa-desktop"></i> Display Books <span
+                            <li><a href="display_books.php"><i class="fa fa-desktop"></i> Buscar livros <span
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a href="issue_books.php"><i class="fa fa-table"></i> Issue Books <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="issue_books.php"><i class="fa fa-table"></i> Empréstimo manual <span class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a href="return_book.php"><i class="fa fa-bar-chart-o"></i> Return Book <span
+                            <li><a href="return_book.php"><i class="fa fa-bar-chart-o"></i> Devoluções <span
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a href="books_details_with_student.php"><i class="fa fa-bar-chart-o"></i> Books With All Info <span
+                            <li><a href="books_details_with_student.php"><i class="fa fa-bar-chart-o"></i> Histórico de empréstimo <span
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a href="send_notification_student.php"><i class="fa fa-mail-forward"></i> Send Message To Student <span
+                            <li><a href="send_notification_student.php"><i class="fa fa-mail-forward"></i> Recados <span
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>
@@ -99,7 +99,7 @@
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Sair </a></li>
                             </ul>
                         </li>
 
