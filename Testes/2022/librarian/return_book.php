@@ -55,6 +55,8 @@ include "header.php";
                                     echo "<th>"; echo "student email"; echo "</th>";
                                     echo "<th>"; echo "books name"; echo "</th>";
                                     echo "<th>"; echo "books issue date"; echo "</th>";
+                                    echo "<th>"; echo "books return date"; echo "</th>";
+                                    echo "<th>"; echo "student status"; echo "</th>";
                                     echo "<th>"; echo "return book"; echo "</th>";
                                     echo "<th>"; echo "perda/avaria"; echo "</th>";
                                     echo "</tr>";
@@ -68,6 +70,16 @@ include "header.php";
                                         echo "<td>"; echo $row["student_email"]; echo "</td>";
                                         echo "<td>"; echo $row["books_name"]; echo "</td>";
                                         echo "<td>"; echo $row["books_issue_date"]; echo "</td>";
+                                        echo "<td>"; echo $row["books_return_date"]; echo "</td>";
+                                        echo "<td>"; 
+                                        $enrollment=$row["student_enrollment"];
+                                        $res1 = mysqli_query($link, "SELECT * FROM student_registration WHERE enrollment=$enrollment");
+                                        while ($row1 = mysqli_fetch_array($res1)) {
+                                            $status=$row1["status"];
+                                        }
+                                        echo $status;
+                                        
+                                         echo "</td>";
                                         echo "<td>"; ?> <a href="return.php?enrollment=<?php echo $row["student_enrollment"]; ?>">Return Books</a> <?php echo "</td>";
                                         echo "<td>"; ?> <a href="perda_avaria.php?enrollment=<?php echo $row["student_enrollment"]; ?>">perda/avaria</a> <?php echo "</td>";
                                         echo "</tr>";

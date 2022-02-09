@@ -71,7 +71,7 @@ include "connection.php";
         <?php
         if(isset($_POST["submit1"])) 
         {
-            mysqli_query($link, "INSERT INTO student_registration VALUES('','$_POST[firstname]','$_POST[lastname]','$_POST[username]','','$_POST[password]','$_POST[email]','$_POST[contact]','$_POST[sem]','$_POST[enrollment]','no')");
+            mysqli_query($link, "INSERT INTO student_registration VALUES('','$_POST[firstname]','$_POST[lastname]','$_POST[username]','','$_POST[password]','$_POST[email]','$_POST[contact]','$_POST[sem]','$_POST[enrollment]','INATIVO')");
             
         ?>
             <div class="alert alert-success col-lg-12 col-lg-push-0">
