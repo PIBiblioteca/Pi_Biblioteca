@@ -59,7 +59,7 @@
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a href="suspensions.php"><i class="fa fa-bar-chart-o"></i> Suspensões <span
+                            <li><a href="suspensoes.php"><i class="fa fa-bar-chart-o"></i> Suspensões <span
                                     class="fa fa-chevron-down"></span></a>
                             </li>
                             <li><a href="books_details_with_student.php"><i class="fa fa-bar-chart-o"></i> Histórico <span
