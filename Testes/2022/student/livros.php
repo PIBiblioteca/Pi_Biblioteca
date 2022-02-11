@@ -20,16 +20,22 @@ include "connection.php"
                         <h3>Plain Page</h3>
                     </div>
 
-                    <div class="title_right">
-                        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
+                    <!-- menu pesquisa -->
+                    <form name="form1" action="" method="post">
+                        <div class="title_right">
+                            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                <div class="input-group">
+
+                                        <input type="text" name="t1" class="form-control" placeholder="Pesquisar">
+                                            <span class="input-group-btn">
+                                                <button type="submit" name="submit1" id="search books" class="btn btn-default">OK</button>
+                                            </span>
+                                    
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
+                    <!-- / menu pesquisa -->
                 </div>
 
                 <div class="clearfix"></div>
@@ -42,16 +48,7 @@ include "connection.php"
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                              
-                            <form name="form1" action="" method="post">
-                                <table class="table">
-                                    <tr>
-                                        <td><input type="text" name="t1" placeholder="enter books name" required class="form-control"></td>
-                                        <td><input type="submit" name="submit1" value="search books" class="form-control btn btn-default"></td>
-                                    </tr>
-
-                                </table>
-                            </form>
+                            
                             <?php
                             if(isset($_POST["submit1"])) // código da pesquisa: pegar variável de entrada do usuário e exibir 
                             {
@@ -75,7 +72,7 @@ include "connection.php"
                                     }              
                                     else {
                                         echo "<br>";
-                                    echo "<b>"; ?> <a href="retiradas?id=<?php echo $row["id"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
+                                    echo "<b>"; ?> <a href="solicitar_emprestimo.php?id=<?php echo $row["id"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
                                     }      
                                     
                                     echo "</td>";
@@ -116,7 +113,7 @@ include "connection.php"
                                     }              
                                     else {
                                         echo "<br>";
-                                    echo "<b>"; ?> <a href="retiradas?id=<?php echo $row["id"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
+                                    echo "<b>"; ?> <a href="solicitar_emprestimo.php?id=<?php echo $row["id"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
                                     }      
                                     echo "</td>";
                                     

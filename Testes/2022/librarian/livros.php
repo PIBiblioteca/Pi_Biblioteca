@@ -20,7 +20,7 @@ include "header.php";
                     <div class="title_left">
                         <h3>Livros cadastrados</h3>
                     </div>
-
+                    <!-- menu pesquisa -->
                     <form name="form1" action="" method="post">
                         <div class="title_right">
                             <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
@@ -35,6 +35,7 @@ include "header.php";
                             </div>
                         </div>
                     </form>
+                    <!-- / menu pesquisa -->
                 </div>
                 <div class="clearfix"></div>
                 <div class="row" style="min-height:500px">

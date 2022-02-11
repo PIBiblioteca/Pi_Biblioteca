@@ -18,19 +18,9 @@ include "connection.php"
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Buscar Livros</h3>
+                        <h3>Solicitar empréstimo</h3>
                     </div>
 
-                    <div class="title_right">
-                        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="clearfix"></div>
@@ -38,7 +28,7 @@ include "connection.php"
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Buscar livros</h2>
+                                <h2>Plain Page</h2>
 
                                 <div class="clearfix"></div>
                             </div>
@@ -65,7 +55,8 @@ include "connection.php"
                                 }
                                 
                                 // SELECIONAR DADOS DO LIVRO
-                                $id=$_GET["id"];
+                                $id=24;
+                                
                                 $qty=0;
                                 $res6=mysqli_query($link, "SELECT * FROM add_books WHERE id=$id");
                                 while ($row6 = mysqli_fetch_array($res6))
@@ -147,7 +138,7 @@ include "connection.php"
                             {
                                 ?>
                             <script type="text/javascript">
-                                window.location="search_books.php";
+                                window.location="livros.php";
                             </script>
                             
                             <?php
@@ -170,7 +161,7 @@ include "connection.php"
                                     ?>
                                     <script type="text/javascript">
                                         alert("books issued sucessfully");
-                                        window.location.href="search_books.php";
+                                        window.location.href="livros.php";
                                     </script>
                                     
                                     <?php

@@ -84,7 +84,7 @@ include "connection.php";
             $_SESSION["username"]=$_POST["username"];
             ?>
             <script type="text/javascript">
-                window.location="my_issued_books.php";
+                window.location="emprestimos.php";
             </script>
             <?php
         }

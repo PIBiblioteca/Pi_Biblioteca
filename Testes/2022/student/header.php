@@ -66,10 +66,10 @@ if($image==''){
                     <div class="menu_section">
                         <h3>Menu</h3>
                         <ul class="nav side-menu">
-                            <li><a href="my_issued_books.php"><i class="fa fa-home"></i> Meus empréstimos <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="emprestimos.php"><i class="fa fa-home"></i> Meus empréstimos <span class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a href="search_books.php"><i class="fa fa-edit"></i> Buscar livros <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="livros.php"><i class="fa fa-edit"></i> Buscar livros <span class="fa fa-chevron-down"></span></a>
 
                             </li>
                         </ul>
@@ -104,10 +104,10 @@ if($image==''){
                         </li>
 
                         <li role="presentation" class="dropdown">
-                            <a href="message_from_librarian.php" class="dropdown-toggle info-number" data-toggle="dropdown"
+                            <a href="recados.php" class="dropdown-toggle info-number" data-toggle="dropdown"
                                aria-expanded="false">
                                 <i class="fa fa-envelope-o"></i>
-                                <span class="badge bg-green" onclick="window.location='message_from_librarian.php'"><?php echo $tot; ?></span>
+                                <span class="badge bg-green" onclick="window.location='recados.php'"><?php echo $tot; ?></span>
                             </a>
 
                         </li>
