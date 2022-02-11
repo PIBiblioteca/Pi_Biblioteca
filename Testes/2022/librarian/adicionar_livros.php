@@ -87,7 +87,7 @@ include "header.php";
     ?>
         <script type="text/javascript">
             alert("books insert sucessfully");
-            window.location="add_books.php";
+            window.location="adicionar_livros.php";
         </script>
     <?php
     

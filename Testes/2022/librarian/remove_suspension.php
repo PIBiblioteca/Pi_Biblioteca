@@ -62,7 +62,7 @@ if ($date > $return_date) {
 ?>
     <script type="text/javascript">
         alert("usuário suspenso até <?php echo $suspensionreturndate ?>");
-        window.location="return_book.php";
+        window.location="devolucoes.php";
     </script>
 <?php
 }
@@ -79,7 +79,7 @@ mysqli_query($link, "UPDATE add_books SET available_qty=available_qty+1 WHERE bo
 
 <script type="text/javascript">
     alert("Devolução concluída");
-    window.location="return_book.php";
+    window.location="devolucoes.php";
 </script>
 <?php
 }

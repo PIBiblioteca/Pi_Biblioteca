@@ -34,5 +34,5 @@ mysqli_query($link, "UPDATE student_registration SET status='SUSPENSO' WHERE enr
 <!--
 <script type="text/javascript">
     alert("usuário suspenso <?php echo $suspensionreturndate ?>");
-    window.location = "return_book.php";
+    window.location = "devolucoes.php";
 </script>

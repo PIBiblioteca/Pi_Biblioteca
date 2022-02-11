@@ -18,7 +18,7 @@ include "header.php";
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Buscar livros</h3>
+                        <h3>Livros cadastrados</h3>
                     </div>
 
                     <form name="form1" action="" method="post">

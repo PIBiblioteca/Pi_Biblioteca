@@ -15,6 +15,6 @@ mysqli_query($link, "UPDATE add_books SET available_qty=available_qty+1 WHERE bo
 ?>
 <!--
 <script type="text/javascript">
-    window.location="return_book.php";
+    window.location="devolucoes.php";
 
 </script>

@@ -75,7 +75,7 @@ include "connection.php"
                                     }              
                                     else {
                                         echo "<br>";
-                                    echo "<b>"; ?> <a href="issue_books.php?id=<?php echo $row["id"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
+                                    echo "<b>"; ?> <a href="retiradas?id=<?php echo $row["id"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
                                     }      
                                     
                                     echo "</td>";
@@ -116,7 +116,7 @@ include "connection.php"
                                     }              
                                     else {
                                         echo "<br>";
-                                    echo "<b>"; ?> <a href="issue_books.php?id=<?php echo $row["id"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
+                                    echo "<b>"; ?> <a href="retiradas?id=<?php echo $row["id"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
                                     }      
                                     echo "</td>";
                                     

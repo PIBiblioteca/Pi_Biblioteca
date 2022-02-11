@@ -133,7 +133,7 @@ include "header.php";
     
         <script type="text/javascript">
             alert("books edit sucessfully");
-            window.location="display_books.php";
+            window.location="livros.php";
         </script>
     
     <?php

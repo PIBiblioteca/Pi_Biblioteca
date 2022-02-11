@@ -49,30 +49,30 @@
                     <div class="menu_section">
                         <h3>Menu</h3>
                         <ul class="nav side-menu">
-                            <li><a href="display_student_info.php"><i class="fa fa-home"></i> Cadastros <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="cadastros.php"><i class="fa fa-home"></i> Cadastros <span class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a href="issue_books.php"><i class="fa fa-table"></i> Retiradas <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="retiradas.php"><i class="fa fa-table"></i> Retiradas <span class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a href="return_book.php"><i class="fa fa-bar-chart-o"></i> Devoluções <span
+                            <li><a href="devolucoes.php"><i class="fa fa-bar-chart-o"></i> Devoluções <span
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>
                             <li><a href="suspensoes.php"><i class="fa fa-bar-chart-o"></i> Suspensões <span
                                     class="fa fa-chevron-down"></span></a>
                             </li>
-                            <li><a href="books_details_with_student.php"><i class="fa fa-bar-chart-o"></i> Histórico <span
+                            <li><a href="historico.php"><i class="fa fa-bar-chart-o"></i> Histórico <span
                                     class="fa fa-chevron-down"></span></a>
                             </li>
-                            <li><a href="display_books.php"><i class="fa fa-desktop"></i> Livros <span
+                            <li><a href="livros.php"><i class="fa fa-desktop"></i> Livros <span
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a href="add_books.php"><i class="fa fa-edit"></i> Adicionar livros <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="adicionar_livros.php"><i class="fa fa-edit"></i> Adicionar livros <span class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a href="send_notification_student.php"><i class="fa fa-mail-forward"></i> Recados <span
+                            <li><a href="recados.php"><i class="fa fa-mail-forward"></i> Recados <span
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>

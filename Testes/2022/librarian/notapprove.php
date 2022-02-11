@@ -5,5 +5,5 @@ mysqli_query($link, "UPDATE student_registration SET status='INATIVO' WHERE id=$
 ?>
 
 <script type="text/javascript">
-    window.location="display_student_info.php";
+    window.location="cadastros.php";
 </script>

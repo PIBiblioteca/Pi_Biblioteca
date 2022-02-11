@@ -73,7 +73,7 @@ include "connection.php";
             $_SESSION["librarian"]=$_POST["username"];
             ?>
             <script type="text/javascript">
-                window.location="display_student_info.php";
+                window.location="cadastros.php";
             </script>
             <?php
         }

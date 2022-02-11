@@ -17,14 +17,14 @@ if(isset($_GET["id"]))
     mysqli_query($link,"DELETE FROM add_books WHERE id=$id");
     ?>
     <script type="text/javascript">
-        window.location="display_books.php";
+        window.location="livros.php";
 
     </script>
     <?php
 } else {
     ?>
     <script type="text/javascript">
-        window.location="display_books.php";
+        window.location="livros.php";
 
     </script>
     <?php
