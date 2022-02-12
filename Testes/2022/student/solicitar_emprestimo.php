@@ -10,7 +10,7 @@ if(!isset($_SESSION["username"]))
     <?php
 }
 include "header.php";
-include "connection.php"
+include "connection.php";
 ?>
 
         <!-- page content area main -->
@@ -37,7 +37,8 @@ include "connection.php"
                             <form name="form1" action="" method="post">
 
                             <?php
-                            
+                          $id=($_GET["id"]);  //puxar id do livro escolhido                          
+
                                 $date=date("d-M-Y");
                                 // SELECIONAR DADOS DO ESTUDANTE
                                 $res5=mysqli_query($link, "SELECT * FROM student_registration WHERE username='$_SESSION[username]'");
@@ -50,13 +51,52 @@ include "connection.php"
                                     $contact=$row5["contact"];
                                     $sem=$row5["sem"];
                                     $enrollment=$row5["enrollment"];
+                                    $status=$row5["status"];
                                     $_SESSION["enrollment"]=$enrollment;
                                     $_SESSION["susername"]=$username;
                                 }
                                 
-                                // SELECIONAR DADOS DO LIVRO
-                                $id=24;
+                                //VERIFICAR VIABILIDADE DE EMPRÉSTIMO
+                                //verifica se usuário está suspenso
+                                $result2 = mysqli_query($link, "SELECT * FROM suspensions WHERE student_enrollment = $enrollment");
+                                //while ($row1=mysqli_fetch_array($result2)) {
+                                //    echo $enrollment."<br>"; 
+                                //}
+                                if($status=='SUSPENSO') {
+                                    ?>
+                                    <script type="text/javascript">
+                                        alert("USUÁRIO SUSPENSO");
+                                        window.location="livros.php";
+                                    </script>
+                                    <?php
+                                }
+                                else {
+                                    if(mysqli_num_rows($result2) > 0) {
+                                        ?>
+                                        <script type="text/javascript">
+                                            alert("USUÁRIO NA LISTA DE SUSPENSÕES");
+                                            window.location="livros.php";
+                                        </script>
+                                        <?php
+                                    } //else {
+                                      //  echo '<br> ATIVO';
+                                    //}
+                                }
+
+                                //verifica se usuário tem empréstimo
+                                $result3 = mysqli_query($link, "SELECT * FROM issue_books WHERE student_enrollment = $enrollment");
+                                if(mysqli_num_rows($result3) > 0) {
+                                    ?>
+                                    <script type="text/javascript">
+                                        alert("USUÁRIO JÁ POSSUI EMPRÉSTIMO");
+                                        window.location="livros.php";
+                                    </script>
+                                    <?php
+                                } //else {
+                                  //  echo '<br> NÃO POSSUI EMPRÉSTIMO';
+                                //}
                                 
+                                // SELECIONAR DADOS DO LIVRO
                                 $qty=0;
                                 $res6=mysqli_query($link, "SELECT * FROM add_books WHERE id=$id");
                                 while ($row6 = mysqli_fetch_array($res6))
@@ -121,20 +161,21 @@ include "connection.php"
                                 <tr>
                                     <td>
                                         <input type="submit" value="Cancelar" 
-                                        name="submit2" class="form-control btn btn-default" style="background-color: brown; color: white">
+                                        name="submit1" class="form-control btn btn-default" style="background-color: brown; color: white">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <input type="submit" value="issue books" 
-                                        name="submit3" class="form-control btn btn-default" style="background-color: blue; color: white">
+                                        name="submit2" class="form-control btn btn-default" style="background-color: blue; color: white">
                                     </td>
                                 </tr>
                                 </table>
                             </form>
 
                             <?php
-                            if(isset($_POST["submit2"]))
+                            //função do botão cancelar
+                            if(isset($_POST["submit1"]))
                             {
                                 ?>
                             <script type="text/javascript">
@@ -143,9 +184,10 @@ include "connection.php"
                             
                             <?php
                             }
-                            if(isset($_POST["submit3"]))
+                            //função do botão solicitar
+                            if(isset($_POST["submit2"]))
                             {
-                                $id=$_GET["id"];
+                                //verificar disponibilidade
                                 if($qty==0)
                                 {
                                     ?>
@@ -156,6 +198,8 @@ include "connection.php"
                                 }
                                 else
                                 {
+                                   
+                                
                                     mysqli_query($link, "INSERT INTO issue_books VALUES('','$_SESSION[enrollment]','$firstname $lastname','$sem','$contact','$email','$booksname','$issuedate','$returndate','$_SESSION[susername]')");
                                     mysqli_query($link, "UPDATE add_books SET available_qty=available_qty-1 WHERE id=$id"); //função diminuir quantidade disponível
                                     ?>
