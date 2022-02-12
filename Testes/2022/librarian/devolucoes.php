@@ -78,7 +78,13 @@ include "header.php";
                                         echo "<td>"; echo $row["books_issue_date"]; echo "</td>";
                                         echo "<td>"; echo $row["books_return_date"]; echo "</td>";
                                         echo "<td>"; 
+
                                         $enrollment=$row["student_enrollment"];
+                                        $return_date=$row["books_issue_date"];
+                                        $contact = $row["student_contact"];
+                                        $email = $row["student_email"];
+                                        $books_name = $row["books_name"];
+
                                         $res1 = mysqli_query($link, "SELECT * FROM student_registration WHERE enrollment=$enrollment");
                                         while ($row1 = mysqli_fetch_array($res1)) {
                                             $status=$row1["status"];
@@ -86,7 +92,27 @@ include "header.php";
                                         echo $status;
                                         
                                          echo "</td>";
-                                        echo "<td>"; ?> <a href="return.php?id=<?php echo $row["id"]; ?>">Return Books</a> <?php echo "</td>";
+                                        echo "<td>"; 
+                                        //VERIFICAR SE DEVOLUÇÃO ESTÁ EM ATRASO
+                                        $date=date ('d/m/Y');
+                                        
+
+
+                                        if ($date > $return_date) {
+
+                                            $result2 = mysqli_query($link, "SELECT * FROM suspensions WHERE student_enrollment = $enrollment");
+                                            if(mysqli_num_rows($result2) > 0) {
+                                                echo "ATRASADO"; 
+                                            }
+                                            else {
+                                            //suspende usuário na tabela student_registration
+                                            mysqli_query($link, "UPDATE student_registration SET status='SUSPENSO' WHERE enrollment='$enrollment'");
+                                            
+                                            //envia usuário para tabela suspensions
+                                            mysqli_query($link, "INSERT INTO suspensions VALUES('', '$enrollment', '$contact', '$email', '$books_name', '', 'atraso na devolução', '')");
+                                            }
+                                        }
+                                        ?> <a href="return.php?id=<?php echo $row["id"]; ?>">Return Books</a> <?php echo "</td>";
                                         echo "<td>"; ?> <a href="perda_avaria.php?id=<?php echo $row["id"]; ?>">perda/avaria</a> <?php echo "</td>";
                                         echo "</tr>";
                                     }

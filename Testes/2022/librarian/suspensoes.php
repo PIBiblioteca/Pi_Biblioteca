@@ -101,7 +101,8 @@ include "header.php";
                                     echo "<td>"; echo $row["suspension_date"]; echo "</td>";
                                     echo "<td>"; echo $row["suspension_reason"]; echo "</td>";
                                     echo "<td>"; echo $row["suspension_return_date"]; echo "</td>";
-                                    echo "<td>"; ?> <a href="remove_suspension.php?id=<?php echo $row["id"]; ?>">Reposição efetuada</a> <?php echo "</td>";
+                                    echo "<td>"; ?>
+                                    if($row["suspension_return_date"]) <a href="remove_suspension.php?id=<?php echo $row["id"]; ?>">Reposição efetuada</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</table>";

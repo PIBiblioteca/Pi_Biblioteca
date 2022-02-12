@@ -25,7 +25,7 @@ while ($row7 = mysqli_fetch_array($res7)) {
 //echo "<br> $email";
 
 $date = date('d/m/Y'); //data atual
-//echo "<br> hoje $date";
+
 //verifica se entrega está atrasada
 if ($date > $return_date) {
     //suspende usuário na tabela student_registration
@@ -52,8 +52,9 @@ if ($date > $return_date) {
     //echo "<br> $suspensiondate";
     //echo "<br> $suspensioreason";
 
-    //envia usuário para tabela suspensões
-    mysqli_query($link, "INSERT INTO suspensions VALUES('', '$enrollment', '$contact', '$email', '$books_name', '$suspensiondate', '$suspensioreason', '$suspensionreturndate')");
+    //atualiza dados de suspensão
+    mysqli_query($link, "UPDATE suspensions SET suspension_date='$suspensiondate', suspension_reasion='$suspensioreason', suspension_return_date='$suspensionreturndate' WHERE enrollment='$enrollment'");
+
     //Função remover livro de emprestados
     mysqli_query($link, "DELETE FROM issue_books WHERE id=$id");
 
