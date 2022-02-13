@@ -62,7 +62,34 @@ include "header.php";
                                     <th>
                                         Books Return Date 
                                     </th>
+                                    <th>
+                                        Status Solicitação 
+                                    </th>
                                     <?php
+                                    //VERIFICA SE USUÁRIO ESTÁ NA LISTA SOLICITAÇÕES OU EMPRÉSTIMOS
+                                    $enrollment=$_SESSION["enrollment"];
+                                    $result3 = mysqli_query($link, "SELECT * FROM retiradas WHERE student_enrollment = $enrollment");
+                                    if(mysqli_num_rows($result3) > 0) {
+                                        while($row=mysqli_fetch_array($result3))
+                                        {
+                                            echo "<tr>";
+                                            echo "<td>";
+                                            echo $row["student_enrollment"];
+                                            echo "</td>";
+                                            echo "<td>";
+                                            echo $row["books_name"];
+                                            echo "</td>";
+                                            echo "<td>";
+                                            echo "</td>";
+                                            echo "<td>";
+                                            echo "</td>";
+                                            echo "<td>";
+                                            echo $row["status_solicitacao"];
+                                            echo "</td>";
+                                            echo "</tr>";
+                                        }
+                                } else {
+
                                     $res=mysqli_query($link, "SELECT * FROM issue_books WHERE student_username='$_SESSION[username]'");
                                     while($row=mysqli_fetch_array($res))
                                     {
@@ -79,10 +106,9 @@ include "header.php";
                                         echo "<td>";
                                         echo $row["books_return_date"];
                                         echo "</td>";
-                                        
                                         echo "</tr>";
-
                                     }
+                                }
                                     ?>
                                     
                                 </table>

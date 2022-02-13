@@ -59,9 +59,7 @@ include "connection.php";
                                 //VERIFICAR VIABILIDADE DE EMPRÉSTIMO
                                 //verifica se usuário está suspenso
                                 $result2 = mysqli_query($link, "SELECT * FROM suspensions WHERE student_enrollment = $enrollment");
-                                //while ($row1=mysqli_fetch_array($result2)) {
-                                //    echo $enrollment."<br>"; 
-                                //}
+
                                 if($status=='SUSPENSO') {
                                     ?>
                                     <script type="text/javascript">
@@ -78,9 +76,7 @@ include "connection.php";
                                             window.location="livros.php";
                                         </script>
                                         <?php
-                                    } //else {
-                                      //  echo '<br> ATIVO';
-                                    //}
+                                    }
                                 }
 
                                 //verifica se usuário tem empréstimo
@@ -92,9 +88,21 @@ include "connection.php";
                                         window.location="livros.php";
                                     </script>
                                     <?php
-                                } //else {
-                                  //  echo '<br> NÃO POSSUI EMPRÉSTIMO';
-                                //}
+                                } 
+
+                                $result4 = mysqli_query($link, "SELECT * FROM retiradas WHERE student_enrollment = $enrollment");
+                                while($row8=mysqli_fetch_array($result4))
+                                {
+                                    $status_solicitacao=$row8["status_solicitacao"];
+                                }
+                                if($status_solicitacao=='AGUARDANDO RETIRADA') {
+                                    ?>
+                                    <script type="text/javascript">
+                                        alert("JÁ EXISTE UMA SOLICITAÇÃO EM ANDAMENTO, SÓ UMA SOLICITAÇÃO POR USUÁRIO É PERMITIDA POR VEZ");
+                                        window.location="livros.php";
+                                    </script>
+                                    <?php
+                                }
                                 
                                 // SELECIONAR DADOS DO LIVRO
                                 $qty=0;
@@ -198,13 +206,12 @@ include "connection.php";
                                 }
                                 else
                                 {
-                                   
-                                
-                                    mysqli_query($link, "INSERT INTO issue_books VALUES('','$_SESSION[enrollment]','$firstname $lastname','$sem','$contact','$email','$booksname','$issuedate','$returndate','$_SESSION[susername]')");
+
+                                    mysqli_query($link, "INSERT INTO retiradas VALUES('','$booksname','$_SESSION[enrollment]','$contact','$email','AGUARDANDO RETIRADA')");
                                     mysqli_query($link, "UPDATE add_books SET available_qty=available_qty-1 WHERE id=$id"); //função diminuir quantidade disponível
                                     ?>
                                     <script type="text/javascript">
-                                        alert("books issued sucessfully");
+                                        alert("Solicitação concluída, comparecer à biblioteca em até 7 dias para retirada");
                                         window.location.href="livros.php";
                                     </script>
                                     

@@ -20,6 +20,22 @@ include "connection.php"
                     <div class="title_left">
                         <h3>Lista de retiradas</h3>
                     </div>
+                     <!-- menu pesquisa -->
+                     <form name="form1" action="" method="post">
+                        <div class="title_right">
+                            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                <div class="input-group">
+
+                                        <input type="text" name="t1" class="form-control" placeholder="Pesquisar">
+                                            <span class="input-group-btn">
+                                                <button type="submit" name="submit1" id="search books" class="btn btn-default">OK</button>
+                                            </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- / menu pesquisa -->
                 </div>
 
                 <div class="clearfix"></div>
@@ -32,7 +48,67 @@ include "connection.php"
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                                
+                              
+                            <?php 
+
+                            if(isset($_POST["submit1"])) {
+                                $res=mysqli_query($link, "SELECT * FROM suspensions WHERE student_enrollment LIKE('%$_POST[t1]%') OR books_name LIKE('%$_POST[t1]%')");
+                                echo "<table class='table table-bordered'>";
+                                echo "<tr>";
+                                echo "<th>"; echo "student enrollment"; echo "</th>";
+                                echo "<th>"; echo "student contact"; echo "</th>";
+                                echo "<th>"; echo "student email"; echo "</th>";
+                                echo "<th>"; echo "books name"; echo "</th>";
+                                echo "<th>"; echo "suspension date"; echo "</th>";
+                                echo "<th>"; echo "suspension reason"; echo "</th>";
+                                echo "<th>"; echo "suspension return date"; echo "</th>";
+                                echo "<th>"; echo "remove suspension"; echo "</th>";
+                                echo "</tr>";
+                                while($row = mysqli_fetch_array($res)) {
+                                    echo "<tr>";
+                                    echo "<td>"; echo $row["student_enrollment"]; echo "</td>";
+                                    echo "<td>"; echo $row["student_contact"]; echo "</td>";
+                                    echo "<td>"; echo $row["student_email"]; echo "</td>";
+                                    echo "<td>"; echo $row["books_name"]; echo "</td>";
+                                    echo "<td>"; echo $row["suspension_date"]; echo "</td>";
+                                    echo "<td>"; echo $row["suspension_reason"]; echo "</td>";
+                                    echo "<td>"; echo $row["suspension_return_date"]; echo "</td>";
+                                    echo "<td>"; ?> <a href="remove_suspension.php?id=<?php echo $row["id"]; ?>">Reposição efetuada</a> <?php echo "</td>";
+                                    echo "</tr>";
+                                }
+                                echo "</table>";
+                            }
+                            else
+                            { 
+
+                            $res=mysqli_query($link, "SELECT * FROM retiradas");
+                                echo "<table class='table table-bordered'>";
+                                echo "<tr>";
+                                echo "<th>"; echo "student enrollment"; echo "</th>";
+                                echo "<th>"; echo "books name"; echo "</th>";
+                                echo "<th>"; echo "student contact"; echo "</th>";
+                                echo "<th>"; echo "student email"; echo "</th>";
+                                echo "<th>"; echo "livro retirado?"; echo "</th>";
+                                echo "</tr>";
+                            while($row = mysqli_fetch_array($res)) {
+                                if($row["status_solicitacao"]=="AGUARDANDO RETIRADA") {
+                                echo "<tr>";
+                                echo "<td>"; echo $row["student_enrollment"]; echo "</td>";
+                                echo "<td>"; echo $row["books_name"]; echo "</td>";
+                                echo "<td>"; echo $row["student_contact"]; echo "</td>";
+                                echo "<td>"; echo $row["student_email"]; echo "</td>";
+                                echo "<td>"; 
+                               ?>
+                               <a class="color: green" href="retirado.php?id=<?php echo $row["id"]; ?>">SIM</a>
+                               <a class="color: red" href="não_retirado.php?id=<?php echo $row["id"]; ?>">NÃO</a>
+                                <?php 
+                                echo "</td>";
+                                echo "</tr>";
+                                }
+                            }
+                            echo "</table>";
+                            }
+                            ?>
                             
                             </div>
                         </div>
