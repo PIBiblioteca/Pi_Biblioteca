@@ -86,21 +86,43 @@ include "connection.php"
                                 echo "<tr>";
                                 echo "<th>"; echo "student enrollment"; echo "</th>";
                                 echo "<th>"; echo "books name"; echo "</th>";
+                                echo "<th>"; echo "student name"; echo "</th>";
                                 echo "<th>"; echo "student contact"; echo "</th>";
                                 echo "<th>"; echo "student email"; echo "</th>";
                                 echo "<th>"; echo "livro retirado?"; echo "</th>";
                                 echo "</tr>";
                             while($row = mysqli_fetch_array($res)) {
+                                $prazo_retirada=$row["prazo_retirada"];
+                                $id = $row["id"];
+                                $status_solicitacao = $row["status_solicitacao"];
+
                                 if($row["status_solicitacao"]=="AGUARDANDO RETIRADA") {
                                 echo "<tr>";
                                 echo "<td>"; echo $row["student_enrollment"]; echo "</td>";
                                 echo "<td>"; echo $row["books_name"]; echo "</td>";
+                                echo "<td>"; echo $row["student_name"]; echo "</td>";
                                 echo "<td>"; echo $row["student_contact"]; echo "</td>";
                                 echo "<td>"; echo $row["student_email"]; echo "</td>";
                                 echo "<td>"; 
+                               
+                                $date=date('d/m/Y');
+                                //VERIFICA SE LIVRO ESTÁ ATRASADO E CANCELA SOLICITAÇÂO
+                                if($status_solicitacao=="AGUARDANDO RETIRADA") { //testar se esse if funciona
+                                    if($date > $prazo_retirada){
+                                        mysqli_query($link, "UPDATE retiradas SET status_solicitacao='LIVRO NÃO RETIRADO NO PRAZO' WHERE id='$id'");
+
+                                        $res5=mysqli_query($link, "SELECT * FROM retiradas WHERE id='$id'");
+                                        while($row5=mysqli_fetch_array($res5)){
+                                            $booksname=$row5["books_name"];
+                                        }
+
+                                        mysqli_query($link, "UPDATE add_books SET available_qty=available_qty+1 WHERE books_name='$booksname'"); //função aumentar quantidade disponível
+                                    }
+                                }
                                ?>
+
                                <a class="color: green" href="retirado.php?id=<?php echo $row["id"]; ?>">SIM</a>
-                               <a class="color: red" href="não_retirado.php?id=<?php echo $row["id"]; ?>">NÃO</a>
+                               
                                 <?php 
                                 echo "</td>";
                                 echo "</tr>";

@@ -15,14 +15,6 @@ while ($row7 = mysqli_fetch_array($res7)) {
     $email = $row7["student_email"];
 }
 
-//teste de variáveis
-//echo $id;
-//echo "<br> $enrollment";
-//echo "<br> $books_name";
-//echo "<br> $books_issue_date";
-//echo "<br> devolu~çao $return_date";
-//echo "<br> $contact";
-//echo "<br> $email";
 
 $date = date('d/m/Y'); //data atual
 
@@ -37,21 +29,14 @@ if ($date > $return_date) {
     $data_final = implode('-', array_reverse(explode('/', "$date")));
     $diferenca = strtotime($data_final) - strtotime($data_inicial); // Calcula a diferença em segundos
     $dias = floor($diferenca / (60 * 60 * 24)); //Calcula a diferença em dias
-    //echo "<br> A diferença é de $dias dias entre as datas <br>";
-
+    
     //calculo tempo de suspensão (1 a 7 dia de atraso = 1 semana de suspensão, 8 a 14 dias = 2 semanas...)
     $semanas_suspensão = ceil($dias / 7);
-    //echo "<br> $semanas_suspensão <br>"; 
-    $suspensionreturndate = date('d/m/Y', strtotime("$date+$semanas_suspensão weeks"));
-    //echo "<br> $date";
-    //echo "<br> $suspensionreturndate";
     
+    $suspensionreturndate = date('d/m/Y', strtotime("$date+$semanas_suspensão weeks"));
     $suspensiondate = $date;
     $suspensioreason = "atraso de $dias dias";
     
-    //echo "<br> $suspensiondate";
-    //echo "<br> $suspensioreason";
-
     //atualiza dados de suspensão
     mysqli_query($link, "UPDATE suspensions SET suspension_date='$suspensiondate', suspension_reasion='$suspensioreason', suspension_return_date='$suspensionreturndate' WHERE enrollment='$enrollment'");
 
@@ -71,8 +56,8 @@ else {
 //Função atualizar usuário suspenso para ativo
 $res = mysqli_query($link, "UPDATE student_registration SET status='ATIVO' WHERE enrollment=$enrollment");
 
-//Função remover livro de emprestados
-mysqli_query($link, "DELETE FROM issue_books WHERE id=$id");
+//Função atualizar status do empréstimo
+mysqli_query($link, "UPDATE issue_books SET status_emprestimo='DEVOLVIDO' WHERE id=$id");
 
 //função aumentar quantidade disponível
 mysqli_query($link, "UPDATE add_books SET available_qty=available_qty+1 WHERE books_name='$books_name'");

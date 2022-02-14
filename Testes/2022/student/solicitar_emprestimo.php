@@ -39,7 +39,7 @@ include "connection.php";
                             <?php
                           $id=($_GET["id"]);  //puxar id do livro escolhido                          
 
-                                $date=date("d-M-Y");
+                                $date=date("d/m/Y");
                                 // SELECIONAR DADOS DO ESTUDANTE
                                 $res5=mysqli_query($link, "SELECT * FROM student_registration WHERE username='$_SESSION[username]'");
                                 while($row5=mysqli_fetch_array($res5))
@@ -206,8 +206,8 @@ include "connection.php";
                                 }
                                 else
                                 {
-
-                                    mysqli_query($link, "INSERT INTO retiradas VALUES('','$booksname','$_SESSION[enrollment]','$contact','$email','AGUARDANDO RETIRADA')");
+                                    $prazo_retirada=date('d/m/Y', strtotime("+1 weeks"));
+                                    mysqli_query($link, "INSERT INTO retiradas VALUES('','$booksname','$_SESSION[enrollment]','$firstname $lastname','$contact','$email','$date','$prazo_retirada','AGUARDANDO RETIRADA')");
                                     mysqli_query($link, "UPDATE add_books SET available_qty=available_qty-1 WHERE id=$id"); //função diminuir quantidade disponível
                                     ?>
                                     <script type="text/javascript">

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["username"]))
+if(!isset($_SESSION["enrollment"]))
 {
     ?>
     <script type="text/javascript">
@@ -44,23 +44,20 @@ include "header.php";
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>My Issued Books</h2>
+                                <h2>Minha solicitação</h2>
 
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
                                 <table class="table table-bordered">
                                     <th>
-                                        Student Enrollment No
-                                    </th>
-                                    <th>
                                         Books Name
                                     </th>
                                     <th>
-                                        Books Issue Date 
+                                        Data Solicitação
                                     </th>
                                     <th>
-                                        Books Return Date 
+                                        Prazo Retirada
                                     </th>
                                     <th>
                                         Status Solicitação 
@@ -69,34 +66,50 @@ include "header.php";
                                     //VERIFICA SE USUÁRIO ESTÁ NA LISTA SOLICITAÇÕES OU EMPRÉSTIMOS
                                     $enrollment=$_SESSION["enrollment"];
                                     $result3 = mysqli_query($link, "SELECT * FROM retiradas WHERE student_enrollment = $enrollment");
-                                    if(mysqli_num_rows($result3) > 0) {
                                         while($row=mysqli_fetch_array($result3))
                                         {
                                             echo "<tr>";
                                             echo "<td>";
-                                            echo $row["student_enrollment"];
-                                            echo "</td>";
-                                            echo "<td>";
                                             echo $row["books_name"];
                                             echo "</td>";
                                             echo "<td>";
+                                            echo $row["data_solicitacao"];
                                             echo "</td>";
                                             echo "<td>";
+                                            echo $row["prazo_retirada"];
                                             echo "</td>";
                                             echo "<td>";
                                             echo $row["status_solicitacao"];
                                             echo "</td>";
                                             echo "</tr>";
                                         }
-                                } else {
+                                ?>
+                                    
+                                </table>
+                                <div class="x_title">
+                                <h2>Meus empréstimos</h2>
+                                <div class="clearfix"></div>
+                                </div>
+                                <table class="table table-bordered">
+                                    
+                                    <th>
+                                        Books Name
+                                    </th>
+                                    <th>
+                                        Data Retirada
+                                    </th>
+                                    <th>
+                                        Prazo Devolução
+                                    </th>
+                                    <th>
+                                        Status Empréstimo 
+                                    </th>
+                                    <?php
 
-                                    $res=mysqli_query($link, "SELECT * FROM issue_books WHERE student_username='$_SESSION[username]'");
+                                    $res=mysqli_query($link, "SELECT * FROM issue_books WHERE student_enrollment='$_SESSION[enrollment]'");
                                     while($row=mysqli_fetch_array($res))
                                     {
                                         echo "<tr>";
-                                        echo "<td>";
-                                        echo $row["student_enrollment"];
-                                        echo "</td>";
                                         echo "<td>";
                                         echo $row["books_name"];
                                         echo "</td>";
@@ -106,9 +119,13 @@ include "header.php";
                                         echo "<td>";
                                         echo $row["books_return_date"];
                                         echo "</td>";
+                                        echo "<td>";
+                                        echo "devolução até "; 
+                                        echo $row["books_return_date"];
+                                        echo "</td>";
                                         echo "</tr>";
                                     }
-                                }
+                                
                                     ?>
                                     
                                 </table>
