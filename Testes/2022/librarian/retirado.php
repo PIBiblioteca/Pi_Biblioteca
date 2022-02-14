@@ -18,6 +18,7 @@ $returndate=date('d/m/Y', strtotime("+2 weeks"));
 
 mysqli_query($link, "INSERT INTO issue_books VALUES('','$enrollment','$student_name',' ','$contact','$email','$books_name','$issuedate','$returndate','')");
 
+mysqli_query($link, "UPDATE retiradas SET status_solicitacao='RETIRADO'");
 
 
 ?>

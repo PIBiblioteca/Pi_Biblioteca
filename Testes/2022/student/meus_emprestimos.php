@@ -87,7 +87,7 @@ include "header.php";
                                     
                                 </table>
                                 <div class="x_title">
-                                <h2>Meus empréstimos</h2>
+                                <h2>Meu histórico</h2>
                                 <div class="clearfix"></div>
                                 </div>
                                 <table class="table table-bordered">

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["username"]))
+if(!isset($_SESSION["enrollment"]))
 {
     ?>
     <script type="text/javascript">
@@ -37,11 +37,12 @@ include "connection.php";
                             <form name="form1" action="" method="post">
 
                             <?php
-                          $id=($_GET["id"]);  //puxar id do livro escolhido                          
+                                //SELEÇÃO DE DADOS E ATRIBUIÇÃO DE VARIÁVEIS
+                                $id=($_GET["id"]);  //puxar id do livro escolhido                          
 
                                 $date=date("d/m/Y");
-                                // SELECIONAR DADOS DO ESTUDANTE
-                                $res5=mysqli_query($link, "SELECT * FROM student_registration WHERE username='$_SESSION[username]'");
+                                // puxa dados do usuário
+                                $res5=mysqli_query($link, "SELECT * FROM student_registration WHERE enrollment='$_SESSION[enrollment]'");
                                 while($row5=mysqli_fetch_array($res5))
                                 {
                                     $firstname=$row5["firstname"];
@@ -89,21 +90,27 @@ include "connection.php";
                                     </script>
                                     <?php
                                 } 
-
-                                $result4 = mysqli_query($link, "SELECT * FROM retiradas WHERE student_enrollment = $enrollment");
-                                while($row8=mysqli_fetch_array($result4))
-                                {
-                                    $status_solicitacao=$row8["status_solicitacao"];
-                                }
-                                if($status_solicitacao=='AGUARDANDO RETIRADA') {
-                                    ?>
-                                    <script type="text/javascript">
-                                        alert("JÁ EXISTE UMA SOLICITAÇÃO EM ANDAMENTO, SÓ UMA SOLICITAÇÃO POR USUÁRIO É PERMITIDA POR VEZ");
-                                        window.location="livros.php";
-                                    </script>
-                                    <?php
-                                }
+                                //verifica se existe solicitação
                                 
+
+                                $result6 = mysqli_query($link, "SELECT * FROM retiradas WHERE student_enrollment = $enrollment");
+                                    
+                                //verifica se já existe dados na tabela
+                                if(mysqli_num_rows($result6) > 0) {
+                                    $result4 = mysqli_query($link, "SELECT * FROM retiradas WHERE student_enrollment = $enrollment");
+                                    while($row8=mysqli_fetch_array($result4))
+                                    {
+                                        $status_solicitacao=$row8["status_solicitacao"];
+                                    }
+                                    if($status_solicitacao=='AGUARDANDO RETIRADA') {
+                                        ?>
+                                        <script type="text/javascript">
+                                            alert("JÁ EXISTE UMA SOLICITAÇÃO EM ANDAMENTO, SÓ UMA SOLICITAÇÃO POR USUÁRIO É PERMITIDA POR VEZ");
+                                            window.location="livros.php";
+                                        </script>
+                                        <?php
+                                    }
+                                }
                                 // SELECIONAR DADOS DO LIVRO
                                 $qty=0;
                                 $res6=mysqli_query($link, "SELECT * FROM add_books WHERE id=$id");
@@ -195,7 +202,7 @@ include "connection.php";
                             //função do botão solicitar
                             if(isset($_POST["submit2"]))
                             {
-                                //verificar disponibilidade
+                                //verifica disponibilidade
                                 if($qty==0)
                                 {
                                     ?>
@@ -207,6 +214,15 @@ include "connection.php";
                                 else
                                 {
                                     $prazo_retirada=date('d/m/Y', strtotime("+1 weeks"));
+
+                                    $result5 = mysqli_query($link, "SELECT * FROM retiradas WHERE student_enrollment = $enrollment");
+                                    
+                                    //verifica se já existe solicitação concluída e a altera
+                                    if(mysqli_num_rows($result5) > 0) {
+                                        mysqli_query($link, "UPDATE retiradas SET books_name='$booksname', student_enrollment='$_SESSION[enrollment]', student_name='$firstname $lastname', student_contact='$contact', student_email='$email', data_solicitacao='$date', prazo_retirada='$prazo_retirada', status_solicitacao='AGUARDANDO RETIRADA'");
+                                        mysqli_query($link, "UPDATE add_books SET available_qty=available_qty-1 WHERE id=$id"); //função diminuir quantidade disponível
+                                    } else {
+                                    //se não houver solicitação, cria uma
                                     mysqli_query($link, "INSERT INTO retiradas VALUES('','$booksname','$_SESSION[enrollment]','$firstname $lastname','$contact','$email','$date','$prazo_retirada','AGUARDANDO RETIRADA')");
                                     mysqli_query($link, "UPDATE add_books SET available_qty=available_qty-1 WHERE id=$id"); //função diminuir quantidade disponível
                                     ?>
@@ -216,9 +232,9 @@ include "connection.php";
                                     </script>
                                     
                                     <?php
+                                    }
                                 }
 
-                                
                             }
                             ?>
                             </div>
