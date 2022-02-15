@@ -60,7 +60,7 @@ include "connection.php";
 <?php
     if(isset($_POST["submit1"])) {
         $count = 0;
-        $res = mysqli_query($link, "SELECT * FROM librarian_registration WHERE username='$_POST[username]' && password='$_POST[password]'");
+        $res = mysqli_query($link, "SELECT * FROM cadastro_bibliotecaria WHERE username='$_POST[username]' && password='$_POST[password]'");
         $count = mysqli_num_rows($res);
 
         if ($count == 0) {

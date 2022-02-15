@@ -49,7 +49,7 @@ include "header.php";
                             <?php
                             
                             $username=$_SESSION['username'];
-                            $res=mysqli_query($link,"SELECT * FROM student_registration WHERE username='$username'");
+                            $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE username='$username'");
                             while($row=mysqli_fetch_array($res))
                             {                                
                                 $firstname=$row["firstname"];
@@ -117,11 +117,11 @@ include "header.php";
 
         if($fnm =='') //verifica se o campo de imagem está vazio
         {
-            mysqli_query($link, "UPDATE student_registration SET firstname='$_POST[firstname]', lastname ='$_POST[lastname]', username ='$_POST[usernam]', password ='$_POST[password]', email ='$_POST[email]', contact ='$_POST[contact]' WHERE username='$username'");
+            mysqli_query($link, "UPDATE cadastro_usuarios SET firstname='$_POST[firstname]', lastname ='$_POST[lastname]', username ='$_POST[usernam]', password ='$_POST[password]', email ='$_POST[email]', contact ='$_POST[contact]' WHERE username='$username'");
         }
         else
         {
-        mysqli_query($link, "UPDATE student_registration SET firstname='$_POST[firstname]', lastname ='$_POST[lastname]', username ='$_POST[username]', profile_image='$dst', password ='$_POST[password]', email ='$_POST[email]', contact ='$_POST[contact]' WHERE username='$username'");
+        mysqli_query($link, "UPDATE cadastro_usuarios SET firstname='$_POST[firstname]', lastname ='$_POST[lastname]', username ='$_POST[username]', profile_image='$dst', password ='$_POST[password]', email ='$_POST[email]', contact ='$_POST[contact]' WHERE username='$username'");
         }
     ?>
     

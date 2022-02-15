@@ -1,11 +1,11 @@
 <?php
 include "connection.php";
 
+//puxa id do empréstimo
 $id = $_GET["id"];
-echo $id;
 
-
-$res5 = mysqli_query($link, "SELECT * FROM issue_books WHERE id='$id'");
+//puxa dados tabela livros emprestados
+$res5 = mysqli_query($link, "SELECT * FROM emprestimos WHERE id='$id'");
 while ($row5 = mysqli_fetch_array($res5)) {
     $enrollment = $row5["student_enrollment"];
     $contact = $row5["student_contact"];
@@ -14,24 +14,23 @@ while ($row5 = mysqli_fetch_array($res5)) {
 }
     
     $suspensiondate = date("d/m/Y");
-    $suspensioreason = "perda ou avaria";
+    $suspensioreason = "perda/avaria";
     $suspensionreturndate = "até que seja feita a reposição do livro";
 
-echo $enrollment;
-echo $contact;
-echo $email;
-echo $booksname;
-echo $suspensiondate;
-echo $suspensioreason;
-echo $suspensionreturndate;
+//verifica se já está suspenso e atualiza informações
+if(mysqli_num_rows($res5) > 0) {
+    mysqli_query($link, "UPDATE suspensoes SET suspension_date='$suspensiondate', suspension_reason='$suspensioreason', suspension_return_date='TEST3' WHERE student_enrollment='$enrollment'");
+} else {
+    //suspende usuário
+    mysqli_query($link, "INSERT INTO suspensoes VALUES('', '$enrollment', '$contact', '$email', '$booksname', '$suspensiondate', '$suspensioreason', '$suspensionreturndate') WHERE student_enrollment='$enrollment'");
+}
 
+mysqli_query($link, "DELETE FROM emprestimos WHERE student_enrollment='$enrollment'");
 
-mysqli_query($link, "INSERT INTO suspensions VALUES('', '$enrollment', '$contact', '$email', '$booksname', '$suspensiondate', '$suspensioreason', '$suspensionreturndate')");
-
-mysqli_query($link, "UPDATE student_registration SET status='SUSPENSO' WHERE enrollment='$enrollment'"); 
+mysqli_query($link, "UPDATE cadastro_usuarios SET status='SUSPENSO' WHERE enrollment='$enrollment'"); 
 
 ?>
-<!--
+
 <script type="text/javascript">
     alert("usuário suspenso <?php echo $suspensionreturndate ?>");
     window.location = "devolucoes.php";

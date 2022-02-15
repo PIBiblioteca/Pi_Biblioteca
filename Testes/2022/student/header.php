@@ -1,14 +1,15 @@
 <?php
 include "connection.php";
 $tot=0;
-$res=mysqli_query($link, "SELECT * FROM messages WHERE dusername='$_SESSION[username]' && read1='n'");
+$res=mysqli_query($link, "SELECT * FROM recados WHERE dusername='$_SESSION[email]' && read1='n'");
 $tot=mysqli_num_rows($res);
 
-$username=$_SESSION['username'];
-$res=mysqli_query($link,"SELECT * FROM student_registration WHERE username='$username'");
+$email=$_SESSION['email'];
+$res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
         while($row=mysqli_fetch_array($res))
         {                                
             $image=$row["profile_image"];
+            $fullname=$row["fullname"];
         }
 if($image==''){
     $image="teste";
@@ -53,7 +54,7 @@ if($image==''){
                     <div class="profile_info">
                         <span>Olá,</span>
 
-                        <h2><?php echo $_SESSION["username"]; ?></h2>
+                        <h2><?php echo $fullname; ?></h2>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -93,7 +94,7 @@ if($image==''){
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="<?php echo $image; ?>" alt=""><?php echo $_SESSION["username"]; ?>
+                                <img src="<?php echo $image; ?>" alt=""><?php echo $fullname; ?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">

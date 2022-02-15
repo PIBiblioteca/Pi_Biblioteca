@@ -53,7 +53,7 @@ include "connection.php"
                             if(isset($_POST["submit1"])) // código da pesquisa: pegar variável de entrada do usuário e exibir 
                             {
                                 $i=0;
-                                $res=mysqli_query($link, "SELECT * FROM add_books WHERE books_name like('%$_POST[t1]%')"); //função pesquisa: WHERE books_name like('%$_POST[t1]%')
+                                $res=mysqli_query($link, "SELECT * FROM adicionar_livros WHERE books_name like('%$_POST[t1]%')"); //função pesquisa: WHERE books_name like('%$_POST[t1]%')
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
                                 while($row=mysqli_fetch_array($res))
@@ -94,7 +94,7 @@ include "connection.php"
                             else // código de exibir livros
                             {
                                 $i=0;
-                                $res=mysqli_query($link, "SELECT * FROM add_books"); //função de exibir somente livros disponíveis: SELECT * FROM add_books WHERE available_qty>0
+                                $res=mysqli_query($link, "SELECT * FROM adicionar_livros"); //função de exibir somente livros disponíveis: SELECT * FROM adicionar_livros WHERE available_qty>0
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
                                 while($row = mysqli_fetch_array($res))

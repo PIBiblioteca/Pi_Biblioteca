@@ -12,7 +12,7 @@ while($row5=mysqli_fetch_array($res5)){
     $booksname=$row5["books_name"];
 }
 
-mysqli_query($link, "UPDATE add_books SET available_qty=available_qty+1 WHERE books_name='$booksname'"); //função aumentar quantidade disponível
+mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty+1 WHERE books_name='$booksname'"); //função aumentar quantidade disponível
 
 ?>
     <script type="text/javascript">

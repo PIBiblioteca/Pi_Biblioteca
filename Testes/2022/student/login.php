@@ -24,7 +24,7 @@ include "connection.php";
 <br>
 
 <div class="col-lg-12 text-center ">
-    <h1 style="font-family:Lucida Console">Library Management System</h1>
+    <h1 style="font-family:Lucida Console">BiblioFateca</h1>
 </div>
 
 <br>
@@ -36,25 +36,25 @@ include "connection.php";
 
         <section class="login_content">
             <form name="form1" action="" method="post">
-                <h1>User Login Form</h1>
+                <h1>Login de Usuário</h1>
 
                 <div>
-                    <input type="text" name="username" class="form-control" placeholder="Username" required="" />
+                    <input type="text" name="email" class="form-control" placeholder="E-mail" required="" />
                 </div>
                 <div>
-                    <input type="password" name="password" class="form-control" placeholder="Password" required="" />
+                    <input type="password" name="password" class="form-control" placeholder="Senha" required="" />
                 </div>
                 <div>
 
                     <input class="btn btn-default submit" type="submit" name="submit1" value="Login">
-                    <a class="reset_pass" href="#">Lost your password?</a>
+                    <a class="reset_pass" href="#">Perdeu sua senha?</a>
                 </div>
 
                 <div class="clearfix"></div>
 
                 <div class="separator">
-                    <p class="change_link">New to site?
-                        <a href="registration.php"> Create Account </a>
+                    <p class="change_link">Novo aqui?
+                        <a href="registro.php"> Crie sua conta </a>
                     </p>
 
                     <div class="clearfix"></div>
@@ -69,19 +69,20 @@ include "connection.php";
     </div>
 
     <?php
+    
     if (isset($_POST["submit1"])) {
         $count = 0;
-        $res = mysqli_query($link, "SELECT * FROM student_registration WHERE username='$_POST[username]' && password='$_POST[password]' && status='ATIVO'");
+        $res = mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$_POST[email]' && password='$_POST[password]' && status='ATIVO'");
         $count = mysqli_num_rows($res);
 
         if ($count == 0) {
     ?>
             <div class="alert alert-danger col-lg-6 col-lg-push-3">
-                <strong style="color:white">Invalid</strong> Username Or Password.
+                <strong style="color:white">Senha ou usuário inválido</strong> 
             </div>
     <?php
         } else {
-            $_SESSION["username"]=$_POST["username"];
+            $_SESSION["email"]=$_POST["email"];
             ?>
             <script type="text/javascript">
                 window.location="meus_emprestimos.php";

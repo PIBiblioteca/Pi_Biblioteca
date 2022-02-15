@@ -52,10 +52,10 @@ mysqli_query($link, "UPDATE messages SET read1='y' WHERE dusername='$_SESSION[us
                                 </tr>
 
                                 <?php
-                            $res=mysqli_query($link, "SELECT * FROM messages WHERE dusername='$_SESSION[username]' ORDER BY id DESC");
+                            $res=mysqli_query($link, "SELECT * FROM recados WHERE dusername='$_SESSION[username]' ORDER BY id DESC");
                             while($row=mysqli_fetch_array($res))
                             {
-                                $res1=mysqli_query($link, "SELECT * FROM librarian_registration WHERE username='$row[susername]'");
+                                $res1=mysqli_query($link, "SELECT * FROM cadastro_bibliotecaria WHERE username='$row[susername]'");
                                 while($row1=mysqli_fetch_array($res1)) {
                                     $fullname=$row1["firstname"]." ".$row1["lastname"];
                                 }

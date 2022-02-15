@@ -56,15 +56,12 @@ include "connection.php";
                                     //echo "<tr>";
                                     //echo "</tr>";
                                     //echo "</TABLE>";
-                                $res=mysqli_query($link,"SELECT * FROM student_registration");
+                                $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios");
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
-                                echo "<th>"; echo "Firstname"; echo "</th>";
-                                echo "<th>"; echo "Lastname"; echo "</th>";
-                                echo "<th>"; echo "Username"; echo "</th>";
+                                echo "<th>"; echo "Fullname"; echo "</th>";
                                 echo "<th>"; echo "Email"; echo "</th>";
                                 echo "<th>"; echo "Contact"; echo "</th>";
-                                echo "<th>"; echo "Sem"; echo "</th>";
                                 echo "<th>"; echo "Enrollment"; echo "</th>";
                                 echo "<th>"; echo "Status"; echo "</th>";
                                 echo "<th>"; echo "Approve"; echo "</th>";
@@ -73,16 +70,13 @@ include "connection.php";
                                 while($row=mysqli_fetch_array($res))
                                 {
                                     echo "<tr>";
-                                    echo "<td>"; echo $row["firstname"]; echo "</td>";
-                                    echo "<td>"; echo $row["lastname"]; echo "</td>";
-                                    echo "<td>"; echo $row["username"]; echo "</td>";
+                                    echo "<td>"; echo $row["fullname"]; echo "</td>";
                                     echo "<td>"; echo $row["email"]; echo "</td>";
                                     echo "<td>"; echo $row["contact"]; echo "</td>";
-                                    echo "<td>"; echo $row["sem"]; echo "</td>";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";
                                     echo "<td>"; echo $row["status"]; echo "</td>";
-                                    echo "<td>"; ?> <a href="approve.php?id=<?php echo $row["id"]; ?>">Approve</a> <?php echo "</td>";
-                                    echo "<td>"; ?> <a href="notapprove.php?id=<?php echo $row["id"]; ?>">Not Approve</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a href="aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">Approve</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a href="não_aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">Not Approve</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</table>"

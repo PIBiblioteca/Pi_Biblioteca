@@ -40,7 +40,7 @@ include "connection.php";
                                         <td>
                                             <select class="form-control" name="dusername">
                                                 <?php
-                                                $res=mysqli_query($link, "SELECT * FROM student_registration");
+                                                $res=mysqli_query($link, "SELECT * FROM cadastro_usuarios");
                                                 while($row=mysqli_fetch_array($res))
                                                 {
                                                     ?><option value="<?php echo $row["username"]?>">
@@ -79,7 +79,7 @@ include "connection.php";
 <?php
     if(isset($_POST["submit1"]))
     {
-        mysqli_query($link, "INSERT INTO messages VALUES('','$_SESSION[librarian]','$_POST[dusername]','$_POST[title]','$_POST[msg]','n')") or die(mysqli_error($link));
+        mysqli_query($link, "INSERT INTO recados VALUES('','$_SESSION[librarian]','$_POST[dusername]','$_POST[title]','$_POST[msg]','n')") or die(mysqli_error($link));
         
         ?>
         <script type="text/javascript">

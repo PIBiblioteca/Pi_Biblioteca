@@ -4,8 +4,8 @@ include "connection.php";
 //puxa identificação de qual livro está sendo devolvido
 $id = $_GET["id"];
 
-//puxa dados da tabela issue_books
-$res7 = mysqli_query($link, "SELECT * FROM issue_books WHERE id='$id'");
+//puxa dados da tabela emprestimos
+$res7 = mysqli_query($link, "SELECT * FROM emprestimos WHERE id='$id'");
 while ($row7 = mysqli_fetch_array($res7)) {
     $enrollment = $row7["student_enrollment"];
     $books_name = $row7["books_name"];
@@ -20,9 +20,9 @@ $date = date('d/m/Y'); //data atual
 
 //verifica se entrega está atrasada
 if ($date > $return_date) {
-    //suspende usuário na tabela student_registration
+    //suspende usuário na tabela cadastro_usuarios
     $status = 'SUSPENSO';
-    mysqli_query($link, "UPDATE student_registration SET status='SUSPENSO' WHERE enrollment='$enrollment'");
+    mysqli_query($link, "UPDATE cadastro_usuarios SET status='SUSPENSO' WHERE enrollment='$enrollment'");
 
     //Calculo diferença entre datas
     $data_inicial = implode('-', array_reverse(explode('/', "$return_date")));
@@ -38,13 +38,13 @@ if ($date > $return_date) {
     $suspensioreason = "atraso de $dias dias";
     
     //atualiza dados de suspensão
-    mysqli_query($link, "UPDATE suspensions SET suspension_date='$suspensiondate', suspension_reasion='$suspensioreason', suspension_return_date='$suspensionreturndate' WHERE enrollment='$enrollment'");
+    mysqli_query($link, "UPDATE suspensoes SET suspension_date='$suspensiondate', suspension_reasion='$suspensioreason', suspension_return_date='$suspensionreturndate' WHERE enrollment='$enrollment'");
 
     //Função remover livro de emprestados
-    mysqli_query($link, "DELETE FROM issue_books WHERE id=$id");
+    mysqli_query($link, "DELETE FROM emprestimos WHERE id=$id");
 
     //função aumentar quantidade disponível
-    mysqli_query($link, "UPDATE add_books SET available_qty=available_qty+1 WHERE books_name='$books_name'");
+    mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty+1 WHERE books_name='$books_name'");
 ?>
     <script type="text/javascript">
         alert("usuário suspenso até <?php echo $suspensionreturndate ?>");
@@ -54,13 +54,13 @@ if ($date > $return_date) {
 }
 else {
 //Função atualizar usuário suspenso para ativo
-$res = mysqli_query($link, "UPDATE student_registration SET status='ATIVO' WHERE enrollment=$enrollment");
+$res = mysqli_query($link, "UPDATE cadastro_usuarios SET status='ATIVO' WHERE enrollment=$enrollment");
 
 //Função atualizar status do empréstimo
-mysqli_query($link, "UPDATE issue_books SET status_emprestimo='DEVOLVIDO' WHERE id=$id");
+mysqli_query($link, "UPDATE emprestimos SET status_emprestimo='DEVOLVIDO' WHERE id=$id");
 
 //função aumentar quantidade disponível
-mysqli_query($link, "UPDATE add_books SET available_qty=available_qty+1 WHERE books_name='$books_name'");
+mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty+1 WHERE books_name='$books_name'");
 ?>
 
 <script type="text/javascript">

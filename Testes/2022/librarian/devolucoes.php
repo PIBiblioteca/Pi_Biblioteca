@@ -51,7 +51,7 @@ include "header.php";
                             <div class="x_content">
 
                                 <?php
-                                    $res = mysqli_query($link, "SELECT * FROM issue_books");
+                                    $res = mysqli_query($link, "SELECT * FROM emprestimos");
                                     echo "<table class='table table-bordered'>";
                                     echo "<tr>";
                                     echo "<th>"; echo "student enrollment"; echo "</th>";
@@ -80,12 +80,12 @@ include "header.php";
                                         echo "<td>"; 
 
                                         $enrollment=$row["student_enrollment"];
-                                        $return_date=$row["books_issue_date"];
+                                        $return_date=$row["books_return_date"];
                                         $contact = $row["student_contact"];
                                         $email = $row["student_email"];
                                         $books_name = $row["books_name"];
 
-                                        $res1 = mysqli_query($link, "SELECT * FROM student_registration WHERE enrollment=$enrollment");
+                                        $res1 = mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE enrollment=$enrollment");
                                         while ($row1 = mysqli_fetch_array($res1)) {
                                             $status=$row1["status"];
                                         }
@@ -95,25 +95,22 @@ include "header.php";
                                         echo "<td>"; 
                                         //VERIFICAR SE DEVOLUÇÃO ESTÁ EM ATRASO
                                         $date=date ('d/m/Y');
-                                        
-
-
+                                       
                                         if ($date > $return_date) {
 
-                                            $result2 = mysqli_query($link, "SELECT * FROM suspensions WHERE student_enrollment = $enrollment");
+                                            $result2 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_enrollment = $enrollment");
                                             if(mysqli_num_rows($result2) > 0) {
                                                 echo "ATRASADO"; 
                                             }
                                             else {
-                                            //suspende usuário na tabela student_registration
-                                            mysqli_query($link, "UPDATE student_registration SET status='SUSPENSO' WHERE enrollment='$enrollment'");
+                                            //suspende usuário na tabela cadastro_usuarios
+                                            mysqli_query($link, "UPDATE cadastro_usuarios SET status='SUSPENSO' WHERE enrollment='$enrollment'");
                                             
-                                            //envia usuário para tabela suspensions
-                                            mysqli_query($link, "INSERT INTO suspensions VALUES('', '$enrollment', '$contact', '$email', '$books_name', '', 'atraso na devolução', '')");
+                                            //envia usuário para tabela suspensoes
+                                            mysqli_query($link, "INSERT INTO suspensoes VALUES('', '$enrollment', '$contact', '$email', '$books_name', '', 'atraso na devolução', '')");
                                             }
                                         }
-                                        ?> <a href="return.php?id=<?php echo $row["id"]; ?>">Return Books</a> <?php echo "</td>";
-                                        echo "<td>"; ?> <a href="perda_avaria.php?id=<?php echo $row["id"]; ?>">perda/avaria</a> <?php echo "</td>";
+                                        ?> <a style="color: green"  href="devolver_livro.php?id=<?php echo $row["id"]; ?>">Return Books</a> <?php echo "</td>";
                                         echo "</tr>";
                                     }
                                     echo "</table>";

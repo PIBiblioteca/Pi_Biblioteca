@@ -51,7 +51,7 @@ include "header.php";
                                 <?php 
 
                                 if(isset($_POST["submit1"])) {
-                                    $res=mysqli_query($link, "SELECT * FROM suspensions WHERE student_enrollment LIKE('%$_POST[t1]%') OR books_name LIKE('%$_POST[t1]%')");
+                                    $res=mysqli_query($link, "SELECT * FROM suspensoes WHERE student_enrollment LIKE('%$_POST[t1]%') OR books_name LIKE('%$_POST[t1]%')");
                                     echo "<table class='table table-bordered'>";
                                     echo "<tr>";
                                     echo "<th>"; echo "student enrollment"; echo "</th>";
@@ -72,7 +72,9 @@ include "header.php";
                                         echo "<td>"; echo $row["suspension_date"]; echo "</td>";
                                         echo "<td>"; echo $row["suspension_reason"]; echo "</td>";
                                         echo "<td>"; echo $row["suspension_return_date"]; echo "</td>";
-                                        echo "<td>"; ?> <a href="remove_suspension.php?id=<?php echo $row["id"]; ?>">Reposição efetuada</a> <?php echo "</td>";
+                                        echo "<td>"; 
+                                        ?> <a href="remover_suspensao.php?id=<?php echo $row["id"]; ?>">Reposição efetuada</a> <?php 
+                                        echo "</td>";
                                         echo "</tr>";
                                     }
                                     echo "</table>";
@@ -80,7 +82,7 @@ include "header.php";
                                 else
                                 { 
 
-                                $res=mysqli_query($link, "SELECT * FROM suspensions");
+                                $res=mysqli_query($link, "SELECT * FROM suspensoes");
                                     echo "<table class='table table-bordered'>";
                                     echo "<tr>";
                                     echo "<th>"; echo "student enrollment"; echo "</th>";
@@ -103,7 +105,7 @@ include "header.php";
                                     echo "<td>"; echo $row["suspension_return_date"]; echo "</td>";
                                     echo "<td>"; 
                                     if($row["suspension_reason"]=='perda/avaria') {?>
-                                        <a href="remove_suspension.php?id=<?php echo $row["id"]; ?>">Reposição</a> <?php } 
+                                        <a style="color: green" href="remover_suspensao.php?id=<?php echo $row["id"]; ?>">Reposição</a> <?php } 
                                     echo "</td>";
                                 
                                     echo "</tr>";

@@ -52,7 +52,7 @@ include "connection.php";
                             <div class="x_content">
                                 <?php
                                 $i=0;
-                                    $res=mysqli_query($link, "SELECT * FROM add_books");
+                                    $res=mysqli_query($link, "SELECT * FROM adicionar_livros");
                                     echo "<table class='table table-bordered'>";
                                     echo "<tr>";
                                     while($row = mysqli_fetch_array($res)) {

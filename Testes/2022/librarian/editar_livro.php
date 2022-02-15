@@ -50,7 +50,7 @@ include "header.php";
                             
                             
                             $id=$_GET['id'];
-                            $res=mysqli_query($link,"SELECT * FROM add_books WHERE id='$id'");
+                            $res=mysqli_query($link,"SELECT * FROM adicionar_livros WHERE id='$id'");
                             while($row=mysqli_fetch_array($res))
                             {                                
                                 $booksname=$row["books_name"];
@@ -123,11 +123,11 @@ include "header.php";
 
         if($fnm =='') //verifica se o campo de imagem está vazio
         {
-            mysqli_query($link, "UPDATE add_books SET books_name='$_POST[booksname]', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', books_purchase_date ='$_POST[bpurchasedt]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id='$id'");
+            mysqli_query($link, "UPDATE adicionar_livros SET books_name='$_POST[booksname]', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', books_purchase_date ='$_POST[bpurchasedt]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id='$id'");
         }
         else
         {
-        mysqli_query($link, "UPDATE add_books SET books_name='$_POST[booksname]', books_image='$dst1', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', books_purchase_date ='$_POST[bpurchasedt]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id='$id'");
+        mysqli_query($link, "UPDATE adicionar_livros SET books_name='$_POST[booksname]', books_image='$dst1', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', books_purchase_date ='$_POST[bpurchasedt]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id='$id'");
         }
     ?>
     

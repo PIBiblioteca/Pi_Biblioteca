@@ -52,7 +52,7 @@ include "connection.php"
                             <?php 
 
                             if(isset($_POST["submit1"])) {
-                                $res=mysqli_query($link, "SELECT * FROM suspensions WHERE student_enrollment LIKE('%$_POST[t1]%') OR books_name LIKE('%$_POST[t1]%')");
+                                $res=mysqli_query($link, "SELECT * FROM suspensoes WHERE student_enrollment LIKE('%$_POST[t1]%') OR books_name LIKE('%$_POST[t1]%')");
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
                                 echo "<th>"; echo "student enrollment"; echo "</th>";
@@ -73,7 +73,7 @@ include "connection.php"
                                     echo "<td>"; echo $row["suspension_date"]; echo "</td>";
                                     echo "<td>"; echo $row["suspension_reason"]; echo "</td>";
                                     echo "<td>"; echo $row["suspension_return_date"]; echo "</td>";
-                                    echo "<td>"; ?> <a href="remove_suspension.php?id=<?php echo $row["id"]; ?>">Reposição efetuada</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a href="remover_suspensao.php?id=<?php echo $row["id"]; ?>">Reposição efetuada</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</table>";
@@ -107,7 +107,7 @@ include "connection.php"
                                
                                 $date=date('d/m/Y');
                                 //VERIFICA SE LIVRO ESTÁ ATRASADO E CANCELA SOLICITAÇÂO
-                                if($status_solicitacao=="AGUARDANDO RETIRADA") { //testar se esse if funciona
+                                if($status_solicitacao=="AGUARDANDO RETIRADA") { 
                                     if($date > $prazo_retirada){
                                         mysqli_query($link, "UPDATE retiradas SET status_solicitacao='LIVRO NÃO RETIRADO NO PRAZO' WHERE id='$id'");
 
@@ -116,7 +116,7 @@ include "connection.php"
                                             $booksname=$row5["books_name"];
                                         }
 
-                                        mysqli_query($link, "UPDATE add_books SET available_qty=available_qty+1 WHERE books_name='$booksname'"); //função aumentar quantidade disponível
+                                        mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty+1 WHERE books_name='$booksname'"); //função aumentar quantidade disponível
                                     }
                                 }
                                ?>

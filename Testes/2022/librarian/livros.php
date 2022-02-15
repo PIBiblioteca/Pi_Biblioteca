@@ -51,7 +51,7 @@ include "header.php";
                                 <?php 
 
                                 if(isset($_POST["submit1"])) {
-                                    $res=mysqli_query($link, "SELECT * FROM add_books WHERE books_name LIKE('%$_POST[t1]%')");
+                                    $res=mysqli_query($link, "SELECT * FROM adicionar_livros WHERE books_name LIKE('%$_POST[t1]%')");
                                     echo "<table class='table table-bordered'>";
                                     echo "<tr>";
                                     echo "<th>"; echo "books image"; echo "</th>";
@@ -76,7 +76,7 @@ include "header.php";
                                         echo "<td>"; echo $row["books_qty"]; echo "</td>";
                                         echo "<td>"; echo $row["available_qty"]; echo "</td>";
                                         echo "<td>"; ?> <a href="delete_books.php?id=<?php echo $row["id"]; ?>">Delete Books</a> <?php echo "</td>";
-                                        echo "<td>"; ?> <a href="edit_book.php?id=<?php echo $row["id"]; ?>">Edit Book</a> <?php echo "</td>";
+                                        echo "<td>"; ?> <a href="editar_livro.php?id=<?php echo $row["id"]; ?>">Edit Book</a> <?php echo "</td>";
                                         echo "</tr>";
                                     }
                                     echo "</table>";
@@ -84,7 +84,7 @@ include "header.php";
                                 else
                                 { 
 
-                                $res=mysqli_query($link, "SELECT * FROM add_books");
+                                $res=mysqli_query($link, "SELECT * FROM adicionar_livros");
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
                                 echo "<th>"; echo "books image"; echo "</th>";
@@ -109,7 +109,7 @@ include "header.php";
                                     echo "<td>"; echo $row["books_qty"]; echo "</td>";
                                     echo "<td>"; echo $row["available_qty"]; echo "</td>";
                                     echo "<td>"; ?> <a href="delete_books.php?id=<?php echo $row["id"]; ?>">Delete Books</a> <?php echo "</td>";
-                                    echo "<td>"; ?> <a href="edit_book.php?id=<?php echo $row["id"]; ?>">Edit Book</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a href="editar_livro.php?id=<?php echo $row["id"]; ?>">Edit Book</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</table>";

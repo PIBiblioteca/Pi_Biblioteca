@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["enrollment"]))
+if(!isset($_SESSION["email"]))
 {
     ?>
     <script type="text/javascript">
@@ -64,8 +64,8 @@ include "header.php";
                                     </th>
                                     <?php
                                     //VERIFICA SE USUÁRIO ESTÁ NA LISTA SOLICITAÇÕES OU EMPRÉSTIMOS
-                                    $enrollment=$_SESSION["enrollment"];
-                                    $result3 = mysqli_query($link, "SELECT * FROM retiradas WHERE student_enrollment = $enrollment");
+                                    $email=$_SESSION["email"];
+                                    $result3 = mysqli_query($link, "SELECT * FROM retiradas WHERE student_email='$email'");
                                         while($row=mysqli_fetch_array($result3))
                                         {
                                             echo "<tr>";
@@ -106,7 +106,7 @@ include "header.php";
                                     </th>
                                     <?php
 
-                                    $res=mysqli_query($link, "SELECT * FROM issue_books WHERE student_enrollment='$_SESSION[enrollment]'");
+                                    $res=mysqli_query($link, "SELECT * FROM emprestimos WHERE student_enrollment='$_SESSION[enrollment]'");
                                     while($row=mysqli_fetch_array($res))
                                     {
                                         echo "<tr>";

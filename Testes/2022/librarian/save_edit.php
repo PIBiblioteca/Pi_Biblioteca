@@ -14,7 +14,7 @@
         $aqty=$_POST['available_qty'];  
         $librarian=$_POST['librarian_username']; 
         
-        $sqlUpdate = "UPDATE add_books SET 
+        $sqlUpdate = "UPDATE adicionar_livros SET 
         id='$id',
         books_name='$booksname', 
         books_image='$img',  
@@ -28,6 +28,6 @@
         WHERE id='$id'";    
         $result = $conexao->query($sqlUpdate);    
     }
-    header('Location: edit_book.php');
+    header('Location: editar_livro.php');
  
 ?>

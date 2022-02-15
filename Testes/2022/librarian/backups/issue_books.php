@@ -39,7 +39,7 @@ include "connection.php"
                                         <td>
                                             <select name="enr" class="form-control selectpicker">
                                                 <?php
-                                                $res=mysqli_query($link, "SELECT enrollment FROM student_registration"); while($row=mysqli_fetch_array($res))
+                                                $res=mysqli_query($link, "SELECT enrollment FROM cadastro_usuarios"); while($row=mysqli_fetch_array($res))
                                                 {
                                                     echo "<option>";
                                                     echo $row["enrollment"];
@@ -64,7 +64,7 @@ include "connection.php"
 
                             if(isset($_POST["submit1"])) {
 
-                                $res5=mysqli_query($link, "SELECT * FROM student_registration WHERE enrollment='$_POST[enr]'");
+                                $res5=mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE enrollment='$_POST[enr]'");
                                 while($row5=mysqli_fetch_array($res5))
                                 {
                                     $firstname=$row5["firstname"];
@@ -109,7 +109,7 @@ include "connection.php"
                                     <td>
                                         <select name="booksname" class="form-control selectpicker">
                                             <?php 
-                                            $res = mysqli_query($link, "SELECT books_name FROM add_books");
+                                            $res = mysqli_query($link, "SELECT books_name FROM adicionar_livros");
                                              ($row = mysqli_fetch_array($res));
                                             {
                                                 echo "<option>";
@@ -152,7 +152,7 @@ include "connection.php"
                             if(isset($_POST["submit2"]))
                             {
                                 $qty=0;
-                                $res=mysqli_query($link, "SELECT * FROM add_books WHERE books_name='$_POST[booksname]'");
+                                $res=mysqli_query($link, "SELECT * FROM adicionar_livros WHERE books_name='$_POST[booksname]'");
                                 while($row=mysqli_fetch_array($res))
                                 {
                                     $qty=$row["available_qty"];
@@ -168,8 +168,8 @@ include "connection.php"
                                 }
                                 else
                                 {
-                                    mysqli_query($link, "INSERT INTO issue_books VALUES('','$_SESSION[enrollment]','$_POST[studentname]','$_POST[studentsem]','$_POST[studentcontact]','$_POST[studentemail]','$_POST[booksname]','$_POST[booksissuedate]','$_POST[booksreturndate]','$_SESSION[susername]')");
-                                    mysqli_query($link, "UPDATE add_books SET available_qty=available_qty-1 WHERE books_name='$_POST[booksname]'"); //função diminuir quantidade disponível
+                                    mysqli_query($link, "INSERT INTO emprestimos VALUES('','$_SESSION[enrollment]','$_POST[studentname]','$_POST[studentsem]','$_POST[studentcontact]','$_POST[studentemail]','$_POST[booksname]','$_POST[booksissuedate]','$_POST[booksreturndate]','$_SESSION[susername]')");
+                                    mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty-1 WHERE books_name='$_POST[booksname]'"); //função diminuir quantidade disponível
                                     ?>
                                     <script type="text/javascript">
                                         alert("books issued sucessfully");

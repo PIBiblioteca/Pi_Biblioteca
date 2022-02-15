@@ -14,7 +14,7 @@ include "connection.php";
 if(isset($_GET["id"]))
 {
     $id=$_GET["id"];
-    mysqli_query($link,"DELETE FROM add_books WHERE id=$id");
+    mysqli_query($link,"DELETE FROM adicionar_livros WHERE id=$id");
     ?>
     <script type="text/javascript">
         window.location="livros.php";

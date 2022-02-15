@@ -44,7 +44,7 @@ include "connection.php";
                             </div>
                             <div class="x_content">
                                 <?php
-                                $res=mysqli_query($link,"SELECT * FROM issue_books WHERE books_name='$_GET[books_name]' && books_return_date=''");
+                                $res=mysqli_query($link,"SELECT * FROM emprestimos WHERE books_name='$_GET[books_name]' && books_return_date=''");
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
                                 echo "<th>"; echo "student name"; echo "</th>";
