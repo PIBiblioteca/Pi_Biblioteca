@@ -56,7 +56,6 @@ include "header.php";
                                     echo "<tr>";
                                     echo "<th>"; echo "student enrollment"; echo "</th>";
                                     echo "<th>"; echo "student name"; echo "</th>";
-                                    echo "<th>"; echo "student sem"; echo "</th>";
                                     echo "<th>"; echo "student contact"; echo "</th>";
                                     echo "<th>"; echo "student email"; echo "</th>";
                                     echo "<th>"; echo "books name"; echo "</th>";
@@ -71,7 +70,6 @@ include "header.php";
                                         echo "<tr>";
                                         echo "<td>"; echo $row["student_enrollment"]; echo "</td>";
                                         echo "<td>"; echo $row["student_name"]; echo "</td>";
-                                        echo "<td>"; echo $row["student_sem"]; echo "</td>";
                                         echo "<td>"; echo $row["student_contact"]; echo "</td>";
                                         echo "<td>"; echo $row["student_email"]; echo "</td>";
                                         echo "<td>"; echo $row["books_name"]; echo "</td>";
@@ -92,13 +90,13 @@ include "header.php";
                                         echo $status;
                                         
                                          echo "</td>";
+
                                         echo "<td>"; 
                                         //VERIFICAR SE DEVOLUÇÃO ESTÁ EM ATRASO
                                         $date=date ('d/m/Y');
-                                       
-                                        if ($date > $return_date) {
+                                        if (strtotime($date) > strtotime($return_date)) {
 
-                                            $result2 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_enrollment = $enrollment");
+                                            $result2 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_enrollment = '$enrollment'");
                                             if(mysqli_num_rows($result2) > 0) {
                                                 echo "ATRASADO"; 
                                             }
@@ -110,7 +108,8 @@ include "header.php";
                                             mysqli_query($link, "INSERT INTO suspensoes VALUES('', '$enrollment', '$contact', '$email', '$books_name', '', 'atraso na devolução', '')");
                                             }
                                         }
-                                        ?> <a style="color: green"  href="devolver_livro.php?id=<?php echo $row["id"]; ?>">Return Books</a> <?php echo "</td>";
+                                        ?> <a style="color: green"  href="devolver_livro.php?id=<?php echo $row["id"]; ?>">Return Books</a> <?php 
+                                        echo "</td>";
                                         echo "</tr>";
                                     }
                                     echo "</table>";

@@ -92,11 +92,6 @@ include "connection.php"
                                 </tr>
                                 <tr>
                                      <td>
-                                        <input type="text" class="form-control" placeholder="studentsem" name="studentsem" value="<?php echo $sem; ?>" required>
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <td>
                                         <input type="text" class="form-control" placeholder="studentcontact" name="studentcontact" value="<?php echo $contact; ?>" required>
                                      </td>
                                 </tr>
@@ -168,7 +163,7 @@ include "connection.php"
                                 }
                                 else
                                 {
-                                    mysqli_query($link, "INSERT INTO emprestimos VALUES('','$_SESSION[enrollment]','$_POST[studentname]','$_POST[studentsem]','$_POST[studentcontact]','$_POST[studentemail]','$_POST[booksname]','$_POST[booksissuedate]','$_POST[booksreturndate]','$_SESSION[susername]')");
+                                    mysqli_query($link, "INSERT INTO emprestimos VALUES('','$_SESSION[enrollment]','$_POST[studentname]','$_POST[studentcontact]','$_POST[studentemail]','$_POST[booksname]','$_POST[booksissuedate]','$_POST[booksreturndate]','$_SESSION[susername]')");
                                     mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty-1 WHERE books_name='$_POST[booksname]'"); //função diminuir quantidade disponível
                                     ?>
                                     <script type="text/javascript">

@@ -59,13 +59,13 @@ include "connection.php";
                                 $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios");
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
-                                echo "<th>"; echo "Fullname"; echo "</th>";
-                                echo "<th>"; echo "Email"; echo "</th>";
-                                echo "<th>"; echo "Contact"; echo "</th>";
-                                echo "<th>"; echo "Enrollment"; echo "</th>";
+                                echo "<th>"; echo "Nome usuário"; echo "</th>";
+                                echo "<th>"; echo "E-mail"; echo "</th>";
+                                echo "<th>"; echo "Contato"; echo "</th>";
+                                echo "<th>"; echo "Matrícula"; echo "</th>";
                                 echo "<th>"; echo "Status"; echo "</th>";
-                                echo "<th>"; echo "Approve"; echo "</th>";
-                                echo "<th>"; echo "Not Approve"; echo "</th>";
+                                echo "<th>"; echo "Aprovar"; echo "</th>";
+                                echo "<th>"; echo "Não aprovar"; echo "</th>";
                                 echo "</tr>";
                                 while($row=mysqli_fetch_array($res))
                                 {
@@ -76,7 +76,7 @@ include "connection.php";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";
                                     echo "<td>"; echo $row["status"]; echo "</td>";
                                     echo "<td>"; ?> <a href="aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">Approve</a> <?php echo "</td>";
-                                    echo "<td>"; ?> <a href="não_aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">Not Approve</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a href="nao_aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">Not Approve</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</table>"

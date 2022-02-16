@@ -5,9 +5,9 @@ include "connection.php";
 $id = $_GET["id"];
 
 //puxa dados da tabela retiradas
-$res = mysqli_query($link, "UPDATE retiradas SET status_solicitacao='LIVRO NÃO RETIRADO NO PRAZO' WHERE id='$id'");
+$res = mysqli_query($link, "UPDATE solicitacoes SET status_solicitacao='LIVRO NÃO RETIRADO NO PRAZO' WHERE id='$id'");
 
-$res5=mysqli_query($link, "SELECT * FROM retiradas WHERE id='$id'");
+$res5=mysqli_query($link, "SELECT * FROM solicitacoes WHERE id='$id'");
 while($row5=mysqli_fetch_array($res5)){
     $booksname=$row5["books_name"];
 }

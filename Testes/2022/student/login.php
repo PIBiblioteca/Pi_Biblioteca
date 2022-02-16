@@ -24,7 +24,7 @@ include "connection.php";
 <br>
 
 <div class="col-lg-12 text-center ">
-    <h1 style="font-family:Lucida Console">BiblioFateca</h1>
+    <h1 style="font-family:Lucida Console"> BiblioFateca w</h1>
 </div>
 
 <br>

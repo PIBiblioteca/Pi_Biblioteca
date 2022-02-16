@@ -19,7 +19,7 @@ while ($row7 = mysqli_fetch_array($res7)) {
 $date = date('d/m/Y'); //data atual
 
 //verifica se entrega está atrasada
-if ($date > $return_date) {
+if (strtotime($date) > strtotime($return_date)) {
     //suspende usuário na tabela cadastro_usuarios
     $status = 'SUSPENSO';
     mysqli_query($link, "UPDATE cadastro_usuarios SET status='SUSPENSO' WHERE enrollment='$enrollment'");
@@ -53,11 +53,12 @@ if ($date > $return_date) {
 <?php
 }
 else {
+
 //Função atualizar usuário suspenso para ativo
-$res = mysqli_query($link, "UPDATE cadastro_usuarios SET status='ATIVO' WHERE enrollment=$enrollment");
+mysqli_query($link, "UPDATE cadastro_usuarios SET status_cadastro='teste' WHERE enrollment='$enrollment'");
 
 //Função atualizar status do empréstimo
-mysqli_query($link, "UPDATE emprestimos SET status_emprestimo='DEVOLVIDO' WHERE id=$id");
+mysqli_query($link, "UPDATE emprestimos SET status_emprestimo='DEVOLVIDO' WHERE student_enrollment='$enrollment'");
 
 //função aumentar quantidade disponível
 mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty+1 WHERE books_name='$books_name'");

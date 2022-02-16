@@ -28,7 +28,7 @@ include "connection.php";
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Send Message to Student</h2>
+                                <h2>Enviar recado para usuário</h2>
 
                                 <div class="clearfix"></div>
                             </div>
@@ -43,8 +43,8 @@ include "connection.php";
                                                 $res=mysqli_query($link, "SELECT * FROM cadastro_usuarios");
                                                 while($row=mysqli_fetch_array($res))
                                                 {
-                                                    ?><option value="<?php echo $row["username"]?>">
-                                                    <?php echo $row["username"]." (". $row["enrollment"].")"; ?>
+                                                    ?><option value="<?php echo $row["fullname"]?>">
+                                                    <?php echo $row["fullname"]." RA (". $row["enrollment"].")"; ?>
                                                     </option><?php
                                                 }
                                                 ?>

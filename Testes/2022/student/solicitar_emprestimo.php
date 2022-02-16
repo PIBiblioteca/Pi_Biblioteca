@@ -42,7 +42,8 @@ include "connection.php";
 
                                 $date=date("d/m/Y");
                                 // puxa dados do usuário
-                                $res5=mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$_SESSION[email]'");
+                                $email=$_SESSION["email"];
+                                $res5=mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$email'");
                                 while($row5=mysqli_fetch_array($res5))
                                 {
                                     $fullname=$row5["fullname"];
@@ -52,10 +53,10 @@ include "connection.php";
                                     $status=$row5["status"];
                                     $_SESSION["email"]=$email;
                                 }
-                                ECHO $STATUS;
+                                
                                 //VERIFICAR VIABILIDADE DE EMPRÉSTIMO
                                 //verifica se usuário está suspenso
-                                $result2 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_email=$email");
+                                $result2 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_email='$email'");
 
                                 if($status=='SUSPENSO') {
                                     ?>
@@ -77,7 +78,7 @@ include "connection.php";
                                 }
 
                                 //verifica se usuário tem empréstimo
-                                $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE email = $email");
+                                $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE student_email = '$email'");
                                 if(mysqli_num_rows($result3) > 0) {
                                     ?>
                                     <script type="text/javascript">
@@ -89,11 +90,11 @@ include "connection.php";
                                 //verifica se existe solicitação
                                 
 
-                                $result6 = mysqli_query($link, "SELECT * FROM retiradas WHERE email = $email");
+                                $result6 = mysqli_query($link, "SELECT * FROM solicitacoes WHERE student_email = '$email'");
                                     
                                 //verifica se já existe dados na tabela
                                 if(mysqli_num_rows($result6) > 0) {
-                                    $result4 = mysqli_query($link, "SELECT * FROM retiradas WHERE email = $email");
+                                    $result4 = mysqli_query($link, "SELECT * FROM solicitacoes WHERE student_email = '$email'");
                                     while($row8=mysqli_fetch_array($result4))
                                     {
                                         $status_solicitacao=$row8["status_solicitacao"];
@@ -123,40 +124,35 @@ include "connection.php";
                                 
                                 <table class="table table-bordered">
                                 <tr>
-                                    <td>booksname
+                                    <td>Nome do livro
                                         <input type="text" class="form-control" placeholder="booksname" name="booksname" value="<?php echo $booksname; ?>" disabled>
                                            
                                         </select>
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <td> Enrollment
+                                    <td> Matrícula usuário
                                         <input type="text" class="form-control" placeholder="enrollmentno" name="enrollment" value="<?php echo $enrollment; ?>" disabled>
                                      </td>
                                 </tr>
                                 <tr>
-                                     <td> studentname
+                                     <td> Nome usuário
                                         <input type="text" class="form-control" placeholder="fullname" name="fullname" value="<?php echo $fullname; ?>" disabled>
                                      </td>
                                 </tr>
                                 <tr>
-                                     <td> studentcontact
+                                     <td> Contato usuário
                                         <input type="text" class="form-control" placeholder="studentcontact" name="studentcontact" value="<?php echo $contact; ?>" disabled>
                                      </td>
                                 </tr>
                                 <tr>
-                                     <td>studentemail
+                                     <td> E-mail usuário
                                         <input type="text" class="form-control" placeholder="studentemail" name="studentemail" value="<?php echo $email; ?>" disabled>
                                      </td>
                                 </tr>
                                 <tr>
-                                     <td>booksissuedate
+                                     <td> Data da solicitação
                                         <input type="text" class="form-control" placeholder="booksissuedate" name="booksissuedate" value="<?php echo date("d/m/Y"); ?>" disabled>
-                                     </td>
-                                </tr>
-                                <tr>
-                                     <td>booksreturndate
-                                        <input type="text" class="form-control" placeholder="booksreturndate" name="booksreturndate" value="<?php echo date('d/m/Y', strtotime("+2 weeks")); ?>" disabled>
                                      </td>
                                 </tr>
                                 <tr>
@@ -167,7 +163,7 @@ include "connection.php";
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="submit" value="issue books" 
+                                        <input type="submit" value="Solicitar Empréstimo" 
                                         name="submit2" class="form-control btn btn-default" style="background-color: blue; color: white">
                                     </td>
                                 </tr>
@@ -193,7 +189,7 @@ include "connection.php";
                                 {
                                     ?>
                                     <div class="alert alert-danger col-lg-6 col-lg-push-3">
-                                        <strong>this book is not available in stock</strong> 
+                                        <strong>Este livro não está mais disponível</strong> 
                                     </div>
                                     <?php
                                 }
@@ -201,18 +197,18 @@ include "connection.php";
                                 {
                                     $prazo_retirada=date('d/m/Y', strtotime("+1 weeks"));
 
-                                    $result5 = mysqli_query($link, "SELECT * FROM retiradas WHERE email = $email");
+                                    $result5 = mysqli_query($link, "SELECT * FROM solicitacoes WHERE student_email = '$email'");
                                     
                                     //verifica se já existe solicitação concluída e a altera
                                     if(mysqli_num_rows($result5) > 0) {
-                                        mysqli_query($link, "UPDATE retiradas SET books_name='$booksname', student_enrollment='$_SESSION[enrollment]', student_name='$fullname', 
+                                        mysqli_query($link, "UPDATE solicitacoes SET books_name='$booksname', student_enrollment='$_SESSION[enrollment]', student_name='$fullname', 
                                         student_contact='$contact', 
                                         student_email='$email', 
                                         data_solicitacao='$date', prazo_retirada='$prazo_retirada', status_solicitacao='AGUARDANDO RETIRADA'");
                                         mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty-1 WHERE id=$id"); //função diminuir quantidade disponível
                                     } else {
                                     //se não houver solicitação, cria uma
-                                    mysqli_query($link, "INSERT INTO retiradas VALUES('','$booksname','$enrollment','$fullname','$contact','$email','$date','$prazo_retirada','AGUARDANDO RETIRADA')");
+                                    mysqli_query($link, "INSERT INTO solicitacoes VALUES('','$booksname','$enrollment','$fullname','$contact','$email','$date','$prazo_retirada','AGUARDANDO RETIRADA')");
                                     mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty-1 WHERE id=$id"); //função diminuir quantidade disponível
                                     ?>
                                     <script type="text/javascript">

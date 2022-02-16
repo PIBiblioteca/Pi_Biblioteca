@@ -43,7 +43,12 @@ include "header.php";
                 <div class="row" style="min-height:500px">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
-                            <div class="x_title">
+                        <?php
+                        //verifica se há solicitação
+                        $result2 = mysqli_query($link, "SELECT * FROM solicitacoes WHERE student_email = '$email'");
+                            if(mysqli_num_rows($result2) > 0) {
+                                ?>
+                                <div class="x_title">
                                 <h2>Minha solicitação</h2>
 
                                 <div class="clearfix"></div>
@@ -51,7 +56,7 @@ include "header.php";
                             <div class="x_content">
                                 <table class="table table-bordered">
                                     <th>
-                                        Books Name
+                                        Nome do livro
                                     </th>
                                     <th>
                                         Data Solicitação
@@ -63,10 +68,7 @@ include "header.php";
                                         Status Solicitação 
                                     </th>
                                     <?php
-                                    //VERIFICA SE USUÁRIO ESTÁ NA LISTA SOLICITAÇÕES OU EMPRÉSTIMOS
-                                    $email=$_SESSION["email"];
-                                    $result3 = mysqli_query($link, "SELECT * FROM retiradas WHERE student_email='$email'");
-                                        while($row=mysqli_fetch_array($result3))
+                                        while($row=mysqli_fetch_array($result2))
                                         {
                                             echo "<tr>";
                                             echo "<td>";
@@ -84,16 +86,32 @@ include "header.php";
                                             echo "</tr>";
                                         }
                                 ?>
-                                    
                                 </table>
+                                <?php
+                            }
+                        ?>
+                        <?php
+                        //verifica se existe empréstimo
+                        $status_emprestimo='';
+                        $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE student_email = '$email'");
+                        while($row3 = mysqli_fetch_array($result3)){
+                            $status_emprestimo=$row3["status_emprestimo"];
+                            $books_name=$row3["books_name"];
+                            $books_issue_date=$row3["books_issue_date"];
+                            $books_return_date=$row3["books_return_date"];
+                            $status_emprestimo=$row3["status_emprestimo"];
+                        }
+
+                        if($status_emprestimo=='RETIRADO') {
+                            ?>
                                 <div class="x_title">
-                                <h2>Meu histórico</h2>
+                                <h2>Livro a devolver</h2>
                                 <div class="clearfix"></div>
                                 </div>
                                 <table class="table table-bordered">
                                     
                                     <th>
-                                        Books Name
+                                        Nome do livro
                                     </th>
                                     <th>
                                         Data Retirada
@@ -105,30 +123,74 @@ include "header.php";
                                         Status Empréstimo 
                                     </th>
                                     <?php
-
-                                    $res=mysqli_query($link, "SELECT * FROM emprestimos WHERE student_enrollment='$_SESSION[enrollment]'");
-                                    while($row=mysqli_fetch_array($res))
-                                    {
+                                    
+                                    
                                         echo "<tr>";
                                         echo "<td>";
-                                        echo $row["books_name"];
+                                        echo $books_name;
                                         echo "</td>";
                                         echo "<td>";
-                                        echo $row["books_issue_date"];
+                                        echo $books_issue_date;
                                         echo "</td>";
                                         echo "<td>";
-                                        echo $row["books_return_date"];
+                                        echo $books_return_date;
                                         echo "</td>";
                                         echo "<td>";
-                                        echo "devolução até "; 
-                                        echo $row["books_return_date"];
+                                        echo $status_emprestimo;
                                         echo "</td>";
                                         echo "</tr>";
-                                    }
-                                
-                                    ?>
                                     
+                                ?>   
                                 </table>
+                                <?php
+                                
+                                if($status_emprestimo=='DEVOLVIDO') {
+                                    ?>
+                                        <div class="x_title">
+                                        <h2>Histórico</h2>
+                                        <div class="clearfix"></div>
+                                        </div>
+                                        <table class="table table-bordered">
+                                            
+                                            <th>
+                                                Nome do livro
+                                            </th>
+                                            <th>
+                                                Data Retirada
+                                            </th>
+                                            <th>
+                                                Prazo Devolução
+                                            </th>
+                                            <th>
+                                                Status Empréstimo 
+                                            </th>
+                                            <?php
+                                            while($row=mysqli_fetch_array($result3))
+                                            {
+                                                echo "<tr>";
+                                                echo "<td>";
+                                                echo $books_name;
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $books_issue_date;
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $books_return_date;
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $status_emprestimo;
+                                                echo "</td>";
+                                                echo "</tr>";
+                                            }
+                                        ?>   
+                                        </table>
+                                        <?php
+                                        }
+                                        if($status_emprestimo==''){
+                                            echo "NÃO HÁ REGISTROS <br> <br>Faça o seu primeiro empréstimo no menu 'Buscar Livros' ";
+                                    }
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
