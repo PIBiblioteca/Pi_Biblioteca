@@ -103,8 +103,14 @@ include "connection.php"
                             }
                             else
                             { 
-                            //exibe tabela sem
+                            //exibe tabela sem pesquisa
                             $res=mysqli_query($link, "SELECT * FROM solicitacoes");
+                            // retorno quando não há registros
+                            if(mysqli_num_rows($res) == 0) {
+                                ECHO "Não há registros no momento   ";
+                            }
+                            //retorno quando há registros
+                            else {
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
                                 echo "<th>"; echo "Matrícula usuário"; echo "</th>";
@@ -152,6 +158,7 @@ include "connection.php"
                                 }
                             }
                             echo "</table>";
+                            }
                             }
                             ?>
                             

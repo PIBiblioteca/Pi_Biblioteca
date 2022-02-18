@@ -12,7 +12,7 @@ while ($row7 = mysqli_fetch_array($res7)) {
 }
 
 //Função atualizar usuário suspenso para ativo
-$res = mysqli_query($link, "UPDATE cadastro_usuarios SET status='ATIVO' WHERE enrollment=$enrollment");
+$res = mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='ATIVO' WHERE enrollment=$enrollment");
 
 //Função atualizar livro nos empréstimos
 mysqli_query($link, "UPDATE emprestimos SET status_emprestimo='REPOSTO' WHERE id=$id");

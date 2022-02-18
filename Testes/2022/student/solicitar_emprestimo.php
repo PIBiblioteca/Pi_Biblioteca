@@ -50,7 +50,7 @@ include "connection.php";
                                     $enrollment=$row5["enrollment"];
                                     $contact=$row5["contact"];
                                     $enrollment=$row5["enrollment"];
-                                    $status=$row5["status"];
+                                    $status=$row5["status_usuario"];
                                     $_SESSION["email"]=$email;
                                 }
                                 
@@ -79,7 +79,10 @@ include "connection.php";
 
                                 //verifica se usuário tem empréstimo
                                 $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE student_email = '$email'");
-                                if(mysqli_num_rows($result3) > 0) {
+                                while($row=mysqli_fetch_array($result3)){
+                                    $status_emprestimo=$row["status_emprestimo"];
+                                }
+                                if(mysqli_num_rows($result3) > 0 && $status_emprestimo!="DEVOLVIDO") {
                                     ?>
                                     <script type="text/javascript">
                                         alert("USUÁRIO JÁ POSSUI EMPRÉSTIMO");
@@ -195,7 +198,7 @@ include "connection.php";
                                 }
                                 else
                                 {
-                                    $prazo_retirada=date('d/m/Y', strtotime("+1 weeks"));
+                                    $prazo_retirada=date('d/m/Y', strtotime("+5 days"));
 
                                     $result5 = mysqli_query($link, "SELECT * FROM solicitacoes WHERE student_email = '$email'");
                                     
@@ -212,7 +215,7 @@ include "connection.php";
                                     mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty-1 WHERE id=$id"); //função diminuir quantidade disponível
                                     ?>
                                     <script type="text/javascript">
-                                        alert("Solicitação concluída, comparecer à biblioteca em até 7 dias para retirada");
+                                        alert("Solicitação concluída, comparecer à biblioteca em até 5 dias para retirada");
                                         window.location.href="livros.php";
                                     </script>
                                     

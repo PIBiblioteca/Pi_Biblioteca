@@ -49,46 +49,57 @@ include "header.php";
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-
+                                
                                 <?php
+                                $status_emprestimo='DEVOLVIDO';
                                     $res = mysqli_query($link, "SELECT * FROM emprestimos");
+                                    while($row = mysqli_fetch_array($res)) {
+                                        $id=$row["id"];
+                                        $student_enrollment=$row["student_enrollment"];
+                                        $return_date=$row["books_return_date"];
+                                        $student_contact = $row["student_contact"];
+                                        $student_email = $row["student_email"];
+                                        $books_name = $row["books_name"];
+                                        $status_emprestimo = $row["status_emprestimo"];
+                                        $student_name = $row["student_name"];
+                                        $books_issue_date = $row["books_issue_date"];
+                                        $books_return_date = $row["books_return_date"];
+                                    }
+                                    //retorno se não houver livros a serem devolvidos
+                                    if($status_emprestimo=='DEVOLVIDO') {
+                                        ECHO "Não há registros no momento   ";
+                                    }
+                                    //retorno se houver livros a serem devolvidos
+                                    else {
                                     echo "<table class='table table-bordered'>";
                                     echo "<tr>";
-                                    echo "<th>"; echo "student enrollment"; echo "</th>";
-                                    echo "<th>"; echo "student name"; echo "</th>";
-                                    echo "<th>"; echo "student contact"; echo "</th>";
-                                    echo "<th>"; echo "student email"; echo "</th>";
-                                    echo "<th>"; echo "books name"; echo "</th>";
-                                    echo "<th>"; echo "books issue date"; echo "</th>";
-                                    echo "<th>"; echo "books return date"; echo "</th>";
-                                    echo "<th>"; echo "student status"; echo "</th>";
-                                    echo "<th>"; echo "return book"; echo "</th>";
-                                    echo "<th>"; echo "perda/avaria"; echo "</th>";
+                                    echo "<th>"; echo "Matrícula usuário"; echo "</th>";
+                                    echo "<th>"; echo "Nome usuário"; echo "</th>";
+                                    echo "<th>"; echo "Contato usuário"; echo "</th>";
+                                    echo "<th>"; echo "E-mail usuário"; echo "</th>";
+                                    echo "<th>"; echo "Nome do livro"; echo "</th>";
+                                    echo "<th>"; echo "Data de empréstimo"; echo "</th>";
+                                    echo "<th>"; echo "Data de retorno"; echo "</th>";
+                                    echo "<th>"; echo "Status usuário"; echo "</th>";
+                                    echo "<th>"; echo "Livro devolvido?"; echo "</th>";
+                                    echo "<th>"; echo "Perda ou Avaria?"; echo "</th>";
                                     echo "</tr>";
-                                    while($row = mysqli_fetch_array($res))
-                                    {
+                                    
                                         echo "<tr>";
-                                        echo "<td>"; echo $row["student_enrollment"]; echo "</td>";
-                                        echo "<td>"; echo $row["student_name"]; echo "</td>";
-                                        echo "<td>"; echo $row["student_contact"]; echo "</td>";
-                                        echo "<td>"; echo $row["student_email"]; echo "</td>";
-                                        echo "<td>"; echo $row["books_name"]; echo "</td>";
-                                        echo "<td>"; echo $row["books_issue_date"]; echo "</td>";
-                                        echo "<td>"; echo $row["books_return_date"]; echo "</td>";
+                                        echo "<td>"; echo $student_enrollment; echo "</td>";
+                                        echo "<td>"; echo $student_name; echo "</td>";
+                                        echo "<td>"; echo $student_contact; echo "</td>";
+                                        echo "<td>"; echo $student_email; echo "</td>";
+                                        echo "<td>"; echo $books_name; echo "</td>";
+                                        echo "<td>"; echo $books_issue_date; echo "</td>";
+                                        echo "<td>"; echo $books_return_date; echo "</td>";
                                         echo "<td>"; 
-
-                                        $enrollment=$row["student_enrollment"];
-                                        $return_date=$row["books_return_date"];
-                                        $contact = $row["student_contact"];
-                                        $email = $row["student_email"];
-                                        $books_name = $row["books_name"];
-
-                                        $res1 = mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE enrollment=$enrollment");
+                                        //puxa status_usuário da tablea "cadastro_usuarios"
+                                        $res1 = mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$student_email'");
                                         while ($row1 = mysqli_fetch_array($res1)) {
-                                            $status=$row1["status"];
+                                            $status_usuario=$row1["status_usuario"];
                                         }
-                                        echo $status;
-                                        
+                                        echo $status_usuario;
                                          echo "</td>";
 
                                         echo "<td>"; 
@@ -102,19 +113,23 @@ include "header.php";
                                             }
                                             else {
                                             //suspende usuário na tabela cadastro_usuarios
-                                            mysqli_query($link, "UPDATE cadastro_usuarios SET status='SUSPENSO' WHERE enrollment='$enrollment'");
+                                            mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='SUSPENSO' WHERE enrollment='$enrollment'");
                                             
                                             //envia usuário para tabela suspensoes
                                             mysqli_query($link, "INSERT INTO suspensoes VALUES('', '$enrollment', '$contact', '$email', '$books_name', '', 'atraso na devolução', '')");
                                             }
                                         }
-                                        ?> <a style="color: green"  href="devolver_livro.php?id=<?php echo $row["id"]; ?>">Return Books</a> <?php 
+                                        ?> <a style="color: green" href="devolver_livro.php?id=<?php echo $id; ?>">SIM</a> <?php 
+                                        echo "</td>";
+                                        
+                                        echo "<td>";
+                                        ?> <a style="color: brown" href="perda_avaria.php?id=<?php echo $id; ?>">SIM</a> <?php 
                                         echo "</td>";
                                         echo "</tr>";
-                                    }
+                                    
                                     echo "</table>";
-                                
-                                ?>   
+                                }
+                                ?> 
                             </div> 
                         </div>
                     </div>

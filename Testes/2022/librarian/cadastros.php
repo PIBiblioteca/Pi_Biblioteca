@@ -74,7 +74,7 @@ include "connection.php";
                                     echo "<td>"; echo $row["email"]; echo "</td>";
                                     echo "<td>"; echo $row["contact"]; echo "</td>";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";
-                                    echo "<td>"; echo $row["status"]; echo "</td>";
+                                    echo "<td>"; echo $row["status_usuario"]; echo "</td>";
                                     echo "<td>"; ?> <a href="aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">Approve</a> <?php echo "</td>";
                                     echo "<td>"; ?> <a href="nao_aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">Not Approve</a> <?php echo "</td>";
                                     echo "</tr>";

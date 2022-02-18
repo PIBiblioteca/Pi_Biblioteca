@@ -41,7 +41,7 @@ if (strtotime($date) > strtotime($return_date)) {
     mysqli_query($link, "UPDATE suspensoes SET suspension_date='$suspensiondate', suspension_reasion='$suspensioreason', suspension_return_date='$suspensionreturndate' WHERE enrollment='$enrollment'");
 
     //Função remover livro de emprestados
-    mysqli_query($link, "DELETE FROM emprestimos WHERE id=$id");
+    mysqli_query($link, "DELETE FROM emprestimos WHERE id='$id'");
 
     //função aumentar quantidade disponível
     mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty+1 WHERE books_name='$books_name'");
@@ -55,7 +55,7 @@ if (strtotime($date) > strtotime($return_date)) {
 else {
 
 //Função atualizar usuário suspenso para ativo
-mysqli_query($link, "UPDATE cadastro_usuarios SET status_cadastro='teste' WHERE enrollment='$enrollment'");
+mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='ATIVO' WHERE enrollment='$enrollment'");
 
 //Função atualizar status do empréstimo
 mysqli_query($link, "UPDATE emprestimos SET status_emprestimo='DEVOLVIDO' WHERE student_enrollment='$enrollment'");
@@ -65,7 +65,7 @@ mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty+1 W
 ?>
 
 <script type="text/javascript">
-    alert("Devolução concluída");
+    alert("Livro devolvido!");
     window.location="devolucoes.php";
 </script>
 <?php

@@ -13,7 +13,7 @@ include "connection.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Student Login Form | LMS </title>
+    <title>Login Usuário | BiblioFateca</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@ include "connection.php";
 <br>
 
 <div class="col-lg-12 text-center ">
-    <h1 style="font-family:Lucida Console"> BiblioFateca w</h1>
+    <h1 style="font-family:Lucida Console"> BiblioFateca </h1>
 </div>
 
 <br>
@@ -72,7 +72,7 @@ include "connection.php";
     
     if (isset($_POST["submit1"])) {
         $count = 0;
-        $res = mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$_POST[email]' && password='$_POST[password]' && status='ATIVO'");
+        $res = mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$_POST[email]' && password='$_POST[password]' && status_cadastro='ATIVO'");
         $count = mysqli_num_rows($res);
 
         if ($count == 0) {

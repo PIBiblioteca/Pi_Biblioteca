@@ -52,6 +52,12 @@ include "header.php";
 
                                 if(isset($_POST["submit1"])) {
                                     $res=mysqli_query($link, "SELECT * FROM suspensoes WHERE student_enrollment LIKE('%$_POST[t1]%') OR books_name LIKE('%$_POST[t1]%')");
+                                // retorno quando não há registros
+                                if(mysqli_num_rows($res) == 0) {
+                                    ECHO "Não há registros no momento   ";
+                                }
+                                //retorno quando há registros
+                                else {
                                     echo "<table class='table table-bordered'>";
                                     echo "<tr>";
                                     echo "<th>"; echo "student enrollment"; echo "</th>";
@@ -79,10 +85,17 @@ include "header.php";
                                     }
                                     echo "</table>";
                                 }
+                                }
                                 else
                                 { 
 
                                 $res=mysqli_query($link, "SELECT * FROM suspensoes");
+                                // retorno quando não há registros
+                                if(mysqli_num_rows($res) == 0) {
+                                    ECHO "Não há registros no momento   ";
+                                }
+                                //retorno quando há registros
+                                else {
                                     echo "<table class='table table-bordered'>";
                                     echo "<tr>";
                                     echo "<th>"; echo "student enrollment"; echo "</th>";
@@ -111,6 +124,7 @@ include "header.php";
                                     echo "</tr>";
                                 }
                                 echo "</table>";
+                                }
                                 }
                                 ?>
                             </div>

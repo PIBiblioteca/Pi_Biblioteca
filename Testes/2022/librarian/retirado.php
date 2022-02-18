@@ -16,13 +16,13 @@ while ($row7 = mysqli_fetch_array($res7)) {
 $issuedate=date("d/m/Y");
 $returndate=date('d/m/Y', strtotime("+2 weeks"));
 
-mysqli_query($link, "INSERT INTO emprestimos VALUES('','$enrollment','$student_name','$contact','$email','$books_name','$issuedate','$returndate','RETIRADO')");
+mysqli_query($link, "INSERT INTO emprestimos VALUES('','$enrollment','$student_name','$contact','$email','$books_name','$issuedate','$returndate','À DEVOLVER')");
 
 mysqli_query($link, "DELETE FROM solicitacoes WHERE id='$id'");
 
 
 ?>
     <script type="text/javascript">
-        alert("RETIRADA EFETUADA"?>);
+        alert("RETIRADA EFETUADA");
         window.location="retiradas.php";
     </script>
