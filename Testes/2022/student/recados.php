@@ -1,6 +1,8 @@
 <?php
 session_start();
-if(!isset($_SESSION["username"]))
+
+//função de segurança de login
+if(!isset($_SESSION["email"]))
 {
     ?>
     <script type="text/javascript">
@@ -8,9 +10,11 @@ if(!isset($_SESSION["username"]))
     </script>
     <?php
 }
+
+$email=$_SESSION["email"];
 include "header.php";
 include "connection.php";
-mysqli_query($link, "UPDATE messages SET read1='y' WHERE dusername='$_SESSION[username]'");
+mysqli_query($link, "UPDATE recados SET read1='y' WHERE email='$_SESSION[email]'");
 ?>
 
         <!-- page content area main -->
@@ -38,7 +42,7 @@ mysqli_query($link, "UPDATE messages SET read1='y' WHERE dusername='$_SESSION[us
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Message From Libarian</h2>
+                                <h2>Mensagens da bibliotecária</h2>
 
                                 <div class="clearfix"></div>
                             </div>
@@ -46,26 +50,18 @@ mysqli_query($link, "UPDATE messages SET read1='y' WHERE dusername='$_SESSION[us
                                 
                             <table class="table table-bordered">
                                 <tr>
-                                    <th>full name</th>
-                                    <th>title</th>
-                                    <th>message</th>
+                                    <th>Título</th>
+                                    <th>Mensagem</th>
                                 </tr>
 
                                 <?php
-                            $res=mysqli_query($link, "SELECT * FROM recados WHERE dusername='$_SESSION[username]' ORDER BY id DESC");
+                            $res=mysqli_query($link, "SELECT * FROM recados WHERE email='$_SESSION[email]' ORDER BY id DESC");
                             while($row=mysqli_fetch_array($res))
                             {
-                                $res1=mysqli_query($link, "SELECT * FROM cadastro_bibliotecaria WHERE username='$row[susername]'");
-                                while($row1=mysqli_fetch_array($res1)) {
-                                    $fullname=$row1["firstname"]." ".$row1["lastname"];
-                                }
-
                                     echo "<tr>";
-                                    echo "<td>"; echo $fullname; echo "</td>"; 
                                     echo "<td>"; echo $row["title"]; echo "</td>"; 
                                     echo "<td>"; echo $row["msg"]; echo "</td>"; 
                                     echo "</tr>";
-                                
                             }
                             ?>
 

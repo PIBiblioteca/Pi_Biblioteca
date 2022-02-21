@@ -59,9 +59,11 @@
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>
+                            <!--
                             <li><a href="suspensoes.php"><i class="fa fa-bar-chart-o"></i> Suspensões <span
                                     class="fa fa-chevron-down"></span></a>
                             </li>
+                            -->
                             <li><a href="historico.php"><i class="fa fa-bar-chart-o"></i> Histórico <span
                                     class="fa fa-chevron-down"></span></a>
                             </li>
@@ -69,7 +71,7 @@
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>
-                            <li><a href="adicionar_livros.php"><i class="fa fa-edit"></i> Adicionar livros <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="adicionar_livros.php"><i class="fa fa-edit"></i> Adicionar livro <span class="fa fa-chevron-down"></span></a>
 
                             </li>
                             <li><a href="recados.php"><i class="fa fa-mail-forward"></i> Recados <span

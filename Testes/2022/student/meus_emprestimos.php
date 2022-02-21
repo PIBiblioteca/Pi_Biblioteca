@@ -187,7 +187,7 @@ include "header.php";
                                                 echo $row3["status_emprestimo"];
                                                 echo "</td>";
                                                 echo "</tr>";
-                                            }
+                                            }   
                                         ?>   
                                         </table>
                                         <?php

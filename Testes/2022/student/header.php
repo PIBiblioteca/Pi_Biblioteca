@@ -1,10 +1,21 @@
 <?php
 include "connection.php";
-$tot=0;
-$res=mysqli_query($link, "SELECT * FROM recados WHERE dusername='$_SESSION[email]' && read1='n'");
-$tot=mysqli_num_rows($res);
-
 $email=$_SESSION['email'];
+//menu de usuário, foto e nome
+$res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
+        while($row=mysqli_fetch_array($res))
+        {                                
+            $image=$row["profile_image"];
+            $fullname=$row["fullname"];
+        }
+//fim menu de usuário
+
+//Menu de recados
+$tot=0;
+$res=mysqli_query($link, "SELECT * FROM recados WHERE dusername='$fullname' && read1='n'");
+$tot=mysqli_num_rows($res);
+//Fim menu de recados
+
 $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
         while($row=mysqli_fetch_array($res))
         {                                
@@ -107,7 +118,7 @@ if($image==''){
                         <li role="presentation" class="dropdown">
                             <a href="recados.php" class="dropdown-toggle info-number" data-toggle="dropdown"
                                aria-expanded="false">
-                                <i class="fa fa-envelope-o"></i>
+                                <i class="fa fa-envelope-o" onclick="window.location='recados.php'"></i>
                                 <span class="badge bg-green" onclick="window.location='recados.php'"><?php echo $tot; ?></span>
                             </a>
 

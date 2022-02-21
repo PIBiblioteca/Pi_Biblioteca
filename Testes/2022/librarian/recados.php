@@ -53,17 +53,17 @@ include "connection.php";
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" name="title" placeholder="Enter Title"></td>
+                                        <td><input type="text" class="form-control" name="title" placeholder="Título"></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        Message <br>
+                                        Mensagem <br>
                                         <textarea name="msg" class="form-control" id="" cols="30" rows="10"></textarea>
                                         </td>   
                                     </tr>
                                     <tr>
                                         <td>
-                                            <input type="submit" name="submit1" value="send message">
+                                            <input type="submit" name="submit1" value="Enviar">
                                         </td>
                                     </tr>
                                 </table>
@@ -79,11 +79,11 @@ include "connection.php";
 <?php
     if(isset($_POST["submit1"]))
     {
-        mysqli_query($link, "INSERT INTO recados VALUES('','$_SESSION[librarian]','$_POST[dusername]','$_POST[title]','$_POST[msg]','n')") or die(mysqli_error($link));
+        mysqli_query($link, "INSERT INTO recados VALUES('','$_SESSION[email]','$_POST[dusername]','$_POST[title]','$_POST[msg]','n')") or die(mysqli_error($link));
         
         ?>
         <script type="text/javascript">
-            alert("message send sucessfully");
+            alert("Mensagem enviada");
         </script>
         <?php
     }

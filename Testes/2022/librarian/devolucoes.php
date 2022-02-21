@@ -18,7 +18,7 @@ include "header.php";
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Return Books</h3>
+                        <h3>Devoluções</h3>
                     </div>
 
                     <!-- menu pesquisa -->
@@ -44,7 +44,7 @@ include "header.php";
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Return Books</h2>
+                                <h2>Livros à serem devolvidos</h2>
 
                                 <div class="clearfix"></div>
                             </div>
@@ -81,8 +81,8 @@ include "header.php";
                                     echo "<th>"; echo "Data de empréstimo"; echo "</th>";
                                     echo "<th>"; echo "Data de retorno"; echo "</th>";
                                     echo "<th>"; echo "Status usuário"; echo "</th>";
-                                    echo "<th>"; echo "Livro devolvido?"; echo "</th>";
-                                    echo "<th>"; echo "Perda ou Avaria?"; echo "</th>";
+                                    echo "<th>"; echo "Devolução"; echo "</th>";
+                                    
                                     echo "</tr>";
                                     
                                         echo "<tr>";
@@ -119,11 +119,18 @@ include "header.php";
                                             mysqli_query($link, "INSERT INTO suspensoes VALUES('', '$enrollment', '$contact', '$email', '$books_name', '', 'atraso na devolução', '')");
                                             }
                                         }
-                                        ?> <a style="color: green" href="devolver_livro.php?id=<?php echo $id; ?>">SIM</a> <?php 
-                                        echo "</td>";
+                                        if($status_emprestimo=='PERDA/AVARIA'){
+                                            ?> <a style="color: green" href="repor_livro.php?id=<?php echo $id; ?>">REPOSIÇÃO</a> <?php 
+                                        } else {
+                                        //MOSTRA BOTÃO "CONFIRMAR"
+                                        ?> <a style="color: green" href="devolver_livro.php?id=<?php echo $id; ?>">CONFIRMAR</a> <?php 
+                                        }
                                         
-                                        echo "<td>";
-                                        ?> <a style="color: brown" href="perda_avaria.php?id=<?php echo $id; ?>">SIM</a> <?php 
+                                        if($status_emprestimo=='PERDA/AVARIA'){
+                                            echo "perdido/avariado";
+                                        } else {
+                                        ?> <a style="color: brown" href="perda_avaria.php?id=<?php echo $id; ?>">PERDA/AVARIA</a> <?php 
+                                        }
                                         echo "</td>";
                                         echo "</tr>";
                                     

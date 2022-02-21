@@ -18,14 +18,15 @@ while ($row5 = mysqli_fetch_array($res5)) {
     $suspensionreturndate = "até que seja feita a reposição do livro";
 
 //verifica se já está suspenso e atualiza informações
-if(mysqli_num_rows($res5) > 0) {
+$res6 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_enrollment='$enrollment'");
+if(mysqli_num_rows($res6) > 0) {
     mysqli_query($link, "UPDATE suspensoes SET suspension_date='$suspensiondate', suspension_reason='$suspensioreason', suspension_return_date='$suspensionreturndate' WHERE student_enrollment='$enrollment'");
 } else {
     //suspende usuário
-    mysqli_query($link, "INSERT INTO suspensoes VALUES('', '$enrollment', '$contact', '$email', '$booksname', '$suspensiondate', '$suspensioreason', '$suspensionreturndate') WHERE student_enrollment='$enrollment'");
+    mysqli_query($link, "INSERT INTO suspensoes VALUES('', '$enrollment', '$contact', '$email', '$booksname', '$suspensiondate', '$suspensioreason', '$suspensionreturndate')");
 }
 
-mysqli_query($link, "UPDATE emprestimos SET status_emprestimo='PERDA/AVARIA' WHERE student_enrollment='$enrollment'");tjtue6ue6
+mysqli_query($link, "UPDATE emprestimos SET status_emprestimo='PERDA/AVARIA' WHERE student_enrollment='$enrollment'");
 
 mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='SUSPENSO' WHERE enrollment='$enrollment'"); 
 

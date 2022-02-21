@@ -38,31 +38,31 @@ include "header.php";
                                 <form name="form1" action="" method="post" class="col-lg-6" enctype="multipart/form-data">
                                 <table class="table table-bordered">
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Name" name="booksname" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Nome do livro" name="booksname" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td>books image<input type="file" name="f1" required=""></td>
+                                        <td>Imagem do livro<input type="file" name="f1" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Author Name" name="bauthorname" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Autor" name="bauthorname" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Publication Name" name="pname" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Editora" name="pname" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Purchase Date" name="bpurchasedt" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Data da compra" name="bpurchasedt" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Price" name="bprice" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Preço" name="bprice" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Books Quantity" name="bqty" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Quantidade" name="bqty" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Available Quantity" name="aqty" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Quantidade disponível" name="aqty" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="submit" name="submit1" class="btn btn-default submit" value="insert books details" style="background-color: blue; color: white"></td>
+                                        <td><input type="submit" name="submit1" class="btn btn-default submit" value="Confirmar" style="background-color: blue; color: white"></td>
                                     </tr>
                                 </table>
                                 </form>
