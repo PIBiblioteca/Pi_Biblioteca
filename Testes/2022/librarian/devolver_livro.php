@@ -47,7 +47,7 @@ if (strtotime($date) > strtotime($return_date)) {
     mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty+1 WHERE books_name='$books_name'");
 ?>
     <script type="text/javascript">
-        alert("usuário suspenso até <?php echo $suspensionreturndate ?>");
+        alert("Usuário suspenso até <?php echo $suspensionreturndate ?>");
         window.location="devolucoes.php";
     </script>
 <?php

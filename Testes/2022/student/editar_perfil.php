@@ -20,7 +20,7 @@ include "header.php";
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Plain Page</h3>
+                        <h3>Editar perfil</h3>
                     </div>
 
                 </div>

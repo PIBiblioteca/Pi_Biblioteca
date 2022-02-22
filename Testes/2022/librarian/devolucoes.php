@@ -101,22 +101,21 @@ include "header.php";
                                         }
                                         echo $status_usuario;
                                          echo "</td>";
-
                                         echo "<td>"; 
                                         //VERIFICAR SE DEVOLUÇÃO ESTÁ EM ATRASO
                                         $date=date ('d/m/Y');
                                         if (strtotime($date) > strtotime($return_date)) {
 
-                                            $result2 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_enrollment = '$enrollment'");
+                                            $result2 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_email = '$student_email'");
                                             if(mysqli_num_rows($result2) > 0) {
                                                 echo "ATRASADO"; 
                                             }
                                             else {
                                             //suspende usuário na tabela cadastro_usuarios
-                                            mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='SUSPENSO' WHERE enrollment='$enrollment'");
+                                            mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='SUSPENSO' WHERE email='$student_email'");
                                             
                                             //envia usuário para tabela suspensoes
-                                            mysqli_query($link, "INSERT INTO suspensoes VALUES('', '$enrollment', '$contact', '$email', '$books_name', '', 'atraso na devolução', '')");
+                                            mysqli_query($link, "INSERT INTO suspensoes VALUES('', '$student_enrollment', '$student_contact', '$student_email', '$books_name', '', 'atraso na devolução', '')");
                                             }
                                         }
                                         if($status_emprestimo=='PERDA/AVARIA'){
