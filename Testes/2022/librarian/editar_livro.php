@@ -48,7 +48,7 @@ include "header.php";
                                 $dst=$row["books_image"];
                                 $bauthorname=$row["books_author_name"];
                                 $pname=$row["books_publication_name"];
-                                $bpurchasedt=$row["books_purchase_date"];
+                                $edicao=$row["edicao"];
                                 $bprice=$row["books_price"];
                                 $bqty=$row["books_qty"];
                                 $aqty=$row["available_qty"];
@@ -74,7 +74,7 @@ include "header.php";
                                         <td>Editora<input type="text" class="form-control" placeholder="Publication Name" name="pname" value="<?php echo $pname; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td>Books Purchase Date<input type="text" class="form-control" placeholder="Books Purchase Date" name="bpurchasedt" value="<?php echo $bpurchasedt; ?>" required=""></td>
+                                        <td>Edição<input type="text" class="form-control" placeholder="Edição" name="edicao" value="<?php echo $edicao; ?>" required=""></td>
                                     </tr>
                                     <tr>
                                         <td>Preço<input type="text" class="form-control" placeholder="Books Price" name="bprice" value="<?php echo $bprice; ?>" required=""></td>
@@ -114,16 +114,16 @@ include "header.php";
 
         if($fnm =='') //verifica se o campo de imagem está vazio
         {
-            mysqli_query($link, "UPDATE adicionar_livros SET books_name='$_POST[booksname]', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', books_purchase_date ='$_POST[bpurchasedt]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id='$id'");
+            mysqli_query($link, "UPDATE adicionar_livros SET books_name='$_POST[booksname]', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', edicao ='$_POST[edicao]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id='$id'");
         }
         else
         {
-        mysqli_query($link, "UPDATE adicionar_livros SET books_name='$_POST[booksname]', books_image='$dst1', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', books_purchase_date ='$_POST[bpurchasedt]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id='$id'");
+        mysqli_query($link, "UPDATE adicionar_livros SET books_name='$_POST[booksname]', books_image='$dst1', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', edicao ='$_POST[edicao]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id='$id'");
         }
     ?>
     
         <script type="text/javascript">
-            alert("books edit sucessfully");
+            alert("Edição concluída com sucesso");
             window.location="livros.php";
         </script>
     

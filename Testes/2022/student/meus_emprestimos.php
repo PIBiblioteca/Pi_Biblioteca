@@ -44,9 +44,12 @@ include "header.php";
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                         <?php
+                      
+                        $count=0;
                         //verifica se há solicitação
                         $result2 = mysqli_query($link, "SELECT * FROM solicitacoes WHERE student_email = '$email'");
                             if(mysqli_num_rows($result2) > 0) {
+                                $count=$count+1;
                                 ?>
                                 <div class="x_title">
                                 <h2>Minha solicitação</h2>
@@ -98,8 +101,8 @@ include "header.php";
                                 </table>
                                 <?php
                             }
-                        ?>
-                        <?php
+                       
+
                         //verifica se existe empréstimo
                         $status_emprestimo='';
                         $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE student_email = '$email'");
@@ -108,6 +111,7 @@ include "header.php";
                         }
 
                         if($status_emprestimo=='À DEVOLVER') {
+                            $count=$count+1;
                             ?>
                                 <div class="x_title">
                                 <h2>Livro a devolver</h2>
@@ -128,7 +132,7 @@ include "header.php";
                                         Status Empréstimo 
                                     </th>
                                     <?php
-                                    $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE status_emprestimo = '$status_emprestimo'");
+                                    $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE status_emprestimo = '$status_emprestimo' && student_email = '$email'");
                                     while($row3 = mysqli_fetch_array($result3)){
                                         echo "<tr>";
                                         echo "<td>";
@@ -149,7 +153,31 @@ include "header.php";
                                 </table>
                                 <?php
                                 }
-                                
+                            //mostra recado se não houver registro nas tabelas
+                            if ($count==0) {
+                                ?>
+                                <div class="x_title">
+                                        <h2>Solicitações</h2>
+                                    <div class="clearfix"></div>
+                                    </div>
+                                    <table class="table table-bordered">
+                                    
+                                    <th>NÃO HÁ REGISTROS <br></th> 
+                                    <tr>
+                                    <td>Faça um empréstimo clicando em 'Buscar Livros' no menu </td>
+                                    </tr>
+                                    </table>
+                                <?php 
+                            
+                                echo "<br>";
+                            }
+                            
+                            //verifica se há histórico
+                            $status_emprestimo='';
+                            $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE student_email = '$email' && status_emprestimo = 'DEVOLVIDO'");
+                            while($row3 = mysqli_fetch_array($result3)){
+                                $status_emprestimo=$row3["status_emprestimo"];
+                            }
                                 if($status_emprestimo=='DEVOLVIDO') {
                                     ?>
                                         <div class="x_title">
@@ -171,7 +199,7 @@ include "header.php";
                                                 Status Empréstimo 
                                             </th>
                                             <?php
-                                            $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE student_email = '$email'");
+                                            $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE student_email = '$email'&& status_emprestimo = 'DEVOLVIDO'");
                                             while($row3 = mysqli_fetch_array($result3)){
                                                 echo "<tr>";
                                                 echo "<td>";
@@ -187,14 +215,11 @@ include "header.php";
                                                 echo $row3["status_emprestimo"];
                                                 echo "</td>";
                                                 echo "</tr>";
-                                            }   
+                                            } 
                                         ?>   
                                         </table>
                                         <?php
-                                        }
-                                        //if($status_emprestimo==''){
-                                          //  echo "NÃO HÁ REGISTROS <br> <br>Faça o seu primeiro empréstimo no menu 'Buscar Livros' ";
-                                        //}
+                                        } 
                                 
                                 ?>
                             </div>

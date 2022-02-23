@@ -72,7 +72,7 @@ include "connection.php";
     
     if (isset($_POST["submit1"])) {
         $count = 0;
-        $res = mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$_POST[email]' && password='$_POST[password]' && status_usuario='ATIVO'");
+        $res = mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$_POST[email]' && password='$_POST[password]' && (status_usuario='ATIVO' OR status_usuario='SUSPENSO')");
         $count = mysqli_num_rows($res);
 
         if ($count == 0) {

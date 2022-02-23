@@ -50,7 +50,7 @@ include "header.php";
                                         <td><input type="text" class="form-control" placeholder="Editora" name="pname" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Data da compra" name="bpurchasedt" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Edição" name="edicao" required=""></td>
                                     </tr>
                                     <tr>
                                         <td><input type="text" class="form-control" placeholder="Preço" name="bprice" required=""></td>
@@ -83,7 +83,7 @@ include "header.php";
         $dst1="./books_image/".$tm.$fnm;
         move_uploaded_file($_FILES["f1"]["tmp_name"],$dst);
 
-        mysqli_query($link, "INSERT INTO adicionar_livros VALUES('','$_POST[booksname]','$dst1','$_POST[bauthorname]','$_POST[pname]','$_POST[bpurchasedt]','$_POST[bprice]','$_POST[bqty]','$_POST[aqty]','$_SESSION[librarian]')");
+        mysqli_query($link, "INSERT INTO adicionar_livros VALUES('','$_POST[booksname]','$dst1','$_POST[bauthorname]','$_POST[pname]','$_POST[edicao]','$_POST[bprice]','$_POST[bqty]','$_POST[aqty]','$_SESSION[librarian]')");
     ?>
         <script type="text/javascript">
             alert("books insert sucessfully");

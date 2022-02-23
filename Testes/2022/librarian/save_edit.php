@@ -8,7 +8,7 @@
         $img=$_POST['books_image'];  
         $bauthorname=$_POST['books_author_name'];  
         $pname=$_POST['books_publication_name'];  
-        $bpurchasedt=$_POST['books_purchase_date'];  
+        $edicao=$_POST['edicao'];  
         $bprice=$_POST['books_price'];  
         $bqty=$_POST['books_qty'];  
         $aqty=$_POST['available_qty'];  
@@ -20,7 +20,7 @@
         books_image='$img',  
         books_author_name='$bauthorname', 
         books_publication_name='$pname', 
-        books_purchase_date='$bpurchasedt', 
+        edicao='$edicao', 
         books_price='$bprice', 
         books_qty='$bqty', 
         available_qty='$aqty', 

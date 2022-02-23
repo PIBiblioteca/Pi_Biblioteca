@@ -106,7 +106,7 @@ include "connection.php";
                                         ?>
                                         <script type="text/javascript">
                                             alert("JÁ EXISTE UMA SOLICITAÇÃO EM ANDAMENTO, SÓ UMA SOLICITAÇÃO POR USUÁRIO É PERMITIDA POR VEZ");
-                                            window.location="livros.php";
+                                            window.location="meus_emprestimos.php";
                                         </script>
                                         <?php
                                     }
