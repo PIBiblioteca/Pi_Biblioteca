@@ -45,38 +45,134 @@ include "connection.php";
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Books With Details</h2>
+                                <h2>Lista de livros devolvidos</h2>
 
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
                                 <?php
-                                $i=0;
-                                    $res=mysqli_query($link, "SELECT * FROM adicionar_livros");
-                                    echo "<table class='table table-bordered'>";
-                                    echo "<tr>";
-                                    while($row = mysqli_fetch_array($res)) {
-                                        $i=$i+1;
-                                        echo "<td>"; ?> <img src="../librarian/<?php echo $row["books_image"]; ?>" height="100" width="100">  <?php 
-                                        echo "<br>";
-                                        echo "<b>".$row["books_name"]."</b>";
-                                        echo "<br>";
-                                        echo "<b>"."Total Books: ".$row["books_qty"]."</b>";
-                                        echo "<br>";
-                                        echo "<b>". "available: ".$row["available_qty"]."</b>";
-                                        echo "<br>";
-                                        ?> <a href="all_student_of_this_books.php?books_name=<?php echo $row["books_name"]; ?>" style="color: red"> Student Record of This Books</a> <?php
-                                        echo "</td>";
+                            // RESULTADO COM CAMPO DE BUSCA
+                            if(isset($_POST["submit1"])) {
+                                $res=mysqli_query($link, "SELECT * FROM emprestimos WHERE books_name LIKE('%$_POST[t1]%')");
+                                
+                                    ?>
+                                        <table class="table table-bordered">
+                                            
+                                            <th>
+                                                Nome do livro
+                                            </th>
+                                            <th>
+                                                Matrícula aluno
+                                            </th>
+                                            <th>
+                                                Nome aluno
+                                            </th>
+                                            <th>
+                                                Data Retirada
+                                            </th>
+                                            <th>
+                                                Prazo Devolução
+                                            </th>
+                                            <th>
+                                                Status Empréstimo 
+                                            </th>
+                                            <?php
+                                            
+                                            while($row3 = mysqli_fetch_array($res)){
+
+                                                
+                                                $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE status_emprestimo = 'DEVOLVIDO'");
+                                                
+                                                if($row3["status_emprestimo"]=='DEVOLVIDO') {
+                                                echo "<tr>";
+                                                echo "<td>";
+                                                echo $row3["books_name"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $row3["student_enrollment"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $row3["student_name"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $row3["books_issue_date"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $row3["books_return_date"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $row3["status_emprestimo"];
+                                                echo "</td>";
+                                                echo "</tr>";
+                                                }
+                                            } 
+                                        ?>   
+                                        </table>
+                                        <?php
                                         
-                                        if($i==5)
-                                        {
-                                            echo "</tr>";
-                                            echo "<tr>";
-                                            $i=0;
-                                        }
+
+                                
+                            } else {
+
+                            // RESULTADO *SEM* O CAMPO DE BUSCA
+                            //verifica se há histórico
+                            $status_emprestimo='';
+                            $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE status_emprestimo = 'DEVOLVIDO'");
+                            while($row3 = mysqli_fetch_array($result3)){
+                                $status_emprestimo=$row3["status_emprestimo"];
+                            }
+                                if($status_emprestimo=='DEVOLVIDO') {
+                                    ?>
+
+                                        <table class="table table-bordered">
+                                            
+                                        <th>
+                                                Nome do livro
+                                            </th>
+                                            <th>
+                                                Matrícula aluno
+                                            </th>
+                                            <th>
+                                                Nome aluno
+                                            </th>
+                                            <th>
+                                                Data Retirada
+                                            </th>
+                                            <th>
+                                                Prazo Devolução
+                                            </th>
+                                            <th>
+                                                Status Empréstimo 
+                                            </th>
+                                            <?php
+                                            $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE status_emprestimo = 'DEVOLVIDO'");
+                                            while($row3 = mysqli_fetch_array($result3)){
+                                                echo "<tr>";
+                                                echo "<td>";
+                                                echo $row3["books_name"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $row3["student_enrollment"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $row3["student_name"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $row3["books_issue_date"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $row3["books_return_date"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $row3["status_emprestimo"];
+                                                echo "</td>";
+                                                echo "</tr>";
+                                            } 
+                                        ?>   
+                                        </table>
+                                        <?php
+                                        } 
                                     }
-                                    echo "</tr>";
-                                    echo "</table>";
                                     ?>
                             </div>
                         </div>

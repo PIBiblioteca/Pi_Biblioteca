@@ -49,7 +49,7 @@ include "header.php";
                             <div class="x_content">
                                
                                 <?php 
-
+                                // RESULTADO COM PESQUISA
                                 if(isset($_POST["submit1"])) {
                                     $res=mysqli_query($link, "SELECT * FROM adicionar_livros WHERE books_name LIKE('%$_POST[t1]%')");
                                     echo "<table class='table table-bordered'>";
@@ -81,7 +81,7 @@ include "header.php";
                                     }
                                     echo "</table>";
                                 }
-                                else
+                                else // RESULTADO SEM PESQUISA
                                 { 
 
                                 $res=mysqli_query($link, "SELECT * FROM adicionar_livros");
