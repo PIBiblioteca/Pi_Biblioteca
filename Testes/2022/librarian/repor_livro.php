@@ -37,6 +37,6 @@ if(isset($_GET["id"]))
     ?>
 <script type="text/javascript">
     alert("Livro reposto!");
-    window.location="livros.php";
+    window.location="devolucoes.php";
 
 </script>

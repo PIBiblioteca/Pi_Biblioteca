@@ -106,7 +106,7 @@ include "connection.php";
                                         ?>
                                         <script type="text/javascript">
                                             alert("JÁ EXISTE UMA SOLICITAÇÃO EM ANDAMENTO, SÓ UMA SOLICITAÇÃO POR USUÁRIO É PERMITIDA POR VEZ");
-                                            window.location="meus_emprestimos.php";
+                                            window.location="livros.php";
                                         </script>
                                         <?php
                                     }
@@ -160,14 +160,14 @@ include "connection.php";
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="submit" value="Cancelar" 
-                                        name="submit1" class="form-control btn btn-default" style="background-color: brown; color: white">
+                                        <input type="submit" value="Solicitar Empréstimo" 
+                                        name="submit2" class="form-control btn btn-default" style="background-color: blue; color: white">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="submit" value="Solicitar Empréstimo" 
-                                        name="submit2" class="form-control btn btn-default" style="background-color: blue; color: white">
+                                        <input type="submit" value="Cancelar" 
+                                        name="submit1" class="form-control btn btn-default" style="background-color: brown; color: white">
                                     </td>
                                 </tr>
                                 </table>
@@ -216,7 +216,7 @@ include "connection.php";
                                     ?>
                                     <script type="text/javascript">
                                         alert("Solicitação concluída, comparecer à biblioteca em até 5 dias para retirada");
-                                        window.location.href="livros.php";
+                                        window.location.href="meus_emprestimos.php";
                                     </script>
                                     
                                     <?php

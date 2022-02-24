@@ -26,6 +26,7 @@ if(isset($_GET["id"]))
 
     ?>
     <script type="text/javascript">
+        alert("Solicitação cancelada!");
         window.location="meus_emprestimos.php";
 
     </script>

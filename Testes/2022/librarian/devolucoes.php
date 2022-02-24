@@ -67,7 +67,7 @@ include "header.php";
                                     }
                                     //retorno se não houver livros a serem devolvidos
                                     if($status_emprestimo=='DEVOLVIDO') {
-                                        ECHO "Não há registros no momento   ";
+                                        ECHO "Não há registros no momento";
                                     }
                                     //retorno se houver livros a serem devolvidos
                                     else {
@@ -104,11 +104,13 @@ include "header.php";
                                         echo "<td>"; 
                                         //VERIFICAR SE DEVOLUÇÃO ESTÁ EM ATRASO
                                         $date=date ('d/m/Y');
-                                        if (strtotime($date) > strtotime($return_date)) {
-
+                                                                              
+                                        if (strtotime($date) < strtotime($return_date)) {
+                                            
                                             $result2 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_email = '$student_email'");
-                                            if(mysqli_num_rows($result2) > 0) {
-                                                echo "ATRASADO"; 
+                                            $teste=1;
+                                            if((mysqli_num_rows($result2) > 0) AND ($status_emprestimo=='ATRASADO')) {
+                                                echo "ATRASADO";
                                             }
                                             else {
                                             //suspende usuário na tabela cadastro_usuarios
@@ -119,6 +121,7 @@ include "header.php";
                                             }
                                         }
                                         if($status_emprestimo=='PERDA/AVARIA'){
+                                            echo "PERDIDO/AVARIADO";
                                             ?> <a style="color: green" href="repor_livro.php?id=<?php echo $id; ?>">REPOSIÇÃO</a> <?php 
                                         } else {
                                         //MOSTRA BOTÃO "CONFIRMAR"
@@ -126,7 +129,7 @@ include "header.php";
                                         }
                                         
                                         if($status_emprestimo=='PERDA/AVARIA'){
-                                            echo "perdido/avariado";
+                                            
                                         } else {
                                         ?> <a style="color: brown" href="perda_avaria.php?id=<?php echo $id; ?>">PERDA/AVARIA</a> <?php 
                                         }
