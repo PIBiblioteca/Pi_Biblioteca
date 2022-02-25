@@ -65,7 +65,6 @@ include "connection.php";
                                 echo "<th>"; echo "Matrícula"; echo "</th>";
                                 echo "<th>"; echo "Status"; echo "</th>";
                                 echo "<th>"; echo "Aprovar"; echo "</th>";
-                                echo "<th>"; echo "Não aprovar"; echo "</th>";
                                 echo "</tr>";
                                 while($row=mysqli_fetch_array($res))
                                 {
@@ -75,8 +74,8 @@ include "connection.php";
                                     echo "<td>"; echo $row["contact"]; echo "</td>";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";
                                     echo "<td>"; echo $row["status_usuario"]; echo "</td>";
-                                    echo "<td>"; ?> <a href="aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">Approve</a> <?php echo "</td>";
-                                    echo "<td>"; ?> <a href="nao_aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">Not Approve</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a style="color: green" href="aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">SIM</a> |
+                                    <a style="color: brown" href="nao_aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">NÃO</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</table>"

@@ -86,7 +86,7 @@ include "header.php";
                                         <td>Quantidade disponível<input type="text" class="form-control" placeholder="Available Quantity" name="aqty" value="<?php echo $aqty; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="submit" name="submit1" class="btn btn-default submit" value="Confirmar" style="background-color: blue; color: white"></td>
+                                        <td><input type="submit" name="submit1" class="btn btn-default submit" value="Confirmar" style="background-color: green; color: white"></td>
                                     </tr>
                                 </table>
                                 </form>
@@ -114,11 +114,26 @@ include "header.php";
 
         if($fnm =='') //verifica se o campo de imagem está vazio
         {
+            // ATUALIZA TABELA "ADICIONAR_LIVROS"
             mysqli_query($link, "UPDATE adicionar_livros SET books_name='$_POST[booksname]', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', edicao ='$_POST[edicao]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id='$id'");
+
+            // ATUALIZA TABELA "EMPRESTIMOS"
+            mysqli_query($link, "UPDATE emprestimos SET books_name='$_POST[booksname]' WHERE books_name='$booksname'");
+            // ATUALIZA TABELA "SOLICITACOES"
+            mysqli_query($link, "UPDATE solicitacoes SET books_name='$_POST[booksname]' WHERE books_name='$booksname'");
+            // ATUALIZA TABELA "SUSPENSOES"
+            mysqli_query($link, "UPDATE suspensoes SET books_name='$_POST[booksname]' WHERE books_name='$booksname'");
         }
         else
         {
+        // ATUALIZA TABELA "ADICIONAR_LIVROS"
         mysqli_query($link, "UPDATE adicionar_livros SET books_name='$_POST[booksname]', books_image='$dst1', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', edicao ='$_POST[edicao]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id='$id'");
+        // ATUALIZA TABELA "EMPRESTIMOS"
+        mysqli_query($link, "UPDATE emprestimos SET books_name='$_POST[booksname]' WHERE books_name='$booksname'");
+        // ATUALIZA TABELA "SOLICITACOES"
+        mysqli_query($link, "UPDATE solicitacoes SET books_name='$_POST[booksname]' WHERE books_name='$booksname'");
+        // ATUALIZA TABELA "SUSPENSOES"
+        mysqli_query($link, "UPDATE suspensoes SET books_name='$_POST[booksname]' WHERE books_name='$booksname'");
         }
     ?>
     

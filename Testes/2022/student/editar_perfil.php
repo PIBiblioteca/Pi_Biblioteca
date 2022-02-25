@@ -68,13 +68,13 @@ include "header.php";
                                         <td>Senha<input type="password" class="form-control" placeholder="Password" name="password" value="<?php echo $password; ?>" required=""><button class="btn btn-default">mudar senha</button></td>
                                     </tr>
                                     <tr>
-                                        <td>E-mail<input type="text" class="form-control" placeholder="E-mail" name="email" value="<?php echo $email; ?>" required=""></td>
+                                        <td>E-mail<input type="text" class="form-control" placeholder="E-mail" name="email" value="<?php echo $email; ?>" disabled=""></td>
                                     </tr>
                                     <tr>
                                         <td>Contato<input type="text" class="form-control" placeholder="Contact" name="contact" value="<?php echo $contact; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="submit" name="submit1" class="btn btn-default submit" value="Confirmar" style="background-color: blue; color: white"></td>
+                                        <td><input type="submit" name="submit1" class="btn btn-default submit" value="Confirmar" style="background-color: green; color: white"></td>
                                     </tr>
                                 </table>
                                 </form>
@@ -100,11 +100,25 @@ include "header.php";
 
         if($fnm =='') //verifica se o campo de imagem está vazio
         {
-            mysqli_query($link, "UPDATE cadastro_usuarios SET fullname='$_POST[fullname]', password ='$_POST[password]', email ='$_POST[email]', contact ='$_POST[contact]' WHERE email='$email'");
+            // ATUALIZA TABELA "cadastro_usuarios"
+            mysqli_query($link, "UPDATE cadastro_usuarios SET fullname='$_POST[fullname]', password ='$_POST[password]', contact ='$_POST[contact]' WHERE email='$email'");
+            // ATUALIZA TABELA "emprestimos"
+            mysqli_query($link, "UPDATE emprestimos SET student_name='$_POST[fullname]', student_contact ='$_POST[contact]' WHERE student_email='$email'");
+            // ATUALIZA TABELA "recados"
+            mysqli_query($link, "UPDATE recados SET dusername='$_POST[fullname]' WHERE email='$email'");
+            // ATUALIZA TABELA "solicitacoes"
+            mysqli_query($link, "UPDATE solicitacoes SET student_name='$_POST[fullname]', student_contact ='$_POST[contact]' WHERE student_email='$email'");
         }
-        else
+        else //se campo de imagem não estiver vazio
         {
-        mysqli_query($link, "UPDATE cadastro_usuarios SET fullname='$_POST[fullname]', profile_image='$dst', password ='$_POST[password]', email ='$_POST[email]', contact ='$_POST[contact]' WHERE email='$email'");
+        // ATUALIZA TABELA "cadastro_usuarios"  
+        mysqli_query($link, "UPDATE cadastro_usuarios SET fullname='$_POST[fullname]', profile_image='$dst', password ='$_POST[password]', contact ='$_POST[contact]' WHERE email='$email'");
+        // ATUALIZA TABELA "emprestimos"
+        mysqli_query($link, "UPDATE emprestimos SET student_name='$_POST[fullname]', student_contact ='$_POST[contact]' WHERE student_email='$email'");
+        // ATUALIZA TABELA "recados"
+        mysqli_query($link, "UPDATE recados SET dusername='$_POST[fullname]' WHERE email='$email'");
+        // ATUALIZA TABELA "solicitacoes"
+        mysqli_query($link, "UPDATE solicitacoes SET student_name='$_POST[fullname]', student_contact ='$_POST[contact]' WHERE student_email='$email'");
         }
     ?>
     

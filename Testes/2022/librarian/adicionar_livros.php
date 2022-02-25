@@ -62,7 +62,7 @@ include "header.php";
                                         <td><input type="text" class="form-control" placeholder="Quantidade disponível" name="aqty" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="submit" name="submit1" class="btn btn-default submit" value="Confirmar" style="background-color: blue; color: white"></td>
+                                        <td><input type="submit" name="submit1" class="btn btn-default submit" value="Confirmar" style="background-color: green; color: white"></td>
                                     </tr>
                                 </table>
                                 </form>

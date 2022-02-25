@@ -161,11 +161,8 @@ include "connection.php";
                                 <tr>
                                     <td>
                                         <input type="submit" value="Solicitar Empréstimo" 
-                                        name="submit2" class="form-control btn btn-default" style="background-color: blue; color: white">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
+                                        name="submit2" class="form-control btn btn-default" style="background-color: green; color: white">
+                                    
                                         <input type="submit" value="Cancelar" 
                                         name="submit1" class="form-control btn btn-default" style="background-color: brown; color: white">
                                     </td>

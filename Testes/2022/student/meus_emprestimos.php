@@ -170,6 +170,8 @@ include "header.php";
                                 <?php 
                             
                                 echo "<br>";
+                            } else if($status_emprestimo=='DEVOLVIDO') {
+
                             }
                             
                             //verifica se há histórico

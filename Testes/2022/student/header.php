@@ -2,6 +2,7 @@
 include "connection.php";
 $email=$_SESSION['email'];
 //menu de usuário, foto e nome
+
 $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
         while($row=mysqli_fetch_array($res))
         {                                
@@ -60,7 +61,7 @@ if($image==''){
                 <!-- menu profile quick info -->
                 <div class="profile clearfix">
                     <div class="profile_pic">
-                        <img src="<?php echo $image; ?>" alt="..." class="img-circle profile_img">
+                        <img style="width: 60px" src="<?php echo $image; ?>" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <span>Olá,</span>

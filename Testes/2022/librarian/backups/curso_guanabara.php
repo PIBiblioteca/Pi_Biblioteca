@@ -70,5 +70,31 @@
     echo '$nome tem $idade anos!';
         ?>  
 
+    <br>
+    <br>
+        OPERAÇÕES ARITMÉTICAS
+    <br>
+    <?php
+        echo "<br>";
+        
+        $n1 = 2;
+        $n2 = 3;
+        $s = $n1+$n2;
+        echo "A soma vale $s";
+
+        echo "<br>";
+        echo "Adição +";
+        $soma=$n1+$n2;
+        echo "<br>";
+        echo "soma: $soma";
+        echo "<br>";
+        echo "subtração -";
+        $sub
+        echo "multiplicação *";
+        echo "divisão /";
+        echo "módulo % (resto da divisão";
+
+    ?>
+
 </body>
 </html>
