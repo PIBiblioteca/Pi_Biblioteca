@@ -57,6 +57,7 @@ include "header.php";
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
+                                <div id='container'>
                                 <table class="table table-bordered">
                                     <th>
                                         Nome do livro
@@ -99,6 +100,7 @@ include "header.php";
                                         }
                                 ?>
                                 </table>
+                                    </div>
                                 <?php
                             }
                        
@@ -117,6 +119,7 @@ include "header.php";
                                 <h2>Livro a devolver</h2>
                                 <div class="clearfix"></div>
                                 </div>
+                                <div id='container'>
                                 <table class="table table-bordered">
                                     
                                     <th>
@@ -151,7 +154,53 @@ include "header.php";
                                     }
                                 ?>   
                                 </table>
+                                </div>
                                 <?php
+                                } else if($status_emprestimo=='PERDA/AVARIA' OR $status_emprestimo=='ATRASADO') {
+                                    $count=$count+1;
+                                    ?>
+                                    <div class="x_title">
+                                <h2>Suspensão</h2>
+                                <div class="clearfix"></div>
+                                </div>
+                                
+                                <div id='container'>
+                                <table class="table table-bordered">
+                                    
+                                    <th>
+                                        Nome do livro
+                                    </th>
+                                    <th>
+                                        Data de suspensão
+                                    </th>
+                                    <th>
+                                        Motivo
+                                    </th>
+                                    <th>
+                                        Final da suspensão
+                                    </th>
+                                    <?php
+                                    $result3 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_email = '$email'");
+                                    while($row3 = mysqli_fetch_array($result3)){
+                                        echo "<tr>";
+                                        echo "<td>";
+                                        echo $row3["books_name"];
+                                        echo "</td>";
+                                        echo "<td>";
+                                        echo $row3["suspension_date"];
+                                        echo "</td>";
+                                        echo "<td>";
+                                        echo $row3["suspension_reason"];
+                                        echo "</td>";
+                                        echo "<td>";
+                                        echo $row3["suspension_return_date"];
+                                        echo "</td>";
+                                        echo "</tr>";
+                                    }
+                                    ?>   
+                                    </table>
+                                    </div>
+                                    <?php
                                 }
                             //mostra recado se não houver registro nas tabelas
                             if ($count==0) {
@@ -160,6 +209,7 @@ include "header.php";
                                         <h2>Solicitações</h2>
                                     <div class="clearfix"></div>
                                     </div>
+                                <div id='container'>
                                     <table class="table table-bordered">
                                     
                                     <th>NÃO HÁ REGISTROS <br></th> 
@@ -167,12 +217,11 @@ include "header.php";
                                     <td>Faça um empréstimo clicando em 'Buscar Livros' no menu </td>
                                     </tr>
                                     </table>
+                                </div>
                                 <?php 
                             
                                 echo "<br>";
-                            } else if($status_emprestimo=='DEVOLVIDO') {
-
-                            }
+                            } 
                             
                             //verifica se há histórico
                             $status_emprestimo='';
@@ -186,6 +235,7 @@ include "header.php";
                                         <h2>Histórico</h2>
                                         <div class="clearfix"></div>
                                         </div>
+                                        <div id='container'>
                                         <table class="table table-bordered">
                                             
                                             <th>
@@ -220,6 +270,7 @@ include "header.php";
                                             } 
                                         ?>   
                                         </table>
+                                        </div>
                                         <?php
                                         } 
                                 

@@ -54,6 +54,7 @@ include "connection.php"
                             {
                                 $i=0;
                                 $res=mysqli_query($link, "SELECT * FROM adicionar_livros WHERE books_name like('%$_POST[t1]%')"); //função pesquisa: WHERE books_name like('%$_POST[t1]%')
+                                echo "<div id='container'>";
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
                                 while($row=mysqli_fetch_array($res))
@@ -89,12 +90,14 @@ include "connection.php"
                                 }
                                 echo "</tr>";
                                 echo "</table>";
+                                echo "</div>";
 
                             }
                             else // código de exibir livros
                             {
                                 $i=0;
                                 $res=mysqli_query($link, "SELECT * FROM adicionar_livros"); //função de exibir somente livros disponíveis: SELECT * FROM adicionar_livros WHERE available_qty>0
+                                echo "<div id='container'>";
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
                                 while($row = mysqli_fetch_array($res))
@@ -127,6 +130,7 @@ include "connection.php"
                                 }
                                 echo "</tr>";
                                 echo "</table>";
+                                echo "</div>";
                             }
 
                             ?>

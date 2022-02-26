@@ -49,7 +49,7 @@ include "header.php";
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                                
+
                                 <?php
                                 $status_emprestimo='DEVOLVIDO';
                                     $res = mysqli_query($link, "SELECT * FROM emprestimos");
@@ -71,72 +71,75 @@ include "header.php";
                                     }
                                     //retorno se houver livros a serem devolvidos
                                     else {
-                                    echo "<table class='table table-bordered'>";
-                                    echo "<tr>";
-                                    echo "<th>"; echo "Matrícula usuário"; echo "</th>";
-                                    echo "<th>"; echo "Nome usuário"; echo "</th>";
-                                    echo "<th>"; echo "Contato usuário"; echo "</th>";
-                                    echo "<th>"; echo "E-mail usuário"; echo "</th>";
-                                    echo "<th>"; echo "Nome do livro"; echo "</th>";
-                                    echo "<th>"; echo "Data de empréstimo"; echo "</th>";
-                                    echo "<th>"; echo "Data de retorno"; echo "</th>";
-                                    echo "<th>"; echo "Status usuário"; echo "</th>";
-                                    echo "<th>"; echo "Devolução"; echo "</th>";
-                                    
-                                    echo "</tr>";
-                                    
+
+                                    echo "<div id='container'>";
+                                        echo "<table class='table table-bordered'>";
                                         echo "<tr>";
-                                        echo "<td>"; echo $student_enrollment; echo "</td>";
-                                        echo "<td>"; echo $student_name; echo "</td>";
-                                        echo "<td>"; echo $student_contact; echo "</td>";
-                                        echo "<td>"; echo $student_email; echo "</td>";
-                                        echo "<td>"; echo $books_name; echo "</td>";
-                                        echo "<td>"; echo $books_issue_date; echo "</td>";
-                                        echo "<td>"; echo $books_return_date; echo "</td>";
-                                        echo "<td>"; 
-                                        //puxa status_usuário da tablea "cadastro_usuarios"
-                                        $res1 = mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$student_email'");
-                                        while ($row1 = mysqli_fetch_array($res1)) {
-                                            $status_usuario=$row1["status_usuario"];
-                                        }
-                                        echo $status_usuario;
-                                         echo "</td>";
-                                        echo "<td>"; 
-                                        //VERIFICAR SE DEVOLUÇÃO ESTÁ EM ATRASO
-                                        $date=date ('d/m/Y');
-                                                                              
-                                        if (strtotime($date) < strtotime($return_date)) {
-                                            
-                                            $result2 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_email = '$student_email'");
-                                            $teste=1;
-                                            if((mysqli_num_rows($result2) > 0) AND ($status_emprestimo=='ATRASADO')) {
-                                                echo "ATRASADO";
-                                            }
-                                            else {
-                                            //suspende usuário na tabela cadastro_usuarios
-                                            mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='SUSPENSO' WHERE email='$student_email'");
-                                            
-                                            //envia usuário para tabela suspensoes
-                                            mysqli_query($link, "INSERT INTO suspensoes VALUES('', '$student_enrollment', '$student_contact', '$student_email', '$books_name', '', 'atraso na devolução', '')");
-                                            }
-                                        }
-                                        if($status_emprestimo=='PERDA/AVARIA'){
-                                            echo "PERDIDO/AVARIADO";
-                                            ?> <a style="color: green" href="repor_livro.php?id=<?php echo $id; ?>">REPOSIÇÃO</a> <?php 
-                                        } else {
-                                        //MOSTRA BOTÃO "CONFIRMAR"
-                                        ?> <a style="color: green" href="devolver_livro.php?id=<?php echo $id; ?>">CONFIRMAR</a> <?php 
-                                        }
+                                        echo "<th>"; echo "Matrícula usuário"; echo "</th>";
+                                        echo "<th>"; echo "Nome usuário"; echo "</th>";
+                                        echo "<th>"; echo "Contato usuário"; echo "</th>";
+                                        echo "<th>"; echo "E-mail usuário"; echo "</th>";
+                                        echo "<th>"; echo "Nome do livro"; echo "</th>";
+                                        echo "<th>"; echo "Data de empréstimo"; echo "</th>";
+                                        echo "<th>"; echo "Data de retorno"; echo "</th>";
+                                        echo "<th>"; echo "Status usuário"; echo "</th>";
+                                        echo "<th>"; echo "Devolução"; echo "</th>";
                                         
-                                        if($status_emprestimo=='PERDA/AVARIA'){
-                                            
-                                        } else {
-                                        ?> <a style="color: brown" href="perda_avaria.php?id=<?php echo $id; ?>">PERDA/AVARIA</a> <?php 
-                                        }
-                                        echo "</td>";
                                         echo "</tr>";
-                                    
-                                    echo "</table>";
+                                        
+                                            echo "<tr>";
+                                            echo "<td>"; echo $student_enrollment; echo "</td>";
+                                            echo "<td>"; echo $student_name; echo "</td>";
+                                            echo "<td>"; echo $student_contact; echo "</td>";
+                                            echo "<td>"; echo $student_email; echo "</td>";
+                                            echo "<td>"; echo $books_name; echo "</td>";
+                                            echo "<td>"; echo $books_issue_date; echo "</td>";
+                                            echo "<td>"; echo $books_return_date; echo "</td>";
+                                            echo "<td>"; 
+                                            //puxa status_usuário da tablea "cadastro_usuarios"
+                                            $res1 = mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$student_email'");
+                                            while ($row1 = mysqli_fetch_array($res1)) {
+                                                $status_usuario=$row1["status_usuario"];
+                                            }
+                                            echo $status_usuario;
+                                            echo "</td>";
+                                            echo "<td>"; 
+                                            //VERIFICAR SE DEVOLUÇÃO ESTÁ EM ATRASO
+                                            $date=date ('d/m/Y');
+                                                                                
+                                            if (strtotime($date) < strtotime($return_date)) {
+                                                
+                                                $result2 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_email = '$student_email'");
+                                                $teste=1;
+                                                if((mysqli_num_rows($result2) > 0) AND ($status_emprestimo=='ATRASADO')) {
+                                                    echo "ATRASADO";
+                                                }
+                                                else {
+                                                //suspende usuário na tabela cadastro_usuarios
+                                                mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='SUSPENSO' WHERE email='$student_email'");
+                                                
+                                                //envia usuário para tabela suspensoes
+                                                mysqli_query($link, "INSERT INTO suspensoes VALUES('', '$student_enrollment', '$student_contact', '$student_email', '$books_name', 'ainda não devolvido', 'atraso na devolução', 'ainda não devolvido')");
+                                                }
+                                            }
+                                            if($status_emprestimo=='PERDA/AVARIA'){
+                                                echo "PERDIDO/AVARIADO";
+                                                ?> <a style="color: green" href="repor_livro.php?id=<?php echo $id; ?>">REPOSIÇÃO</a> <?php 
+                                            } else {
+                                            //MOSTRA BOTÃO "CONFIRMAR"
+                                            ?> <a style="color: green" href="devolver_livro.php?id=<?php echo $id; ?>">CONFIRMAR</a> <?php 
+                                            }
+                                            
+                                            if($status_emprestimo=='PERDA/AVARIA'){
+                                                
+                                            } else {
+                                            ?> <a style="color: brown" href="perda_avaria.php?id=<?php echo $id; ?>">PERDA/AVARIA</a> <?php 
+                                            }
+                                            echo "</td>";
+                                            echo "</tr>";
+                                        
+                                        echo "</table>";
+                                    echo "</div>";
                                 }
                                 ?> 
                             </div> 

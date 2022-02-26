@@ -27,6 +27,14 @@
 
                 <div class="clearfix"></div>
 
+                <!-- estilo para tabelas responsivas (barra de rolagem) -->
+                <style>
+                    div#container {
+                        overflow-x: auto;
+                    }
+                </style>
+                <!-- fim estilo para tabelas responsivas (barra de rolagem) -->
+                
                 <!-- menu profile quick info -->
                 <div class="profile clearfix">
                     <div class="profile_pic">

@@ -52,6 +52,7 @@ include "header.php";
                                 // RESULTADO COM PESQUISA
                                 if(isset($_POST["submit1"])) {
                                     $res=mysqli_query($link, "SELECT * FROM adicionar_livros WHERE books_name LIKE('%$_POST[t1]%')");
+                                    echo "<div id='container'>";
                                     echo "<table class='table table-bordered'>";
                                     echo "<tr>";
                                     echo "<th>"; echo "books image"; echo "</th>";
@@ -80,11 +81,13 @@ include "header.php";
                                         echo "</tr>";
                                     }
                                     echo "</table>";
+                                    echo "</div>";
                                 }
                                 else // RESULTADO SEM PESQUISA
                                 { 
 
                                 $res=mysqli_query($link, "SELECT * FROM adicionar_livros");
+                                echo "<div id='container'>";
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
                                 echo "<th>"; echo "Imagem do livro"; echo "</th>";
@@ -113,6 +116,7 @@ include "header.php";
                                     echo "</tr>";
                                 }
                                 echo "</table>";
+                                echo "</div>";
                                 }
                                 ?>
                             </div>

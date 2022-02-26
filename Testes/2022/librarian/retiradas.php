@@ -53,6 +53,7 @@ include "connection.php"
                             //função pesquisar (CORRIGIR)
                             if(isset($_POST["submit1"])) {
                                 $res=mysqli_query($link, "SELECT * FROM solicitacoes WHERE student_enrollment LIKE('%$_POST[t1]%') OR books_name LIKE('%$_POST[t1]%')");
+                                echo "<div id='container'>";
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
                                 echo "<th>"; echo "Matrícula usuário"; echo "</th>";
@@ -100,6 +101,7 @@ include "connection.php"
                                 }
                             }
                             echo "</table>";
+                            echo "</div>";
                             }
                             else
                             { 
@@ -111,6 +113,7 @@ include "connection.php"
                             }
                             //retorno quando há registros
                             else {
+                                echo "<div id='container'>";
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
                                 echo "<th>"; echo "Matrícula usuário"; echo "</th>";
@@ -158,6 +161,7 @@ include "connection.php"
                                 }
                             }
                             echo "</table>";
+                            echo "</div>";
                             }
                             }
                             ?>

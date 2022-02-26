@@ -56,6 +56,7 @@ include "connection.php";
                                 $res=mysqli_query($link, "SELECT * FROM emprestimos WHERE books_name LIKE('%$_POST[t1]%')");
                                 
                                     ?>
+                                    <div id='container'>
                                         <table class="table table-bordered">
                                             
                                             <th>
@@ -108,6 +109,7 @@ include "connection.php";
                                             } 
                                         ?>   
                                         </table>
+                                    </div>
                                         <?php
                                         
 
@@ -123,7 +125,7 @@ include "connection.php";
                             }
                                 if($status_emprestimo=='DEVOLVIDO') {
                                     ?>
-
+                                        <div id='container'>
                                         <table class="table table-bordered">
                                             
                                         <th>
@@ -170,6 +172,7 @@ include "connection.php";
                                             } 
                                         ?>   
                                         </table>
+                                        </div>
                                         <?php
                                         } 
                                     }

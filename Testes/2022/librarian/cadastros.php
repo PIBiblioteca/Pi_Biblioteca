@@ -52,11 +52,9 @@ include "connection.php";
                             <div class="x_content">
                                 
                                 <?php
-                                    //echo "<TABLE>";
-                                    //echo "<tr>";
-                                    //echo "</tr>";
-                                    //echo "</TABLE>";
+                               
                                 $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios");
+                                echo "<div id='container'>";
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
                                 echo "<th>"; echo "Nome usuário"; echo "</th>";
@@ -78,7 +76,8 @@ include "connection.php";
                                     <a style="color: brown" href="nao_aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">NÃO</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
-                                echo "</table>"
+                                echo "</table>";
+                                echo "</div>";
                                 ?>
                                 
                             </div>

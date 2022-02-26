@@ -62,7 +62,7 @@ include "connection.php";
                                     ?>
                                     <script type="text/javascript">
                                         alert("USUÁRIO SUSPENSO");
-                                        window.location="livros.php";
+                                        window.location="meus_emprestimos.php";
                                     </script>
                                     <?php
                                 }

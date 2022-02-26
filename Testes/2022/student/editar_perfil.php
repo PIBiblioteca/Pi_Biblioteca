@@ -52,6 +52,7 @@ include "header.php";
                             ?>
                             
                                 <form name="form1" action="" method="post" class="col-lg-6" enctype="multipart/form-data">
+                                <div id='container'>
                                 <table class="table table-bordered">
                                 
                                     <tr>
@@ -77,6 +78,7 @@ include "header.php";
                                         <td><input type="submit" name="submit1" class="btn btn-default submit" value="Confirmar" style="background-color: green; color: white"></td>
                                     </tr>
                                 </table>
+                                </div>
                                 </form>
                             </div>
                         </div>
