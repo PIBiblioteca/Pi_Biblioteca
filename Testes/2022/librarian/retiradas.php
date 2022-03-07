@@ -138,7 +138,7 @@ include "connection.php"
                                 echo "<td>"; 
                                
                                 $date=date('d/m/Y');
-                                //VERIFICA SE LIVRO ESTÁ ATRASADO E CANCELA SOLICITAÇÂO
+                                //VERIFICA SE RETIRADA ESTÁ ATRASADA E CANCELA SOLICITAÇÂO
                                 if($status_solicitacao=="AGUARDANDO RETIRADA") { 
                                     if(strtotime($date) > strtotime($prazo_retirada)){
                                         mysqli_query($link, "UPDATE solicitacoes SET status_solicitacao='LIVRO NÃO RETIRADO NO PRAZO' WHERE id='$id'");

@@ -50,7 +50,8 @@ include "connection.php"
                             <div class="x_content">
                             
                             <?php
-                            if(isset($_POST["submit1"])) // código da pesquisa: pegar variável de entrada do usuário e exibir 
+                            //FUNÇÃO PESQUISAR
+                            if(isset($_POST["submit1"])) // pega variável de entrada do usuário
                             {
                                 $i=0;
                                 $res=mysqli_query($link, "SELECT * FROM adicionar_livros WHERE books_name like('%$_POST[t1]%')"); //função pesquisa: WHERE books_name like('%$_POST[t1]%')
@@ -64,7 +65,7 @@ include "connection.php"
                                     echo "<br>";
                                     echo "<b>".$row["books_name"]."</b>";
                                     echo "<br>";
-                                    echo "<b>". "available: ".$row["available_qty"]."</b>";
+                                    echo "<b>". "Disponíveis: ".$row["available_qty"]."</b>";
                                     
                                     $qtdzero=$row["available_qty"];
                                     if($qtdzero==0){
@@ -107,7 +108,7 @@ include "connection.php"
                                     echo "<br>";
                                     echo "<b>".$row["books_name"]."</b>";
                                     echo "<br>";
-                                    echo "<b>". "available: ".$row["available_qty"]."</b>";
+                                    echo "<b>". "Disponíveis: ".$row["available_qty"]."</b>";
                                     
                                     $qtdzero=$row["available_qty"];
                                     if($qtdzero==0){

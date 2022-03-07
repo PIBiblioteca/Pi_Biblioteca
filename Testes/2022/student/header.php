@@ -24,7 +24,7 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
             $fullname=$row["fullname"];
         }
 if($image==''){
-    $image="teste";
+    $image="images/astronauta.png";
 }
 
 ?>
@@ -45,6 +45,7 @@ if($image==''){
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/nprogress.css" rel="stylesheet">
     <link href="css/custom.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/GitHub/Pi_Biblioteca/img/favicon_bibliofateca.png" type="image/x-icon">
 </head>
 
 <body class="nav-md">
@@ -69,7 +70,7 @@ if($image==''){
                 <!-- menu profile quick info -->
                 <div class="profile clearfix">
                     <div class="profile_pic">
-                        <img style="width: 60px" src="<?php echo $image; ?>" alt="..." class="img-circle profile_img">
+                        <img style="width: 60px; height:60px" src="<?php echo $image; ?>" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <span>Olá,</span>
@@ -118,7 +119,7 @@ if($image==''){
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="editar_perfil.php?id=<?php echo $_SESSION["username"]; ?>"><i class="fa fa-sign-out pull-right"></i> Editar perfil</a></li>
+                                <li><a href="editar_perfil.php?id=<?php echo $fullname; ?>"><i class="fa fa-sign-out pull-right"></i> Editar perfil</a></li>
                                 <li><a href="login.php"><i class="fa fa-sign-out pull-right"></i> Sair </a></li>
                             </ul>
                             

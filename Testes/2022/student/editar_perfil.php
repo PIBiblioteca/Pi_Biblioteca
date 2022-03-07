@@ -48,7 +48,9 @@ include "header.php";
                                 $email=$row["email"];
                                 $contact=$row["contact"];                              
                             }
-                            
+                            if($image==''){
+                                $image="images/astronauta.png";
+                            }
                             ?>
                             
                                 <form name="form1" action="" method="post" class="col-lg-6" enctype="multipart/form-data">

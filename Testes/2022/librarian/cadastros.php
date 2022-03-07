@@ -52,8 +52,38 @@ include "connection.php";
                             <div class="x_content">
                                 
                                 <?php
-                               
-                                $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios");
+                                // RESULTADO COM PESQUISA
+                                if(isset($_POST["submit1"])) {
+                                $res=mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE fullname LIKE('%$_POST[t1]%') OR enrollment LIKE('%$_POST[t1]%')");
+                                echo "<div id='container'>";
+                                echo "<table class='table table-bordered'>";
+                                echo "<tr>";
+                                echo "<th>"; echo "Nome usuário"; echo "</th>";
+                                echo "<th>"; echo "E-mail"; echo "</th>";
+                                echo "<th>"; echo "Contato"; echo "</th>";
+                                echo "<th>"; echo "Matrícula"; echo "</th>";
+                                echo "<th>"; echo "Status"; echo "</th>";
+                                echo "<th>"; echo "Aprovar"; echo "</th>";
+                                echo "</tr>";
+
+                                while($row = mysqli_fetch_array($res)) {
+                                    echo "<tr>";
+                                    echo "<td>"; echo $row["fullname"]; echo "</td>";
+                                    echo "<td>"; echo $row["email"]; echo "</td>";
+                                    echo "<td>"; echo $row["contact"]; echo "</td>";
+                                    echo "<td>"; echo $row["enrollment"]; echo "</td>";
+                                    echo "<td>"; echo $row["status_usuario"]; echo "</td>";
+                                    echo "<td>"; ?> <a style="color: green" href="aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">SIM</a> |
+                                    <a style="color: brown" href="nao_aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">NÃO</a> <?php echo "</td>";
+                                    echo "</tr>";
+
+                                }
+                                echo "</table>";
+                                echo "</div>";
+                                }
+                                else // RESULTADO SEM PESQUISA
+                                { 
+                                $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios ORDER BY id DESC");
                                 echo "<div id='container'>";
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
@@ -78,6 +108,7 @@ include "connection.php";
                                 }
                                 echo "</table>";
                                 echo "</div>";
+                                }
                                 ?>
                                 
                             </div>

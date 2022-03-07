@@ -14,6 +14,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/nprogress.css" rel="stylesheet">
     <link href="css/custom.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/GitHub/Pi_Biblioteca/img/favicon_bibliofateca.png" type="image/x-icon">
 </head>
 
 <body class="nav-md">
@@ -38,7 +39,7 @@
                 <!-- menu profile quick info -->
                 <div class="profile clearfix">
                     <div class="profile_pic">
-                        <img style="width: 60px" src="images/img.jpg" alt="..." class="img-circle profile_img">
+                        <img style="width: 60px" src="images/astronauta.png" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <span>Olá,</span>
@@ -108,7 +109,7 @@
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="images/img.jpg" alt=""><?php echo $_SESSION["librarian"]; ?>
+                                <img src="images/astronauta.png" alt=""><?php echo $_SESSION["librarian"]; ?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">

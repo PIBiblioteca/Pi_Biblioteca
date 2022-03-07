@@ -83,18 +83,44 @@
         echo "A soma vale $s";
 
         echo "<br>";
+        echo "<br>";
         echo "Adição +";
         $soma=$n1+$n2;
         echo "<br>";
         echo "soma: $soma";
         echo "<br>";
         echo "subtração -";
-        $sub
+        $subt=$n1-$n2;
+        echo "<br>";
+        echo "subt: $subt";
+        echo "<br>";
         echo "multiplicação *";
+        $mult=$n1*$n2;
+        echo "<br>";
+        echo "mult: $mult";
+        echo "<br>";
         echo "divisão /";
+        $divis=$n1/$n2;
+        echo "<br>";
+        echo "divis: $divis";
+        echo "<br>";
         echo "módulo % (resto da divisão";
+        $mod=$n1%$n2;
+        echo "<br>";
+        echo "mod: $mod";
+        echo "<br>";
 
     ?>
+    <br>
+    OPERADORES RELACIONAIS: >, <, >=, <=, <>(diferente), != (diferente), ==, ===(idêntico, mesmo tipo primitivo e iguais).
+    <br>
+    <br>
+    Operador unário: expressão?verdadeiro:falso
+        Exemplo: $n1<$n2?$n1:$n2
+                 $n1<$n2?sim:não
+                 $maior=$n1<$n2?$n1:$n2
+    
+
 
 </body>
 </html>

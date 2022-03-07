@@ -26,7 +26,7 @@ if(mysqli_num_rows($res6) > 0) {
     mysqli_query($link, "INSERT INTO suspensoes VALUES('', '$enrollment', '$contact', '$email', '$booksname', '$suspensiondate', '$suspensioreason', '$suspensionreturndate')");
 }
 
-mysqli_query($link, "UPDATE emprestimos SET status_emprestimo='PERDA/AVARIA' WHERE student_enrollment='$enrollment'");
+mysqli_query($link, "UPDATE emprestimos SET status_emprestimo='PERDA/AVARIA' WHERE id='$id'");
 
 mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='SUSPENSO' WHERE enrollment='$enrollment'"); 
 

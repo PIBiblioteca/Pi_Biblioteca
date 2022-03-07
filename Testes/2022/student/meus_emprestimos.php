@@ -18,9 +18,10 @@ include "header.php";
                 <div class="page-title">
                     <div class="title_left">
                         <h3>Meus empréstimos</h3>
+                        <br>
                     </div>
 
-                    <!-- menu pesquisa -->
+                    <!-- menu pesquisa 
                     <form name="form1" action="" method="post">
                         <div class="title_right">
                             <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
@@ -35,7 +36,7 @@ include "header.php";
                             </div>
                         </div>
                     </form>
-                    <!-- / menu pesquisa -->
+                     / menu pesquisa -->
                     
                 </div>
 

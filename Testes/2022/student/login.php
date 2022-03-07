@@ -12,19 +12,22 @@ include "connection.php";
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Login Usuário | BiblioFateca</title>
+    <link rel="shortcut icon" href="/GitHub/Pi_Biblioteca/img/favicon_bibliofateca.png" type="image/x-icon">
+    
+    <title>BiblioFateca | Login Usuário</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/custom.min.css" rel="stylesheet">
+    
 </head>
 
 <br>
 
 <div class="col-lg-12 text-center ">
-    <h1 style="font-family:Lucida Console"> BiblioFateca </h1>
+<br>
+    <h1 style="font-family:Lucida Console; margin: auto"> BiblioFateca </h1>
 </div>
 
 <br>

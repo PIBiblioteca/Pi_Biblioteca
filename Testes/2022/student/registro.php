@@ -17,12 +17,15 @@ include "connection.php";
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/custom.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/GitHub/Pi_Biblioteca/img/favicon_bibliofateca.png" type="image/x-icon">
 </head>
 
 <br>
 
 <div class="col-lg-12 text-center ">
+<br><br>
     <h1 style="font-family:Lucida Console">BiblioFateca</h1>
+    
 </div>
 
 
@@ -64,10 +67,12 @@ include "connection.php";
             mysqli_query($link, "INSERT INTO cadastro_usuarios VALUES('','$_POST[fullname]','','$_POST[password]','$_POST[email]','$_POST[contact]','$_POST[enrollment]','INATIVO')");
             
         ?>
-            <div class="alert alert-success col-lg-12 col-lg-push-0">
-                Registro concluído, você receberá um e-mail quando o registro for aprovado
-            </div>
-        
+            
+            <script type="text/javascript">
+            alert("Registro concluído, aguarde até 3 dias para aprovação");
+            window.location="login.php";
+            </script>
+            
         <?php
         }
         ?>
