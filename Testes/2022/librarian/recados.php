@@ -19,6 +19,7 @@ include "connection.php";
                 <div class="page-title">
                     <div class="title_left">
                         <h3>Recados</h3>
+                        <br>
                     </div>
 
                 </div>

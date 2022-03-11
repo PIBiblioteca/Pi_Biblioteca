@@ -1,7 +1,7 @@
 <?php
 session_start();
 // código de segurança para impossibilitar o acesso à essa página sem fazer login
-if(!isset($_SESSION["email"])) 
+if(!isset($_SESSION["librarian"])) 
 {
     ?>
     <script type="text/javascript">
@@ -39,19 +39,20 @@ include "header.php";
 
                             <?php
                             
-                            $email=$_SESSION['email'];
-                            $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
+                            $email=$_SESSION['librarian'];
+                            $res=mysqli_query($link,"SELECT * FROM cadastro_bibliotecaria");
                             while($row=mysqli_fetch_array($res))
-                            {                                
-                                $firstname=$row["fullname"];
-                                $image=$row["profile_image"];
+                            {
+                                $firstname=$row["firstname"];
+                                $lastname=$row["lastname"];
+                                $username=$row["username"];
                                 $password=$row["password"];
                                 $email=$row["email"];
-                                $contact=$row["contact"];                              
+                                $contact=$row["contact"];                            
                             }
-                            if($image==''){
-                                $image="images/astronauta.png";
-                            }
+                            
+                            $image="images/astronauta.png";
+                            
                             ?>
                             
                                 <form name="form1" action="" method="post" class="col-lg-6" enctype="multipart/form-data">
@@ -59,7 +60,7 @@ include "header.php";
                                 <table class="table table-bordered">
                                 
                                     <tr>
-                                        <td>Nome completo<input type="text" class="form-control" placeholder="First Name" name="fullname" value="<?php echo $firstname; ?>" required=""></td>
+                                        <td>Primeiro Nome<input type="text" class="form-control" placeholder="First Name" name="firstname" value="<?php echo $firstname; ?>" required=""></td>
 
                                     </tr>
                                     <tr>
@@ -102,7 +103,6 @@ include "header.php";
         </script>
         <?php
    }
-
     if(isset($_POST["submit1"]))
     {        
         

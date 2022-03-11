@@ -51,20 +51,31 @@ include "header.php";
                                 <?php 
                                 // RESULTADO COM PESQUISA
                                 if(isset($_POST["submit1"])) {
-                                    $res=mysqli_query($link, "SELECT * FROM adicionar_livros WHERE books_name LIKE('%$_POST[t1]%')");
+                                    $res=mysqli_query($link, "SELECT * FROM adicionar_livros 
+                                    WHERE books_name LIKE('%$_POST[t1]%')
+                                    OR books_author_name LIKE('%$_POST[t1]%')
+                                    OR books_publication_name LIKE('%$_POST[t1]%')
+                                    OR edicao LIKE('%$_POST[t1]%')
+                                    ");
+                                    $contador=0; //contador para exibir resultado caso while não der retorno
+                                    while($row = mysqli_fetch_array($res)) {
+                                    $contador=$contador+1; 
+
+                                    if ($contador == 1) { //contador para não exibir a tabela duas vezes quando a pesquisa dá mais de um resultado
+
                                     echo "<div id='container'>";
                                     echo "<table class='table table-bordered'>";
                                     echo "<tr>";
-                                    echo "<th>"; echo "books image"; echo "</th>";
-                                    echo "<th>"; echo "books name"; echo "</th>";
-                                    echo "<th>"; echo "author name"; echo "</th>";
-                                    echo "<th>"; echo "publication name"; echo "</th>";
-                                    echo "<th>"; echo "purchase date"; echo "</th>";
-                                    echo "<th>"; echo "books price"; echo "</th>";
-                                    echo "<th>"; echo "books quantity"; echo "</th>";
-                                    echo "<th>"; echo "available quantity"; echo "</th>";
-                                    echo "<th>"; echo "Delete Books"; echo "</th>";
-                                    echo "<th>"; echo "Edit Book"; echo "</th>";
+                                    echo "<th>"; echo "Imagem do livro"; echo "</th>";
+                                    echo "<th>"; echo "Nome do livro"; echo "</th>";
+                                    echo "<th>"; echo "Nome do autor"; echo "</th>";
+                                    echo "<th>"; echo "Editora"; echo "</th>";
+                                    echo "<th>"; echo "Edição"; echo "</th>";
+                                    echo "<th>"; echo "Preço"; echo "</th>";
+                                    echo "<th>"; echo "Quantidade"; echo "</th>";
+                                    echo "<th>"; echo "Disponíveis"; echo "</th>";
+                                    echo "<th>"; echo "Deletar Livro"; echo "</th>";
+                                    echo "<th>"; echo "Editar Livro"; echo "</th>";
                                     echo "</tr>";
                                     while($row = mysqli_fetch_array($res)) {
                                         echo "<tr>";
@@ -83,6 +94,12 @@ include "header.php";
                                     echo "</table>";
                                     echo "</div>";
                                 }
+                                }
+                                if ($contador==0){
+                                    echo "'$_POST[t1]' não encontrado";
+                                }
+
+                            }
                                 else // RESULTADO SEM PESQUISA
                                 { 
 

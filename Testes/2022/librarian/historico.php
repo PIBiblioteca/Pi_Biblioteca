@@ -53,8 +53,21 @@ include "connection.php";
                                 <?php
                             // RESULTADO COM CAMPO DE BUSCA
                             if(isset($_POST["submit1"])) {
-                                $res=mysqli_query($link, "SELECT * FROM emprestimos WHERE books_name LIKE('%$_POST[t1]%')");
-                                
+                                $res=mysqli_query($link, "SELECT * FROM emprestimos 
+                                    WHERE books_name LIKE('%$_POST[t1]%')
+                                    OR student_enrollment LIKE('%$_POST[t1]%')
+                                	OR student_name LIKE('%$_POST[t1]%')
+                                    OR student_contact LIKE('%$_POST[t1]%')
+                                    OR student_email LIKE('%$_POST[t1]%')
+                                    OR books_issue_date LIKE('%$_POST[t1]%')
+                                    OR books_return_date LIKE('%$_POST[t1]%')
+                                    OR status_emprestimo LIKE('%$_POST[t1]%') 
+                                ");
+                                    $contador=0; //contador para exibir resultado caso while não der retorno
+                                    while($row3 = mysqli_fetch_array($res)){
+                                    $contador=$contador+1;
+                                    
+                                    if ($contador == 1) { //contador para não exibir a tabela duas vezes quando a pesquisa dá mais de um resultado
                                     ?>
                                     <div id='container'>
                                         <table class="table table-bordered">
@@ -69,6 +82,12 @@ include "connection.php";
                                                 Nome aluno
                                             </th>
                                             <th>
+                                                Contato
+                                            </th>
+                                            <th>
+                                                E-mail
+                                            </th>
+                                            <th>
                                                 Data Retirada
                                             </th>
                                             <th>
@@ -78,10 +97,7 @@ include "connection.php";
                                                 Status Empréstimo 
                                             </th>
                                             <?php
-                                            
-                                            while($row3 = mysqli_fetch_array($res)){
-
-                                                
+                                            while($row = mysqli_fetch_array($res)) {
                                                 $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE status_emprestimo = 'DEVOLVIDO'");
                                                 
                                                 if($row3["status_emprestimo"]=='DEVOLVIDO') {
@@ -94,6 +110,12 @@ include "connection.php";
                                                 echo "</td>";
                                                 echo "<td>";
                                                 echo $row3["student_name"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $row3["student_contact"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $row3["student_email"];
                                                 echo "</td>";
                                                 echo "<td>";
                                                 echo $row3["books_issue_date"];
@@ -111,8 +133,11 @@ include "connection.php";
                                         </table>
                                     </div>
                                         <?php
-                                        
-
+                                        }
+                                        }
+                                        if ($contador==0){
+                                            echo "'$_POST[t1]' não encontrado";
+                                        }
                                 
                             } else {
 
@@ -138,6 +163,12 @@ include "connection.php";
                                                 Nome aluno
                                             </th>
                                             <th>
+                                                Contato
+                                            </th>
+                                            <th>
+                                                E-mail
+                                            </th>
+                                            <th>
                                                 Data Retirada
                                             </th>
                                             <th>
@@ -158,6 +189,12 @@ include "connection.php";
                                                 echo "</td>";
                                                 echo "<td>";
                                                 echo $row3["student_name"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $row3["student_contact"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                echo $row3["student_email"];
                                                 echo "</td>";
                                                 echo "<td>";
                                                 echo $row3["books_issue_date"];

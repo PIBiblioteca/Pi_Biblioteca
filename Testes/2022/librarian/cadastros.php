@@ -52,9 +52,20 @@ include "connection.php";
                             <div class="x_content">
                                 
                                 <?php
-                                // RESULTADO COM PESQUISA
+                                // RESULTADO COM PESQUISA   
                                 if(isset($_POST["submit1"])) {
-                                $res=mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE fullname LIKE('%$_POST[t1]%') OR enrollment LIKE('%$_POST[t1]%')");
+                                //Seleciona da tabela "cadastro_usuarios"                    
+                                $res=mysqli_query($link, "SELECT * FROM cadastro_usuarios 
+                                WHERE fullname LIKE('%$_POST[t1]%') 
+                                OR enrollment LIKE('%$_POST[t1]%')
+                                OR email LIKE('%$_POST[t1]%')
+                                OR contact LIKE('%$_POST[t1]%')
+                                OR status_usuario LIKE('%$_POST[t1]%')
+                                ");
+                                $contador=0; //contador para while
+                                while($row = mysqli_fetch_array($res)) {
+                                $contador=$contador+1;
+                                if ($contador==1) {
                                 echo "<div id='container'>";
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
@@ -65,7 +76,13 @@ include "connection.php";
                                 echo "<th>"; echo "Status"; echo "</th>";
                                 echo "<th>"; echo "Aprovar"; echo "</th>";
                                 echo "</tr>";
-
+                                $res=mysqli_query($link, "SELECT * FROM cadastro_usuarios 
+                                WHERE fullname LIKE('%$_POST[t1]%') 
+                                OR enrollment LIKE('%$_POST[t1]%')
+                                OR email LIKE('%$_POST[t1]%')
+                                OR contact LIKE('%$_POST[t1]%')
+                                OR status_usuario LIKE('%$_POST[t1]%')
+                                ");
                                 while($row = mysqli_fetch_array($res)) {
                                     echo "<tr>";
                                     echo "<td>"; echo $row["fullname"]; echo "</td>";
@@ -76,10 +93,15 @@ include "connection.php";
                                     echo "<td>"; ?> <a style="color: green" href="aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">SIM</a> |
                                     <a style="color: brown" href="nao_aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">NÃO</a> <?php echo "</td>";
                                     echo "</tr>";
-
+                                }
                                 }
                                 echo "</table>";
                                 echo "</div>";
+                            
+                                }
+                                if ($contador==0){
+                                    echo "'$_POST[t1]' não encontrado";
+                                }
                                 }
                                 else // RESULTADO SEM PESQUISA
                                 { 

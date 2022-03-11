@@ -21,6 +21,7 @@ include "header.php";
                 <div class="page-title">
                     <div class="title_left">
                         <h3>Adicionar livros</h3>
+                        <br>
                     </div>
 
                 </div>
@@ -86,7 +87,7 @@ include "header.php";
         mysqli_query($link, "INSERT INTO adicionar_livros VALUES('','$_POST[booksname]','$dst1','$_POST[bauthorname]','$_POST[pname]','$_POST[edicao]','$_POST[bprice]','$_POST[bqty]','$_POST[aqty]','$_SESSION[librarian]')");
     ?>
         <script type="text/javascript">
-            alert("books insert sucessfully");
+            alert("Livro adicionado com sucesso!");
             window.location="adicionar_livros.php";
         </script>
     <?php

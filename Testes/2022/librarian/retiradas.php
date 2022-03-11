@@ -50,9 +50,18 @@ include "connection.php"
                             <div class="x_content">
                               
                             <?php 
-                            //função pesquisar (CORRIGIR)
+                            //função pesquisar
                             if(isset($_POST["submit1"])) {
-                                $res=mysqli_query($link, "SELECT * FROM solicitacoes WHERE student_enrollment LIKE('%$_POST[t1]%') OR books_name LIKE('%$_POST[t1]%')");
+                                $res=mysqli_query($link, "SELECT * FROM solicitacoes 
+                                WHERE student_enrollment LIKE('%$_POST[t1]%') 
+                                    OR books_name LIKE('%$_POST[t1]%')
+                                	OR student_name LIKE('%$_POST[t1]%')
+                                    OR student_contact LIKE('%$_POST[t1]%')
+                                    OR student_email LIKE('%$_POST[t1]%')
+                                ");
+                                $contador=0;
+                                while($row = mysqli_fetch_array($res)) {
+                                $contador=$contador+1;
                                 echo "<div id='container'>";
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
@@ -63,7 +72,7 @@ include "connection.php"
                                 echo "<th>"; echo "E-mail usuário"; echo "</th>";
                                 echo "<th>"; echo "livro retirado?"; echo "</th>";
                                 echo "</tr>";
-                            while($row = mysqli_fetch_array($res)) {
+                            
                                 $prazo_retirada=$row["prazo_retirada"];
                                 $id = $row["id"];
                                 $status_solicitacao = $row["status_solicitacao"];
@@ -102,6 +111,9 @@ include "connection.php"
                             }
                             echo "</table>";
                             echo "</div>";
+                            if ($contador==0){
+                                echo "'$_POST[t1]' não encontrado";
+                            }
                             }
                             else
                             { 

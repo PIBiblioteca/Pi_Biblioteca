@@ -67,7 +67,7 @@ include "connection.php";
         if ($count == 0) {
     ?>
             <div class="alert alert-danger col-lg-6 col-lg-push-3">
-                <strong>Invalid</strong> Username Or Password.
+                Usuário ou senha <strong>incorretos</strong>
             </div>
     <?php
         } else {
