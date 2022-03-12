@@ -64,22 +64,20 @@ include "connection.php";
         <?php
 
         if(isset($_POST["submit1"])) {
-                echo "teste";
-                $email=(isset($_POST["email"]));
-                echo $email;
+                $email=$_POST["email"];
                 $result2 = mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$email'");
             if(mysqli_num_rows($result2) > 0) {
             ?>
                 <div class="alert alert-success col-lg-12 col-lg-push-0">
-                E-mail '<?php echo (isset($_POST["email"])); ?>' já cadastrado
+                E-mail '<?php echo $_POST["email"]; ?>' já cadastrado
                 </div>
             <?php     
             } else {
                 mysqli_query($link, "INSERT INTO cadastro_usuarios VALUES('','$_POST[fullname]','','$_POST[password]','$_POST[email]','$_POST[contact]','$_POST[enrollment]','INATIVO')");
             ?> 
                 <script type="text/javascript">
-                //alert("Registro concluído, aguarde até 3 dias para aprovação");
-                //window.location="login.php";
+                alert("Registro concluído, aguarde até 3 dias para aprovação");
+                window.location="login.php";
                 </script>  
             <?php
         }
