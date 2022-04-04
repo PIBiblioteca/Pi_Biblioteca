@@ -16,6 +16,32 @@
     <link rel="shortcut icon" href="/GitHub/Pi_Biblioteca/img/favicon_bibliofateca.png" type="image/x-icon">
 </head>
 
+<!--FORÇAR ALTERAÇÃO NO ESTILO (tbm é possível alterar o arquivo "custom.css")
+<style>
+    .left_col {
+    background: #b20000 !important;
+}
+.nav_title {
+    
+    background: #b20000;
+    
+}
+/*
+Anotações de alterações necessárias a serem feitas no Front: 
+	- Alinhamento título página login
+	- Melhorar pág livros
+	- Home no logo
+	- Melhorar ícones do menu
+	- Mudar ícone de "editar perfil" e "editar regras" do usuário e bibliotecária
+	- Corrigir responsividade, botão e texto nas tabelas de páginas editar livro e editar perfil
+	- Organizar página editar perfil (usuário)
+	- Remover barras de rolagem em telas com pouca informação
+	- Modo noturno
+Exibir um livro por linha no modo mobile
+*/
+</style>
+-->
+
 <body class="nav-md">
 <div class="container body">
     <div class="main_container">
@@ -113,7 +139,7 @@
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
                             <li><a href="editar_perfil.php"><i class="fa fa-sign-out pull-right"></i> Editar perfil</a></li>
-                            <li><a href="editar_regras.php?id=<?php echo $fullname; ?>"><i class="fa fa-sign-out pull-right"></i> Editar regras</a></li>
+                            <li><a href="editar_regras.php"><i class="fa fa-sign-out pull-right"></i> Editar regras</a></li>
                                 <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Sair </a></li>
                             </ul>
                         </li>

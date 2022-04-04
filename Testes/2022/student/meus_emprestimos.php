@@ -1,3 +1,5 @@
+
+
 <?php
 session_start();
 if(!isset($_SESSION["email"]))
@@ -83,7 +85,10 @@ include "header.php";
                                             echo $row["books_name"];
                                             echo "</td>";
                                             echo "<td>";
-                                            echo $row["data_solicitacao"];
+                                            $issuedate=$row["data_solicitacao"];
+                                            $issuedate=implode("/",array_reverse(explode("-",$issuedate))); //exibir data no formato BR
+                                            echo $issuedate;
+                                            //echo $row[date('d/m/Y', "data_solicitacao")];
                                             echo "</td>";
                                             echo "<td>";
                                             echo $row["prazo_retirada"];

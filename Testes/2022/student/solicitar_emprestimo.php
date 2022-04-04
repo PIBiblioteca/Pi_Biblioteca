@@ -40,7 +40,7 @@ include "connection.php";
                                 //SELEÇÃO DE DADOS E ATRIBUIÇÃO DE VARIÁVEIS
                                 $id=($_GET["id"]);  //puxar id do livro escolhido                          
 
-                                $date=date("d/m/Y");
+                                $date=date("mm-dd-yyyy");
                                 // puxa dados do usuário
                                 $email=$_SESSION["email"];
                                 $res5=mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$email'");
@@ -120,9 +120,25 @@ include "connection.php";
                                     $qty=$row6["available_qty"];
                                 }   
                                 
-                                $issuedate=date("d/m/Y");
-                                $returndate=date('d/m/Y', strtotime("+2 weeks"));
+                                $issuedate=date("Y-m-d");
+                                
+                                echo "$issuedate <br>";
+                                
+                                
+                                $returndate=date('Y-m-d', strtotime("+4 weeks")); //CORRIGIR PARA +2 WEEKS
+                                
+                                echo "$returndate <br>";
+                                if ($issuedate>$returndate) {
+                                    echo "Primeiro maior";
+                                    }else{
+                                        echo "segundo maior <br>";
+                                    }
+                                    $returndate=implode("/",array_reverse(explode("-",$returndate))); //exibir data no formato BR
+                                    $issuedate=implode("/",array_reverse(explode("-",$issuedate))); //exibir data no formato BR
+                                    echo "$issuedate <br>";
+                                    echo "$returndate <br>";
                                 ?>
+                                
 
                                 
                                 <table class="table table-bordered">
@@ -155,7 +171,7 @@ include "connection.php";
                                 </tr>
                                 <tr>
                                      <td> Data da solicitação
-                                        <input type="text" class="form-control" placeholder="booksissuedate" name="booksissuedate" value="<?php echo date("d/m/Y"); ?>" disabled>
+                                        <input type="text" class="form-control" placeholder="booksissuedate" name="booksissuedate" value="<?php echo $issuedate; ?>" disabled>
                                      </td>
                                 </tr>
                                 <tr>
@@ -204,11 +220,11 @@ include "connection.php";
                                         mysqli_query($link, "UPDATE solicitacoes SET books_name='$booksname', student_enrollment='$_SESSION[enrollment]', student_name='$fullname', 
                                         student_contact='$contact', 
                                         student_email='$email', 
-                                        data_solicitacao='$date', prazo_retirada='$prazo_retirada', status_solicitacao='AGUARDANDO RETIRADA'");
+                                        data_solicitacao='$issuedate', prazo_retirada='$prazo_retirada', status_solicitacao='AGUARDANDO RETIRADA'");
                                         mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty-1 WHERE id=$id"); //função diminuir quantidade disponível
                                     } else {
                                     //se não houver solicitação, cria uma
-                                    mysqli_query($link, "INSERT INTO solicitacoes VALUES('','$booksname','$enrollment','$fullname','$contact','$email','$date','$prazo_retirada','AGUARDANDO RETIRADA')");
+                                    mysqli_query($link, "INSERT INTO solicitacoes VALUES('','$booksname','$enrollment','$fullname','$contact','$email','$issuedate','$prazo_retirada','AGUARDANDO RETIRADA')");
                                     mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty-1 WHERE id=$id"); //função diminuir quantidade disponível
                                     ?>
                                     <script type="text/javascript">

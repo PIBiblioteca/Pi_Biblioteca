@@ -23,17 +23,7 @@ mysqli_query($link, "UPDATE recados SET read1='y' WHERE email='$_SESSION[email]'
                 <div class="page-title">
                     <div class="title_left">
                         <h3>Recados</h3>
-                    </div>
-
-                    <div class="title_right">
-                        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                            </div>
-                        </div>
+                        <br>
                     </div>
                 </div>
 
@@ -52,6 +42,7 @@ mysqli_query($link, "UPDATE recados SET read1='y' WHERE email='$_SESSION[email]'
                                 <tr>
                                     <th>Título</th>
                                     <th>Mensagem</th>
+                                    <th>Data</th>
                                 </tr>
 
                                 <?php
@@ -60,7 +51,8 @@ mysqli_query($link, "UPDATE recados SET read1='y' WHERE email='$_SESSION[email]'
                             {
                                     echo "<tr>";
                                     echo "<td>"; echo $row["title"]; echo "</td>"; 
-                                    echo "<td>"; echo $row["msg"]; echo "</td>"; 
+                                    echo "<td>"; echo $row["msg"]; echo "</td>";
+                                    echo "<td>"; echo $row["data_msg"]; echo "</td>";
                                     echo "</tr>";
                             }
                             ?>

@@ -48,6 +48,7 @@ include "connection.php";
                                                     <?php echo $row["fullname"]." RA (". $row["enrollment"].")"; ?>
                                                     </option><?php
                                                 }
+                                                $data_msg=date("d/m/Y");
                                                 ?>
                                                 
                                             </select>
@@ -80,7 +81,7 @@ include "connection.php";
 <?php
     if(isset($_POST["submit1"]))
     {
-        mysqli_query($link, "INSERT INTO recados VALUES('','$_SESSION[email]','$_POST[dusername]','$_POST[title]','$_POST[msg]','n')") or die(mysqli_error($link));
+        mysqli_query($link, "INSERT INTO recados VALUES('','$_SESSION[email]','$_POST[dusername]','$data_msg','$_POST[title]','$_POST[msg]','n')") or die(mysqli_error($link));
         
         ?>
         <script type="text/javascript">
