@@ -13,7 +13,7 @@ while ($row5 = mysqli_fetch_array($res5)) {
     $booksname = $row5["books_name"];
 }
     
-    $suspensiondate = date("d/m/Y");
+    $suspensiondate = date("Y-m-d");
     $suspensioreason = "perda/avaria";
     $suspensionreturndate = "até que seja feita a reposição do livro";
 

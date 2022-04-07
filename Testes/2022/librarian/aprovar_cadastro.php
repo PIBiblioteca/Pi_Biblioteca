@@ -1,7 +1,7 @@
 <?php
 include "connection.php";
-$id=$_GET["id"];
-mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='ATIVO' WHERE id=$id");
+$id_usuario=$_GET["id_usuario"];
+mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='ATIVO' WHERE id_usuario=$id_usuario");
 ?>
 
 <script type="text/javascript">

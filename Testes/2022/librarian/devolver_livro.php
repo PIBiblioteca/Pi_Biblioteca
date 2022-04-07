@@ -16,13 +16,10 @@ while ($row7 = mysqli_fetch_array($res7)) {
 }
 
 
-$date = date('d/m/Y'); //data atual
+$date = date('Y-m-d'); //data atual
 
 //verifica se entrega está atrasada
 if (strtotime($date) > strtotime($return_date)) {
-    //suspende usuário na tabela cadastro_usuarios
-    $status = 'SUSPENSO';
-    mysqli_query($link, "UPDATE cadastro_usuarios SET status='SUSPENSO' WHERE enrollment='$enrollment'");
 
     //Calculo diferença entre datas
     $data_inicial = implode('-', array_reverse(explode('/', "$return_date")));
@@ -33,7 +30,7 @@ if (strtotime($date) > strtotime($return_date)) {
     //calculo tempo de suspensão (1 a 7 dia de atraso = 1 semana de suspensão, 8 a 14 dias = 2 semanas...)
     $semanas_suspensão = ceil($dias / 7);
     
-    $suspensionreturndate = date('d/m/Y', strtotime("$date+$semanas_suspensão weeks"));
+    $suspensionreturndate = date('Y-m-d', strtotime("$date+$semanas_suspensão weeks"));
     $suspensiondate = $date;
     $suspensioreason = "atraso de $dias dias";
     
@@ -47,7 +44,7 @@ if (strtotime($date) > strtotime($return_date)) {
     mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty+1 WHERE books_name='$books_name'");
 ?>
     <script type="text/javascript">
-        alert("Usuário suspenso até <?php echo $suspensionreturndate ?>");
+        alert("Usuário suspenso até <?php echo (implode("/",array_reverse(explode("-",$suspensionreturndate))));?>)
         window.location="devolucoes.php";
     </script>
 <?php
@@ -58,7 +55,7 @@ else {
 mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='ATIVO' WHERE enrollment='$enrollment'");
 
 //Função atualizar status do empréstimo
-mysqli_query($link, "UPDATE emprestimos SET status_emprestimo='DEVOLVIDO' WHERE student_enrollment='$enrollment'");
+mysqli_query($link, "UPDATE emprestimos SET status_emprestimo='DEVOLVIDO' WHERE id='$id'");
 
 //função aumentar quantidade disponível
 mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty+1 WHERE books_name='$books_name'");

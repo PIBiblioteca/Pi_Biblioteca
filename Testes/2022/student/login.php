@@ -57,7 +57,7 @@ include "connection.php";
 
                 <div class="separator">
                     <p class="change_link">Novo aqui?
-                        <a href="registro.php"> Crie sua conta </a>
+                        <a href="cadastro.php"> Crie sua conta </a>
                     </p>
 
                     <div class="clearfix"></div>

@@ -1,5 +1,6 @@
 <?php
 include "connection.php";
+include "regras_biblioteca.php";
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +38,7 @@ include "connection.php";
 
         <section class="login_content" style="margin-top: -40px;">
             <form name="form1" action="" method="post">
-                <h2>Registro de Usuário</h2><br>
+                <h2>Cadastro de Usuário</h2><br>
 
                 <div>
                     <input type="text" class="form-control" placeholder="Nome Completo" name="fullname" required="" />
@@ -74,9 +75,10 @@ include "connection.php";
             <?php     
             } else {
                 mysqli_query($link, "INSERT INTO cadastro_usuarios VALUES('','$_POST[fullname]','','$_POST[password]','$_POST[email]','$_POST[contact]','$_POST[enrollment]','INATIVO')");
+        
             ?> 
                 <script type="text/javascript">
-                alert("Registro concluído, aguarde até 3 dias para aprovação");
+                alert("Cadastro concluído, estimativa para aprovação: até <?php echo $prazo_aprovacao_cadastro ?> dias úteis");
                 window.location="login.php";
                 </script>  
             <?php

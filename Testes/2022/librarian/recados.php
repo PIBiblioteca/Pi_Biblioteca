@@ -48,7 +48,7 @@ include "connection.php";
                                                     <?php echo $row["fullname"]." RA (". $row["enrollment"].")"; ?>
                                                     </option><?php
                                                 }
-                                                $data_msg=date("d/m/Y");
+                                                $data_msg=date("Y-m-d");
                                                 ?>
                                                 
                                             </select>

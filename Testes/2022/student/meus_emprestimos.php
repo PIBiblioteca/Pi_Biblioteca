@@ -1,5 +1,3 @@
-
-
 <?php
 session_start();
 if(!isset($_SESSION["email"]))
@@ -85,23 +83,20 @@ include "header.php";
                                             echo $row["books_name"];
                                             echo "</td>";
                                             echo "<td>";
-                                            $issuedate=$row["data_solicitacao"];
-                                            $issuedate=implode("/",array_reverse(explode("-",$issuedate))); //exibir data no formato BR
-                                            echo $issuedate;
-                                            //echo $row[date('d/m/Y', "data_solicitacao")];
+                                            
+                                            echo (implode("/",array_reverse(explode("-",($row["data_solicitacao"]))))); // data no formato BR
+
+                                            //echo $row[date('Y-m-d', "data_solicitacao")];
                                             echo "</td>";
                                             echo "<td>";
-                                            echo $row["prazo_retirada"];
+                                            echo (implode("/",array_reverse(explode("-",($row["prazo_retirada"]))))); // data no formato BR
                                             echo "</td>";
                                             echo "<td>";
                                             echo $row["status_solicitacao"];
                                             echo "</td>";
                                             echo "<td>";
-                                            echo "<b>"; ?> <a href="cancelar_solicitacao.php?id=<?php echo $row["id"]; ?>">CANCELAR SOLICITAÇÃO</a> <?php echo "</b>";
+                                            echo "<b>"; ?> <a href="cancelar_solicitacao.php?id_solicitacao=<?php echo $row["id_solicitacao"]; ?>">CANCELAR SOLICITAÇÃO</a> <?php echo "</b>";
                                             echo "</td>";
-
-                                            
-
                                             echo "</tr>";
                                         }
                                 ?>
@@ -148,10 +143,10 @@ include "header.php";
                                         echo $row3["books_name"];
                                         echo "</td>";
                                         echo "<td>";
-                                        echo $row3["books_issue_date"];
+                                        echo (implode("/",array_reverse(explode("-",($row3["books_issue_date"])))));
                                         echo "</td>";
                                         echo "<td>";
-                                        echo $row3["books_return_date"];
+                                        echo (implode("/",array_reverse(explode("-",($row3["books_return_date"])))));
                                         echo "</td>";
                                         echo "<td>";
                                         echo $row3["status_emprestimo"];
@@ -162,7 +157,9 @@ include "header.php";
                                 </table>
                                 </div>
                                 <?php
-                                } else if($status_emprestimo=='PERDA/AVARIA' OR $status_emprestimo=='ATRASADO') {
+                                } else {
+                                 $result3 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_email = '$email'");
+                                 if(mysqli_num_rows($result3) > 0) {
                                     $count=$count+1;
                                     ?>
                                     <div class="x_title">
@@ -186,20 +183,20 @@ include "header.php";
                                         Final da suspensão
                                     </th>
                                     <?php
-                                    $result3 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_email = '$email'");
+                                    
                                     while($row3 = mysqli_fetch_array($result3)){
                                         echo "<tr>";
                                         echo "<td>";
                                         echo $row3["books_name"];
                                         echo "</td>";
                                         echo "<td>";
-                                        echo $row3["suspension_date"];
+                                        echo (implode("/",array_reverse(explode("-",($row3["suspension_date"]))))); // data no formato BR
                                         echo "</td>";
                                         echo "<td>";
                                         echo $row3["suspension_reason"];
                                         echo "</td>";
                                         echo "<td>";
-                                        echo $row3["suspension_return_date"];
+                                        echo (implode("/",array_reverse(explode("-",($row3["suspension_return_date"]))))); // data no formato BR
                                         echo "</td>";
                                         echo "</tr>";
                                     }
@@ -208,6 +205,7 @@ include "header.php";
                                     </div>
                                     <?php
                                 }
+                            }
                             //mostra recado se não houver registro nas tabelas
                             if ($count==0) {
                                 ?>
@@ -220,7 +218,7 @@ include "header.php";
                                     
                                     <th>NÃO HÁ REGISTROS <br></th> 
                                     <tr>
-                                    <td>Faça um empréstimo clicando em 'Buscar Livros' no menu </td>
+                                    <td> <a href="livros.php"> Clique aqui </a> para solicitar o empréstimo de um livro ou acesse 'Buscar Livros' no menu </td>
                                     </tr>
                                     </table>
                                 </div>
@@ -257,17 +255,17 @@ include "header.php";
                                                 Status Empréstimo 
                                             </th>
                                             <?php
-                                            $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE student_email = '$email'&& status_emprestimo = 'DEVOLVIDO'");
+                                            $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE student_email = '$email' && status_emprestimo = 'DEVOLVIDO'");
                                             while($row3 = mysqli_fetch_array($result3)){
                                                 echo "<tr>";
                                                 echo "<td>";
                                                 echo $row3["books_name"];
                                                 echo "</td>";
                                                 echo "<td>";
-                                                echo $row3["books_issue_date"];
+                                                echo (implode("/",array_reverse(explode("-",($row3["books_issue_date"]))))); // data no formato BR
                                                 echo "</td>";
                                                 echo "<td>";
-                                                echo $row3["books_return_date"];
+                                                echo (implode("/",array_reverse(explode("-",($row3["books_return_date"]))))); // data no formato BR
                                                 echo "</td>";
                                                 echo "<td>";
                                                 echo $row3["status_emprestimo"];

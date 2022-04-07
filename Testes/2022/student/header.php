@@ -89,10 +89,12 @@ if($image==''){
                         <h3>Menu</h3>
                         <ul class="nav side-menu">
                             <li><a href="meus_emprestimos.php"><i class="fa fa-home"></i> Meus empréstimos <span class="fa fa-chevron-down"></span></a>
-
                             </li>
-                            <li><a href="livros.php"><i class="fa fa-edit"></i> Buscar livros <span class="fa fa-chevron-down"></span></a>
 
+                            <li><a href="livros.php"><i class="fa fa-edit"></i> Buscar livros <span class="fa fa-chevron-down"></span></a>
+                            </li>
+                            
+                            <li><a href="regras_biblioteca.php"><i class="fa fa-edit"></i> Regras da biblioteca <span class="fa fa-chevron-down"></span></a>
                             </li>
                         </ul>
                     </div>

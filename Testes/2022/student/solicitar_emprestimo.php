@@ -11,6 +11,7 @@ if(!isset($_SESSION["email"]))
 }
 include "header.php";
 include "connection.php";
+include "/xampp/htdocs/GitHub/Pi_Biblioteca/Testes/2022/librarian/regras_biblioteca.php";
 ?>
 
         <!-- page content area main -->
@@ -58,23 +59,13 @@ include "connection.php";
                                 //verifica se usuário está suspenso
                                 $result2 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_email='$email'");
 
-                                if($status=='SUSPENSO') {
+                                if(mysqli_num_rows($result2) > 0) {
                                     ?>
                                     <script type="text/javascript">
-                                        alert("USUÁRIO SUSPENSO");
-                                        window.location="meus_emprestimos.php";
+                                        alert("USUÁRIO NA LISTA DE SUSPENSÕES");
+                                        window.location="livros.php";
                                     </script>
                                     <?php
-                                }
-                                else {
-                                    if(mysqli_num_rows($result2) > 0) {
-                                        ?>
-                                        <script type="text/javascript">
-                                            alert("USUÁRIO NA LISTA DE SUSPENSÕES");
-                                            window.location="livros.php";
-                                        </script>
-                                        <?php
-                                    }
                                 }
 
                                 //verifica se usuário tem empréstimo
@@ -121,22 +112,8 @@ include "connection.php";
                                 }   
                                 
                                 $issuedate=date("Y-m-d");
-                                
-                                echo "$issuedate <br>";
-                                
-                                
                                 $returndate=date('Y-m-d', strtotime("+4 weeks")); //CORRIGIR PARA +2 WEEKS
                                 
-                                echo "$returndate <br>";
-                                if ($issuedate>$returndate) {
-                                    echo "Primeiro maior";
-                                    }else{
-                                        echo "segundo maior <br>";
-                                    }
-                                    $returndate=implode("/",array_reverse(explode("-",$returndate))); //exibir data no formato BR
-                                    $issuedate=implode("/",array_reverse(explode("-",$issuedate))); //exibir data no formato BR
-                                    echo "$issuedate <br>";
-                                    echo "$returndate <br>";
                                 ?>
                                 
 
@@ -171,7 +148,7 @@ include "connection.php";
                                 </tr>
                                 <tr>
                                      <td> Data da solicitação
-                                        <input type="text" class="form-control" placeholder="booksissuedate" name="booksissuedate" value="<?php echo $issuedate; ?>" disabled>
+                                        <input type="text" class="form-control" placeholder="booksissuedate" name="booksissuedate" value="<?php echo (implode("/",array_reverse(explode("-",$issuedate))));  ?>" disabled>
                                      </td>
                                 </tr>
                                 <tr>
@@ -211,7 +188,7 @@ include "connection.php";
                                 }
                                 else
                                 {
-                                    $prazo_retirada=date('d/m/Y', strtotime("+5 days"));
+                                    $prazo_retirada=date('Y-m-d', strtotime("+5 days"));
 
                                     $result5 = mysqli_query($link, "SELECT * FROM solicitacoes WHERE student_email = '$email'");
                                     
@@ -228,7 +205,7 @@ include "connection.php";
                                     mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty-1 WHERE id=$id"); //função diminuir quantidade disponível
                                     ?>
                                     <script type="text/javascript">
-                                        alert("Solicitação concluída, comparecer à biblioteca em até 5 dias para retirada");
+                                        alert("Solicitação concluída, comparecer à biblioteca em até <?php echo $prazo_retirada_livro; ?> dias para retirada");
                                         window.location.href="meus_emprestimos.php";
                                     </script>
                                     

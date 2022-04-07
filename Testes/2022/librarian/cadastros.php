@@ -21,22 +21,7 @@ include "connection.php";
                         <h3>Cadastros</h3>
                     </div>
 
-                    <!-- menu pesquisa -->
-                    <form name="form1" action="" method="post">
-                        <div class="title_right">
-                            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                                <div class="input-group">
-
-                                        <input type="text" name="t1" class="form-control" placeholder="Pesquisar">
-                                            <span class="input-group-btn">
-                                                <button type="submit" name="submit1" id="search books" class="btn btn-default">OK</button>
-                                            </span>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <!-- / menu pesquisa -->
+                    <?php include "botao_pesquisar.php";?>
                     
                 </div>
 
@@ -90,8 +75,8 @@ include "connection.php";
                                     echo "<td>"; echo $row["contact"]; echo "</td>";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";
                                     echo "<td>"; echo $row["status_usuario"]; echo "</td>";
-                                    echo "<td>"; ?> <a style="color: green" href="aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">SIM</a> |
-                                    <a style="color: brown" href="nao_aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">NÃO</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a style="color: green" href="aprovar_cadastro.php?id_cadastro=<?php echo $row["id_cadastro"]; ?>">SIM</a> |
+                                    <a style="color: brown" href="nao_aprovar_cadastro.php?id=<?php echo $row["id_cadastro"]; ?>">NÃO</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
                                 }
@@ -105,7 +90,7 @@ include "connection.php";
                                 }
                                 else // RESULTADO SEM PESQUISA
                                 { 
-                                $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios ORDER BY id DESC");
+                                $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios ORDER BY id_usuario DESC");
                                 echo "<div id='container'>";
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
@@ -124,8 +109,8 @@ include "connection.php";
                                     echo "<td>"; echo $row["contact"]; echo "</td>";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";
                                     echo "<td>"; echo $row["status_usuario"]; echo "</td>";
-                                    echo "<td>"; ?> <a style="color: green" href="aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">SIM</a> |
-                                    <a style="color: brown" href="nao_aprovar_cadastro.php?id=<?php echo $row["id"]; ?>">NÃO</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a style="color: green" href="aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">SIM</a> |
+                                    <a style="color: brown" href="nao_aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">NÃO</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</table>";

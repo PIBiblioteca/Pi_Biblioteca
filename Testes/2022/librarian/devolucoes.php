@@ -95,8 +95,12 @@ include "header.php";
                                             echo "<td>"; echo $student_contact; echo "</td>";
                                             echo "<td>"; echo $student_email; echo "</td>";
                                             echo "<td>"; echo $books_name; echo "</td>";
-                                            echo "<td>"; echo $books_issue_date; echo "</td>";
-                                            echo "<td>"; echo $books_return_date; echo "</td>";
+                                            echo "<td>"; 
+                                            echo (implode("/",array_reverse(explode("-",($books_issue_date))))); // data no formato BR
+                                            echo "</td>";
+                                            echo "<td>"; 
+                                            echo (implode("/",array_reverse(explode("-",($books_return_date))))); // data no formato BR
+                                            echo "</td>";
                                             echo "<td>"; 
                                             //puxa status_usuário da tablea "cadastro_usuarios" para coluna "status usuario"
                                             $res1 = mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$student_email'");
@@ -108,35 +112,35 @@ include "header.php";
 
                                             //coluna "devoluções"
                                             echo "<td>"; 
-                                            $date=date('d/m/Y');
+                                            $date=date('Y-m-d');
 
-                                            //VERIFICAR SE DEVOLUÇÃO ESTÁ EM ATRASO                                                                                                                         
-//                                            if (strtotime($date) < strtotime($return_date)) {
-  //                                              
-    //                                            $result2 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_email = '$student_email'");
-      //                                          $teste=1;
-        //                                        if((mysqli_num_rows($result2) > 0) AND ($status_emprestimo=='ATRASADO')) {
-          //                                          echo "ATRASADO";
-            //                                    }
-              //                                  else {
-                                                //suspende usuário na tabela cadastro_usuarios
-                  //                              mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='SUSPENSO' WHERE email='$student_email'");
+                                            //VERIFICAR SE DEVOLUÇÃO ESTÁ EM ATRASO                                                        
+                                            if ($date > $books_return_date) { //se a data atual for menor q a data de devolução:
+                                                $teste=1;
                                                 
-                                                //envia usuário para tabela suspensoes
-                    //                            mysqli_query($link, "INSERT INTO suspensoes VALUES('', '$student_enrollment', '$student_contact', '$student_email', '$books_name', 'ainda não devolvido', 'atraso na devolução', 'ainda não devolvido')");
-                      //                          }
+                                                
+                                                
+                                                $result2 = mysqli_query($link, "SELECT * FROM suspensoes WHERE student_email = '$student_email'");
+                                                $teste=1;
+                                                
+                                                if ($status_emprestimo=='ATRASADO') {
+                                                    echo "ATRASADO <br>";
+                                                }
+                                                if((mysqli_num_rows($result2) == 0)) { //verifica se já está suspenso   
+                                                    //suspende usuário na tabela cadastro_usuarios
+                                                    mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='SUSPENSO' WHERE email='$student_email'");
 
-                                            //echo "data hoje: $date <br>";
-                                            //echo "data retorno: $return_date <br> <br>";
-                                            //OBS: NÃO FUNCIONA QUANDO A DATA TIVER MESES DIFERENTES
-                                            //if (($date) < ($return_date)){ 
-                                            //    echo "$date < $return_date <br><br>";
-                                            //}
-                                            //if (($date) > ($return_date)){ 
-                                            //    echo "$date > $return_date <br><br>";
-                                            //}
-
+                                                    mysqli_query($link, "UPDATE emprestimos SET status_emprestimo='ATRASADO' WHERE id='$id'");
+                                                        
+                                                    //envia usuário para tabela suspensoes
+                                                    mysqli_query($link, "INSERT INTO suspensoes VALUES('', '$student_enrollment', '$student_contact', '$student_email', '$books_name', 'ainda não devolvido', 'atraso na devolução', 'ainda não devolvido')");
+                                                    $status_emprestimo="ATRASADO";
+                                                    echo "teste2 <br>";
+                                                    echo "$status_emprestimo <br>";
+                                                    }
+                                                }
                                             
+
                                             //VERIFICA SE LIVRO ESTÁ PERDIDO OU AVARIADO
                                             if($status_emprestimo=='PERDA/AVARIA'){
                                                 echo "PERDIDO/AVARIADO";
@@ -155,7 +159,7 @@ include "header.php";
                                             }
                                             echo "</td>";
                                             echo "</tr>";
-                                        
+
                                         echo "</table>";
                                     echo "</div>";
                                 }

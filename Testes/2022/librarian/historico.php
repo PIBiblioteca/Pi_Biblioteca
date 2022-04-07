@@ -21,22 +21,7 @@ include "connection.php";
                         <h3>Histórico de empréstimos</h3>
                     </div>
 
-                    <!-- menu pesquisa -->
-                    <form name="form1" action="" method="post">
-                        <div class="title_right">
-                            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                                <div class="input-group">
-
-                                        <input type="text" name="t1" class="form-control" placeholder="Pesquisar">
-                                            <span class="input-group-btn">
-                                                <button type="submit" name="submit1" id="search books" class="btn btn-default">OK</button>
-                                            </span>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <!-- / menu pesquisa -->
+                    <?php include "botao_pesquisar.php";?>
                     
                 </div>
 
@@ -51,7 +36,7 @@ include "connection.php";
                             </div>
                             <div class="x_content">
                                 <?php
-                            // RESULTADO COM CAMPO DE BUSCA
+                            // RESULTADO COM CAMPO DE BUSCA - NÃO FUNCIONANDO
                             if(isset($_POST["submit1"])) {
                                 $res=mysqli_query($link, "SELECT * FROM emprestimos 
                                     WHERE books_name LIKE('%$_POST[t1]%')
@@ -98,7 +83,7 @@ include "connection.php";
                                             </th>
                                             <?php
                                             while($row = mysqli_fetch_array($res)) {
-                                                $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE status_emprestimo = 'DEVOLVIDO'");
+                                                $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE status_emprestimo = 'DEVOLVIDO' ORDER BY id DESC");
                                                 
                                                 if($row3["status_emprestimo"]=='DEVOLVIDO') {
                                                 echo "<tr>";
@@ -178,7 +163,7 @@ include "connection.php";
                                                 Status Empréstimo 
                                             </th>
                                             <?php
-                                            $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE status_emprestimo = 'DEVOLVIDO'");
+                                            $result3 = mysqli_query($link, "SELECT * FROM emprestimos WHERE status_emprestimo = 'DEVOLVIDO' ORDER BY id DESC");
                                             while($row3 = mysqli_fetch_array($result3)){
                                                 echo "<tr>";
                                                 echo "<td>";

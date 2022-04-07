@@ -58,7 +58,7 @@ include "connection.php";
 
                 <div class="separator">
                     <p class="change_link">Novo aqui?
-                        <a href="registro.php"> Crie sua conta </a>
+                        <a href="cadastro.php"> Crie sua conta </a>
                     </p>
 
                     <div class="clearfix"></div>
@@ -79,6 +79,9 @@ include "connection.php";
             "senha": $("#password").val()
         }, function(response) {
             if (response.result) {
+                
+                //if // verificar se usuário está no BD local, se estiver, permitir seguir
+                //if // verificar se usuário está no BD da API, se não estiver, excluir do BD local, caso contrário, permitir seguir
                 window.location="meus_emprestimos.php";
             } else {
                 // <div class="alert alert-danger col-lg-6 col-lg-push-3">

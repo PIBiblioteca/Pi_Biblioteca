@@ -20,22 +20,9 @@ include "connection.php"
                     <div class="title_left">
                         <h3>Lista de retiradas</h3>
                     </div>
-                     <!-- menu pesquisa -->
-                     <form name="form1" action="" method="post">
-                        <div class="title_right">
-                            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                                <div class="input-group">
+                    
+                    <?php include "botao_pesquisar.php";?>
 
-                                        <input type="text" name="t1" class="form-control" placeholder="Pesquisar">
-                                            <span class="input-group-btn">
-                                                <button type="submit" name="submit1" id="search books" class="btn btn-default">OK</button>
-                                            </span>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <!-- / menu pesquisa -->
                 </div>
 
                 <div class="clearfix"></div>
@@ -74,7 +61,7 @@ include "connection.php"
                                 echo "</tr>";
                             
                                 $prazo_retirada=$row["prazo_retirada"];
-                                $id = $row["id"];
+                                $id_solicitacao = $row["id_solicitacao"];
                                 $status_solicitacao = $row["status_solicitacao"];
 
                                 if($row["status_solicitacao"]=="AGUARDANDO RETIRADA") {
@@ -86,13 +73,13 @@ include "connection.php"
                                 echo "<td>"; echo $row["student_email"]; echo "</td>";
                                 echo "<td>"; 
                                
-                                $date=date('d/m/Y');
+                                $date=date('Y-m-d');
                                 //VERIFICA SE LIVRO ESTÁ ATRASADO E CANCELA SOLICITAÇÂO
                                 if($status_solicitacao=="AGUARDANDO RETIRADA") { 
                                     if(strtotime($date) > strtotime($prazo_retirada)){
-                                        mysqli_query($link, "UPDATE solicitacoes SET status_solicitacao='LIVRO NÃO RETIRADO NO PRAZO' WHERE id='$id'");
+                                        mysqli_query($link, "UPDATE solicitacoes SET status_solicitacao='LIVRO NÃO RETIRADO NO PRAZO' WHERE id_solicitacao='$id_solicitacao'");
 
-                                        $res5=mysqli_query($link, "SELECT * FROM solicitacoes WHERE id='$id'");
+                                        $res5=mysqli_query($link, "SELECT * FROM solicitacoes WHERE id_solicitacao='$id_solicitacao'");
                                         while($row5=mysqli_fetch_array($res5)){
                                             $booksname=$row5["books_name"];
                                         }
@@ -102,7 +89,7 @@ include "connection.php"
                                 }
                                ?>
 
-                               <a class="color: green" href="retirado.php?id=<?php echo $row["id"]; ?>">SIM</a>
+                               <a class="color: green" href="retirado.php?id_solicitacao=<?php echo $row["id_solicitacao"]; ?>">SIM</a>
                                
                                 <?php 
                                 echo "</td>";
@@ -137,7 +124,7 @@ include "connection.php"
                                 echo "</tr>";
                             while($row = mysqli_fetch_array($res)) {
                                 $prazo_retirada=$row["prazo_retirada"];
-                                $id = $row["id"];
+                                $id_solicitacao = $row["id_solicitacao"];
                                 $status_solicitacao = $row["status_solicitacao"];
 
                                 if($row["status_solicitacao"]=="AGUARDANDO RETIRADA") {
@@ -149,13 +136,13 @@ include "connection.php"
                                 echo "<td>"; echo $row["student_email"]; echo "</td>";
                                 echo "<td>"; 
                                
-                                $date=date('d/m/Y');
+                                $date=date('Y-m-d');
                                 //VERIFICA SE RETIRADA ESTÁ ATRASADA E CANCELA SOLICITAÇÂO
                                 if($status_solicitacao=="AGUARDANDO RETIRADA") { 
                                     if(strtotime($date) > strtotime($prazo_retirada)){
-                                        mysqli_query($link, "UPDATE solicitacoes SET status_solicitacao='LIVRO NÃO RETIRADO NO PRAZO' WHERE id='$id'");
+                                        mysqli_query($link, "UPDATE solicitacoes SET status_solicitacao='LIVRO NÃO RETIRADO NO PRAZO' WHERE id_solicitacao='$id_solicitacao'");
 
-                                        $res5=mysqli_query($link, "SELECT * FROM solicitacoes WHERE id='$id'");
+                                        $res5=mysqli_query($link, "SELECT * FROM solicitacoes WHERE id_solicitacao='$id_solicitacao'");
                                         while($row5=mysqli_fetch_array($res5)){
                                             $booksname=$row5["books_name"];
                                         }
@@ -165,7 +152,7 @@ include "connection.php"
                                 }
                                ?>
 
-                               <a class="color: green" href="retirado.php?id=<?php echo $row["id"]; ?>">SIM</a>
+                               <a class="color: green" href="retirado.php?id_solicitacao=<?php echo $row["id_solicitacao"]; ?>">SIM</a>
                                
                                 <?php 
                                 echo "</td>";
