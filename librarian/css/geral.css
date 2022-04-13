@@ -1,0 +1,44 @@
+body {
+    color: #fff;
+    background: #b20000;
+}
+.left_col {
+    background: #b20000 !important;
+}
+.nav_title {
+    background: #b20000 !important;
+}
+body {
+    color: #b20000 !important;
+    background: #b20000 !important;
+    font: times !important;
+}
+toggle {
+    color: #b20000 !important;
+}
+
+btn btn-default {
+    color: #b20000 !important;
+}
+.select{
+    border-radius: 20px !important;
+}
+.toggle a {
+    color: #b20000 !important;
+}
+
+.nav.side-menu>li.active, .nav.side-menu>li.current-page {
+    border-right: 5px solid #013a46 !important;
+    font: verdana !important;
+}
+
+.x_panel, .x_title {
+    color: #5c5353 !important;
+}
+
+footer {
+    background-color: #013a46 !important;
+    color: #1c9bb5 !important;
+    
+}
+
