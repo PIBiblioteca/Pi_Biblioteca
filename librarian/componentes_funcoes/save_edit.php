@@ -5,7 +5,7 @@
     {
         $id=$_POST['id'];
         $booksname=$_POST['books_name'];
-        $img=$_POST['books_image'];  
+        $img=$_POST['imagens/books_image'];  
         $bauthorname=$_POST['books_author_name'];  
         $pname=$_POST['books_publication_name'];  
         $edicao=$_POST['edicao'];  
@@ -17,7 +17,7 @@
         $sqlUpdate = "UPDATE adicionar_livros SET 
         id='$id',
         books_name='$booksname', 
-        books_image='$img',  
+        imagens/books_image='$img',  
         books_author_name='$bauthorname', 
         books_publication_name='$pname', 
         edicao='$edicao', 

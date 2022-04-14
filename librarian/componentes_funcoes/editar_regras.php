@@ -14,7 +14,7 @@ if(!isset($_SESSION["librarian"]))
 include "../librarian/componentes_funcoes/connection.php";
 include "../librarian/componentes_funcoes/header.php";
 ?>
-<a href="/Testes/2022/librarian/books_image/"></a>
+<a href="/Testes/2022/librarian/imagens/books_image/"></a>
         <!-- page content area main -->
         <div class="right_col" role="main">
             <div class="">

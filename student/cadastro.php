@@ -1,5 +1,5 @@
 <?php
-include "../librarian/componentes_funcoes/connection.php";
+include "../student/componentes_funcoes/connection.php";
 include "regras_biblioteca.php";
 ?>
 

@@ -14,7 +14,7 @@ if(!isset($_SESSION["librarian"]))
 include "connection.php";
 include "header.php";
 ?>
-<a href="/Testes/2022/librarian/books_image/"></a>
+<a href="/librarian/imagens/books_image/"></a>
         <!-- page content area main -->
         <div class="right_col" role="main">
             <div class="">
@@ -80,8 +80,8 @@ include "header.php";
     {
         $tm=md5 (time());
         $fnm=$_FILES["f1"]["name"];
-        $dst="./books_image/".$tm.$fnm;
-        $dst1="./books_image/".$tm.$fnm;
+        $dst="./imagens/books_image/".$tm.$fnm;
+        $dst1="./imagens/books_image/".$tm.$fnm;
         move_uploaded_file($_FILES["f1"]["tmp_name"],$dst);
 
         mysqli_query($link, "INSERT INTO adicionar_livros VALUES('','$_POST[booksname]','$dst1','$_POST[bauthorname]','$_POST[pname]','$_POST[edicao]','$_POST[bprice]','$_POST[bqty]','$_POST[aqty]','$_SESSION[librarian]')");

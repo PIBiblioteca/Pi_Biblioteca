@@ -14,7 +14,7 @@ if(!isset($_SESSION["librarian"]))
 include "../librarian/componentes_funcoes/connection.php";
 include "../librarian/componentes_funcoes/header.php";
 ?>
-<a href="/Testes/2022/librarian/books_image/"></a>
+<a href="/Testes/2022/librarian/imagens/books_image/"></a>
         <!-- page content area main -->
         <div class="right_col" role="main">
             <div class="">
@@ -46,7 +46,7 @@ include "../librarian/componentes_funcoes/header.php";
                             while($row=mysqli_fetch_array($res))
                             {                                
                                 $booksname=$row["books_name"];
-                                $dst=$row["books_image"];
+                                $dst=$row["imagens/books_image"];
                                 $bauthorname=$row["books_author_name"];
                                 $pname=$row["books_publication_name"];
                                 $edicao=$row["edicao"];
@@ -109,8 +109,8 @@ include "../librarian/componentes_funcoes/header.php";
         
         $tm=md5 (time());
         $fnm=$_FILES["f1"]["name"];
-        $dst="./books_image/".$tm.$fnm;
-        $dst1="./books_image/".$tm.$fnm;
+        $dst="./imagens/books_image/".$tm.$fnm;
+        $dst1="./imagens/books_image/".$tm.$fnm;
         move_uploaded_file($_FILES["f1"]["tmp_name"],$dst);
 
         if($fnm =='') //verifica se o campo de imagem está vazio
@@ -128,7 +128,7 @@ include "../librarian/componentes_funcoes/header.php";
         else
         {
         // ATUALIZA TABELA "ADICIONAR_LIVROS"
-        mysqli_query($link, "UPDATE adicionar_livros SET books_name='$_POST[booksname]', books_image='$dst1', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', edicao ='$_POST[edicao]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id='$id'");
+        mysqli_query($link, "UPDATE adicionar_livros SET books_name='$_POST[booksname]', imagens/books_image='$dst1', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', edicao ='$_POST[edicao]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id='$id'");
         // ATUALIZA TABELA "EMPRESTIMOS"
         mysqli_query($link, "UPDATE emprestimos SET books_name='$_POST[booksname]' WHERE books_name='$booksname'");
         // ATUALIZA TABELA "SOLICITACOES"
