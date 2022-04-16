@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../student/componentes_funcoes/connection.php";
+include "../users/componentes/connection.php";
 ?>
 
 <!DOCTYPE html>

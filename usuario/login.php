@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "./usuario/componentes_funcoes/connection.php";
+include "..\usuario\componentes_funcoes\connection.php";
 ?>
 
 <!DOCTYPE html>
@@ -17,19 +17,17 @@ include "./usuario/componentes_funcoes/connection.php";
     <title>BiblioFateca | Login Usuário</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../"> 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/custom.min.css" rel="stylesheet">
+    <link rel="stylesheet" href=".."> 
+    <link href="..\usuario\css\bootstrap.min.css" rel="stylesheet">
+    <link href="..\usuario\css\animate.min.css" rel="stylesheet">
+    <link href="..\usuario\css\custom.min.css" rel="stylesheet"> 
+    <link href="..\usuario\css\geral.css" rel="stylesheet">
     
 </head>
 
 <br>
 
 <div class="col-lg-12 text-center ">
-<br>
-    <h1 style="font-family:Lucida Console; margin: auto"> BiblioFateca </h1>
-</div>
 
 <br>
 
@@ -54,6 +52,12 @@ include "./usuario/componentes_funcoes/connection.php";
     .login_content h1:after {
         background: white;
     }
+
+    body {
+    background-color: #013a46 !important;
+    color: #1c9bb5 !important; 
+}
+
 </style>
     <div class="login_wrapper">
 
@@ -116,9 +120,22 @@ include "./usuario/componentes_funcoes/connection.php";
         }
     }
     ?>
-
-
+<img src="../images/logo.png" class="logo" alt="">
 
 </body>
+
+<style>
+.logo{
+    position: sticky;
+    top:0;
+    float: right;
+    z-index: 10;
+    height: 60px;
+    width: 60px;
+    margin-right: 15px;
+    margin-top:15px;
+    margin-bottom: 0px;
+}
+</style>
 
 </html>

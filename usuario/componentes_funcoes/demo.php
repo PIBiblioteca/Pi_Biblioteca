@@ -1,5 +1,5 @@
 <?php
-include "../student/componentes_funcoes.php/header.php";
+include "../users/componentes.php/header.php";
 ?>
 
         <!-- page content area main -->

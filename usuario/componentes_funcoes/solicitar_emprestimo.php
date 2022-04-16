@@ -9,7 +9,7 @@ if(!isset($_SESSION["email"]))
     </script>
     <?php
 }
-include "../student/componentes_funcoes.php/header.php";
+include "../student/componentes.php/header.php";
 include "connection.php";
 include "/xampp/htdocs/GitHub/Pi_Biblioteca/Testes/2022/librarian/regras_biblioteca.php";
 ?>

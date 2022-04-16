@@ -12,7 +12,7 @@ if(!isset($_SESSION["email"]))
 }
 // fim do código de segurança para impossibilitar o acesso à essa página sem fazer login
 include "connection.php";
-include "../student/componentes_funcoes.php/header.php";
+include "../users/componentes.php/header.php";
 ?>
 <a href="/Testes/2022/librarian/imagens/books_image/"></a>
         <!-- page content area main -->

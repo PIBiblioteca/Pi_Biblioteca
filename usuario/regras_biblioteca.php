@@ -8,8 +8,8 @@ if(!isset($_SESSION["email"]))
     </script>
     <?php
 }
-include "../student/componentes_funcoes/header.php";
-include "../student/componentes_funcoes/connection.php"
+include "../usuario/componentes_funcoes/header.php";
+include "../usuario/componentes_funcoes/connection.php"
 ?>
 
         <!-- page content area main -->

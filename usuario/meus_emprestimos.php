@@ -8,9 +8,9 @@ if(!isset($_SESSION["email"]))
     </script>
     <?php
 }
-include "../student/componentes_funcoes/connection.php";
-include "../student/componentes_funcoes/header.php";
-include "../componentes_funcoes/contadores.php";
+include "..\usuario\componentes_funcoes\connection.php";
+include "..\usuario\componentes_funcoes\header.php";
+include "..\bibliotecaria\componentes_funcoes\contadores.php";
 ?>
 
 
