@@ -9,9 +9,9 @@ if(!isset($_SESSION["librarian"]))
     </script>
     <?php
 }
-include "../componentes_funcoes/header.php";
-include "../componentes_funcoes/connection.php";
-include "../componentes_funcoes/contadores.php";
+include "..\bibliotecaria\componentes_funcoes\header.php";
+include "..\bibliotecaria\componentes_funcoes\connection.php";
+include "..\bibliotecaria\componentes_funcoes\contadores.php";
 ?>
 
         <!-- page content area main -->
@@ -65,15 +65,15 @@ include "../componentes_funcoes/contadores.php";
                                 echo "<table class='table table-bordered'>";                  
                                 //$res=mysqli_query($link, "SELECT * FROM relatorio_sig_biblioteca");
                                 //while($row = mysqli_fetch_array($res)) {
-                                include "../componentes_funcoes/titulo_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\titulo_sig_biblioteca.php";
                                 $titulo_linha = "Alunos";
-                                include "../componentes_funcoes/linha_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\linha_sig_biblioteca.php";
                                 $titulo_linha = "Professores";
-                                include "../componentes_funcoes/linha_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\linha_sig_biblioteca.php";
                                 $titulo_linha = "Servidores";
-                                include "../componentes_funcoes/linha_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\linha_sig_biblioteca.php";
                                 $titulo_linha = "Comunidade externa";
-                                include "../componentes_funcoes/linha_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\linha_sig_biblioteca.php";
                                 echo "</table>";
                                 echo "</div>";
                                 echo "<br>";
@@ -81,19 +81,19 @@ include "../componentes_funcoes/contadores.php";
                                 echo "<b> Quantidade de empréstimos por dia / mês </b>";
                                 echo "<div id='container'>";
                                 echo "<table class='table table-bordered'>";                  
-                                include "../componentes_funcoes/titulo_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\titulo_sig_biblioteca.php";
                                 $titulo_linha = "Livros";
-                                include "../componentes_funcoes/linha_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\linha_sig_biblioteca.php";
                                 $titulo_linha = "Revista";
-                                include "../componentes_funcoes/linha_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\linha_sig_biblioteca.php";
                                 $titulo_linha = "CDs";
-                                include "../componentes_funcoes/linha_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\linha_sig_biblioteca.php";
                                 $titulo_linha = "DVDs";
-                                include "../componentes_funcoes/linha_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\linha_sig_biblioteca.php";
                                 $titulo_linha = "Material Especial";
-                                include "../componentes_funcoes/linha_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\linha_sig_biblioteca.php";
                                 $titulo_linha = "Outros";
-                                include "../componentes_funcoes/linha_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\linha_sig_biblioteca.php";
                                 echo "</table>";
                                 echo "</div>";
                                 echo "<br>";
@@ -101,19 +101,19 @@ include "../componentes_funcoes/contadores.php";
                                 echo "<b> Quantidade de serviços prestados por dia / mês </b>";
                                 echo "<div id='container'>";
                                 echo "<table class='table table-bordered'>";                  
-                                include "../componentes_funcoes/titulo_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\titulo_sig_biblioteca.php";
                                 $titulo_linha = "Empréstimo";
-                                include "../componentes_funcoes/linha_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\linha_sig_biblioteca.php";
                                 $titulo_linha = "Orientações a usuário";
-                                include "../componentes_funcoes/linha_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\linha_sig_biblioteca.php";
                                 $titulo_linha = "Consulta Internet";
-                                include "../componentes_funcoes/linha_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\linha_sig_biblioteca.php";
                                 $titulo_linha = "Consulta catálogo online";
-                                include "../componentes_funcoes/linha_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\linha_sig_biblioteca.php";
                                 $titulo_linha = "Usuários Cadastrados";
-                                include "../componentes_funcoes/linha_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\linha_sig_biblioteca.php";
                                 $titulo_linha = "Outros";
-                                include "../componentes_funcoes/linha_sig_biblioteca.php";
+                                include "..\bibliotecaria\componentes_funcoes\linha_sig_biblioteca.php";
                                 echo "</table>";
                                 echo "</div>";
                                 echo "<br>";
@@ -148,6 +148,6 @@ include "../componentes_funcoes/contadores.php";
         <!-- /page content -->
 
 <?php
-include "../componentes_funcoes/footer.php";
+include "../bibliotecaria/componentes_funcoes/footer.php";
 ?>
 

@@ -5,13 +5,12 @@ if(!isset($_SESSION["librarian"]))
     ?>
     <script type="text/javascript">
         window.location="login.php";
-
     </script>
     <?php
 }
-include "../componentes_funcoes/header.php";
-include "../componentes_funcoes/connection.php";
-include "../componentes_funcoes/contadores.php";
+include "..\bibliotecaria\componentes_funcoes\header.php";
+include "..\bibliotecaria\componentes_funcoes\connection.php";
+include "..\bibliotecaria\componentes_funcoes\contadores.php";
 ?>
 
         <!-- page content area main -->
@@ -22,7 +21,7 @@ include "../componentes_funcoes/contadores.php";
                         <h3>Cadastros</h3>
                     </div>
 
-                    <?php include "../componentes_funcoes/botao_pesquisar.php";?>
+                    <?php include "..\bibliotecaria\componentes_funcoes\botao_pesquisar.php";?>
                     
                 </div>
 
@@ -131,7 +130,7 @@ include "../componentes_funcoes/contadores.php";
         <!-- /page content -->
 
 <?php
-include "../componentes_funcoes/footer.php";
+include "../bibliotecaria/componentes_funcoes/footer.php";
 ?>
 
        

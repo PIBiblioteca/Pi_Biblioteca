@@ -208,7 +208,7 @@ include "../bibliotecaria/componentes_funcoes/connection.php";
         <!-- /page content -->
 
 <?php
-include "../componentes_funcoes/footer.php";
+include "../bibliotecaria/componentes_funcoes/footer.php";
 ?>
 
        

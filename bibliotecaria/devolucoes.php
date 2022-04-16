@@ -9,8 +9,8 @@ if(!isset($_SESSION["librarian"]))
     </script>
     <?php
 }
-include "../componentes_funcoes/connection.php";
-include "../componentes_funcoes/header.php";
+include "..\bibliotecaria\componentes_funcoes\connection.php";
+include "..\bibliotecaria\componentes_funcoes\header.php";
 ?>
 
         <!-- page content area main -->
@@ -173,5 +173,5 @@ include "../componentes_funcoes/header.php";
         <!-- /page content -->
 
 <?php
-include "../componentes_funcoes/footer.php";
+include "../bibliotecaria/componentes_funcoes/footer.php";
 ?>
