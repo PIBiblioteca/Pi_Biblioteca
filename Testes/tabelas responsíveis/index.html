@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Tabelas Responsivas</title>
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+        <div class="content">
+            <table class="rTable">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Sexo</th>
+                        <th>Idade</th>
+                        <th>Email</th>
+                    </tr>           
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Josefa Silvia</td>
+                        <td>Feminino</td>
+                        <td>20</td>
+                        <td>jsilva@gmail.com</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Joaquim Pereira</td>
+                        <td>Masculino</td>
+                        <td>18</td>
+                        <td>joaquim@gmail.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+    <script>
+        window.addEventListener('load'.()=>{
+            let tbody=document.querySelector('tbody')
+            let t=''
+            for(let i=0;i<10;i++){
+                t+=tbody.innerHTML
+            }
+            tbody.innerHTML=t
+        })
+    </script>
+</html>
+
