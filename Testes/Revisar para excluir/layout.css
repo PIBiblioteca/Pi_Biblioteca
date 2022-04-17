@@ -1,0 +1,159 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+ul {
+    position: fixed;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+
+li a{
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+li a:hover:not(.logo) {
+    background-color: #111;
+}
+
+.logo{
+    color: #ca3838;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.sair {
+    float:right;
+    background-color: #ca3838;
+}
+
+footer {
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        padding: 0;
+        background-color: #333;
+        width: 100%;
+        list-style-type: none;
+        overflow: hidden;
+        text-align: right;
+        color: rgb(255, 255, 255);
+        font-size: 20px;   
+}
+
+
+body{
+    background-color: rgb(92, 91, 91);
+}
+
+/*Tablets */
+@media screen and (max-width: 1024px) {
+   
+    ul {
+        float: none;
+        list-style-type:none;
+        margin: 0;
+        padding: 10px;
+        background-color: #333;
+        overflow: auto;
+       
+    }
+    
+    ul li{
+        float: none;
+        text-align: center; 
+        width: 100%;   
+    }
+    
+.sair{
+        float: none;
+        
+    }
+
+    li a {
+        display: block;
+        color: rgb(255, 255, 255);
+    }
+    
+    li a:hover:not(.logo, .sair) {
+        color: #ca3838;
+        background-color: #555;
+        color: white;
+    }
+
+    footer{
+        width: 100%;
+        text-align: center;
+        
+    }
+
+}
+
+
+/*Celulares */
+@media screen and (max-width: 600px) {
+    ul {
+        float: none;
+        list-style-type:none;
+        margin: 0;
+        padding: 10px;
+        background-color: #333;
+        overflow: auto;
+       
+    }
+    
+    ul li{
+        float: none;
+        text-align: center; 
+        width: 100%;   
+    }
+    
+.sair{
+        float: none;
+        
+    }
+
+    li a {
+        display: block;
+        color: rgb(255, 255, 255);
+    }
+    
+    li a.logo {
+        color: #ca3838;
+       
+    }
+    
+    li a:hover:not(.logo) {
+        background-color: #555;
+        color: white;
+    }
+
+
+    footer{
+        width: 100%;
+        text-align: center;
+        
+    }
+
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste PHP</title>
+    <style>
+        h2{
+            color: blue;
+            text-shadow: 1px 1px 1px black;
+        }
+
+    </style>
+</head>
+<body>
+    supertag (para adicionar outras linguagens) PHP: <?php ?>
+    <H1>TESTE PHP</H1>
+    <?php 
+    echo "<h2>Ola, <br> Mundo</h2>";
+    ?>
+    <h2>Variáveis</h2>
+    
+    <?php
+    $nome_da_variavel="valor da variável";
+    echo $nome_da_variavel;
+    ?>
+
+    No PHP não precisa definir os tipos primitivos, a variável é versátil e identifica o tipo
+    FORÇAR TIPO PRIMITIVO (typecast):
+        (int)
+        (real)
+        (float)
+        (string)
+        tipo lógico não tem, são considerados inteiros: Verdaeiro = 1 Falso = '' (vazio)
+        <br>
+        <br>
+    <?php
+    $nome_da_variavel="valor da variável";
+    echo $nome_da_variavel;
+    
+    $n = 4;
+    $n = "Jean";
+    $n = (int)"Jean";
+    $n = (int)"5Jean";
+    echo $n; 
+    ?>
+<?php
+
+?>
+<?php
+
+?>
+
+<br>
+<br>
+    CONCATENAR    
+<br>
+
+    <?php 
+    $nome="Jean";
+    $idade="29";
+    echo $nome." tem ".$idade." anos!";
+    echo "$nome tem $idade anos!";
+    ?>
+    necessário usar aspas duplas para uso das variáveis dentro da string
+    se usar aspas simples não identifica variaveis:
+        <br>
+    <?php
+    echo '$nome tem $idade anos!';
+        ?>  
+
+    <br>
+    <br>
+        OPERAÇÕES ARITMÉTICAS
+    <br>
+    <?php
+        echo "<br>";
+        
+        $n1 = 2;
+        $n2 = 3;
+        $s = $n1+$n2;
+        echo "A soma vale $s";
+
+        echo "<br>";
+        echo "<br>";
+        echo "Adição +";
+        $soma=$n1+$n2;
+        echo "<br>";
+        echo "soma: $soma";
+        echo "<br>";
+        echo "subtração -";
+        $subt=$n1-$n2;
+        echo "<br>";
+        echo "subt: $subt";
+        echo "<br>";
+        echo "multiplicação *";
+        $mult=$n1*$n2;
+        echo "<br>";
+        echo "mult: $mult";
+        echo "<br>";
+        echo "divisão /";
+        $divis=$n1/$n2;
+        echo "<br>";
+        echo "divis: $divis";
+        echo "<br>";
+        echo "módulo % (resto da divisão";
+        $mod=$n1%$n2;
+        echo "<br>";
+        echo "mod: $mod";
+        echo "<br>";
+
+    ?>
+    <br>
+    OPERADORES RELACIONAIS: >, <, >=, <=, <>(diferente), != (diferente), ==, ===(idêntico, mesmo tipo primitivo e iguais).
+    <br>
+    <br>
+    Operador unário: expressão?verdadeiro:falso
+        Exemplo: $n1<$n2?$n1:$n2
+                 $n1<$n2?sim:não
+                 $maior=$n1<$n2?$n1:$n2
+    
+
+
+</body>
+</html>
