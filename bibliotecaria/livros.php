@@ -9,8 +9,8 @@ if(!isset($_SESSION["librarian"]))
     </script>
     <?php
 }
-include "..\bibliotecaria\componentes_funcoes\connection.php";
-include "..\bibliotecaria\componentes_funcoes\header.php";
+include "../bibliotecaria/componentes_funcoes/connection.php";
+include "../bibliotecaria/componentes_funcoes/header.php";
 ?>
 
         <!-- page content area main -->
@@ -20,7 +20,7 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
                     <div class="title_left">
                         <h3>Livros cadastrados</h3>
                     </div>
-                    <?php include "..\bibliotecaria\componentes_funcoes\botao_pesquisar.php";//BOTÃO PESQUISAR?> 
+                    <?php include "../bibliotecaria/componentes_funcoes/botao_pesquisar.php";//BOTÃO PESQUISAR?> 
                 </div>
                 <div class="clearfix"></div>
                 <div class="row" style="min-height:500px">
@@ -32,7 +32,7 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                            <a href="..\bibliotecaria\componentes_funcoes\adicionar_livros.php"><i class="fa fa-edit"></i> Adicionar livro <span class="fa fa-chevron-down"></span></a>
+                            <a href="../bibliotecaria/componentes_funcoes/adicionar_livros.php"><i class="fa fa-edit"></i> Adicionar livro <span class="fa fa-chevron-down"></span></a>
                                 <?php 
                                 
                                 // RESULTADO COM PESQUISA
@@ -133,5 +133,3 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
 <?php
 include "../bibliotecaria/componentes_funcoes/footer.php";
 ?>
-
-       

@@ -9,8 +9,8 @@ if(!isset($_SESSION["librarian"]))
     </script>
     <?php
 }
-include "..\bibliotecaria\componentes_funcoes\header.php";
-include "..\bibliotecaria\componentes_funcoes\connection.php"
+include "../bibliotecaria/componentes_funcoes/header.php";
+include "../bibliotecaria/componentes_funcoes/connection.php"
 ?>
 
         <!-- page content area main -->
@@ -21,7 +21,7 @@ include "..\bibliotecaria\componentes_funcoes\connection.php"
                         <h3>Lista de retiradas</h3>
                     </div>
                     
-                    <?php include "..\bibliotecaria\componentes_funcoes\botao_pesquisar.php";?>
+                    <?php include "../bibliotecaria/componentes_funcoes/botao_pesquisar.php";?>
 
                 </div>
 
