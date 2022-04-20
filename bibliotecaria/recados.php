@@ -65,7 +65,7 @@ include "../bibliotecaria/componentes_funcoes/connection.php";
                                     </tr>
                                     <tr>
                                         <td>
-                                            <input type="submit" name="submit1" value="Enviar">
+                                            <input button style="background: green; color: white" class="btn btn-default submit" type="submit" name="submit1" value="Enviar">
                                         </td>
                                     </tr>
                                 </table>

@@ -13,7 +13,7 @@ include "regras_biblioteca.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Cadastro usuário  | BiblioFateca</title>
+    <title>Cadastro usuário  | BiblioFateca </title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">

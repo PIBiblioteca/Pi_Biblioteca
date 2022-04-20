@@ -277,8 +277,9 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
         </div>
         <!-- /page content -->
 
+
 <?php
-include "footer.php";
+include "../usuario/componentes_funcoes/footer.php";
 ?>
 
         
