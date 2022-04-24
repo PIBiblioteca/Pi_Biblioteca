@@ -11,8 +11,8 @@ if(!isset($_SESSION["librarian"]))
     <?php
 }
 // fim do código de segurança para impossibilitar o acesso à essa página sem fazer login
-include "../bibliotecaria/componentes_funcoes/connection.php";
-include "../bibliotecaria/componentes_funcoes/header.php";
+include "..\bibliotecaria\componentes_funcoes\connection.php";
+include "..\bibliotecaria\componentes_funcoes\header.php";
 ?>
 <a href="/imagens/books_image/"></a>
         <!-- page content area main -->

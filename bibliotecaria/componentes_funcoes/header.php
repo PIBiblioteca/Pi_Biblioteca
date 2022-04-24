@@ -9,17 +9,12 @@
 
     <title> BiblioFateca </title>
 
- 
-
-    <script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
-    <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
-    
-    <link href="../usuario/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="..\usuario\css\geral.css">
+    <link href="..\usuario\css\bootstrap.min.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/686ced9e11.js"></script>
-    <link href="../usuario/css/nprogress.css" rel="stylesheet">
-    <link href="../usuario/css/custom.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../images/favicon_bibliofateca.png" type="image/x-icon">
-    <link rel="stylesheet" href="../usuario/css/geral.css">
+    <link href="..\usuario\css\nprogress.css" rel="stylesheet">
+    <link href="..\usuario\css\custom.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="..\images\favicon_bibliofateca.png" type="image/x-icon">
 </head>
 <!--FORÇAR ALTERAÇÃO NO ESTILO (tbm é possível alterar o arquivo "custom.css")-->
 <style>
@@ -50,7 +45,7 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="../componentes_funcoes/cadastros.php" class="site_title"><img src="../images/favicon_bibliofateca.png" alt=""style="width: 45px"> <span>Biblio<b>Fatec</b>a</span></a>
+                    <a href="/GitHub/Pi_Biblioteca/Testes/2022/librarian/cadastros.php" class="site_title"><img src="..\images\favicon_bibliofateca.png" alt=""style="width: 45px"> <span>Biblio<b>Fatec</b>a</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -66,7 +61,7 @@
                 <!-- menu profile quick info -->
                 <div class="profile clearfix">
                     <div class="profile_pic">
-                        <img style="width: 60px" src="../images/astronauta.png" alt="..." class="img-circle profile_img">
+                        <img style="width: 60px" src="..\images\astronauta.png" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <span>Olá,</span>
@@ -136,7 +131,7 @@
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="../images/astronauta.png" alt=""><?php echo $_SESSION["librarian"]; ?>
+                                <img src="..\images\astronauta.png" alt=""><?php echo $_SESSION["librarian"]; ?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -152,5 +147,3 @@
             </div>
         </div>
         <!-- /top navigation -->
-        
-        

@@ -1,6 +1,6 @@
 <?php
 session_start(); // carrega info de sessão ativa
-include "../bibliotecaria/componentes_funcoes/connection.php";
+include "..\bibliotecaria\componentes_funcoes\connection.php";
 ?>
 
 <!DOCTYPE html>
