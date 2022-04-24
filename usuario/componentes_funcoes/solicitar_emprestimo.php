@@ -9,9 +9,9 @@ if(!isset($_SESSION["email"]))
     </script>
     <?php
 }
-include "../student/componentes.php/header.php";
-include "connection.php";
-include "/xampp/htdocs/GitHub/Pi_Biblioteca/Testes/2022/librarian/regras_biblioteca.php";
+include "../usuario/componentes_funcoes/header.php";
+include "../usuario/componentes_funcoes/connection.php";
+include "../bibliotecaria/componentes_funcoes/regras_biblioteca.php";
 ?>
 
         <!-- page content area main -->
