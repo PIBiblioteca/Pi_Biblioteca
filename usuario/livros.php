@@ -46,17 +46,23 @@ include "../usuario/componentes_funcoes/connection.php";
                         <div class="x_panel">
                             <div class="x_title">
                                 <h2>Buscar Livros</h2>
-
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="x_content">
-                            <label for="color">Categoria:</label>
-                            <select class="select" name="color" id="color">
+                                <div class="categoria"> 
+                                <label for="color">Categoria:</label>
+                                <select class="select" name="color" id="color">
                                 <option value=""> </option>
                                 <option value="manha">Cultura Geral</option>
                                 <option value="tarde">G3E</option>
                                 <option value="noite">GTI</option>
                             </select>
+                            </div>
+
+                                <div class="clearfix"></div>
+
+                          
+                            </div>
+                            
+                            <div class="x_content">
+                           
                             <?php
                             //FUNÇÃO PESQUISAR
                             if(isset($_POST["submit1"])) // pega variável de entrada do usuário
