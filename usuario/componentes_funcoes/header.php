@@ -1,5 +1,5 @@
 <?php
-include "..\bibliotecaria\componentes_funcoes\contadores.php";
+include "../bibliotecaria/componentes_funcoes/contadores.php";
 $email=$_SESSION['email'];
 //menu de usuário, foto e nome
 
@@ -40,18 +40,26 @@ if($image==''){
 
     <title>BiblioFateca </title>
 
-    <link rel="stylesheet" href="..\usuario\css\geral.css"> 
+    <link rel="stylesheet" href="../usuario/css/header.css">
     <!-- 
+      > 
         Dicas de navegação nos diretórios
         ./          - referencia o diretorio/pasta atual
         ./ = voltar para raiz 
         ../ = voltar uma pasta
     -->
-    <link href="..\usuario\css\bootstrap.min.css" rel="stylesheet">
-    <link href="..\usuario\css\font-awesome.min.css" rel="stylesheet">
-    <link href="..\usuario\css\nprogress.css" rel="stylesheet">
-    <link href="..\usuario\css\custom.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="..\img\favicon_bibliofateca.png" type="image/x-icon">
+    <link href="../js/bootstrap.min.js" rel="stylesheet">
+    <link href="../js/custom.min.js" rel="stylesheet">
+    <link href="../js/nprogress.js" rel="stylesheet">
+    <link href="../usuario/css/animate.min.css" rel="stylesheet">
+    <link href="../usuario/css/custom.css" rel="stylesheet">
+    <link href="../usuario/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../usuario/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script src="https://use.fontawesome.com/686ced9e11.js"></script>
+    <link href="../usuario/css/nprogress.css" rel="stylesheet">
+    <link href="../usuario/css/custom.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/favicon_bibliofateca.png" type="image/x-icon">
 </head>
 
 <body class="nav-md">
@@ -60,7 +68,7 @@ if($image==''){
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="..\usuario\meus_emprestimos.php" class="site_title"><img src="..\images\favicon_bibliofateca.png" alt=""style="width: 45px"> <span>Biblio<b>Fatec</b>a</span></a>
+                    <a href="../usuario/meus_emprestimos.php" class="site_title"><img src="../images/favicon_bibliofateca.png" alt=""style="width: 45px"> <span>Biblio<b>Fatec</b>a</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -94,13 +102,13 @@ if($image==''){
                     <div class="menu_section">
                         <h3>Menu</h3>
                         <ul class="nav side-menu">
-                            <li><a href="..\usuario\meus_emprestimos.php"><i class="fa fa-home"></i> Meus empréstimos <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="../usuario/meus_emprestimos.php"><i class="fa fa-home"></i> Meus empréstimos <span class="fa fa-chevron-down"></span></a>
                             </li>
 
-                            <li><a href="..\usuario\livros.php"><i class="fa fa-edit"></i> Buscar livros <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="../usuario/livros.php"><i class="fa fa-edit"></i> Buscar livros <span class="fa fa-chevron-down"></span></a>
                             </li>
                             
-                            <li><a href="..\usuario\regras_biblioteca.php"><i class="fa fa-edit"></i> Regras da biblioteca <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="../usuario/regras_biblioteca.php"><i class="fa fa-edit"></i> Regras da biblioteca <span class="fa fa-chevron-down"></span></a>
                             </li>
                         </ul>
                     </div>
@@ -127,8 +135,8 @@ if($image==''){
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="editar_perfil.php?id=<?php echo $fullname; ?>"><i class="fa fa-sign-out pull-right"></i> Editar perfil</a></li>
-                                <li><a href="..\usuario\login.php"><i class="fa fa-sign-out pull-right"></i> Sair </a></li>
+                                <li><a href="componentes_funcoes/editar_perfil.php?id=<?php echo $fullname; ?>"><i class="fa fa-sign-out pull-right"></i> Editar perfil</a></li>
+                                <li><a href="../usuario/login.php"><i class="fa fa-sign-out pull-right"></i> Sair </a></li>
                             </ul>
                             
                         </li>

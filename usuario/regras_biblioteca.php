@@ -58,5 +58,5 @@ include "../usuario/componentes_funcoes/connection.php"
         <!-- /page content -->
 
 <?php
-include "footer.php";
+include "../usuario/componentes_funcoes/footer.php";
 ?>       

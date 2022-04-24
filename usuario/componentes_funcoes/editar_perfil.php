@@ -11,10 +11,10 @@ if(!isset($_SESSION["email"]))
     <?php
 }
 // fim do código de segurança para impossibilitar o acesso à essa página sem fazer login
-include "connection.php";
-include "../users/componentes.php/header.php";
+include "../usuario/componentes_funcoes/connection.php";
+include "../usuario/componentes_funcoes/header.php";
 ?>
-<a href="/Testes/2022/librarian/imagens/books_image/"></a>
+<a href="..imagens/books_image/"></a>
         <!-- page content area main -->
         <div class="right_col" role="main">
             <div class="">
@@ -148,5 +148,5 @@ include "../users/componentes.php/header.php";
 
 
 <?php
-include "footer.php";
+include "../usuario/componentes_funcoes/footer.php";
 ?>

@@ -208,7 +208,7 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
                                     
                                     <th>NÃO HÁ REGISTROS <br></th> 
                                     <tr>
-                                    <td> <a href="livros.php"> Clique aqui </a> para solicitar o empréstimo de um livro ou acesse 'Buscar Livros' no menu </td>
+                                    <td> <a href="../usuario/livros.php"> Clique aqui </a> para solicitar o empréstimo de um livro ou acesse 'Buscar Livros' no menu </td>
                                     </tr>
                                     </table>
                                 </div>
@@ -278,7 +278,7 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
         <!-- /page content -->
 
 <?php
-include "footer.php";
+include "../usuario/componentes_funcoes/footer.php";
 ?>
 
         
