@@ -65,7 +65,7 @@ include "../bibliotecaria/componentes_funcoes/header.php";
                                     echo "</tr>";
                                     while($row = mysqli_fetch_array($res)) {
                                         echo "<tr>";
-                                        echo "<td>"; ?> <img src="<?php echo $row["imagens/books_image"]; ?>" height="100" width="100"> <?php echo "</td>";
+                                        echo "<td>"; ?> <img src="<?php echo $row["images/books_image"]; ?>" height="100" width="100"> <?php echo "</td>";
                                         echo "<td>"; echo $row["books_name"]; echo "</td>";
                                         echo "<td>"; echo $row["books_author_name"]; echo "</td>";
                                         echo "<td>"; echo $row["books_publication_name"]; echo "</td>";
@@ -106,7 +106,7 @@ include "../bibliotecaria/componentes_funcoes/header.php";
                                 echo "</tr>";
                                 while($row = mysqli_fetch_array($res)) {
                                     echo "<tr>";
-                                    echo "<td>"; ?> <img src="<?php echo $row["imagens/books_image"]; ?>" height="100" width="100"> <?php echo "</td>";
+                                    echo "<td>"; ?> <img src="<?php echo $row["images/books_image"]; ?>" height="100" width="100"> <?php echo "</td>";
                                     echo "<td>"; echo $row["books_name"]; echo "</td>";
                                     echo "<td>"; echo $row["books_author_name"]; echo "</td>";
                                     echo "<td>"; echo $row["books_publication_name"]; echo "</td>";
