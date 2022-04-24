@@ -12,7 +12,7 @@ include "..\usuario\componentes_funcoes\connection.php";
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/GitHub/Pi_Biblioteca/images/favicon_bibliofateca.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/GitHub/Pi_Biblioteca/img/favicon_bibliofateca.png" type="image/x-icon">
     
     <title>BiblioFateca | Login Usuário</title>
 
@@ -120,7 +120,7 @@ include "..\usuario\componentes_funcoes\connection.php";
         }
     }
     ?>
-
+<img src="../images/logo.png" class="logo" alt="">
 
 </body>
 

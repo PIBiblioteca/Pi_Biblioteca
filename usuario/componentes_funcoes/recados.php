@@ -12,7 +12,7 @@ if(!isset($_SESSION["email"]))
 }
 
 $email=$_SESSION["email"];
-include "header.php";
+include "../users/componentes.php/header.php";
 include "connection.php";
 mysqli_query($link, "UPDATE recados SET read1='y' WHERE email='$_SESSION[email]'");
 ?>
@@ -67,7 +67,7 @@ mysqli_query($link, "UPDATE recados SET read1='y' WHERE email='$_SESSION[email]'
         <!-- /page content -->
 
 <?php
-include "../bibliotecaria/componentes_funcoes/footer.php";
+include "footer.php";
 ?>
 
        

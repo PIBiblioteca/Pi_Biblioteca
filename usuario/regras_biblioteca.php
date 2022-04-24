@@ -48,8 +48,8 @@ include "../usuario/componentes_funcoes/connection.php"
                                 echo "</tr>";
                                 }
                             ?>
+                            </div>
                         
-                            </div>                              
                         </div>
                     </div>
                 </div>
@@ -57,6 +57,6 @@ include "../usuario/componentes_funcoes/connection.php"
         </div>
         <!-- /page content -->
 
-        <?php
-        include "../usuario/componentes_funcoes/footer.php";
-        ?>       
+<?php
+include "footer.php";
+?>       
