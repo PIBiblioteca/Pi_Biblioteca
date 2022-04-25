@@ -28,10 +28,12 @@ footer.rodape{
 
 .form-control {
     background-color: #e7e4e4 !important;
+    border-radius: 5px !important;
 }
 
 .btn-default {
     background-color: #e7e4e4 !important;
+    border-radius: 5px !important;
 }
 
 
