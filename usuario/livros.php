@@ -14,7 +14,8 @@ include "../usuario/componentes_funcoes/connection.php";
 ?>
 
         <!-- page content area main -->
-        <link rel="stylesheet" href="../css/geral.css"> 
+        <link rel="stylesheet" href="..usuario/css/header.css"> 
+        
         <div class="right_col" role="main">
             <div class="">
                 <div class="page-title">
@@ -47,13 +48,28 @@ include "../usuario/componentes_funcoes/connection.php";
                             <div class="x_title">
                                 <h2>Buscar Livros</h2>
                                 <div class="categoria"> 
-                                <label for="color">Categoria:</label>
-                                <select class="select" name="color" id="color">
-                                <option value=""> </option>
-                                <option value="manha">Cultura Geral</option>
-                                <option value="tarde">G3E</option>
-                                <option value="noite">GTI</option>
-                            </select>
+
+                            <details class="custom-select">
+                                <summary class="radios">
+                                    <input type="radio" name="item" id="default" title="Categorias..." checked>
+                                    <input type="radio" name="item" id="item1" title="Item 1">
+                                    <input type="radio" name="item" id="item2" title="Item 2">
+                                    <input type="radio" name="item" id="item3" title="Item 3">
+                                    <input type="radio" name="item" id="item4" title="Item 4">
+                                    <input type="radio" name="item" id="item5" title="Item 5">
+                                </summary>
+                                <ul class="list">
+                                    <li>
+                                        <label for="item1">Cultura Geral</label>
+                                    </li>
+                                    <li>
+                                        <label for="item2">GTI</label>
+                                    </li>
+                                    <li>
+                                        <label for="item3">G3E</label>
+                                    </li>
+                                </ul>
+                            </details>
                             </div>
 
                                 <div class="clearfix"></div>
@@ -75,7 +91,7 @@ include "../usuario/componentes_funcoes/connection.php";
                                 while($row = mysqli_fetch_array($res))
                                 {
                                     $i=$i+1;
-                                    echo "<td>"; ?> <img src="../<?php echo $row["imagem_livro"]; ?>" height="100" width="100">  <?php 
+                                    echo "<td>"; ?> <img src="../<?php echo $row["imagem_livro"];  ?>" height="100" width="100">  <?php 
                                     echo "<br>";
                                     echo "<b>".$row["titulo_livro"]."</b>";
                                     echo "<br>";

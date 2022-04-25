@@ -120,7 +120,7 @@ include "..\usuario\componentes_funcoes\connection.php";
         }
     }
     ?>
-<img src="../images/logo.png" class="logo" alt="">
+
 
 </body>
 
