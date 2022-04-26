@@ -15,18 +15,23 @@ include "..\bibliotecaria\componentes_funcoes\connection.php";
     <title>BiblioFateca | Login Bibliotecária</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../../Pi_Biblioteca/css/geral.css"> 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/custom.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../img/favicon_bibliofateca.png" type="image/x-icon">
+    <link rel="stylesheet" href=".."> 
+    <link href="..\usuario\css\bootstrap.min.css" rel="stylesheet">
+    <link href="..\usuario\css\animate.min.css" rel="stylesheet">
+    <link href="..\usuario\css\custom.min.css" rel="stylesheet"> 
+    <link href="..\usuario\css\geral.css" rel="stylesheet">
 </head>
 
 <br>
 
+
+
+<br>
+
+<body class="login">
+
+
 <div class="col-lg-12 text-center ">
-    <h1 style="font-family:Lucida Console">BiblioFateca</h1>
-</div>
 
 <br>
 
@@ -51,51 +56,67 @@ include "..\bibliotecaria\componentes_funcoes\connection.php";
     .login_content h1:after {
         background: white;
     }
+
+    body {
+    background-color: #013a46 !important;
+    color: #1c9bb5 !important; 
+}
+
 </style>
+    <div class="login_wrapper">
 
-<div class="login_wrapper">
+        <section class="login_content">
+            <form name="form1" action="" method="post">
+            <img src="../images/logo_bibliofateca.png" alt=""style="width: 160px"> 
+                <br><br>
+                <h1 style="color: white">Login Bibliotecária</h1>
 
-    <section class="login_content">
-        <form name="form1" action="" method="post">
-            <h1>Login Bibliotecária</h1>
+                <div>
+                    <input type="text" name="email" class="form-control" placeholder="E-mail" required="" />
+                </div>
+                <div>
+                    <input type="password" name="password" class="form-control" placeholder="Senha" required="" />
+                </div>
+                <div>
 
-            <div>
-                <input type="text" name="username" class="form-control" placeholder="E-mail" required=""/>
-            </div>
-            <div>
-                <input type="password" name="password" class="form-control" placeholder="Senha" required=""/>
-            </div>
-            <div>
+                    <input class="btn btn-default submit" type="submit" name="submit1" value="Login">
+                    
+                </div>
 
-                <input class="btn btn-default submit" type="submit" name="submit1" value="Login">
-                <a class="reset_pass" href="#">Perdeu sua senha?</a>
-            </div>
+                <div class="clearfix"></div>
 
-            <div class="clearfix"></div>
+                <div class="separator">
+                  
+                    </p>
 
-            
-        </form>
-    </section>
+                    <div class="clearfix"></div>
+                    <br>
 
-</div>
+
+                </div>
+            </form>
+        </section>
+
+
+    </div>
 
 <?php
     if(isset($_POST["submit1"])) {
         $count = 0;
-        $res = mysqli_query($link, "SELECT * FROM cadastro_bibliotecaria WHERE username='$_POST[username]' && password='$_POST[password]'");
+        $res = mysqli_query($link, "SELECT * FROM cadastro_bibliotecaria WHERE username='$_POST[email]' && password='$_POST[password]'");
         $count = mysqli_num_rows($res);
 
         if ($count == 0) {
     ?>
             <div class="alert alert-danger col-lg-6 col-lg-push-3">
-                Usuário ou senha <strong>incorretos</strong>
+            <strong style="color:white">Senha ou usuário inválido</strong> 
             </div>
     <?php
         } else {
             $_SESSION["librarian"]=$_POST["username"];
             ?>
             <script type="text/javascript">
-                window.location="cadastros.php";
+                window.location="../bibliotecaria/componentes_funcoes/cadastros.php";
             </script>
             <?php
         }
@@ -104,4 +125,19 @@ include "..\bibliotecaria\componentes_funcoes\connection.php";
 ?>
 
 </body>
+
+<style>
+.logo{
+    position: sticky;
+    top:0;
+    float: right;
+    z-index: 10;
+    height: 60px;
+    width: 60px;
+    margin-right: 15px;
+    margin-top:15px;
+    margin-bottom: 0px;
+}
+</style> 
+
 </html>

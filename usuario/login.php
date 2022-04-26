@@ -87,7 +87,7 @@ include "..\usuario\componentes_funcoes\connection.php";
                     </p>
 
                     <div class="clearfix"></div>
-                    <br />
+                    <br>
 
 
                 </div>

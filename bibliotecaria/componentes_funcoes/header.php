@@ -9,12 +9,12 @@
 
     <title> BiblioFateca </title>
 
-    <link rel="stylesheet" href="..\usuario\css\geral.css">
-    <link href="..\usuario\css\bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../usuario/css/geral.css">
+    <link href="../usuario/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/686ced9e11.js"></script>
-    <link href="..\usuario\css\nprogress.css" rel="stylesheet">
-    <link href="..\usuario\css\custom.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="..\images\favicon_bibliofateca.png" type="image/x-icon">
+    <link href="../usuario/css/nprogress.css" rel="stylesheet">
+    <link href="../usuario/css/custom.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/favicon_bibliofateca.png" type="image/x-icon">
 </head>
 <!--FORÇAR ALTERAÇÃO NO ESTILO (tbm é possível alterar o arquivo "custom.css")-->
 <style>
