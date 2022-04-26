@@ -36,27 +36,21 @@ footer.rodape{
     border-radius: 5px !important;
 }
 
-
-
-/* Categoria*/
-
 .categoria{
     float: right;
 }
 
-
-
-details {
+.custom-select {
 	position: relative;
 	width: 200px;
 	margin-right: 1rem;
 }
 
-details[open] {
+.custom-select[open] {
 	z-index: 1;
 }
 
-summary {
+summary.radios {
 	padding: 1rem;
 	cursor: pointer;
 	border-radius: 5px;
@@ -64,11 +58,11 @@ summary {
 	list-style: none;
 }
 
-summary::-webkit-details-marker {
+summary.radios::-webkit-details-marker {
 	display: none;
 }
 
-details[open] summary:before {
+.custom-select [open] summary:before {
 	content: '';
 	display: block;
 	width: 100vw;
@@ -79,7 +73,7 @@ details[open] summary:before {
 	left: 0;
 }
 
-summary:after {
+summary.radios:after {
 	content: '';
 	display: inline-block;
 	float: right;
@@ -93,15 +87,15 @@ summary:after {
 	transition: transform ease-in-out 100ms
 }
 
-summary:focus {
+summary.radios:focus {
 	outline: none;
 }
 
-details[open] summary:after {
+.custom-select [open] summary:after {
 	transform: rotate(-45deg) translate(0%, 0%);
 }
 
-ul {
+ul.list {
 	width: 100%;
 	background: #e7e4e4;
 	position: absolute;
@@ -115,17 +109,17 @@ ul {
 	overflow-y: auto;
 }
 
-li {
+li.lia {
 	margin: 0;
 	padding: 1rem 0;
 	border-bottom: 1px solid #ccc;
 }
 
-li:first-child {
+li.lia:first-child {
 	padding-top: 0;
 }
 
-li:last-child {
+li.lia:last-child {
 	padding-bottom: 0;
 	border-bottom: none;
 }
@@ -136,17 +130,17 @@ summary.radios {
 	counter-reset: radios;
 }
 
-input[type=radio] {
+.botao[type=radio] {
 	counter-increment: radios;
 	appearance: none;
 	display: none;
 }
 
-input[type=radio]:checked {
+.botao[type=radio]:checked {
 	display: inline;
 }
 
-input[type=radio]:after {
+.botao[type=radio]:after {
 	content: attr(title);
 	display: inline;
 	font-size: 1.3rem;
@@ -156,7 +150,7 @@ ul.list {
 	counter-reset: labels;
 }
 
-label {
+.linha {
 	width: 100%;
 	display: block;
 	cursor: pointer;

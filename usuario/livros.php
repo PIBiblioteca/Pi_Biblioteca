@@ -49,24 +49,24 @@ include "../usuario/componentes_funcoes/connection.php";
                                 <h2>Buscar Livros</h2>
                                 <div class="categoria"> 
 
+                                <link rel="stylesheet" href="..usuario/css/categoria.css">
                             <details class="custom-select">
                                 <summary class="radios">
-                                    <input type="radio" name="item" id="default" title="Categorias..." checked>
-                                    <input type="radio" name="item" id="item1" title="Item 1">
-                                    <input type="radio" name="item" id="item2" title="Item 2">
-                                    <input type="radio" name="item" id="item3" title="Item 3">
-                                    <input type="radio" name="item" id="item4" title="Item 4">
-                                    <input type="radio" name="item" id="item5" title="Item 5">
-                                </summary>
+                                    <input class ="botao" type="radio" name="item" id="default" title="Categorias..." checked>
+                                    <input class ="botao" type="radio" name="item" id="item1" title="Item 1">
+                                    <input class ="botao" type="radio" name="item" id="item2" title="Item 2">
+                                    <input class ="botao" type="radio" name="item" id="item3" title="Item 3">
+                                </summary> 
+
                                 <ul class="list">
-                                    <li>
-                                        <label for="item1">Cultura Geral</label>
+                                    <li class="lia">
+                                        <label class="linha" for="item1">Cultura Geral</label>
                                     </li>
-                                    <li>
-                                        <label for="item2">GTI</label>
+                                    <li class="lia">
+                                        <label class="linha" for="item2">GTI</label>
                                     </li>
-                                    <li>
-                                        <label for="item3">G3E</label>
+                                    <li class="lia">
+                                        <label class="linha" for="item3">G3E</label>
                                     </li>
                                 </ul>
                             </details>
