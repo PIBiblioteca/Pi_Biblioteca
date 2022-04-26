@@ -72,7 +72,7 @@ include "..\bibliotecaria\componentes_funcoes\connection.php";
                 <h1 style="color: white">Login Bibliotecária</h1>
 
                 <div>
-                    <input type="text" name="email" class="form-control" placeholder="E-mail" required="" />
+                    <input type="text" name="username" class="form-control" placeholder="E-mail" required="" />
                 </div>
                 <div>
                     <input type="password" name="password" class="form-control" placeholder="Senha" required="" />
@@ -103,7 +103,7 @@ include "..\bibliotecaria\componentes_funcoes\connection.php";
 <?php
     if(isset($_POST["submit1"])) {
         $count = 0;
-        $res = mysqli_query($link, "SELECT * FROM cadastro_bibliotecaria WHERE email='$_POST[email]' && password='$_POST[password]'");
+        $res = mysqli_query($link, "SELECT * FROM cadastro_bibliotecaria WHERE username='$_POST[username]' && password='$_POST[password]'");
         $count = mysqli_num_rows($res);
 
         if ($count == 0) {
