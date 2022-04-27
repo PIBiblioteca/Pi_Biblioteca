@@ -84,7 +84,7 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
         $dst1="./imagens/books_image/".$tm.$fnm;
         move_uploaded_file($_FILES["f1"]["tmp_name"],$dst);
 
-        mysqli_query($link, "INSERT INTO adicionar_livros VALUES('','$_POST[booksname]','$dst1','$_POST[bauthorname]','$_POST[pname]','$_POST[edicao]','$_POST[bprice]','$_POST[bqty]','$_POST[aqty]','$_SESSION[librarian]')");
+        mysqli_query($link, "INSERT INTO livros VALUES('','$_POST[booksname]','$dst1','$_POST[bauthorname]','$_POST[pname]','$_POST[edicao]','$_POST[bprice]','$_POST[bqty]','$_POST[aqty]','$_SESSION[librarian]')");
     ?>
         <script type="text/javascript">
             alert("Livro adicionado com sucesso!");

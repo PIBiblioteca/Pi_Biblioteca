@@ -9,9 +9,8 @@ if(!isset($_SESSION["email"]))
     </script>
     <?php
 }
-include "../usuario/componentes_funcoes/header.php";
-include "../usuario/componentes_funcoes/connection.php";
-include "../bibliotecaria/componentes_funcoes/prazos_biblioteca.php";
+include "header.php";
+include "tabela_regras_biblioteca.php";
 ?>
 
         <!-- page content area main -->

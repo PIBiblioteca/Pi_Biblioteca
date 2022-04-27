@@ -37,7 +37,7 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
                                 
                                 // RESULTADO COM PESQUISA
                                 if(isset($_POST["submit1"])) {
-                                    $res=mysqli_query($link, "SELECT * FROM adicionar_livros 
+                                    $res=mysqli_query($link, "SELECT * FROM livros 
                                     WHERE books_name LIKE('%$_POST[t1]%')
                                     OR books_author_name LIKE('%$_POST[t1]%')
                                     OR books_publication_name LIKE('%$_POST[t1]%')
@@ -89,33 +89,33 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
                                 else // RESULTADO SEM PESQUISA
                                 { 
 
-                                $res=mysqli_query($link, "SELECT * FROM adicionar_livros");
+                                $res=mysqli_query($link, "SELECT * FROM livros");
                                 echo "<div id='container'>";
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
                                 echo "<th>"; echo "Imagem do livro"; echo "</th>";
-                                echo "<th>"; echo "Nome do livro"; echo "</th>";
-                                echo "<th>"; echo "Nome do autor"; echo "</th>";
+                                echo "<th>"; echo "Categoria"; echo "</th>";
+                                echo "<th>"; echo "ISBN"; echo "</th>";
+                                echo "<th>"; echo "Título"; echo "</th>";
+                                echo "<th>"; echo "Autor"; echo "</th>";
+                                echo "<th>"; echo "Quantidade"; echo "</th>";
                                 echo "<th>"; echo "Editora"; echo "</th>";
                                 echo "<th>"; echo "Edição"; echo "</th>";
-                                echo "<th>"; echo "Preço"; echo "</th>";
-                                echo "<th>"; echo "Quantidade"; echo "</th>";
-                                echo "<th>"; echo "Disponíveis"; echo "</th>";
                                 echo "<th>"; echo "Deletar Livro"; echo "</th>";
                                 echo "<th>"; echo "Editar Livro"; echo "</th>";
                                 echo "</tr>";
                                 while($row = mysqli_fetch_array($res)) {
                                     echo "<tr>";
                                     echo "<td>"; ?> <img src="<?php echo $row["images/books_image"]; ?>" height="100" width="100"> <?php echo "</td>";
-                                    echo "<td>"; echo $row["books_name"]; echo "</td>";
-                                    echo "<td>"; echo $row["books_author_name"]; echo "</td>";
-                                    echo "<td>"; echo $row["books_publication_name"]; echo "</td>";
-                                    echo "<td>"; echo $row["edicao"]; echo "</td>";
-                                    echo "<td>"; echo $row["books_price"]; echo "</td>";
-                                    echo "<td>"; echo $row["books_qty"]; echo "</td>";
-                                    echo "<td>"; echo $row["available_qty"]; echo "</td>";
-                                    echo "<td>"; ?> <a href="delete_books.php?id=<?php echo $row["id"]; ?>">Deletar</a> <?php echo "</td>";
-                                    echo "<td>"; ?> <a href="editar_livro.php?id=<?php echo $row["id"]; ?>">Editar</a> <?php echo "</td>";
+                                    echo "<td>"; echo $row["categoria_livro"]; echo "</td>";
+                                    echo "<td>"; echo $row["isbn_livro"]; echo "</td>";
+                                    echo "<td>"; echo $row["titulo_livro"]; echo "</td>";
+                                    echo "<td>"; echo $row["autor_livro"]; echo "</td>";
+                                    echo "<td>"; echo $row["quantidade_livro"]; echo "</td>";
+                                    echo "<td>"; echo $row["editora_livro"]; echo "</td>";
+                                    echo "<td>"; echo $row["edicao_livro"]; echo "</td>";
+                                    echo "<td>"; ?> <a href="delete_books.php?id=<?php echo $row["id_livro"]; ?>">Deletar</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a href="editar_livro.php?id=<?php echo $row["id_livro"]; ?>">Editar</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</table>";

@@ -31,7 +31,7 @@ include "../usuario/componentes_funcoes/connection.php";
 
                                         <input type="text" name="t1" class="form-control" placeholder="Pesquisar">
                                             <span class="input-group-btn">
-                                                <button type="submit" name="submit1" id="search books" class="btn btn-default">OK</button>
+                                                <button type="submit" name="submit1" id="search books" class="btn btn-default"><i class="fa-solid fa-magnifying-glass"></i></button>
                                             </span>
                                     
                                 </div>
@@ -49,10 +49,9 @@ include "../usuario/componentes_funcoes/connection.php";
                                 <h2>Buscar Livros</h2>
                                 <div class="categoria"> 
 
-                                <link rel="stylesheet" href="..usuario/css/categoria.css">
                             <details class="custom-select">
                                 <summary class="radios">
-                                    <input class ="botao" type="radio" name="item" id="default" title="Categorias..." checked>
+                                    <input class="botao" type="radio" name="item" id="default" title="Categorias">Categoria</input>
                                     <input class ="botao" type="radio" name="item" id="item1" title="Item 1">
                                     <input class ="botao" type="radio" name="item" id="item2" title="Item 2">
                                     <input class ="botao" type="radio" name="item" id="item3" title="Item 3">

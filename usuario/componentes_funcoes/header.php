@@ -1,5 +1,5 @@
 <?php
-include "../bibliotecaria/componentes_funcoes/contadores.php";
+include "connection.php";
 $email=$_SESSION['email'];
 //menu de usuário, foto e nome
 
