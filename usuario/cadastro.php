@@ -1,6 +1,6 @@
 <?php
 include "../usuario/componentes_funcoes/connection.php";
-include "regras_biblioteca.php";
+include "prazos_biblioteca.php";
 ?>
 
 <!DOCTYPE html>

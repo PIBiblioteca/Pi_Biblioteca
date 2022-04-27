@@ -11,7 +11,7 @@ if(!isset($_SESSION["email"]))
 }
 include "../usuario/componentes_funcoes/header.php";
 include "../usuario/componentes_funcoes/connection.php";
-include "../bibliotecaria/componentes_funcoes/regras_biblioteca.php";
+include "../bibliotecaria/componentes_funcoes/prazos_biblioteca.php";
 ?>
 
         <!-- page content area main -->

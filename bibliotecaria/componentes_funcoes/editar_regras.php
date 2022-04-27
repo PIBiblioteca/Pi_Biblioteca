@@ -38,7 +38,7 @@ include "../librarian/componentes_funcoes/header.php";
                             <?php
                             
                             $email=$_SESSION['librarian'];
-                            $res=mysqli_query($link,"SELECT * FROM regras_biblioteca");
+                            $res=mysqli_query($link,"SELECT * FROM prazos_biblioteca");
                             while($row=mysqli_fetch_array($res))
                             {
                                 $prazo_aprovacao_cadastro=$row["prazo_aprovacao_cadastro"];
@@ -96,7 +96,7 @@ include "../librarian/componentes_funcoes/header.php";
     if(isset($_POST["submit1"]))
         {
         // ATUALIZA TABELA "recados"
-        mysqli_query($link, "UPDATE regras_biblioteca SET prazo_aprovacao_cadastro='$_POST[prazo_aprovacao_cadastro]', prazo_retirada_livro='$_POST[prazo_retirada_livro]', prazo_devolucao_livro='$_POST[prazo_devolucao_livro]', prazo_suspensao_usuario='$_POST[prazo_suspensao_usuario]', horario_funcionamento='$_POST[horario_funcionamento]', regras_gerais='$_POST[regras_gerais]'");
+        mysqli_query($link, "UPDATE prazos_biblioteca SET prazo_aprovacao_cadastro='$_POST[prazo_aprovacao_cadastro]', prazo_retirada_livro='$_POST[prazo_retirada_livro]', prazo_devolucao_livro='$_POST[prazo_devolucao_livro]', prazo_suspensao_usuario='$_POST[prazo_suspensao_usuario]', horario_funcionamento='$_POST[horario_funcionamento]', regras_gerais='$_POST[regras_gerais]'");
     ?>
     
         <script type="text/javascript">
