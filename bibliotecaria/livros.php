@@ -23,7 +23,7 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
                     <?php include "..\bibliotecaria\componentes_funcoes\botao_pesquisar.php";//BOTÃO PESQUISAR?> 
                 </div>
                 <div class="clearfix"></div>
-                <div class="row" style="min-height:500px">
+                <div class="row" style="min-height:750px">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">

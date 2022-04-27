@@ -56,6 +56,7 @@ if($image==''){
     <link href="../usuario/css/font-awesome.min.css" rel="stylesheet">
     <link href="../usuario/css/bootstrap.min.css" rel="stylesheet">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src="https://use.fontawesome.com/686ced9e11.js"></script>
     <link href="../usuario/css/nprogress.css" rel="stylesheet">
     <link href="../usuario/css/custom.min.css" rel="stylesheet">
@@ -135,7 +136,7 @@ if($image==''){
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="componentes_funcoes/editar_perfil.php?id=<?php echo $fullname; ?>"><i class="fa fa-sign-out pull-right"></i> Editar perfil</a></li>
+                                <li><a href="componentes_funcoes/editar_perfil.php?id=<?php echo $fullname; ?>"><i class="fa-solid fa-pen-to-square pull-right"></i> Editar perfil</a></li>
                                 <li><a href="../usuario/login.php"><i class="fa fa-sign-out pull-right"></i> Sair </a></li>
                             </ul>
                             
