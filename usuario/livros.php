@@ -103,7 +103,7 @@ include "../usuario/componentes_funcoes/connection.php";
                                     }              
                                     else {
                                         echo "<br>";
-                                    echo "<b>"; ?> <a href="../usuario/componentes_funcoes/solicitar_emprestimo.php?id_livro=<?php echo $row["id_livro"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
+                                    echo "<b>"; ?> <a href="../usuario/solicitar_emprestimo.php?id_livro=<?php echo $row["id_livro"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
                                     }      
                                     echo "</td>";
                                     
@@ -143,7 +143,7 @@ include "../usuario/componentes_funcoes/connection.php";
                                     }              
                                     else {
                                         echo "<br>";
-                                    echo "<b>"; ?> <a href="../usuario/componentes_funcoes/solicitar_emprestimo.php?id_livro=<?php echo $row["id_livro"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
+                                    echo "<b>"; ?> <a href="../usuario/solicitar_emprestimo.php?id_livro=<?php echo $row["id_livro"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
                                     }      
                                     echo "</td>";
                                     

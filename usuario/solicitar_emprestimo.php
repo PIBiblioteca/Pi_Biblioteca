@@ -9,8 +9,9 @@ if(!isset($_SESSION["email"]))
     </script>
     <?php
 }
-include "header.php";
-include "tabela_regras_biblioteca.php";
+include "..\usuario\componentes_funcoes\connection.php";
+include "..\usuario\componentes_funcoes\header.php";
+include "../bibliotecaria/componentes_funcoes/regras_biblioteca.php";
 ?>
 
         <!-- page content area main -->
@@ -38,7 +39,7 @@ include "tabela_regras_biblioteca.php";
 
                             <?php
                                 //SELEÇÃO DE DADOS E ATRIBUIÇÃO DE VARIÁVEIS
-                                $id=($_GET["id"]);  //puxar id do livro escolhido                          
+                                $id_livro=($_GET["id_livro"]);  //puxar id do livro escolhido                          
 
                                 $date=date("mm-dd-yyyy");
                                 // puxa dados do usuário
@@ -102,12 +103,12 @@ include "tabela_regras_biblioteca.php";
                                     }
                                 }
                                 // SELECIONAR DADOS DO LIVRO
-                                $qty=0;
-                                $res6=mysqli_query($link, "SELECT * FROM adicionar_livros WHERE id=$id");
+                                $quantidade_livro=0;
+                                $res6=mysqli_query($link, "SELECT * FROM livros WHERE id_livro=$id_livro");
                                 while ($row6 = mysqli_fetch_array($res6))
                                 {           
-                                    $booksname=$row6["books_name"];  
-                                    $qty=$row6["available_qty"];
+                                    $titulo_livro=$row6["titulo_livro"];  
+                                    $quantidade_livro=$row6["quantidade_livro"];
                                 }   
                                 
                                 $issuedate=date("Y-m-d");
@@ -120,7 +121,7 @@ include "tabela_regras_biblioteca.php";
                                 <table class="table table-bordered">
                                 <tr>
                                     <td>Nome do livro
-                                        <input type="text" class="form-control" placeholder="booksname" name="booksname" value="<?php echo $booksname; ?>" disabled>
+                                        <input type="text" class="form-control" placeholder="titulo_livro" name="titulo_livro" value="<?php echo $titulo_livro; ?>" disabled>
                                            
                                         </select>
                                     </td>
@@ -177,7 +178,7 @@ include "tabela_regras_biblioteca.php";
                             if(isset($_POST["submit2"]))
                             {
                                 //verifica disponibilidade
-                                if($qty==0)
+                                if($quantidade_livro==0)
                                 {
                                     ?>
                                     <div class="alert alert-danger col-lg-6 col-lg-push-3">
@@ -193,15 +194,15 @@ include "tabela_regras_biblioteca.php";
                                     
                                     //verifica se já existe solicitação concluída e a altera
                                     if(mysqli_num_rows($result5) > 0) {
-                                        mysqli_query($link, "UPDATE solicitacoes SET books_name='$booksname', student_enrollment='$_SESSION[enrollment]', student_name='$fullname', 
+                                        mysqli_query($link, "UPDATE solicitacoes SET titulo_livro='$titulo_livro', student_enrollment='$_SESSION[enrollment]', student_name='$fullname', 
                                         student_contact='$contact', 
                                         student_email='$email', 
                                         data_solicitacao='$issuedate', prazo_retirada='$prazo_retirada', status_solicitacao='AGUARDANDO RETIRADA'");
-                                        mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty-1 WHERE id=$id"); //função diminuir quantidade disponível
+                                        mysqli_query($link, "UPDATE adicionar_livros SET quantidade_livro=quantidade_livro-1 WHERE id_livro=$id_livro"); //função diminuir quantidade disponível
                                     } else {
                                     //se não houver solicitação, cria uma
-                                    mysqli_query($link, "INSERT INTO solicitacoes VALUES('','$booksname','$enrollment','$fullname','$contact','$email','$issuedate','$prazo_retirada','AGUARDANDO RETIRADA')");
-                                    mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty-1 WHERE id=$id"); //função diminuir quantidade disponível
+                                    mysqli_query($link, "INSERT INTO solicitacoes VALUES('','$titulo_livro','$enrollment','$fullname','$contact','$email','$issuedate','$prazo_retirada','AGUARDANDO RETIRADA')");
+                                    mysqli_query($link, "UPDATE adicionar_livros SET quantidade_livro=quantidade_livro-1 WHERE id_livro=$id_livro"); //função diminuir quantidade disponível
                                     ?>
                                     <script type="text/javascript">
                                         alert("Solicitação concluída, comparecer à biblioteca em até <?php echo $prazo_retirada_livro; ?> dias para retirada");
@@ -223,7 +224,7 @@ include "tabela_regras_biblioteca.php";
         <!-- /page content -->
 
 <?php
-include "footer.php";
+include "../bibliotecaria/componentes_funcoes/footer.php";
 ?>
 
        

@@ -27,14 +27,14 @@ if(isset($_GET["id_solicitacao"]))
     ?>
     <script type="text/javascript">
         alert("Solicitação cancelada!");
-        window.location="meus_emprestimos.php";
+        window.location="../meus_emprestimos.php";
 
     </script>
     <?php
 } else {
     ?>
     <script type="text/javascript">
-        window.location="meus_emprestimos.php";
+        window.location="../meus_emprestimos.php";
 
     </script>
     <?php

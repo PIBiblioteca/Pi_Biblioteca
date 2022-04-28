@@ -85,7 +85,7 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
                                             echo $row["status_solicitacao"];
                                             echo "</td>";
                                             echo "<td>";
-                                            echo "<b>"; ?> <a href="cancelar_solicitacao.php?id_solicitacao=<?php echo $row["id_solicitacao"]; ?>">CANCELAR SOLICITAÇÃO</a> <?php echo "</b>";
+                                            echo "<b>"; ?> <a href="../usuario/componentes_funcoes/cancelar_solicitacao.php?id_solicitacao=<?php echo $row["id_solicitacao"]; ?>">CANCELAR SOLICITAÇÃO</a> <?php echo "</b>";
                                             echo "</td>";
                                             echo "</tr>";
                                         }
