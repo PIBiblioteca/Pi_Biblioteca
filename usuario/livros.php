@@ -51,10 +51,10 @@ include "../usuario/componentes_funcoes/connection.php";
 
                             <details class="custom-select">
                                 <summary class="radios">
-                                    <input class="botao" type="radio" name="item" id="default" title="Categorias">Categoria</input>
-                                    <input class ="botao" type="radio" name="item" id="item1" title="Item 1">
-                                    <input class ="botao" type="radio" name="item" id="item2" title="Item 2">
-                                    <input class ="botao" type="radio" name="item" id="item3" title="Item 3">
+                                    <input class ="botao" type="radio" name="item" id="default" title="Categorias..." checked>
+                                    <input class ="botao" type="radio" name="item" id="item1" title="Cultura Geral">
+                                    <input class ="botao" type="radio" name="item" id="item2" title="GTI">
+                                    <input class ="botao" type="radio" name="item" id="item3" title="G3E">
                                 </summary> 
 
                                 <ul class="list">
