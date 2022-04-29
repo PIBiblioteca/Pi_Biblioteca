@@ -12,7 +12,7 @@ include "..\usuario\componentes_funcoes\connection.php";
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/GitHub/Pi_Biblioteca/img/favicon_bibliofateca.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon_bibliofateca.png" type="image/x-icon">
     
     <title>BiblioFateca | Login Usuário</title>
 
@@ -121,7 +121,8 @@ include "..\usuario\componentes_funcoes\connection.php";
     }
     ?>
 
-
+<img style="float:right; margin-right:0; margin-left:10px; margin-bottom:5px; margin-top:100px;
+    width: 6em" src="../images/logo_fatec_franco_branco.png" alt="">
 </body>
 
 <style>
