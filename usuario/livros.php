@@ -137,7 +137,7 @@ include "../usuario/componentes_funcoes/connection.php";
                                         echo "<br>";
                                     }
                                     else {
-                                    echo "<td>"; ?> <img src="../<?php echo $row["imagem_livro"]; ?>" height="100" width="100">  <?php 
+                                    echo "<td>"; ?> <img style="width: 85px; height:120px" src="../<?php echo $row["imagem_livro"]; ?>" height="100" width="100">  <?php 
                                     
                                     echo "<br>";
                                     }                                                                        
@@ -147,8 +147,7 @@ include "../usuario/componentes_funcoes/connection.php";
                                         echo "LIVRO INDISPONÍVEL";
                                     }              
                                     else {
-                                        echo "<br>";
-                                    echo "<b>"; ?> <button style="background-color: #428bca; border: none; border-radius: 5px; box-shadow: none"  > <a style="color: white" href="../usuario/solicitar_emprestimo.php?id_livro=<?php echo $row["id_livro"]; ?>">Solicitar <br> empréstimo</a> </button> <?php echo "</b>";
+                                    echo "<b>"; ?> <button style="background-color: #428bca; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin-top: 8px; margin-bottom: 5px"  > <a style="color: white" href="../usuario/solicitar_emprestimo.php?id_livro=<?php echo $row["id_livro"]; ?>">Solicitar <br> empréstimo</a> </button> <?php echo "</b>";
                                     }      
                                 echo "<br>";    
                                 echo "<b>".$row["titulo_livro"]."</b>";

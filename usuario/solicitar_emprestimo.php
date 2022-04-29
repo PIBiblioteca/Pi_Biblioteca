@@ -27,7 +27,7 @@ include "../bibliotecaria/componentes_funcoes/regras_biblioteca.php";
                 <div class="clearfix"></div>
                 <div class="row" style="min-height:500px">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="x_panel">
+                        <div class="x_panel"  style="margin-bottom: 20px">
                             <div class="x_title">
                                 <h2>Plain Page</h2>
 
@@ -151,16 +151,13 @@ include "../bibliotecaria/componentes_funcoes/regras_biblioteca.php";
                                         <input type="text" class="form-control" placeholder="booksissuedate" name="booksissuedate" value="<?php echo (implode("/",array_reverse(explode("-",$issuedate))));  ?>" disabled>
                                      </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <input type="submit" value="Solicitar Empréstimo" 
-                                        name="submit2" class="form-control btn btn-default" style="background-color: green; color: white">
+                                </table>
+                                        <input type="submit" value="Confirmar" 
+                                        name="submit2" style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px">
                                     
                                         <input type="submit" value="Cancelar" 
-                                        name="submit1" class="form-control btn btn-default" style="background-color: brown; color: white">
-                                    </td>
-                                </tr>
-                                </table>
+                                        name="submit1" style="padding: 5px 10px; color: white; background-color: brown; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px;">
+                                  
                             </form>
 
                             <?php
