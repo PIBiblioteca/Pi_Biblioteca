@@ -35,11 +35,50 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                                
+
+                            <!-- Tabela de contadores -->
+                            <div style=" overflow-x: auto;"> <!-- Função scroll tabela automático -->
+                            <table style="margin:auto; font-weight: bold;">
+                            <tr>
+                                <td style="padding: 30px; background-color: #2A3F54; color: white">
+                                    <?php
+                                    echo "Livros da biblioteca:" 
+                                    ?>
+                                </td>
+                                <td style="padding: 30px; background-color: #b20000; color: white">
+                                    <?php
+                                    echo "$contador_livros_disponiveis";
+                                    ?>
+                                </td>
+                                <td style="padding: 10px; background-color: white"></td>
+                                <td style="padding: 30px; background-color: #2A3F54; color: white">
+                                    <?php
+                                    echo "Livros emprestados:" 
+                                    ?>
+                                </td>
+                                <td style="padding: 30px; background-color: #b20000; color: white">
+                                    <?php
+                                    echo "$contador_livros_emprestados";
+                                    ?>
+                                </td>
+                                <td style="padding: 10px; background-color: white"></td>
+                                <td style="padding: 30px; background-color: #2A3F54; color: white">
+                                    <?php
+                                    echo "Alunos suspensos:" 
+                                    ?>
+                                </td>
+                                <td style="padding: 30px; background-color: #b20000; color: white">
+                                    <?php
+                                    echo "$contador_suspensoes";
+                                    ?>
+                                </td>
+                            </tr>
+                        </table>
+                        </div>
+                        <!-- Fim tabela de contadores -->
+                        <br>
+
                                 <?php
-                                echo "Usuários suspensos: $contador_suspensoes <br>";
-                                echo "Livros da biblioteca: $contador_livros_disponiveis <br>";
-                                echo "Livros emprestados: $contador_livros_emprestados <br>";
                                 // RESULTADO COM PESQUISA   
                                 if(isset($_POST["submit1"])) {
                                 //Seleciona da tabela "cadastro_usuarios"                    

@@ -32,10 +32,49 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
                 <div class="row" style="min-height:750px">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
-                        <?php
-                        echo "Total de livros na biblioteca: $contador_livros_disponiveis <br>";
-                        echo "Total de livros emprestados: $contador_livros_emprestados <br>";
                         
+                        <!-- Tabela de contadores -->
+                        <div style=" overflow-x: auto;"> <!-- Função scroll tabela automático -->
+                        <table style="margin:auto; font-weight: bold">
+                            <tr>
+                                <td style="padding: 30px; background-color: #2A3F54; color: white">
+                                    <?php
+                                    echo "Total de livros da biblioteca:" 
+                                    ?>
+                                </td>
+                                <td style="padding: 30px; background-color: #b20000; color: white">
+                                    <?php
+                                    echo "$contador_livros_disponiveis";
+                                    ?>
+                                </td>
+                                <td style="padding: 10px; background-color: white"></td>
+                                <td style="padding: 30px; background-color: #2A3F54; color: white">
+                                    <?php
+                                    echo "Total de livros emprestados:" 
+                                    ?>
+                                </td>
+                                <td style="padding: 30px; background-color: #b20000; color: white">
+                                    <?php
+                                    echo "$contador_livros_emprestados";
+                                    ?>
+                                </td>
+                                <td style="padding: 10px; background-color: white"></td>
+                                <td style="padding: 30px; background-color: #2A3F54; color: white">
+                                    <?php
+                                    echo "Total de livros devolvidos:" 
+                                    ?>
+                                </td>
+                                <td style="padding: 30px; background-color: #b20000; color: white">
+                                    <?php
+                                    echo "$contador_livros_devolvidos";
+                                    ?>
+                                </td>
+                            </tr>
+                        </table>
+                        </div>
+                        <!-- Fim tabela de contadores -->
+                        <br>
+                        <?php
                         $count=0;
                         //verifica se há solicitação
                         $result2 = mysqli_query($link, "SELECT * FROM solicitacoes WHERE student_email = '$email'");
@@ -49,7 +88,7 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
                             </div>
                             <div class="x_content">
                                 <div id='container'>
-                                <table class="table table-bordered">
+                                <table class="table table-borde#b20000; color: white">
                                     <th>
                                         Nome do livro
                                     </th>
@@ -113,7 +152,7 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
                                 <div class="clearfix"></div>
                                 </div>
                                 <div id='container'>
-                                <table class="table table-bordered">
+                                <table class="table table-borde#b20000; color: white">
                                     
                                     <th>
                                         Nome do livro
@@ -160,7 +199,7 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
                                 </div>
                                 
                                 <div id='container'>
-                                <table class="table table-bordered">
+                                <table class="table table-borde#b20000; color: white">
                                     
                                     <th>
                                         Nome do livro
@@ -206,7 +245,7 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
                                     <div class="clearfix"></div>
                                     </div>
                                 <div id='container'>
-                                    <table class="table table-bordered">
+                                    <table class="table table-borde#b20000; color: white">
                                     
                                     <th>NÃO HÁ REGISTROS <br></th> 
                                     <tr>
@@ -232,7 +271,7 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
                                         <div class="clearfix"></div>
                                         </div>
                                         <div id='container'>
-                                        <table class="table table-bordered">
+                                        <table class="table table-borde#b20000; color: white">
                                             
                                             <th>
                                                 Nome do livro
