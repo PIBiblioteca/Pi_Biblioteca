@@ -88,9 +88,8 @@ if($image==''){
                         <img style="width: 60px; height:60px" src="<?php echo $image; ?>" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
-                        <span>Olá,</span>
-
-                        <h2><?php echo $fullname; ?></h2>
+                        <span style="color: white">Olá,</span>
+                        <h2> <b><?php echo $fullname; ?></b></h2>
                     </div>
                     <div class="clearfix"></div>
                 </div>

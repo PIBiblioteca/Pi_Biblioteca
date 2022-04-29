@@ -102,7 +102,7 @@ include "../usuario/componentes_funcoes/connection.php";
                                         echo "LIVRO INDISPONÍVEL";
                                     }              
                                     else {
-                                        echo "<br>";
+                                    echo "<br>";
                                     echo "<b>"; ?> <a href="../usuario/solicitar_emprestimo.php?id_livro=<?php echo $row["id_livro"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
                                     }      
                                     echo "</td>";
@@ -130,12 +130,16 @@ include "../usuario/componentes_funcoes/connection.php";
                                 while($row = mysqli_fetch_array($res))
                                 {
                                     $i=$i+1;
+                                    if($row["imagem_livro"]==''){
+                                        echo "<td>";
+                                        echo "";?><img style="width: 90px; height:120px" src="../images/CAPA NÃO cARREGADA.jpg" alt=""><?php
+                                        echo "<br>";
+                                    }
+                                    else {
                                     echo "<td>"; ?> <img src="../<?php echo $row["imagem_livro"]; ?>" height="100" width="100">  <?php 
-                                    echo "<br>";
-                                    echo "<b>".$row["titulo_livro"]."</b>";
-                                    echo "<br>";
-                                    echo "<b>". "Disponíveis: ".$row["quantidade_livro"]."</b>";
                                     
+                                    echo "<br>";
+                                    }                                                                        
                                     $qtdzero=$row["quantidade_livro"];
                                     if($qtdzero==0){
                                         echo "<br>";
@@ -145,6 +149,10 @@ include "../usuario/componentes_funcoes/connection.php";
                                         echo "<br>";
                                     echo "<b>"; ?> <a href="../usuario/solicitar_emprestimo.php?id_livro=<?php echo $row["id_livro"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
                                     }      
+                                    
+                                echo "<b>".$row["titulo_livro"]."</b>";
+                                echo "<br>";
+                                echo "<b>". "Disponíveis: ".$row["quantidade_livro"]."</b>";
                                     echo "</td>";
                                     
                                     if($i==5)

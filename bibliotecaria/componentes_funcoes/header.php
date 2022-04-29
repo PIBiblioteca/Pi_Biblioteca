@@ -72,9 +72,10 @@
                         <img style="width: 60px" src="..\images\astronauta.png" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
-                        <span>Olá,</span>
+                    
+                        <span style="color: white">Olá,</span>
 
-                        <h2><?php echo $_SESSION["librarian"]; ?></h2>
+                        <h2><b></b><?php echo $_SESSION["librarian"]; ?></b></h2>
                     </div>
                     <div class="clearfix"></div>
                 </div>
