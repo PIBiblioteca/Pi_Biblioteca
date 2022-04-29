@@ -14,8 +14,7 @@ body {
     background: #ffffff !important;
     height: 100% !important;
     margin: 0px !important;
-    padding: 0px !important;
-    
+    padding: 0px !important; 
 }
 
 .rodape {
@@ -68,10 +67,6 @@ btn btn-default {
     font: verdana !important;
     width:100% !important;
     height: 100% !important;
-}
-
-.x_panel, .x_title {
-    color: #5c5353 !important;
 }
 
 .row{

@@ -103,7 +103,8 @@ include "../usuario/componentes_funcoes/connection.php";
                                     }              
                                     else {
                                     echo "<br>";
-                                    echo "<b>"; ?> <a href="../usuario/solicitar_emprestimo.php?id_livro=<?php echo $row["id_livro"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
+                                    echo "<b>"; ?>
+                                    <button > </button> <a href="../usuario/solicitar_emprestimo.php?id_livro=<?php echo $row["id_livro"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
                                     }      
                                     echo "</td>";
                                     
@@ -125,14 +126,14 @@ include "../usuario/componentes_funcoes/connection.php";
                                 $i=0;
                                 $res=mysqli_query($link, "SELECT * FROM livros"); //função de exibir somente livros disponíveis: SELECT * FROM adicionar_livros WHERE available_qty>0
                                 echo "<div id='container'>";
-                                echo "<table class='table table-bordered'>";
+                                echo "<table class='table table-bordered' >";
                                 echo "<tr>";
                                 while($row = mysqli_fetch_array($res))
                                 {
                                     $i=$i+1;
                                     if($row["imagem_livro"]==''){
-                                        echo "<td>";
-                                        echo "";?><img style="width: 90px; height:120px" src="../images/CAPA NÃO cARREGADA.jpg" alt=""><?php
+                                        echo "<td align='center'>";
+                                        echo "";?><img style="width: 85px; height:120px" src="../images/CAPA NÃO cARREGADA.jpg" alt=""><?php
                                         echo "<br>";
                                     }
                                     else {
@@ -147,12 +148,12 @@ include "../usuario/componentes_funcoes/connection.php";
                                     }              
                                     else {
                                         echo "<br>";
-                                    echo "<b>"; ?> <a href="../usuario/solicitar_emprestimo.php?id_livro=<?php echo $row["id_livro"]; ?>">SOLICITAR EMPRÉSTIMO</a> <?php echo "</b>";
+                                    echo "<b>"; ?> <button style="background-color: #428bca; border: none; border-radius: 5px; box-shadow: none"  > <a style="color: white" href="../usuario/solicitar_emprestimo.php?id_livro=<?php echo $row["id_livro"]; ?>">Solicitar <br> empréstimo</a> </button> <?php echo "</b>";
                                     }      
-                                    
+                                echo "<br>";    
                                 echo "<b>".$row["titulo_livro"]."</b>";
                                 echo "<br>";
-                                echo "<b>". "Disponíveis: ".$row["quantidade_livro"]."</b>";
+                                echo "Disponíveis: ".$row["quantidade_livro"];
                                     echo "</td>";
                                     
                                     if($i==5)
