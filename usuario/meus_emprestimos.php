@@ -85,7 +85,9 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
                                             echo $row["status_solicitacao"];
                                             echo "</td>";
                                             echo "<td>";
-                                            echo "<b>"; ?> <a href="../usuario/componentes_funcoes/cancelar_solicitacao.php?id_solicitacao=<?php echo $row["id_solicitacao"]; ?>">CANCELAR SOLICITAÇÃO</a> <?php echo "</b>";
+                                            echo "<b>"; ?>
+                                            <button style="background-color: #f57c03; border: none; border-radius: 5px; box-shadow: none; margin: 0"> <a style="color: white" href="../usuario/componentes_funcoes/cancelar_solicitacao.php?id_solicitacao=<?php echo $row["id_solicitacao"]; ?>">Cancelar </a> </button> <?php echo "</b>";
+                                            
                                             echo "</td>";
                                             echo "</tr>";
                                         }
@@ -208,7 +210,7 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
                                     
                                     <th>NÃO HÁ REGISTROS <br></th> 
                                     <tr>
-                                    <td> <a href="../usuario/livros.php"> Clique aqui </a> para solicitar o empréstimo de um livro ou acesse 'Buscar Livros' no menu </td>
+                                    <td style=""> <b> <a style="" href="../usuario/livros.php"> Clique aqui </b></a> para solicitar o empréstimo de um livro ou acesse 'Buscar Livros' no menu </td>
                                     </tr>
                                     </table>
                                 </div>

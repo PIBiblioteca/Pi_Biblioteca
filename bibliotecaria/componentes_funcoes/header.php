@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link href="../usuario/css/nprogress.css" rel="stylesheet">
     <link href="../usuario/css/custom.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../img/favicon_bibliofateca.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon_bibliofateca.png" type="image/x-icon">
 </head>
 <!--FORÇAR ALTERAÇÃO NO ESTILO (tbm é possível alterar o arquivo "custom.css")-->
 <style>
