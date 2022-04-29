@@ -36,9 +36,24 @@ include "../usuario/componentes_funcoes/connection.php";
                                     
                                 </div>
                             </div>
+
+                            <select name="select" style="width: 150px; height: 32px; float: right; padding-left: 20px; color: #9e9fa0; background-color: white; border: none; border-radius: 5px; box-shadow: inset 0 1px 0 rgb(0 0 0 / 8%); margin: 0; margin: 5px; margin-top: 11px;">
+                            <option value="valor1" selected>Categorias</option>
+                            <option value="valor2">G3E</option>
+                            <option value="valor3">GTI</option>
+                            <option value="valor4">Cultura Geral</option>
+                            </select>
+
+                            
                         </div>
+                        
                     </form>
                     <!-- / menu pesquisa -->
+
+                    
+
+                            
+                            
                 </div>
 
                 <div class="clearfix"></div>
@@ -47,29 +62,7 @@ include "../usuario/componentes_funcoes/connection.php";
                         <div class="x_panel">
                             <div class="x_title">
                                 <h2>Buscar Livros</h2>
-                                <div class="categoria"> 
-
-                            <details class="custom-select">
-                                <summary class="radios">
-                                    <input class ="botao" type="radio" name="item" id="default" title="Categorias..." checked>
-                                    <input class ="botao" type="radio" name="item" id="item1" title="Cultura Geral">
-                                    <input class ="botao" type="radio" name="item" id="item2" title="GTI">
-                                    <input class ="botao" type="radio" name="item" id="item3" title="G3E">
-                                </summary> 
-
-                                <ul class="list">
-                                    <li class="lia">
-                                        <label class="linha" for="item1">Cultura Geral</label>
-                                    </li>
-                                    <li class="lia">
-                                        <label class="linha" for="item2">GTI</label>
-                                    </li>
-                                    <li class="lia">
-                                        <label class="linha" for="item3">G3E</label>
-                                    </li>
-                                </ul>
-                            </details>
-                            </div>
+                                
 
                                 <div class="clearfix"></div>
 
@@ -150,7 +143,7 @@ include "../usuario/componentes_funcoes/connection.php";
                                     echo "<b>"; ?> <button style="background-color: #428bca; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin-top: 8px; margin-bottom: 5px"  > <a style="color: white" href="../usuario/solicitar_emprestimo.php?id_livro=<?php echo $row["id_livro"]; ?>">Solicitar <br> empréstimo</a> </button> <?php echo "</b>";
                                     }      
                                 echo "<br>";    
-                                echo "<b>".$row["titulo_livro"]."</b>";
+                                echo "<b style='color: #428bca'>".$row["titulo_livro"]."</b>";
                                 echo "<br>";
                                 echo "Disponíveis: ".$row["quantidade_livro"];
                                     echo "</td>";
