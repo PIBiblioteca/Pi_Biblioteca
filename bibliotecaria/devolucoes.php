@@ -145,17 +145,17 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
                                             if($status_emprestimo=='PERDA/AVARIA'){
                                                 echo "PERDIDO/AVARIADO";
                                                 //MOSTRA BOTÃO "REPOSIÇÃO"
-                                                ?> <a style="color: green" href="repor_livro.php?id=<?php echo $id; ?>">REPOSIÇÃO</a> <?php 
+                                                ?> <a style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; float: left " href="../bibliotecaria/componentes_funcoes/repor_livro.php?id=<?php echo $id; ?>">REPOSIÇÃO</a> <?php 
                                             } else {
                                             //MOSTRA BOTÃO "CONFIRMAR(devolução)"
-                                            ?> <a style="color: green" href="devolver_livro.php?id=<?php echo $id; ?>">CONFIRMAR</a> <?php 
+                                            ?> <a style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; float: left " href="devolver_livro.php?id=<?php echo $id; ?>">CONFIRMAR</a> <?php 
                                             }
                                             //VERIFICA SE LIVRO ESTÁ PERDIDO OU AVARIADO
                                             if($status_emprestimo=='PERDA/AVARIA'){
                                                 
                                             } else {
                                             //MOSTRA BOTÃO "PERDA/AVARIA"
-                                            ?> <a style="color: brown" href="perda_avaria.php?id=<?php echo $id; ?>">PERDA/AVARIA</a> <?php 
+                                            ?> <a style="padding: 5px 10px; color: white; background-color: #f57c03; border: none; border-radius: 5px; box-shadow: none; margin: 0; float: left" href="../bibliotecaria/componentes_funcoes/perda_avaria.php?id=<?php echo $id; ?>">PERDA/AVARIA</a> <?php 
                                             }
                                             echo "</td>";
                                             echo "</tr>";

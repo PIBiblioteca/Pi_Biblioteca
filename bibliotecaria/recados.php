@@ -63,12 +63,9 @@ include "..\bibliotecaria\componentes_funcoes\connection.php";
                                         <textarea name="msg" class="form-control" id="" cols="30" rows="10"></textarea>
                                         </td>   
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="submit" name="submit1" value="Enviar">
-                                        </td>
-                                    </tr>
+                                    
                                 </table>
+                                <input type="submit" name="submit1" style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px" value="Enviar">
                                 </form>
 
                             </div>

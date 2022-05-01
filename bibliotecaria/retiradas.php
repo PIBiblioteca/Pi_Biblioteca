@@ -152,7 +152,7 @@ include "..\bibliotecaria\componentes_funcoes\connection.php"
                                 }
                                ?>
 
-                               <a class="color: green" href="retirado.php?id_solicitacao=<?php echo $row["id_solicitacao"]; ?>">SIM</a>
+                               <a class="color: green" style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="../bibliotecaria/componentes_funcoes/retirado.php?id_solicitacao=<?php echo $row["id_solicitacao"]; ?>">SIM</a>
                                
                                 <?php 
                                 echo "</td>";

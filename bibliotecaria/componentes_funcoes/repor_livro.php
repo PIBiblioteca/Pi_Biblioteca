@@ -9,7 +9,7 @@ if(!isset($_SESSION["librarian"]))
     </script>
     <?php
 }
-include "../librarian/componentes_funcoes/connection.php";
+include "connection.php";
 
 //puxa identificação de qual livro está sendo reposto
 $id = $_GET["id"];
@@ -37,6 +37,6 @@ if(isset($_GET["id"]))
     ?>
 <script type="text/javascript">
     alert("Livro reposto!");
-    window.location="devolucoes.php";
+    window.location="../devolucoes.php";
 
 </script>

@@ -1,5 +1,5 @@
 <?php
-include "../librarian/componentes_funcoes/connection.php";
+include "connection.php";
 
 //puxa id do empréstimo
 $id = $_GET["id"];
@@ -34,5 +34,5 @@ mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='SUSPENSO' WHER
 
 <script type="text/javascript">
     alert("Usuário suspenso <?php echo $suspensionreturndate ?>");
-    window.location = "devolucoes.php";
+    window.location = "../bibliotecaria/devolucoes.php";
 </script>

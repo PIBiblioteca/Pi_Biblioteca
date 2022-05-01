@@ -1,6 +1,6 @@
  <!-- footer content -->
  <footer class="rodape" >
-            <div class="pull-right">
+            <div class="pull-right" style="font-size: 16px">
                 Fatec Franco da Rocha
             </div>
             <div class="clearfix"></div>

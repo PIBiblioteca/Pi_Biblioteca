@@ -1,5 +1,5 @@
 <?php
-include "../librarian/componentes_funcoes/connection.php";
+include "connection.php";
 
 //puxa identificação da solicitação
 $id_solicitacao = $_GET["id_solicitacao"];
@@ -24,5 +24,5 @@ mysqli_query($link, "DELETE FROM solicitacoes WHERE id_solicitacao='$id_solicita
 ?>
     <script type="text/javascript">
         alert("RETIRADA EFETUADA");
-        window.location="retiradas.php";
+        window.location="../retiradas.php";
     </script>

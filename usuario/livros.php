@@ -76,7 +76,7 @@ include "../usuario/componentes_funcoes/connection.php";
                             if(isset($_POST["submit1"])) // pega variável de entrada do usuário
                             {
                                 $i=0;
-                                $res=mysqli_query($link, "SELECT * FROM livros WHERE titulo_livro like('%$_POST[t1]%')"); //função pesquisa: WHERE books_name like('%$_POST[t1]%')
+                                $res=mysqli_query($link, "SELECT * FROM livros WHERE titulo_livro like('%$_POST[t1]%') or categoria_livro where like ('%$_POST[select]%')"); //função pesquisa: WHERE books_name like('%$_POST[t1]%')
                                 echo "<div id='container'>";
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";

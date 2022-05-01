@@ -114,9 +114,10 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
                                     echo "<td>"; echo $row["quantidade_livro"]; echo "</td>";
                                     echo "<td>"; echo $row["editora_livro"]; echo "</td>";
                                     echo "<td>"; echo $row["edicao_livro"]; echo "</td>";
-                                    echo "<td>"; ?> <a href="delete_books.php?id_livro=<?php echo $row["id_livro"]; ?>">Deletar</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a style="padding: 5px 10px; color: white; background-color: brown; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px;" href="delete_books.php?id_livro=<?php echo $row["id_livro"]; ?>">Deletar</a> <?php echo "</td>";
                                     echo "<td>"; ?> <a href="editar_livro.php?id_livro=<?php echo $row["id_livro"]; ?>">Editar</a> <?php echo "</td>";
                                     echo "</tr>";
+                                    
                                 }
                                 echo "</table>";
                                 echo "</div>";
