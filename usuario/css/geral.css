@@ -4,7 +4,7 @@
   }
 
 html, body {
-    font-family: 'Times New Roman', Times, serif !important;
+    font-family: 'Times New Roman', Times, sans-serif !important;
     margin: 0px !important;
     padding: 0px !important;
 }
@@ -44,6 +44,12 @@ body {
     background: #ffffff !important;
     font: times !important;
 }
+
+.container{
+    margin-left: auto !important;
+    margin-right: auto !important;; 
+}
+
 toggle {
     color: #b20000 !important;
 }
