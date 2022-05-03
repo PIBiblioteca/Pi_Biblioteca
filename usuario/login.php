@@ -27,7 +27,7 @@ include "..\usuario\componentes_funcoes\connection.php";
 
 <br>
 
-<div class="col-lg-12 text-center ">
+<div class="container">
 
 <br>
 
@@ -37,7 +37,8 @@ include "..\usuario\componentes_funcoes\connection.php";
 
     a {
         text-shadow: none !important;
-        color: white;
+        color: white !important;
+        
     }
     a:hover {
         text-shadow: none !important;
@@ -55,7 +56,8 @@ include "..\usuario\componentes_funcoes\connection.php";
 
     body {
     background-color: #013a46 !important;
-    color: #1c9bb5 !important; 
+    color: #1c9bb5 !important;
+    font-family: sans-serif !important;
 }
 
 </style>
@@ -121,8 +123,7 @@ include "..\usuario\componentes_funcoes\connection.php";
     }
     ?>
 
-<img style="float:right; margin-right:0; margin-left:10px; margin-bottom:5px; margin-top:100px;
-    width: 6em" src="../images/logo_fatec_franco_branco.png" alt="">
+
 </body>
 
 <style>

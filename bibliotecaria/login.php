@@ -60,6 +60,7 @@ include "..\bibliotecaria\componentes_funcoes\connection.php";
     body {
     background-color: #013a46 !important;
     color: #1c9bb5 !important; 
+    font-family: sans-serif !important;
 }
 
 </style>
