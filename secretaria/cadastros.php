@@ -41,36 +41,36 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                             <table style="margin:auto; font-weight: bold;">
                             <tr>
                                 <td style="padding: 30px; background-color: #2A3F54; color: white">
-                                    <?php
+                                    <a href="livros.php"><?php
                                     echo "Livros da biblioteca:" 
-                                    ?>
+                                    ?></a>
                                 </td>
                                 <td style="padding: 30px; background-color: #b20000; color: white">
-                                    <?php
+                                    <a href="livros.php"><?php
                                     echo "$contador_livros_disponiveis";
-                                    ?>
+                                    ?></a>
                                 </td>
                                 <td style="padding: 10px; background-color: white"></td>
                                 <td style="padding: 30px; background-color: #2A3F54; color: white">
-                                    <?php
+                                    <a href="historico.php"><?php
                                     echo "Livros emprestados:" 
-                                    ?>
+                                    ?></a>
                                 </td>
                                 <td style="padding: 30px; background-color: #b20000; color: white">
-                                    <?php
+                                    <a href="historico.php"><?php
                                     echo "$contador_livros_emprestados";
-                                    ?>
+                                    ?></a>
                                 </td>
                                 <td style="padding: 10px; background-color: white"></td>
-                                <td style="padding: 30px; background-color: #2A3F54; color: white">
-                                    <?php
+                                 <td style="padding: 30px; background-color: #2A3F54; color: white">
+                                    <a href="suspensoes.php"><?php
                                     echo "Alunos suspensos:" 
-                                    ?>
+                                    ?></a>
                                 </td>
                                 <td style="padding: 30px; background-color: #b20000; color: white">
-                                    <?php
+                                    <a href="suspensoes.php"><?php
                                     echo "$contador_suspensoes";
-                                    ?>
+                                    ?></a>
                                 </td>
                             </tr>
                         </table>
@@ -117,8 +117,7 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                                     echo "<td>"; echo $row["contact"]; echo "</td>";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";
                                     echo "<td>"; echo $row["status_usuario"]; echo "</td>";
-                                    echo "<td>"; ?> <a style="color: green" href="aprovar_cadastro.php?id_cadastro=<?php echo $row["id_cadastro"]; ?>">SIM</a> |
-                                    <a style="color: brown" href="nao_aprovar_cadastro.php?id=<?php echo $row["id_cadastro"]; ?>">NÃO</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a style="color: green" href="aprovar_cadastro.php?id_cadastro=<?php echo $row["id_cadastro"]; ?>">TORNAR BIBLIOTECARIA</a>
                                     echo "</tr>";
                                 }
                                 }
