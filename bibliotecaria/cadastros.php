@@ -151,8 +151,8 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
                                     echo "<td>"; echo $row["contact"]; echo "</td>";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";
                                     echo "<td>"; echo $row["status_usuario"]; echo "</td>";
-                                    echo "<td>"; ?> <a style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">SIM</a> 
-                                    <a style="padding: 5px 10px; color: white; background-color: brown; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="nao_aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">NÃO</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="../bibliotecaria/componentes_funcoes/aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">SIM</a> 
+                                    <a style="padding: 5px 10px; color: white; background-color: brown; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="../bibliotecaria/componentes_funcoes/nao_aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">NÃO</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</table>";

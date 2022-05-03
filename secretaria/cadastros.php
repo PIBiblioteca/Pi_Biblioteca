@@ -101,7 +101,7 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                                 echo "<th>"; echo "Contato"; echo "</th>";
                                 echo "<th>"; echo "Matrícula"; echo "</th>";
                                 echo "<th>"; echo "Status"; echo "</th>";
-                                echo "<th>"; echo "Aprovar"; echo "</th>";
+                                echo "<th>"; echo "Tornar bibliotecário"; echo "</th>";
                                 echo "</tr>";
                                 $res=mysqli_query($link, "SELECT * FROM cadastro_usuarios 
                                 WHERE fullname LIKE('%$_POST[t1]%') 
@@ -117,7 +117,8 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                                     echo "<td>"; echo $row["contact"]; echo "</td>";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";
                                     echo "<td>"; echo $row["status_usuario"]; echo "</td>";
-                                    echo "<td>"; ?> <a style="color: green" href="aprovar_cadastro.php?id_cadastro=<?php echo $row["id_cadastro"]; ?>">TORNAR BIBLIOTECARIA</a>
+                                    echo "<td>"; ?> <a style="color: green" href="aprovar_cadastro.php?id_cadastro=<?php echo $row["id_cadastro"]; ?>">SIM</a> |
+                                    <a style="color: brown" href="nao_aprovar_cadastro.php?id=<?php echo $row["id_cadastro"]; ?>">NÃO</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
                                 }
@@ -131,7 +132,7 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                                 }
                                 else // RESULTADO SEM PESQUISA
                                 { 
-                                $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios ORDER BY id_usuario DESC");
+                                $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE nivel_usuario='usuário' OR nivel_usuario='bibliotecário' ORDER BY id_usuario DESC");
                                 echo "<div id='container'>";
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
@@ -140,7 +141,8 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                                 echo "<th>"; echo "Contato"; echo "</th>";
                                 echo "<th>"; echo "Matrícula"; echo "</th>";
                                 echo "<th>"; echo "Status"; echo "</th>";
-                                echo "<th>"; echo "Aprovar"; echo "</th>";
+                                echo "<th>"; echo "Nível usuário"; echo "</th>";
+                                echo "<th>"; echo "Torna bibliotecário"; echo "</th>";
                                 echo "</tr>";
                                 while($row=mysqli_fetch_array($res))
                                 {
@@ -150,8 +152,9 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                                     echo "<td>"; echo $row["contact"]; echo "</td>";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";
                                     echo "<td>"; echo $row["status_usuario"]; echo "</td>";
-                                    echo "<td>"; ?> <a style="color: green" href="aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">SIM</a> |
-                                    <a style="color: brown" href="nao_aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">NÃO</a> <?php echo "</td>";
+                                    echo "<td>"; echo $row["nivel_usuario"]; echo "</td>";
+                                    echo "<td>"; ?> <a style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="../secretaria/componentes_funcoes/tornar_bibliotecario.php?id_usuario=<?php echo $row["id_usuario"]; ?>">SIM</a>
+                                    <a style="padding: 5px 10px; color: white; background-color: brown; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="../secretaria/componentes_funcoes/nao_tornar_bibliotecario.php?id_usuario=<?php echo $row["id_usuario"]; ?>">NÃO</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</table>";
