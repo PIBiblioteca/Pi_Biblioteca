@@ -1,7 +1,7 @@
  <!-- footer content -->
  <footer class="rodape" >
             <div class="pull-right" style="font-size: 16px">
-                Fatec Franco da Rocha
+                <img src="/images/logo_bibliofateca.png" alt="">
             </div>
             <div class="clearfix"></div>
         </footer>

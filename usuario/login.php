@@ -113,12 +113,35 @@ include "..\usuario\componentes_funcoes\connection.php";
             </div>
     <?php
         } else {
-            $_SESSION["email"]=$_POST["email"];
-            ?>
-            <script type="text/javascript">
-                window.location="meus_emprestimos.php";
-            </script>
+            
+            while($row = mysqli_fetch_array($res)){
+                $nivel_usuario=$row["nivel_usuario"];
+            }
+            if($nivel_usuario=='usuário'){
+                $_SESSION["usuario"]=$_POST["email"];
+                ?>
+                <script type="text/javascript">
+                    window.location="../usuario/meus_emprestimos.php";
+                </script>
+            
             <?php
+            }
+            if($nivel_usuario=='bibliotecário'){
+                $_SESSION["bibliotecario"]=$_POST["email"];
+                ?>
+                <script type="text/javascript">
+                    window.location="../bibliotecaria/cadastros.php";
+                </script>
+                <?php
+            }
+            if($nivel_usuario=='admin'){
+                $_SESSION["admin"]=$_POST["email"];
+                ?>
+                <script type="text/javascript">
+                    window.location="../secretaria/cadastros.php";
+                </script>
+                <?php
+            }
         }
     }
     ?>

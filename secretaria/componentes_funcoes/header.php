@@ -1,3 +1,14 @@
+<?php
+include "connection.php";
+//menu de usuário, nome
+$email=$_SESSION['admin'];
+$res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
+        while($row=mysqli_fetch_array($res))
+        {                                
+            $fullname=$row["fullname"];
+        }
+//fim menu de usuário
+?>
 <!DOCTYPE html>
 <html lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -75,7 +86,7 @@
                     
                         <span style="color: white">Olá,</span>
 
-                        <h2><b></b><?php echo $_SESSION["librarian"]; ?></b></h2>
+                        <h2><b></b><?php echo $fullname; ?></b></h2>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -98,10 +109,6 @@
                             <li><a href="historico.php"><i class="fa fa-bar-chart-o"></i> Histórico <span
                                     class="fa fa-chevron-down"></span></a>
                             </li>
-                            <li><a href="livros.php"><i class="fa fa-desktop"></i> Livros <span
-                                    class="fa fa-chevron-down"></span></a>
-                            </li>
-                        
 
                         </ul>
                     </div>
@@ -124,13 +131,12 @@
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="..\images\astronauta.png" alt=""><?php echo $_SESSION["librarian"]; ?>
+                                <img src="..\images\astronauta.png" alt=""><?php echo $fullname; ?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
                             <li><a href="editar_perfil.php"><i class="fa-solid fa-pen-to-square pull-right"></i> Editar perfil</a></li>
-                            <li><a href="editar_regras.php"><i class="fa-solid fa-pen-ruler pull-right"></i> Editar regras</a></li>
-                                <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Sair </a></li>
+                                <li><a href="../secretaria/componentes_funcoes/logout.php"><i class="fa fa-sign-out pull-right"></i> Sair </a></li>
                             </ul>
                         </li>
 
