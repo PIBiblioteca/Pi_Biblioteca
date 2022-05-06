@@ -4,13 +4,13 @@ if(!isset($_SESSION["bibliotecario"]))
 {
     ?>
     <script type="text/javascript">
-        window.location="../usuario/login.php";
+        window.location="../usuario/../usuario/login.php";
     </script>
     <?php
 }
-include "..\bibliotecaria\componentes_funcoes\header.php";
-include "..\bibliotecaria\componentes_funcoes\connection.php";
-include "..\bibliotecaria\componentes_funcoes\contadores.php";
+include "..\bibliotecario\componentes_funcoes\header.php";
+include "..\bibliotecario\componentes_funcoes\connection.php";
+include "..\bibliotecario\componentes_funcoes\contadores.php";
 ?>
 
         <!-- page content area main -->
@@ -21,7 +21,7 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
                         <h3>Cadastros</h3>
                     </div>
 
-                    <?php include "..\bibliotecaria\componentes_funcoes\botao_pesquisar.php";?>
+                    <?php include "..\bibliotecario\componentes_funcoes\botao_pesquisar.php";?>
                     
                 </div>
 
@@ -151,8 +151,8 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
                                     echo "<td>"; echo $row["contact"]; echo "</td>";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";
                                     echo "<td>"; echo $row["status_usuario"]; echo "</td>";
-                                    echo "<td>"; ?> <a style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="../bibliotecaria/componentes_funcoes/aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">SIM</a> 
-                                    <a style="padding: 5px 10px; color: white; background-color: brown; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="../bibliotecaria/componentes_funcoes/nao_aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">NÃO</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="../bibliotecario/componentes_funcoes/aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">SIM</a> 
+                                    <a style="padding: 5px 10px; color: white; background-color: brown; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="../bibliotecario/componentes_funcoes/nao_aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">NÃO</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</table>";

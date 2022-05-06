@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["librarian"]))
+if(!isset($_SESSION["bibliotecario"]))
 {
     ?>
     <script type="text/javascript">
@@ -9,7 +9,7 @@ if(!isset($_SESSION["librarian"]))
     </script>
     <?php
 }
-include "../librarian/componentes_funcoes/connection.php";
+include "../bibliotecario/componentes_funcoes/connection.php";
 
 if(isset($_GET["id"]))
 {

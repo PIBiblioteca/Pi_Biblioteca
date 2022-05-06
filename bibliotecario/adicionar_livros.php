@@ -1,18 +1,18 @@
 <?php
 session_start();
 // código de segurança para impossibilitar o acesso à essa página sem fazer login
-if(!isset($_SESSION["librarian"])) 
+if(!isset($_SESSION["bibliotecario"])) 
 {
     ?>
     <script type="text/javascript">
-        window.location="login.php";
+        window.location="../usuario/login.php";
 
     </script>
     <?php
 }
 // fim do código de segurança para impossibilitar o acesso à essa página sem fazer login
-include "..\bibliotecaria\componentes_funcoes\connection.php";
-include "..\bibliotecaria\componentes_funcoes\header.php";
+include "..\bibliotecario\componentes_funcoes\connection.php";
+include "..\bibliotecario\componentes_funcoes\header.php";
 ?>
 <a href="/imagens/books_image/"></a>
         <!-- page content area main -->
@@ -84,7 +84,7 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
         $dst1="./imagens/books_image/".$tm.$fnm;
         move_uploaded_file($_FILES["f1"]["tmp_name"],$dst);
 
-        mysqli_query($link, "INSERT INTO livros VALUES('','$_POST[booksname]','$dst1','$_POST[bauthorname]','$_POST[pname]','$_POST[edicao]','$_POST[bprice]','$_POST[bqty]','$_POST[aqty]','$_SESSION[librarian]')");
+        mysqli_query($link, "INSERT INTO livros VALUES('','$_POST[booksname]','$dst1','$_POST[bauthorname]','$_POST[pname]','$_POST[edicao]','$_POST[bprice]','$_POST[bqty]','$_POST[aqty]','$_SESSION[bibliotecario]')");
     ?>
         <script type="text/javascript">
             alert("Livro adicionado com sucesso!");

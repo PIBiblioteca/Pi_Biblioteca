@@ -88,7 +88,7 @@ include "connection.php";
             echo "senha correta <br>";
             if (($_POST["nova_senha"])==($_POST["confirmar_senha"])) {
                 echo "Confirmação correta";
-                // ATUALIZA TABELA "cadastro_bibliotecaria"
+                // ATUALIZA TABELA "cadastro_bibliotecario"
                 mysqli_query($link, "UPDATE cadastro_usuarios SET password='$_POST[nova_senha]' WHERE email='$email'");
                 ?>
                     <script type="text/javascript">
@@ -100,7 +100,7 @@ include "connection.php";
                 ?>
                     <script type="text/javascript">
                         alert("Confirmação de senha não confere");
-    //                        window.location="../librarian/componentes_funcoes/adicionar_livros.php";
+    //                        window.location="../bibliotecario/componentes_funcoes/adicionar_livros.php";
                     </script>
                 <?php
             

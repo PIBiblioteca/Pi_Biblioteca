@@ -9,8 +9,8 @@ if(!isset($_SESSION["admin"]))
     <?php
 }
 include "../secretaria/componentes_funcoes/header.php";
-include "../bibliotecaria/componentes_funcoes/connection.php";
-include "../bibliotecaria/componentes_funcoes/contadores.php";
+include "../bibliotecario/componentes_funcoes/connection.php";
+include "../bibliotecario/componentes_funcoes/contadores.php";
 ?>
 
         <!-- page content area main -->
@@ -21,7 +21,7 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                         <h3>Cadastros</h3>
                     </div>
 
-                    <?php include "../bibliotecaria/componentes_funcoes/botao_pesquisar.php";?>
+                    <?php include "../bibliotecario/componentes_funcoes/botao_pesquisar.php";?>
                     
                 </div>
 

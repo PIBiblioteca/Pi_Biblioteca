@@ -1,7 +1,7 @@
  <!-- footer content -->
- <footer class="rodape">
+ <footer class="rodape" style="font-size: 13px;">
             <div class="pull-right">
-                <img style="width: 100px; margin: auto;" src="/images/logo_fatec_franco_branco.png" alt="">
+                Fatec Franco da Rocha
             </div>
             <div class="clearfix"></div>
         </footer>
@@ -17,7 +17,7 @@
 <script src="../js/fastclick.js"></script>
 <!-- NProgress -->
 <script src="../js/nprogress.js"></script>
-
+hots
 <!-- Custom Theme Scripts -->
 <script src="../js/custom.min.js"></script>
 </body>

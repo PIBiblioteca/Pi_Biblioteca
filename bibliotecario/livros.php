@@ -1,16 +1,16 @@
 <?php
 session_start();
-if(!isset($_SESSION["librarian"]))
+if(!isset($_SESSION["bibliotecario"]))
 {
     ?>
     <script type="text/javascript">
-        window.location="login.php";
+        window.location="../usuario/login.php";
 
     </script>
     <?php
 }
-include "..\bibliotecaria\componentes_funcoes\connection.php";
-include "..\bibliotecaria\componentes_funcoes\header.php";
+include "..\bibliotecario\componentes_funcoes\connection.php";
+include "..\bibliotecario\componentes_funcoes\header.php";
 ?>
 
         <!-- page content area main -->
@@ -20,7 +20,7 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
                     <div class="title_left">
                         <h3>Livros cadastrados</h3>
                     </div>
-                    <?php include "..\bibliotecaria\componentes_funcoes\botao_pesquisar.php";//BOTÃO PESQUISAR?> 
+                    <?php include "..\bibliotecario\componentes_funcoes\botao_pesquisar.php";//BOTÃO PESQUISAR?> 
                 </div>
                 <div class="clearfix"></div>
                 <div class="row" style="min-height:750px">
@@ -32,7 +32,7 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                            <a href="..\bibliotecaria\componentes_funcoes\adicionar_livros.php"><i class="fa fa-edit"></i> Adicionar livro <span class="fa fa-chevron-down"></span></a>
+                            <a href="..\bibliotecario\componentes_funcoes\adicionar_livros.php"><i class="fa fa-edit"></i> Adicionar livro <span class="fa fa-chevron-down"></span></a>
                                 <?php 
                                 
                                 // RESULTADO COM PESQUISA
@@ -115,7 +115,8 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
                                     echo "<td>"; echo $row["editora_livro"]; echo "</td>";
                                     echo "<td>"; echo $row["edicao_livro"]; echo "</td>";
                                     echo "<td>"; ?> <a style="padding: 5px 10px; color: white; background-color: brown; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px;" href="delete_books.php?id_livro=<?php echo $row["id_livro"]; ?>">Deletar</a> <?php echo "</td>";
-                                    echo "<td>"; ?> <a href="editar_livro.php?id_livro=<?php echo $row["id_livro"]; ?>">Editar</a> <?php echo "</td>";
+
+                                    echo "<td>"; ?> <a style="padding: 5px 10px; color: white; background-color: #428bca; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px;" href="editar_livro.php?id_livro=<?php echo $row["id_livro"]; ?>">Editar</a> <?php echo "</td>";
                                     echo "</tr>";
                                     
                                 }
@@ -132,7 +133,7 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
         <!-- /page content -->
 
 <?php
-include "../bibliotecaria/componentes_funcoes/footer.php";
+include "../bibliotecario/componentes_funcoes/footer.php";
 ?>
 
        

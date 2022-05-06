@@ -1,5 +1,5 @@
 <?php
-include "..\bibliotecaria\componentes_funcoes\connection.php";
+include "..\bibliotecario\componentes_funcoes\connection.php";
 
 $result2 = mysqli_query($link, "SELECT * FROM livros");
 if(mysqli_num_rows($result2) > 0) {   

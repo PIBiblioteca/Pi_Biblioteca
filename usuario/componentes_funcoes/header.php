@@ -135,7 +135,7 @@ if($image==''){
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="componentes_funcoes/editar_perfil.php?id=<?php echo $fullname; ?>"><i class="fa-solid fa-pen-to-square pull-right"></i> Editar perfil</a></li>
+                                <li><a href="editar_perfil.php?id=<?php echo $fullname; ?>"><i class="fa-solid fa-pen-to-square pull-right"></i> Editar perfil</a></li>
                                 <li><a href="../usuario/login.php"><i class="fa fa-sign-out pull-right"></i> Sair </a></li>
                             </ul>
                             

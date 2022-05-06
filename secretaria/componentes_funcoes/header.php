@@ -64,7 +64,7 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="../bibliotecaria/cadastros.php" class="site_title"><img src="..\images\favicon_bibliofateca.png" alt=""style="width: 45px"> <span>Biblio<b>Fatec</b>a</span></a>
+                    <a href="../bibliotecario/cadastros.php" class="site_title"><img src="..\images\favicon_bibliofateca.png" alt=""style="width: 45px"> <span>Biblio<b>Fatec</b>a</span></a>
                 </div>
 
                 <div class="clearfix"></div>

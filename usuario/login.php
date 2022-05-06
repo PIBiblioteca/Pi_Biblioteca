@@ -130,7 +130,7 @@ include "..\usuario\componentes_funcoes\connection.php";
                 $_SESSION["bibliotecario"]=$_POST["email"];
                 ?>
                 <script type="text/javascript">
-                    window.location="../bibliotecaria/cadastros.php";
+                    window.location="../bibliotecario/cadastros.php";
                 </script>
                 <?php
             }

@@ -11,7 +11,7 @@ if(!isset($_SESSION["email"]))
 }
 include "..\usuario\componentes_funcoes\connection.php";
 include "..\usuario\componentes_funcoes\header.php";
-include "../bibliotecaria/componentes_funcoes/regras_biblioteca.php";
+include "../bibliotecario/componentes_funcoes/regras_biblioteca.php";
 ?>
 
         <!-- page content area main -->
@@ -221,7 +221,7 @@ include "../bibliotecaria/componentes_funcoes/regras_biblioteca.php";
         <!-- /page content -->
 
 <?php
-include "../bibliotecaria/componentes_funcoes/footer.php";
+include "../bibliotecario/componentes_funcoes/footer.php";
 ?>
 
        

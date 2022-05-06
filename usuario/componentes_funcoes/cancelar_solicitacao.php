@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["librarian"])) //CORRIGIR
+if(!isset($_SESSION["bibliotecario"])) //CORRIGIR
 {
     ?>
     <script type="text/javascript">

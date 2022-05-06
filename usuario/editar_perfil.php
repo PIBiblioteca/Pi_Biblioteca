@@ -1,11 +1,11 @@
 <?php
 session_start();
 // código de segurança para impossibilitar o acesso à essa página sem fazer login
-if(!isset($_SESSION["email"])) 
+if(!isset($_SESSION["bibliotecario"])) 
 {
     ?>
     <script type="text/javascript">
-        window.location="login.php";
+        window.location="../usuario/../usuario/login.php";
 
     </script>
     <?php

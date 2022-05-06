@@ -1,5 +1,5 @@
 <?php
-include "../librarian/componentes_funcoes/connection.php";
+include "../bibliotecario/componentes_funcoes/connection.php";
 
 //puxa identificação de qual livro está sendo devolvido
 $id = $_GET["id"];

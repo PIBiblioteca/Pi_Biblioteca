@@ -1,6 +1,6 @@
 <?php 
 
-    include_once "../librarian/componentes_funcoes/connection.php";
+    include_once "../bibliotecario/componentes_funcoes/connection.php";
     if(isset($_POST['submit2']))
     {
         $id=$_POST['id'];
@@ -12,7 +12,7 @@
         $bprice=$_POST['books_price'];  
         $bqty=$_POST['books_qty'];  
         $aqty=$_POST['available_qty'];  
-        $librarian=$_POST['librarian_username']; 
+        $bibliotecario=$_POST['bibliotecario_username']; 
         
         $sqlUpdate = "UPDATE adicionar_livros SET 
         id='$id',
@@ -24,7 +24,7 @@
         books_price='$bprice', 
         books_qty='$bqty', 
         available_qty='$aqty', 
-        librarian_username='$librarian',
+        bibliotecario_username='$bibliotecario',
         WHERE id='$id'";    
         $result = $conexao->query($sqlUpdate);    
     }

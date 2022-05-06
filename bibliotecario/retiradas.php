@@ -1,16 +1,16 @@
 <?php
 session_start();
-if(!isset($_SESSION["librarian"]))
+if(!isset($_SESSION["bibliotecario"]))
 {
     ?>
     <script type="text/javascript">
-        window.location="login.php";
+        window.location="../usuario/login.php";
 
     </script>
     <?php
 }
-include "..\bibliotecaria\componentes_funcoes\header.php";
-include "..\bibliotecaria\componentes_funcoes\connection.php"
+include "..\bibliotecario\componentes_funcoes\header.php";
+include "..\bibliotecario\componentes_funcoes\connection.php"
 ?>
 
         <!-- page content area main -->
@@ -21,7 +21,7 @@ include "..\bibliotecaria\componentes_funcoes\connection.php"
                         <h3>Lista de retiradas</h3>
                     </div>
                     
-                    <?php include "..\bibliotecaria\componentes_funcoes\botao_pesquisar.php";?>
+                    <?php include "..\bibliotecario\componentes_funcoes\botao_pesquisar.php";?>
 
                 </div>
 
@@ -152,7 +152,7 @@ include "..\bibliotecaria\componentes_funcoes\connection.php"
                                 }
                                ?>
 
-                               <a class="color: green" style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="../bibliotecaria/componentes_funcoes/retirado.php?id_solicitacao=<?php echo $row["id_solicitacao"]; ?>">SIM</a>
+                               <a class="color: green" style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="../bibliotecario/componentes_funcoes/retirado.php?id_solicitacao=<?php echo $row["id_solicitacao"]; ?>">SIM</a>
                                
                                 <?php 
                                 echo "</td>";
@@ -174,7 +174,7 @@ include "..\bibliotecaria\componentes_funcoes\connection.php"
         <!-- /page content -->
 
 <?php
-include "../bibliotecaria/componentes_funcoes/footer.php";
+include "../bibliotecario/componentes_funcoes/footer.php";
 ?>
 
        

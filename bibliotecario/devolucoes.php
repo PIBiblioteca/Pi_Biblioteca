@@ -1,16 +1,16 @@
 <?php
 session_start();
-if(!isset($_SESSION["librarian"]))
+if(!isset($_SESSION["bibliotecario"]))
 {
     ?>
     <script type="text/javascript">
-        window.location="login.php";
+        window.location="../usuario/login.php";
 
     </script>
     <?php
 }
-include "..\bibliotecaria\componentes_funcoes\connection.php";
-include "..\bibliotecaria\componentes_funcoes\header.php";
+include "..\bibliotecario\componentes_funcoes\connection.php";
+include "..\bibliotecario\componentes_funcoes\header.php";
 ?>
 
         <!-- page content area main -->
@@ -145,7 +145,7 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
                                             if($status_emprestimo=='PERDA/AVARIA'){
                                                 echo "PERDIDO/AVARIADO";
                                                 //MOSTRA BOTÃO "REPOSIÇÃO"
-                                                ?> <a style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; float: left " href="../bibliotecaria/componentes_funcoes/repor_livro.php?id=<?php echo $id; ?>">REPOSIÇÃO</a> <?php 
+                                                ?> <a style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; float: left " href="../bibliotecario/componentes_funcoes/repor_livro.php?id=<?php echo $id; ?>">REPOSIÇÃO</a> <?php 
                                             } else {
                                             //MOSTRA BOTÃO "CONFIRMAR(devolução)"
                                             ?> <a style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; float: left " href="devolver_livro.php?id=<?php echo $id; ?>">CONFIRMAR</a> <?php 
@@ -155,7 +155,7 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
                                                 
                                             } else {
                                             //MOSTRA BOTÃO "PERDA/AVARIA"
-                                            ?> <a style="padding: 5px 10px; color: white; background-color: #f57c03; border: none; border-radius: 5px; box-shadow: none; margin: 0; float: left" href="../bibliotecaria/componentes_funcoes/perda_avaria.php?id=<?php echo $id; ?>">PERDA/AVARIA</a> <?php 
+                                            ?> <a style="padding: 5px 10px; color: white; background-color: #f57c03; border: none; border-radius: 5px; box-shadow: none; margin: 0; float: left" href="../bibliotecario/componentes_funcoes/perda_avaria.php?id=<?php echo $id; ?>">PERDA/AVARIA</a> <?php 
                                             }
                                             echo "</td>";
                                             echo "</tr>";
@@ -173,5 +173,5 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
         <!-- /page content -->
 
 <?php
-include "../bibliotecaria/componentes_funcoes/footer.php";
+include "../bibliotecario/componentes_funcoes/footer.php";
 ?>

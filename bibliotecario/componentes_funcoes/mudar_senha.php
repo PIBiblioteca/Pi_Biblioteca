@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["librarian"]))
+if(!isset($_SESSION["bibliotecario"]))
 {
     ?>
     <script type="text/javascript">
@@ -9,8 +9,8 @@ if(!isset($_SESSION["librarian"]))
     </script>
     <?php
 }
-include "../librarian/componentes_funcoes/header.php";
-include "../librarian/componentes_funcoes/connection.php";
+include "../bibliotecario/componentes_funcoes/header.php";
+include "../bibliotecario/componentes_funcoes/connection.php";
 ?>
 
         <!-- page content area main -->
@@ -35,8 +35,8 @@ include "../librarian/componentes_funcoes/connection.php";
                             </div>
                             <div class="x_content">
                                 <?php
-                                    $email=$_SESSION['librarian'];
-                                    $res=mysqli_query($link,"SELECT * FROM cadastro_bibliotecaria");
+                                    $email=$_SESSION['bibliotecario'];
+                                    $res=mysqli_query($link,"SELECT * FROM cadastro_bibliotecario");
                                     while($row=mysqli_fetch_array($res))
                                     {
                                         $password=$row["password"];
@@ -88,8 +88,8 @@ include "../librarian/componentes_funcoes/connection.php";
             echo "senha correta <br>";
             if (($_POST["nova_senha"])==($_POST["confirmar_senha"])) {
                 echo "Confirmação correta";
-                // ATUALIZA TABELA "cadastro_bibliotecaria"
-                mysqli_query($link, "UPDATE cadastro_bibliotecaria SET password='$_POST[nova_senha]'");
+                // ATUALIZA TABELA "cadastro_bibliotecario"
+                mysqli_query($link, "UPDATE cadastro_bibliotecario SET password='$_POST[nova_senha]'");
                 ?>
                     <script type="text/javascript">
                         alert("Senha atualizada com sucesso");
@@ -100,7 +100,7 @@ include "../librarian/componentes_funcoes/connection.php";
                 ?>
                     <script type="text/javascript">
                         alert("Confirmação de senha não confere");
-    //                        window.location="../librarian/componentes_funcoes/adicionar_livros.php";
+    //                        window.location="../bibliotecario/componentes_funcoes/adicionar_livros.php";
                     </script>
                 <?php
             
@@ -123,7 +123,7 @@ include "../librarian/componentes_funcoes/connection.php";
 
     ?>
 <?php
-include "../librarian/componentes_funcoes/footer.php";
+include "../bibliotecario/componentes_funcoes/footer.php";
 ?>
 
        

@@ -1,20 +1,20 @@
 <?php
 session_start();
 // código de segurança para impossibilitar o acesso à essa página sem fazer login
-if(!isset($_SESSION["librarian"])) 
+if(!isset($_SESSION["bibliotecario"])) 
 {
     ?>
     <script type="text/javascript">
-        window.location="login.php";
+        window.location="../usuario/login.php";
 
     </script>
     <?php
 }
 // fim do código de segurança para impossibilitar o acesso à essa página sem fazer login
-include "../librarian/componentes_funcoes/connection.php";
-include "../librarian/componentes_funcoes/header.php";
+include "../bibliotecario/componentes_funcoes/connection.php";
+include "../bibliotecario/componentes_funcoes/header.php";
 ?>
-<a href="/Testes/2022/librarian/imagens/books_image/"></a>
+<a href="/Testes/2022/bibliotecario/imagens/books_image/"></a>
         <!-- page content area main -->
         <div class="right_col" role="main">
             <div class="">
@@ -39,8 +39,8 @@ include "../librarian/componentes_funcoes/header.php";
 
                             <?php
                             
-                            $email=$_SESSION['librarian'];
-                            $res=mysqli_query($link,"SELECT * FROM cadastro_bibliotecaria");
+                            $email=$_SESSION['bibliotecario'];
+                            $res=mysqli_query($link,"SELECT * FROM cadastro_bibliotecario");
                             while($row=mysqli_fetch_array($res))
                             {
                                 $firstname=$row["firstname"];
@@ -148,5 +148,5 @@ include "../librarian/componentes_funcoes/header.php";
 
 
 <?php
-include "../librarian/componentes_funcoes/footer.php";
+include "../bibliotecario/componentes_funcoes/footer.php";
 ?>
