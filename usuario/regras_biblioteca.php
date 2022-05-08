@@ -37,23 +37,21 @@ include "..\usuario\componentes_funcoes\header.php";
                                 
                             <?php
                            
+                           echo "<table class='table table-bordered'>";
+                           echo "<tr>";
+                           echo "<th>"; echo "Id"; echo "</th>";
+                           echo "<th>"; echo "Regra"; echo "</th>";
+                           echo "</tr>";
                                 $res=mysqli_query($link, "SELECT * FROM regras_biblioteca");
                                 while($row=mysqli_fetch_array($res)) {
-                                
-
-                                echo "<table class='table table-bordered'>";
-                                echo "<tr>";
-                                echo "<th>"; echo "Id"; echo "</th>";
-                                echo "<th>"; echo "Regra"; echo "</th>";
-                                echo "</tr>";
-
+                       
                                 echo "<tr>";
                                 echo "<td>"; echo $row["id_regra"]; echo "</td>"; 
                                 echo "<td>"; echo $row["regra"]; echo "</td>"; 
-                                
-                                echo "</table>";    
+                                echo "</tr>";
+                                  
                             }
-
+                            echo "</table>";  
                             ?>
 
 

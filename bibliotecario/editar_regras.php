@@ -78,7 +78,7 @@ include "../bibliotecario/componentes_funcoes/header.php";
                                         <td>Regras gerais<input type="text" class="form-control" placeholder="Regulamento completo" name="regras_gerais" value="<?php echo $regras_gerais; ?>" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="submit" name="submit1" class="btn btn-default submit" value="Confirmar" style="background-color: green; color: white"></td>
+                                        <td><input type="submit" name="submit1" value="Confirmar"style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px"></td>
                                     </tr>
                                 </table>
                                 </div>

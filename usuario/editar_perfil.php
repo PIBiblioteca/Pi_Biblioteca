@@ -43,9 +43,9 @@ include "../usuario/componentes_funcoes/header.php";
                             $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
                             while($row=mysqli_fetch_array($res))
                             {                                
-                                $firstname=$row["fullname"];
-                                $image=$row["profile_image"];
-                                $password=$row["password"];
+                                $firstname=$row["nome_completo_usuario"];
+                                $image=$row["imagem_perfil_usuario"];
+                                $senha_usuario=$row["senha_usuario"];
                                 $email=$row["email"];
                                 $contact=$row["contact"];                              
                             }
@@ -59,7 +59,7 @@ include "../usuario/componentes_funcoes/header.php";
                                 <table class="table table-bordered">
                                 
                                     <tr>
-                                        <td>Nome completo<input type="text" class="form-control" placeholder="First Name" name="fullname" value="<?php echo $firstname; ?>" required=""></td>
+                                        <td>Nome completo<input type="text" class="form-control" placeholder="First Name" name="nome_completo_usuario" value="<?php echo $firstname; ?>" required=""></td>
 
                                     </tr>
                                     <tr>
@@ -108,31 +108,31 @@ include "../usuario/componentes_funcoes/header.php";
         
         $tm=md5 (time());
         $fnm=$_FILES["f1"]["name"];
-        $dst="./profile_image/".$tm.$fnm;
-        $dst1="./profile_image/".$tm.$fnm;
+        $dst="./imagem_perfil_usuario/".$tm.$fnm;
+        $dst1="./imagem_perfil_usuario/".$tm.$fnm;
         move_uploaded_file($_FILES["f1"]["tmp_name"],$dst);
 
         if($fnm =='') //verifica se o campo de imagem está vazio
         {
             // ATUALIZA TABELA "cadastro_usuarios"
-            mysqli_query($link, "UPDATE cadastro_usuarios SET fullname='$_POST[fullname]', password ='$_POST[password]', contact ='$_POST[contact]' WHERE email='$email'");
+            mysqli_query($link, "UPDATE cadastro_usuarios SET nome_completo_usuario='$_POST[nome_completo_usuario]', senha_usuario ='$_POST[senha_usuario]', contact ='$_POST[contact]' WHERE email='$email'");
             // ATUALIZA TABELA "emprestimos"
-            mysqli_query($link, "UPDATE emprestimos SET student_name='$_POST[fullname]', student_contact ='$_POST[contact]' WHERE student_email='$email'");
+            mysqli_query($link, "UPDATE emprestimos SET student_name='$_POST[nome_completo_usuario]', student_contact ='$_POST[contact]' WHERE student_email='$email'");
             // ATUALIZA TABELA "recados"
-            mysqli_query($link, "UPDATE recados SET dusername='$_POST[fullname]' WHERE email='$email'");
+            mysqli_query($link, "UPDATE recados SET dusername='$_POST[nome_completo_usuario]' WHERE email='$email'");
             // ATUALIZA TABELA "solicitacoes"
-            mysqli_query($link, "UPDATE solicitacoes SET student_name='$_POST[fullname]', student_contact ='$_POST[contact]' WHERE student_email='$email'");
+            mysqli_query($link, "UPDATE solicitacoes SET student_name='$_POST[nome_completo_usuario]', student_contact ='$_POST[contact]' WHERE student_email='$email'");
         }
         else //se campo de imagem não estiver vazio
         {
         // ATUALIZA TABELA "cadastro_usuarios"  
-        mysqli_query($link, "UPDATE cadastro_usuarios SET fullname='$_POST[fullname]', profile_image='$dst', password ='$_POST[password]', contact ='$_POST[contact]' WHERE email='$email'");
+        mysqli_query($link, "UPDATE cadastro_usuarios SET nome_completo_usuario='$_POST[nome_completo_usuario]', imagem_perfil_usuario='$dst', senha_usuario ='$_POST[senha_usuario]', contact ='$_POST[contact]' WHERE email='$email'");
         // ATUALIZA TABELA "emprestimos"
-        mysqli_query($link, "UPDATE emprestimos SET student_name='$_POST[fullname]', student_contact ='$_POST[contact]' WHERE student_email='$email'");
+        mysqli_query($link, "UPDATE emprestimos SET student_name='$_POST[nome_completo_usuario]', student_contact ='$_POST[contact]' WHERE student_email='$email'");
         // ATUALIZA TABELA "recados"
-        mysqli_query($link, "UPDATE recados SET dusername='$_POST[fullname]' WHERE email='$email'");
+        mysqli_query($link, "UPDATE recados SET dusername='$_POST[nome_completo_usuario]' WHERE email='$email'");
         // ATUALIZA TABELA "solicitacoes"
-        mysqli_query($link, "UPDATE solicitacoes SET student_name='$_POST[fullname]', student_contact ='$_POST[contact]' WHERE student_email='$email'");
+        mysqli_query($link, "UPDATE solicitacoes SET student_name='$_POST[nome_completo_usuario]', student_contact ='$_POST[contact]' WHERE student_email='$email'");
         }
     ?>
     

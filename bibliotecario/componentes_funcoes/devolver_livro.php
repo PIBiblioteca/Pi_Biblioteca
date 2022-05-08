@@ -63,7 +63,7 @@ mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty+1 W
 
 <script type="text/javascript">
     alert("Livro devolvido!");
-    window.location="devolucoes.php";
+    window.location="../devolucoes.php";
 </script>
 <?php
 }

@@ -83,7 +83,7 @@ include "../bibliotecario/componentes_funcoes/contadores.php";
                                 if(isset($_POST["submit1"])) {
                                 //Seleciona da tabela "cadastro_usuarios"                    
                                 $res=mysqli_query($link, "SELECT * FROM cadastro_usuarios 
-                                WHERE fullname LIKE('%$_POST[t1]%') 
+                                WHERE nome_completo_usuario LIKE('%$_POST[t1]%') 
                                 OR enrollment LIKE('%$_POST[t1]%')
                                 OR email LIKE('%$_POST[t1]%')
                                 OR contact LIKE('%$_POST[t1]%')
@@ -104,7 +104,7 @@ include "../bibliotecario/componentes_funcoes/contadores.php";
                                 echo "<th>"; echo "Tornar bibliotecário"; echo "</th>";
                                 echo "</tr>";
                                 $res=mysqli_query($link, "SELECT * FROM cadastro_usuarios 
-                                WHERE fullname LIKE('%$_POST[t1]%') 
+                                WHERE nome_completo_usuario LIKE('%$_POST[t1]%') 
                                 OR enrollment LIKE('%$_POST[t1]%')
                                 OR email LIKE('%$_POST[t1]%')
                                 OR contact LIKE('%$_POST[t1]%')
@@ -112,7 +112,7 @@ include "../bibliotecario/componentes_funcoes/contadores.php";
                                 ");
                                 while($row = mysqli_fetch_array($res)) {
                                     echo "<tr>";
-                                    echo "<td>"; echo $row["fullname"]; echo "</td>";
+                                    echo "<td>"; echo $row["nome_completo_usuario"]; echo "</td>";
                                     echo "<td>"; echo $row["email"]; echo "</td>";
                                     echo "<td>"; echo $row["contact"]; echo "</td>";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";
@@ -147,7 +147,7 @@ include "../bibliotecario/componentes_funcoes/contadores.php";
                                 while($row=mysqli_fetch_array($res))
                                 {
                                     echo "<tr>";
-                                    echo "<td>"; echo $row["fullname"]; echo "</td>";
+                                    echo "<td>"; echo $row["nome_completo_usuario"]; echo "</td>";
                                     echo "<td>"; echo $row["email"]; echo "</td>";
                                     echo "<td>"; echo $row["contact"]; echo "</td>";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";

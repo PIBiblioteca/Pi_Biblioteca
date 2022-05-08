@@ -5,7 +5,7 @@ $email=$_SESSION['admin'];
 $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
         while($row=mysqli_fetch_array($res))
         {                                
-            $fullname=$row["fullname"];
+            $nome_completo_usuario=$row["nome_completo_usuario"];
         }
 //fim menu de usuário
 ?>
@@ -86,7 +86,7 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
                     
                         <span style="color: white">Olá,</span>
 
-                        <h2><b></b><?php echo $fullname; ?></b></h2>
+                        <h2><b></b><?php echo $nome_completo_usuario; ?></b></h2>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -131,7 +131,7 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="..\images\astronauta.png" alt=""><?php echo $fullname; ?>
+                                <img src="..\images\astronauta.png" alt=""><?php echo $nome_completo_usuario; ?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">

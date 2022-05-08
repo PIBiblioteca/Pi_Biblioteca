@@ -44,8 +44,8 @@ include "..\bibliotecario\componentes_funcoes\connection.php";
                                                 $res=mysqli_query($link, "SELECT * FROM cadastro_usuarios");
                                                 while($row=mysqli_fetch_array($res))
                                                 {
-                                                    ?><option value="<?php echo $row["fullname"]?>">
-                                                    <?php echo $row["fullname"]." RA (". $row["enrollment"].")"; ?>
+                                                    ?><option value="<?php echo $row["nome_completo_usuario"]?>">
+                                                    <?php echo $row["nome_completo_usuario"]." RA (". $row["enrollment"].")"; ?>
                                                     </option><?php
                                                 }
                                                 $data_msg=date("Y-m-d");

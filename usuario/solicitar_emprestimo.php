@@ -47,7 +47,7 @@ include "../bibliotecario/componentes_funcoes/regras_biblioteca.php";
                                 $res5=mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$email'");
                                 while($row5=mysqli_fetch_array($res5))
                                 {
-                                    $fullname=$row5["fullname"];
+                                    $nome_completo_usuario=$row5["nome_completo_usuario"];
                                     $enrollment=$row5["enrollment"];
                                     $contact=$row5["contact"];
                                     $enrollment=$row5["enrollment"];
@@ -133,7 +133,7 @@ include "../bibliotecario/componentes_funcoes/regras_biblioteca.php";
                                 </tr>
                                 <tr>
                                      <td> Nome usuário
-                                        <input type="text" class="form-control" placeholder="fullname" name="fullname" value="<?php echo $fullname; ?>" disabled>
+                                        <input type="text" class="form-control" placeholder="nome_completo_usuario" name="nome_completo_usuario" value="<?php echo $nome_completo_usuario; ?>" disabled>
                                      </td>
                                 </tr>
                                 <tr>
@@ -191,14 +191,14 @@ include "../bibliotecario/componentes_funcoes/regras_biblioteca.php";
                                     
                                     //verifica se já existe solicitação concluída e a altera
                                     if(mysqli_num_rows($result5) > 0) {
-                                        mysqli_query($link, "UPDATE solicitacoes SET titulo_livro='$titulo_livro', student_enrollment='$_SESSION[enrollment]', student_name='$fullname', 
+                                        mysqli_query($link, "UPDATE solicitacoes SET titulo_livro='$titulo_livro', student_enrollment='$_SESSION[enrollment]', student_name='$nome_completo_usuario', 
                                         student_contact='$contact', 
                                         student_email='$email', 
                                         data_solicitacao='$issuedate', prazo_retirada='$prazo_retirada', status_solicitacao='AGUARDANDO RETIRADA'");
                                         mysqli_query($link, "UPDATE adicionar_livros SET quantidade_livro=quantidade_livro-1 WHERE id_livro=$id_livro"); //função diminuir quantidade disponível
                                     } else {
                                     //se não houver solicitação, cria uma
-                                    mysqli_query($link, "INSERT INTO solicitacoes VALUES('','$titulo_livro','$enrollment','$fullname','$contact','$email','$issuedate','$prazo_retirada','AGUARDANDO RETIRADA')");
+                                    mysqli_query($link, "INSERT INTO solicitacoes VALUES('','$titulo_livro','$enrollment','$nome_completo_usuario','$contact','$email','$issuedate','$prazo_retirada','AGUARDANDO RETIRADA')");
                                     mysqli_query($link, "UPDATE adicionar_livros SET quantidade_livro=quantidade_livro-1 WHERE id_livro=$id_livro"); //função diminuir quantidade disponível
                                     ?>
                                     <script type="text/javascript">

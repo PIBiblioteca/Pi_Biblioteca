@@ -1,6 +1,6 @@
 <?php
 include "../usuario/componentes_funcoes/connection.php";
-include "prazos_biblioteca.php";
+include "../bibliotecario/componentes_funcoes/regras_biblioteca.php";
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ include "prazos_biblioteca.php";
 
 <div class="col-lg-12 text-center ">
 <br><br>
-    <h1 style="font-family:Lucida Console">BiblioFateca</h1>
+    <h1 style="font-family:Lucida Console"></h1>
     
 </div>
 
@@ -38,13 +38,16 @@ include "prazos_biblioteca.php";
 
         <section class="login_content" style="margin-top: -40px;">
             <form name="form1" action="" method="post">
-                <h2>Cadastro de Usuário</h2><br>
+            <img src="../images/logo_bibliofateca_preto.png" alt=""style="width: 160px"> 
+        
+                <br><br>
+                <h2 style="color: #181717"><b>Cadastro de Usuário</b></h2><br>
 
                 <div>
-                    <input type="text" class="form-control" placeholder="Nome Completo" name="fullname" required="" />
+                    <input type="text" class="form-control" placeholder="Nome Completo" name="nome_completo_usuario" required="" />
                 </div>
                 <div>
-                    <input type="password" class="form-control" placeholder="Senha" name="password" required="" />
+                    <input type="senha_usuario" class="form-control" placeholder="Senha" name="senha_usuario" required="" />
                 </div>
                 <div>
                     <input type="text" class="form-control" placeholder="E-mail" name="email" required="" />
@@ -74,7 +77,7 @@ include "prazos_biblioteca.php";
                 </div>
             <?php     
             } else {
-                mysqli_query($link, "INSERT INTO cadastro_usuarios VALUES('','$_POST[fullname]','','$_POST[password]','$_POST[email]','$_POST[contact]','$_POST[enrollment]','INATIVO')");
+                mysqli_query($link, "INSERT INTO cadastro_usuarios VALUES('','$_POST[nome_completo_usuario]','','$_POST[senha_usuario]','$_POST[email]','$_POST[contact]','$_POST[enrollment]','INATIVO')");
         
             ?> 
                 <script type="text/javascript">
@@ -92,3 +95,18 @@ include "prazos_biblioteca.php";
 </body>
 
 </html>
+
+
+<style>
+.logo{
+    position: sticky;
+    top:0;
+    float: right;
+    z-index: 10;
+    height: 60px;
+    width: 60px;
+    margin-right: 15px;
+    margin-top:15px;
+    margin-bottom: 0px;
+}
+</style>

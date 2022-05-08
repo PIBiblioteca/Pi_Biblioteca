@@ -39,14 +39,14 @@ include "connection.php";
                                     $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
                                     while($row=mysqli_fetch_array($res))
                                     {
-                                        $password=$row["password"];
+                                        $senha_usuario=$row["senha_usuario"];
                                     }
                                 ?>
                             <form name="form1" action="" method="post" class="col-lg-6" enctype="multipart/form-data">
                                 <table class="table table-bordered">
                                     <tr>
                                         <td>
-                                            <input type="password" class="form-control" placeholder="Senha atual" name="senha_atual" required="" />
+                                            <input type="senha_usuario" class="form-control" placeholder="Senha atual" name="senha_atual" required="" />
                                             <?php
                                             
                                             ?>
@@ -54,12 +54,12 @@ include "connection.php";
                                     </tr>
                                     <tr>
                                         <td>
-                                            <input type="password" class="form-control" placeholder="Nova senha" name="nova_senha" required="" />
+                                            <input type="senha_usuario" class="form-control" placeholder="Nova senha" name="nova_senha" required="" />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <input type="password" class="form-control" placeholder="Confirmar nova senha" name="confirmar_senha" required="" />
+                                            <input type="senha_usuario" class="form-control" placeholder="Confirmar nova senha" name="confirmar_senha" required="" />
                                         </td>   
                                     </tr>
                                     <tr>
@@ -82,14 +82,14 @@ include "connection.php";
     if(isset($_POST["submit1"])) {
         echo (($_POST["senha_atual"]));
         echo "<br>";
-        echo $password;
+        echo $senha_usuario;
         echo "<br>";
-        if($_POST["senha_atual"]==$password){
+        if($_POST["senha_atual"]==$senha_usuario){
             echo "senha correta <br>";
             if (($_POST["nova_senha"])==($_POST["confirmar_senha"])) {
                 echo "Confirmação correta";
                 // ATUALIZA TABELA "cadastro_bibliotecario"
-                mysqli_query($link, "UPDATE cadastro_usuarios SET password='$_POST[nova_senha]' WHERE email='$email'");
+                mysqli_query($link, "UPDATE cadastro_usuarios SET senha_usuario='$_POST[nova_senha]' WHERE email='$email'");
                 ?>
                     <script type="text/javascript">
                         alert("Senha atualizada com sucesso");

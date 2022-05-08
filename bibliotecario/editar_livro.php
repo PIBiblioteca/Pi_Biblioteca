@@ -41,18 +41,22 @@ include "../bibliotecario/componentes_funcoes/header.php";
                             <?php
                             
                             
-                            $id=$_GET['id'];
-                            $res=mysqli_query($link,"SELECT * FROM adicionar_livros WHERE id='$id'");
+                            $id_livro=$_GET['id_livro'];
+                            $res=mysqli_query($link,"SELECT * FROM livros WHERE id_livro='$id_livro'");
                             while($row=mysqli_fetch_array($res))
                             {                                
+                                
+                                
                                 $booksname=$row["books_name"];
                                 $dst=$row["imagens/books_image"];
                                 $bauthorname=$row["books_author_name"];
-                                $pname=$row["books_publication_name"];
+                                $bqty=$row["books_qty"];
+                                
                                 $edicao=$row["edicao"];
                                 $bprice=$row["books_price"];
-                                $bqty=$row["books_qty"];
+                                
                                 $aqty=$row["available_qty"];
+                                $pname=$row["books_publication_name"];
                                 
                             }
                             ?>
@@ -100,7 +104,7 @@ include "../bibliotecario/componentes_funcoes/header.php";
         <!-- /page content -->
 
 <?php
-    $id=$_GET['id'];
+    $id_livro=$_GET['id_livro'];
     
     
 
@@ -115,8 +119,8 @@ include "../bibliotecario/componentes_funcoes/header.php";
 
         if($fnm =='') //verifica se o campo de imagem está vazio
         {
-            // ATUALIZA TABELA "ADICIONAR_LIVROS"
-            mysqli_query($link, "UPDATE adicionar_livros SET books_name='$_POST[booksname]', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', edicao ='$_POST[edicao]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id='$id'");
+            // ATUALIZA TABELA "livros"
+            mysqli_query($link, "UPDATE livros SET books_name='$_POST[booksname]', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', edicao ='$_POST[edicao]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id_livro='$id_livro'");
 
             // ATUALIZA TABELA "EMPRESTIMOS"
             mysqli_query($link, "UPDATE emprestimos SET books_name='$_POST[booksname]' WHERE books_name='$booksname'");
@@ -127,8 +131,8 @@ include "../bibliotecario/componentes_funcoes/header.php";
         }
         else
         {
-        // ATUALIZA TABELA "ADICIONAR_LIVROS"
-        mysqli_query($link, "UPDATE adicionar_livros SET books_name='$_POST[booksname]', imagens/books_image='$dst1', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', edicao ='$_POST[edicao]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id='$id'");
+        // ATUALIZA TABELA "livros"
+        mysqli_query($link, "UPDATE livros SET books_name='$_POST[booksname]', imagens/books_image='$dst1', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', edicao ='$_POST[edicao]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id_livro='$id_livro'");
         // ATUALIZA TABELA "EMPRESTIMOS"
         mysqli_query($link, "UPDATE emprestimos SET books_name='$_POST[booksname]' WHERE books_name='$booksname'");
         // ATUALIZA TABELA "SOLICITACOES"

@@ -148,7 +148,7 @@ include "..\bibliotecario\componentes_funcoes\header.php";
                                                 ?> <a style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; float: left " href="../bibliotecario/componentes_funcoes/repor_livro.php?id=<?php echo $id; ?>">REPOSIÇÃO</a> <?php 
                                             } else {
                                             //MOSTRA BOTÃO "CONFIRMAR(devolução)"
-                                            ?> <a style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; float: left " href="devolver_livro.php?id=<?php echo $id; ?>">CONFIRMAR</a> <?php 
+                                            ?> <a style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; float: left " href="../bibliotecario/componentes_funcoes/devolver_livro.php?id=<?php echo $id; ?>">CONFIRMAR</a> <?php 
                                             }
                                             //VERIFICA SE LIVRO ESTÁ PERDIDO OU AVARIADO
                                             if($status_emprestimo=='PERDA/AVARIA'){
