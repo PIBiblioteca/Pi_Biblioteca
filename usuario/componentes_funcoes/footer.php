@@ -6,28 +6,28 @@
             <div class="pull-right" style="overflow-x: auto;">
       
             </div style="overflow-x: auto;">
-            <table style="overflow-x: auto; font-size: 13px; margin-left: auto; ">
+            <table style="overflow-x: auto; font-size: 12px; margin-left: auto; ">
                <tr>
                         
-                        <td style="padding-right: 40px">
-                        <a href="https://pt-br.facebook.com/fatecfrancodarocha/" target="_blank" style="color: white; font-size: 18px; "><i class="fa-brands fa-facebook"> </i> </a>
+                        <td style="padding-right: 20px">
+                        <a href="https://pt-br.facebook.com/fatecfrancodarocha/" target="_blank" style="color: white; font-size: 14px; "><i class="fa-brands fa-facebook"> </i> </a>
                         </td>
-                        <td style="padding-right: 40px">
-                        <a href="https://www.instagram.com/fatecfrancodarocha/ " target="_blank" style="color: white; font-size: 18px; "><i class="fa-brands fa-instagram"> </i> </a>    
+                        <td style="padding-right: 20px">
+                        <a href="https://www.instagram.com/fatecfrancodarocha/ " target="_blank" style="color: white; font-size: 14px; "><i class="fa-brands fa-instagram"> </i> </a>    
                         </td>
-                        <td style="padding-right: 40px">
-                        <a href="https://www.youtube.com/channel/UC27-29XnRg7iFKYb2e9o4_A" target="_blank" style="color: white; font-size: 18px; "><i class="fa-brands fa-youtube"> </i> </a>    
+                        <td style="padding-right: 20px">
+                        <a href="https://www.youtube.com/channel/UC27-29XnRg7iFKYb2e9o4_A" target="_blank" style="color: white; font-size: 14px; font-weight: light "><i class="fa-brands fa-youtube"> </i> </a>    
                         </td>
-                        <td style="padding-right: 40px">
+                        <td style="padding-right: 20px">
                         <a href="https://www.fatecfrancodarocha.edu.br" target="_blank" style="color: white; font-size: 16px; "><i class="fa-solid fa-globe"> </i> </a>    
                         </td>
-                        <td style="padding-right: 40px">
-                        <a href="https://g.page/fatecfrancodarocha?share" target="_blank" style="color: white; font-size: 18px; "><i class="fa-solid fa-location-dot"> </i> </a>    
+                        <td style="padding-right: 20px">
+                        <a href="https://g.page/fatecfrancodarocha?share" target="_blank" style="color: white; font-size: 14px"><i class="fa-solid fa-location-dot"> </i> </a>    
                         </td>
-                        <td style="padding-right: 40px">
+                        <!-- <td style="padding-right: 20px">
                         11 4444-4444
-                        </td>
-                        <td style="padding-right: 40px">
+                        </td> -->
+                        <td style="padding-right: 20px">
                         <b>Fatec Franco da Rocha</b>
                         </td>
                         

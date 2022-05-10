@@ -47,7 +47,7 @@ include "../bibliotecario/componentes_funcoes/header.php";
                             {                                
                                 
                                 
-                                $booksname=$row["books_name"];
+                                $titulo_livro=$row["titulo_livro"];
                                 $dst=$row["imagens/books_image"];
                                 $bauthorname=$row["books_author_name"];
                                 $bqty=$row["books_qty"];
@@ -64,7 +64,13 @@ include "../bibliotecario/componentes_funcoes/header.php";
                                 <form name="form1" action="" method="post" class="col-lg-6" enctype="multipart/form-data">
                                 <table class="table table-bordered">
                                     <tr>
-                                        <td>Nome do livro<input type="text" class="form-control" placeholder="Books Name" name="booksname" value="<?php echo $booksname; ?>" required=""></td>
+                                        <td>Nome do livro<input type="text" class="form-control" placeholder="Books Name" name="titulo_livro" value="<?php echo $titulo_livro; ?>" required=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Categoria do livro<input type="text" class="form-control" placeholder="Categoria" name="categoria_livro" value="<?php echo $titulo_livro; ?>" required=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ISBN do livro<input type="text" class="form-control" placeholder="ISBN" name="isbn_livro" value="<?php echo $titulo_livro; ?>" required=""></td>
                                     </tr>
                                     <tr>
                                         <td>Imagem atual <br><img src="<?php echo $dst; ?>" height="100" width="100">
@@ -120,25 +126,25 @@ include "../bibliotecario/componentes_funcoes/header.php";
         if($fnm =='') //verifica se o campo de imagem está vazio
         {
             // ATUALIZA TABELA "livros"
-            mysqli_query($link, "UPDATE livros SET books_name='$_POST[booksname]', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', edicao ='$_POST[edicao]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id_livro='$id_livro'");
+            mysqli_query($link, "UPDATE livros SET titulo_livro='$_POST[titulo_livro]', categoria_livro='$POST[categoria_livro]', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', edicao ='$_POST[edicao]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id_livro='$id_livro'");
 
             // ATUALIZA TABELA "EMPRESTIMOS"
-            mysqli_query($link, "UPDATE emprestimos SET books_name='$_POST[booksname]' WHERE books_name='$booksname'");
+            mysqli_query($link, "UPDATE emprestimos SET categoria_livro='$POST[categoria_livro]', titulo_livro='$_POST[titulo_livro]' WHERE titulo_livro='$titulo_livro'");
             // ATUALIZA TABELA "SOLICITACOES"
-            mysqli_query($link, "UPDATE solicitacoes SET books_name='$_POST[booksname]' WHERE books_name='$booksname'");
+            mysqli_query($link, "UPDATE solicitacoes SET categoria_livro='$POST[categoria_livro]', titulo_livro='$_POST[titulo_livro]' WHERE titulo_livro='$titulo_livro'");
             // ATUALIZA TABELA "SUSPENSOES"
-            mysqli_query($link, "UPDATE suspensoes SET books_name='$_POST[booksname]' WHERE books_name='$booksname'");
+            mysqli_query($link, "UPDATE suspensoes SET categoria_livro='$POST[categoria_livro]', titulo_livro='$_POST[titulo_livro]' WHERE titulo_livro='$titulo_livro'");
         }
         else
         {
         // ATUALIZA TABELA "livros"
-        mysqli_query($link, "UPDATE livros SET books_name='$_POST[booksname]', imagens/books_image='$dst1', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', edicao ='$_POST[edicao]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id_livro='$id_livro'");
+        mysqli_query($link, "UPDATE livros SET titulo_livro='$_POST[titulo_livro]', imagens/books_image='$dst1', books_author_name ='$_POST[bauthorname]', books_publication_name ='$_POST[pname]', edicao ='$_POST[edicao]', books_price ='$_POST[bprice]', books_qty ='$_POST[bqty]', available_qty ='$_POST[aqty]' WHERE id_livro='$id_livro'");
         // ATUALIZA TABELA "EMPRESTIMOS"
-        mysqli_query($link, "UPDATE emprestimos SET books_name='$_POST[booksname]' WHERE books_name='$booksname'");
+        mysqli_query($link, "UPDATE emprestimos SET titulo_livro='$_POST[titulo_livro]' WHERE titulo_livro='$titulo_livro'");
         // ATUALIZA TABELA "SOLICITACOES"
-        mysqli_query($link, "UPDATE solicitacoes SET books_name='$_POST[booksname]' WHERE books_name='$booksname'");
+        mysqli_query($link, "UPDATE solicitacoes SET titulo_livro='$_POST[titulo_livro]' WHERE titulo_livro='$titulo_livro'");
         // ATUALIZA TABELA "SUSPENSOES"
-        mysqli_query($link, "UPDATE suspensoes SET books_name='$_POST[booksname]' WHERE books_name='$booksname'");
+        mysqli_query($link, "UPDATE suspensoes SET titulo_livro='$_POST[titulo_livro]' WHERE titulo_livro='$titulo_livro'");
         }
     ?>
     

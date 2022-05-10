@@ -120,7 +120,7 @@ include "..\bibliotecario\componentes_funcoes\connection.php"
                                 echo "<th>"; echo "Nome usuário"; echo "</th>";
                                 echo "<th>"; echo "Contato usuário"; echo "</th>";
                                 echo "<th>"; echo "E-mail usuário"; echo "</th>";
-                                echo "<th>"; echo "livro retirado?"; echo "</th>";
+                                echo "<th>"; echo "Livro retirado?"; echo "</th>";
                                 echo "</tr>";
                             while($row = mysqli_fetch_array($res)) {
                                 $prazo_retirada=$row["prazo_retirada"];

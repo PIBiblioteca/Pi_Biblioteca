@@ -106,7 +106,7 @@ include "..\bibliotecario\componentes_funcoes\header.php";
                                 echo "</tr>";
                                 while($row = mysqli_fetch_array($res)) {
                                     echo "<tr>";
-                                    echo "<td>"; ?> <img src="<?php echo $row["images/books_image"]; ?>" height="100" width="100"> <?php echo "</td>";
+                                    echo "<td>"; ?> <img src="<?php echo $row['images/books_image']; ?> <?php echo "</td>";
                                     echo "<td>"; echo $row["categoria_livro"]; echo "</td>";
                                     echo "<td>"; echo $row["isbn_livro"]; echo "</td>";
                                     echo "<td>"; echo $row["titulo_livro"]; echo "</td>";

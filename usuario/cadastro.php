@@ -38,7 +38,7 @@ include "../bibliotecario/componentes_funcoes/regras_biblioteca.php";
 
         <section class="login_content" style="margin-top: -40px;">
             <form name="form1" action="" method="post">
-            <img src="../images/logo_bibliofateca_preto.png" alt=""style="width: 160px"> 
+            
         
                 <br><br>
                 <h2 style="color: #181717"><b>Cadastro de Usuário</b></h2><br>
@@ -47,7 +47,7 @@ include "../bibliotecario/componentes_funcoes/regras_biblioteca.php";
                     <input type="text" class="form-control" placeholder="Nome Completo" name="nome_completo_usuario" required="" />
                 </div>
                 <div>
-                    <input type="senha_usuario" class="form-control" placeholder="Senha" name="senha_usuario" required="" />
+                    <input type="password" class="form-control" placeholder="Senha" name="senha_usuario" required="" />
                 </div>
                 <div>
                     <input type="text" class="form-control" placeholder="E-mail" name="email" required="" />
@@ -77,7 +77,7 @@ include "../bibliotecario/componentes_funcoes/regras_biblioteca.php";
                 </div>
             <?php     
             } else {
-                mysqli_query($link, "INSERT INTO cadastro_usuarios VALUES('','$_POST[nome_completo_usuario]','','$_POST[senha_usuario]','$_POST[email]','$_POST[contact]','$_POST[enrollment]','INATIVO')");
+                mysqli_query($link, "INSERT INTO cadastro_usuarios VALUES('','$_POST[nome_completo_usuario]','','$_POST[senha_usuario]','$_POST[email]','$_POST[contact]','$_POST[enrollment]','INATIVO','usuário')");
         
             ?> 
                 <script type="text/javascript">

@@ -29,7 +29,7 @@ include "../bibliotecario/componentes_funcoes/regras_biblioteca.php";
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel"  style="margin-bottom: 20px">
                             <div class="x_title">
-                                <h2>Plain Page</h2>
+                                <h2>Dados da solicitação</h2>
 
                                 <div class="clearfix"></div>
                             </div>

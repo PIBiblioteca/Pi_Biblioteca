@@ -73,7 +73,7 @@ include "..\usuario\componentes_funcoes\connection.php";
                     <input type="text" name="email" class="form-control" placeholder="E-mail" required="" />
                 </div>
                 <div>
-                    <input type="senha_usuario" name="senha_usuario" class="form-control" placeholder="Senha" required="" />
+                    <input type="password" name="senha_usuario" class="form-control" placeholder="Senha" required="" />
                 </div>
                 <div>
 

@@ -103,7 +103,7 @@ include "../bibliotecario/componentes_funcoes/connection.php";
                                                 echo $row3["student_email"];
                                                 echo "</td>";
                                                 echo "<td>";
-                                                echo $row3["books_issue_date"];
+                                                echo (implode("/",array_reverse(explode("-",($row3["books_issue_date"]))))); // data no formato BR
                                                 echo "</td>";
                                                 echo "<td>";
                                                 echo $row3["books_return_date"];
@@ -182,10 +182,11 @@ include "../bibliotecario/componentes_funcoes/connection.php";
                                                 echo $row3["student_email"];
                                                 echo "</td>";
                                                 echo "<td>";
-                                                echo $row3["books_issue_date"];
+                                                echo (implode("/",array_reverse(explode("-",($row3["books_issue_date"]))))); // data no formato BR
                                                 echo "</td>";
                                                 echo "<td>";
-                                                echo $row3["books_return_date"];
+                                                echo (implode("/",array_reverse(explode("-",($row3["books_return_date"]))))); // data no formato BR
+                                                
                                                 echo "</td>";
                                                 echo "<td>";
                                                 echo $row3["status_emprestimo"];

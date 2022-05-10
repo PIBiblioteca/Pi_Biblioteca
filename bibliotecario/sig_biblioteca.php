@@ -125,6 +125,7 @@ include "../bibliotecario/componentes_funcoes/contadores.php";
                                 </button>
 
                                 <?php
+
                                 //CÓDIGO
                                 //$res=mysqli_query($link, "SELECT * FROM relatorio_sig_biblioteca");
                                 //while($row = mysqli_fetch_array($res)) {

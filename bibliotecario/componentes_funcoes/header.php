@@ -114,17 +114,17 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
                                     class="fa fa-chevron-down"></span></a>
                             </li>
                             -->
-                            <li><a href="historico.php"><i class="fa fa-bar-chart-o"></i> Histórico <span
+                            <li><a href="historico.php"><i class="fa fa-table-list"></i> Histórico <span
                                     class="fa fa-chevron-down"></span></a>
                             </li>
-                            <li><a href="livros.php"><i class="fa fa-desktop"></i> Livros <span
+                            <li><a href="livros.php"><i class="fa fa-book"></i> Livros <span
                                     class="fa fa-chevron-down"></span></a>
 
                             </li>
                             <li><a href="recados.php"><i class="fa fa-mail-forward"></i> Recados <span
                                     class="fa fa-chevron-down"></span></a>
                             
-                                    <li><a href="sig_biblioteca.php"><i class="fa fa-edit"></i> SIG Biblioteca <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="sig_biblioteca.php"><i class="fa fa-file-lines"></i> SIG Biblioteca <span class="fa fa-chevron-down"></span></a>
                             </li>
 
                             </li>
@@ -154,7 +154,7 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
                                 <span class=" fa fa-angle-down"></span>       </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
                             <li><a href="editar_perfil.php"><i class="fa-solid fa-pen-to-square pull-right"></i> Editar perfil</a></li>
-                            <li><a href="editar_regras.php"><i class="fa-solid fa-pen-ruler pull-right"></i> Editar regras</a></li>
+                            <li><a href="editar_regras.php"><i class="fa-solid fa-gavel pull-right"></i> Editar regras</a></li>
                                 <li><a href="componentes_funcoes/logout.php"><i class="fa fa-sign-out pull-right"></i> Sair </a></li>
                             </ul>
                         </li>

@@ -106,7 +106,7 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
                                     class="fa fa-chevron-down"></span></a>
                             </li>
                             
-                            <li><a href="historico.php"><i class="fa fa-bar-chart-o"></i> Histórico <span
+                            <li><a href="historico.php"><i class="fa fa-table-list"></i> Histórico <span
                                     class="fa fa-chevron-down"></span></a>
                             </li>
 
