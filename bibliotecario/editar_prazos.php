@@ -5,7 +5,7 @@ if(!isset($_SESSION["bibliotecario"]))
 {
     ?>
     <script type="text/javascript">
-        window.location="login.php";
+        window.location="../usuario/login.php";
 
     </script>
     <?php
@@ -20,7 +20,7 @@ include "../bibliotecario/componentes_funcoes/header.php";
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Editar regras</h3>
+                        <h3>Editar prazos</h3>
                         <br>
                     </div>
 
@@ -46,7 +46,6 @@ include "../bibliotecario/componentes_funcoes/header.php";
                                 $prazo_devolucao_livro=$row["prazo_devolucao_livro"];
                                 $prazo_suspensao_usuario=$row["prazo_suspensao_usuario"];
                                 $horario_funcionamento=$row["horario_funcionamento"];
-                                $regras_gerais=$row["regras_gerais"];
                             }
                             
                             $image="images/astronauta.png";
@@ -73,22 +72,23 @@ include "../bibliotecario/componentes_funcoes/header.php";
                                     <tr>
                                         <td>Horário de funcionamento<input type="text" class="form-control" placeholder="Descrever onde, como, quando e com quem tratar para retirar livros" name="horario_funcionamento" value="<?php echo $horario_funcionamento; ?>" required=""></td>
                                     </tr>
-                                    <tr>
-                                        
-                                        <td>Regras gerais<input type="text" class="form-control" placeholder="Regulamento completo" name="regras_gerais" value="<?php echo $regras_gerais; ?>" required=""></td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="submit" name="submit1" value="Confirmar"style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px"></td>
-                                    </tr>
+                                    
                                 </table>
+                                <input type="submit" name="submit1" value="Confirmar"style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px; margin-bottom: 15px">
                                 </div>
                                 </form>
+
+                               
+                                </div>
+                               
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        
         <!-- /page content -->
 
 <?php

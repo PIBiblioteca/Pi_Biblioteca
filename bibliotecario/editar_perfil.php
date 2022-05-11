@@ -40,12 +40,10 @@ include "../bibliotecario/componentes_funcoes/header.php";
                             <?php
                             
                             $email=$_SESSION['bibliotecario'];
-                            $res=mysqli_query($link,"SELECT * FROM cadastro_bibliotecario");
+                            $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
                             while($row=mysqli_fetch_array($res))
                             {
-                                $firstname=$row["firstname"];
-                                $lastname=$row["lastname"];
-                                $username=$row["username"];
+                                $nome_completo_usuario=$row["nome_completo_usuario"];
                                 $senha_usuario=$row["senha_usuario"];
                                 $email=$row["email"];
                                 $contact=$row["contact"];                            
@@ -60,7 +58,7 @@ include "../bibliotecario/componentes_funcoes/header.php";
                                 <table class="table table-bordered">
                                 
                                     <tr>
-                                        <td>Primeiro Nome<input type="text" class="form-control" placeholder="First Name" name="firstname" value="<?php echo $firstname; ?>" required=""></td>
+                                        <td>Primeiro Nome<input type="text" class="form-control" placeholder="First Name" name="nome_completo_usuario" value="<?php echo $nome_completo_usuario; ?>" required=""></td>
 
                                     </tr>
                                     <tr>
@@ -78,10 +76,8 @@ include "../bibliotecario/componentes_funcoes/header.php";
                                     <tr>
                                         <td>Contato<input type="text" class="form-control" placeholder="Contact" name="contact" value="<?php echo $contact; ?>" required=""></td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="submit" name="submit1" class="btn btn-default submit" value="Confirmar" style="background-color: green; color: white"></td>
-                                    </tr>
                                 </table>
+                                 <input type="submit" name="submit1" value="Confirmar" style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px; margin-bottom: 15px">
                                 </div>
                                 </form>
                             </div>

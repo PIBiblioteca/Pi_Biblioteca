@@ -77,10 +77,11 @@ include "../usuario/componentes_funcoes/header.php";
                                     <tr>
                                         <td>Contato<input type="text" class="form-control" placeholder="Contact" name="contact" value="<?php echo $contact; ?>" required=""></td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="submit" name="submit1" class="btn btn-default submit" value="Confirmar" style="background-color: green; color: white"></td>
-                                    </tr>
+                                    
+                                        
+                                    
                                 </table>
+                                <input type="submit" name="submit1" value="Confirmar" style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px; margin-bottom: 15px">
                                 </div>
                                 </form>
                             </div>

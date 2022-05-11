@@ -32,7 +32,8 @@ include "..\bibliotecario\componentes_funcoes\header.php";
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                            <a href="..\bibliotecario\componentes_funcoes\adicionar_livros.php"><i class="fa fa-edit"></i> Adicionar livro <span class="fa fa-chevron-down"></span></a>
+                            <a style="padding: 5px 10px; color: white; background-color: #428bca; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px;" href="..\bibliotecario\componentes_funcoes\adicionar_livros.php"> Adicionar livro </a>
+                                <br><br>
                                 <?php 
                                 
                                 // RESULTADO COM PESQUISA
