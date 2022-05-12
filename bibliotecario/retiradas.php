@@ -84,7 +84,7 @@ include "..\bibliotecario\componentes_funcoes\connection.php"
                                             $booksname=$row5["books_name"];
                                         }
 
-                                        mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty+1 WHERE books_name='$booksname'"); //função aumentar quantidade disponível
+                                        mysqli_query($link, "UPDATE adicionar_livros SET quantidade_disponivel=quantidade_disponivel+1 WHERE books_name='$booksname'"); //função aumentar quantidade disponível
                                     }
                                 }
                                ?>
@@ -147,7 +147,7 @@ include "..\bibliotecario\componentes_funcoes\connection.php"
                                             $booksname=$row5["books_name"];
                                         }
 
-                                        mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty+1 WHERE books_name='$booksname'"); //função aumentar quantidade disponível
+                                        mysqli_query($link, "UPDATE adicionar_livros SET quantidade_disponivel=quantidade_disponivel+1 WHERE books_name='$booksname'"); //função aumentar quantidade disponível
                                     }
                                 }
                                ?>

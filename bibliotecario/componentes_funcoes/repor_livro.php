@@ -30,7 +30,7 @@ if(isset($_GET["id"]))
     mysqli_query($link, "UPDATE emprestimos SET status_emprestimo='DEVOLVIDO' WHERE student_enrollment='$enrollment'");
 
     //função aumentar quantidade disponível
-    mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty+1 WHERE books_name='$books_name'");
+    mysqli_query($link, "UPDATE adicionar_livros SET quantidade_disponivel=quantidade_disponivel+1 WHERE books_name='$books_name'");
 
     mysqli_query($link, "DELETE FROM suspensoes WHERE student_enrollment='$enrollment'");
     } 

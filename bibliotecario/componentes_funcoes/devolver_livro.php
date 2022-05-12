@@ -41,7 +41,7 @@ if (strtotime($date) > strtotime($return_date)) {
     mysqli_query($link, "DELETE FROM emprestimos WHERE id='$id'");
 
     //função aumentar quantidade disponível
-    mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty+1 WHERE books_name='$books_name'");
+    mysqli_query($link, "UPDATE adicionar_livros SET quantidade_disponivel=quantidade_disponivel+1 WHERE books_name='$books_name'");
 ?>
     <script type="text/javascript">
         alert("Usuário suspenso até <?php echo (implode("/",array_reverse(explode("-",$suspensionreturndate))));?>)
@@ -58,7 +58,7 @@ mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='ATIVO' WHERE e
 mysqli_query($link, "UPDATE emprestimos SET status_emprestimo='DEVOLVIDO' WHERE id='$id'");
 
 //função aumentar quantidade disponível
-mysqli_query($link, "UPDATE adicionar_livros SET available_qty=available_qty+1 WHERE books_name='$books_name'");
+mysqli_query($link, "UPDATE adicionar_livros SET quantidade_disponivel=quantidade_disponivel+1 WHERE books_name='$books_name'");
 ?>
 
 <script type="text/javascript">

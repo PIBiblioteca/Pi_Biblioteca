@@ -45,10 +45,10 @@ include "..\bibliotecario\componentes_funcoes\header.php";
                                         <td>Imagem do livro<input type="file" name="f1" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Autor" name="bauthorname" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Autor" name="autor_livro" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Editora" name="pname" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Editora" name="editora_livro" required=""></td>
                                     </tr>
                                     <tr>
                                         <td><input type="text" class="form-control" placeholder="Edição" name="edicao" required=""></td>
@@ -57,10 +57,10 @@ include "..\bibliotecario\componentes_funcoes\header.php";
                                         <td><input type="text" class="form-control" placeholder="Preço" name="bprice" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Quantidade" name="bqty" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Quantidade" name="quantidade_livro" required=""></td>
                                     </tr>
                                     <tr>
-                                        <td><input type="text" class="form-control" placeholder="Quantidade disponível" name="aqty" required=""></td>
+                                        <td><input type="text" class="form-control" placeholder="Quantidade disponível" name="quantidade_disponivel" required=""></td>
                                     </tr>
                                     <tr>
                                         <td><input type="submit" name="submit1" class="btn btn-default submit" value="Confirmar" style="background-color: green; color: white"></td>
@@ -84,7 +84,7 @@ include "..\bibliotecario\componentes_funcoes\header.php";
         $dst1="./imagens/books_image/".$tm.$fnm;
         move_uploaded_file($_FILES["f1"]["tmp_name"],$dst);
 
-        mysqli_query($link, "INSERT INTO livros VALUES('','$_POST[booksname]','$dst1','$_POST[bauthorname]','$_POST[pname]','$_POST[edicao]','$_POST[bprice]','$_POST[bqty]','$_POST[aqty]','$_SESSION[bibliotecario]')");
+        mysqli_query($link, "INSERT INTO livros VALUES('','$_POST[booksname]','$dst1','$_POST[autor_livro]','$_POST[editora_livro]','$_POST[edicao]','$_POST[bprice]','$_POST[quantidade_livro]','$_POST[quantidade_disponivel]','$_SESSION[bibliotecario]')");
     ?>
         <script type="text/javascript">
             alert("Livro adicionado com sucesso!");

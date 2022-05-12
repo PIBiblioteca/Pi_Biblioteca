@@ -40,8 +40,8 @@ include "..\bibliotecario\componentes_funcoes\header.php";
                                 if(isset($_POST["submit1"])) {
                                     $res=mysqli_query($link, "SELECT * FROM livros 
                                     WHERE books_name LIKE('%$_POST[t1]%')
-                                    OR books_author_name LIKE('%$_POST[t1]%')
-                                    OR books_publication_name LIKE('%$_POST[t1]%')
+                                    OR autor_livro LIKE('%$_POST[t1]%')
+                                    OR editora_livro LIKE('%$_POST[t1]%')
                                     OR edicao LIKE('%$_POST[t1]%')
                                     ");
                                     $contador=0; //contador para exibir resultado caso while não der retorno
@@ -68,12 +68,12 @@ include "..\bibliotecario\componentes_funcoes\header.php";
                                         echo "<tr>";
                                         echo "<td>"; ?> <img src="<?php echo $row["images/books_image"]; ?>" height="100" width="100"> <?php echo "</td>";
                                         echo "<td>"; echo $row["books_name"]; echo "</td>";
-                                        echo "<td>"; echo $row["books_author_name"]; echo "</td>";
-                                        echo "<td>"; echo $row["books_publication_name"]; echo "</td>";
+                                        echo "<td>"; echo $row["autor_livro"]; echo "</td>";
+                                        echo "<td>"; echo $row["editora_livro"]; echo "</td>";
                                         echo "<td>"; echo $row["edicao"]; echo "</td>";
                                         echo "<td>"; echo $row["books_price"]; echo "</td>";
-                                        echo "<td>"; echo $row["books_qty"]; echo "</td>";
-                                        echo "<td>"; echo $row["available_qty"]; echo "</td>";
+                                        echo "<td>"; echo $row["quantidade_livro"]; echo "</td>";
+                                        echo "<td>"; echo $row["quantidade_disponivel"]; echo "</td>";
                                         echo "<td>"; ?> <a href="delete_books.php?id=<?php echo $row["id"]; ?>">Delete Books</a> <?php echo "</td>";
                                         echo "<td>"; ?> <a href="editar_livro.php?id=<?php echo $row["id"]; ?>">Edit Book</a> <?php echo "</td>";
                                         echo "</tr>";

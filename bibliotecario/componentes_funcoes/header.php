@@ -154,7 +154,7 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
                                 <span class=" fa fa-angle-down"></span>       </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
                             <li><a href="editar_perfil.php"><i class="fa-solid fa-pen-to-square pull-right"></i> Editar perfil</a></li>
-                            <li><a href="editar_prazos.php"><i class="fa-solid fa-gavel pull-right"></i> Editar prazos</a></li>
+                            <li><a href="editar_prazos.php"><i class="fa-solid fa-pen pull-right"></i> Editar prazos</a></li>
                             <li><a href="editar_regulamento.php"><i class="fa-solid fa-gavel pull-right"></i> Editar regulamento</a></li>
                             <li><a href="componentes_funcoes/logout.php"><i class="fa fa-sign-out pull-right"></i> Sair </a></li>
                             </ul>

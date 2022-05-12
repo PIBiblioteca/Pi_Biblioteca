@@ -11,9 +11,9 @@ if(!isset($_SESSION["email"]))
     <?php
 }
 
-$email=$_SESSION["email"];
+
 include "../usuario/componentes_funcoes/header.php";
-include "usuario/componentes_funcoes/connection.php";
+include "../usuario/componentes_funcoes/connection.php";
 mysqli_query($link, "UPDATE recados SET read1='y' WHERE email='$_SESSION[email]'");
 ?>
 
@@ -52,7 +52,10 @@ mysqli_query($link, "UPDATE recados SET read1='y' WHERE email='$_SESSION[email]'
                                     echo "<tr>";
                                     echo "<td>"; echo $row["title"]; echo "</td>"; 
                                     echo "<td>"; echo $row["msg"]; echo "</td>";
-                                    echo "<td>"; echo $row["data_msg"]; echo "</td>";
+                                    $data_msg=$row["data_msg"];
+                                    echo "<td>"; echo (implode("/",array_reverse(explode("-",($data_msg))))); echo "</td>";
+                                    
+                                    
                                     echo "</tr>";
                             }
                             ?>
