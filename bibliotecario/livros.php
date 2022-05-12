@@ -106,8 +106,23 @@ include "..\bibliotecario\componentes_funcoes\header.php";
                                 echo "<th>"; echo "Editar Livro"; echo "</th>";
                                 echo "</tr>";
                                 while($row = mysqli_fetch_array($res)) {
+                                                                       
                                     echo "<tr>";
-                                    echo "<td>"; ?> <img src="<?php echo $row['images/books_image']; ?> <?php echo "</td>";
+
+                                    if($row["imagem_livro"]==''){
+                                        echo "<td align='center'>";
+                                        echo "";?><img style="width: 85px; height:120px" src="../images/CAPA NÃO cARREGADA.jpg" alt=""><?php
+                                        echo "<br>";
+                                    }
+                                    else {
+                                        echo "<td>"; ?> <img style="width: 85px; height:120px" src="<?php echo $row['imagem_livro']; ?>"> <?php echo "</td>";
+                                    
+                                    echo "<br>";
+                                    }                                             
+                                    
+                                    
+
+
                                     echo "<td>"; echo $row["categoria_livro"]; echo "</td>";
                                     echo "<td>"; echo $row["isbn_livro"]; echo "</td>";
                                     echo "<td>"; echo $row["titulo_livro"]; echo "</td>";
@@ -115,9 +130,9 @@ include "..\bibliotecario\componentes_funcoes\header.php";
                                     echo "<td>"; echo $row["quantidade_livro"]; echo "</td>";
                                     echo "<td>"; echo $row["editora_livro"]; echo "</td>";
                                     echo "<td>"; echo $row["edicao_livro"]; echo "</td>";
-                                    echo "<td>"; ?> <a style="padding: 5px 10px; color: white; background-color: brown; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px;" href="delete_books.php?id_livro=<?php echo $row["id_livro"]; ?>">Deletar</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a style="padding: 5px 10px; color: white; background-color: brown; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="delete_books.php?id_livro=<?php echo $row["id_livro"]; ?>">Deletar</a> <?php echo "</td>";
 
-                                    echo "<td>"; ?> <a style="padding: 5px 10px; color: white; background-color: #428bca; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px;" href="editar_livro.php?id_livro=<?php echo $row["id_livro"]; ?>">Editar</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a style="padding: 5px 10px; color: white; background-color: #428bca; border: none; border-radius: 5px; box-shadow: none; margin: 0;" href="editar_livro.php?id_livro=<?php echo $row["id_livro"]; ?>">Editar</a> <?php echo "</td>";
                                     echo "</tr>";
                                     
                                 }

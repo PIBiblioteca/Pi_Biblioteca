@@ -50,7 +50,7 @@ include "../bibliotecario/componentes_funcoes/header.php";
                                 
                                 $titulo_livro=$row["titulo_livro"];
                                 $categoria_livro=$row["categoria_livro"];
-                                $dst=$row["../images/books_image"];
+                                $dst=$row["imagem_livro"];
                                 $autor_livro=$row["autor_livro"];
                                 $quantidade_livro=$row["quantidade_livro"];
                                 $isbn_livro=$row["isbn_livro"];
@@ -136,7 +136,7 @@ include "../bibliotecario/componentes_funcoes/header.php";
         else
         {
         // ATUALIZA TABELA "livros"
-        mysqli_query($link, "UPDATE livros SET categoria_livro='$POST[categoria_livro]', titulo_livro='$_POST[titulo_livro]', imagens/books_image='$dst1', autor_livro ='$_POST[autor_livro]', editora_livro ='$_POST[editora_livro]', edicao_livro ='$_POST[edicao_livro]', quantidade_livro ='$_POST[quantidade_livro]', quantidade_disponivel ='$_POST[quantidade_disponivel]' WHERE id_livro='$id_livro'");
+        mysqli_query($link, "UPDATE livros SET categoria_livro='$_POST[categoria_livro]', titulo_livro='$_POST[titulo_livro]', imagem_livro='$dst1', autor_livro ='$_POST[autor_livro]', editora_livro ='$_POST[editora_livro]', edicao_livro ='$_POST[edicao_livro]', quantidade_livro ='$_POST[quantidade_livro]', quantidade_disponivel ='$_POST[quantidade_disponivel]' WHERE id_livro='$id_livro'");
         // ATUALIZA TABELA "EMPRESTIMOS"
         mysqli_query($link, "UPDATE emprestimos SET books_name='$_POST[titulo_livro]' WHERE titulo_livro='$titulo_livro'");
         // ATUALIZA TABELA "SOLICITACOES"
