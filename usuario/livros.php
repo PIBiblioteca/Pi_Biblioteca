@@ -14,7 +14,9 @@ include "../usuario/componentes_funcoes/connection.php";
 ?>
 
         <!-- page content area main -->
-        <link rel="stylesheet" href="..usuario/css/header.css"> 
+        <link rel="stylesheet" href="../usuario/css/header.css"> 
+        <link rel="stylesheet" href="../usuario/css/pesquisar.css"> 
+
         
         <div class="right_col" role="main">
             <div class="">
@@ -24,37 +26,34 @@ include "../usuario/componentes_funcoes/connection.php";
                     </div>
                     
                     <!-- menu pesquisa -->
+                    <div class="title_right">
                     <form name="form1" action="" method="post">
-                        <div class="title_right">
+                       
                             <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                                 <div class="input-group">
-
                                         <input type="text" name="t1" class="form-control" placeholder="Pesquisar">
                                             <span class="input-group-btn">
                                                 <button type="submit" name="submit1" id="search books" class="btn btn-default"><i class="fa-solid fa-magnifying-glass"></i></button>
                                             </span>
-                                    
                                 </div>
                             </div>
-
-                            <select name="select" style="width: 150px; height: 32px; float: right; padding-left: 20px; color: #9e9fa0; background-color: white; border: none; border-radius: 5px; box-shadow: inset 0 1px 0 rgb(0 0 0 / 8%); margin: 0; margin: 5px; margin-top: 11px;">
-                            <option value="valor1" selected>Categorias</option>
-                            <option value="valor2">G3E</option>
-                            <option value="valor3">GTI</option>
-                            <option value="valor4">Cultura Geral</option>
+                      
+                            <select class="select" name="select" style="width: 150px; height: 32px; float: right; padding-left: 20px; color: #9e9fa0; background-color: white; border: none; border-radius: 5px; box-shadow: inset 0 1px 0 rgb(0 0 0 / 8%); margin: 0; margin: 5px; margin-top: 11px;">
+                            <option class="option" value="" hidden>Categorias</option>
+                            <option class="option" value="valor1">G3E</option>
+                            <option class="option" value="valor2">GTI</option>
+                            <option class="option" value="valor3">Cultura Geral</option>
                             </select>
-
-                            
-                        </div>
-                        
-                    </form>
+                    
+                    </div>          
+                </div>
+                </form>           
                     <!-- / menu pesquisa -->
 
                     
 
                             
-                            
-                </div>
+                
 
                 <div class="clearfix"></div>
                 <div class="row" style="min-height:500px">
@@ -140,7 +139,7 @@ include "../usuario/componentes_funcoes/connection.php";
                                         echo "LIVRO INDISPONÍVEL";
                                     }              
                                     else {
-                                    echo "<b>"; ?> <button style="background-color: #428bca; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin-top: 8px; margin-bottom: 5px"  > <a style="color: white" href="../usuario/solicitar_emprestimo.php?id_livro=<?php echo $row["id_livro"]; ?>">Solicitar <br> empréstimo</a> </button> <?php echo "</b>";
+                                    echo "<b>"; ?> <button style="background-color: #57bd84; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin-top: 8px; margin-bottom: 5px"  > <a style="color: white" href="../usuario/solicitar_emprestimo.php?id_livro=<?php echo $row["id_livro"]; ?>">Solicitar <br> empréstimo</a> </button> <?php echo "</b>";
                                     }      
                                 echo "<br>";    
                                 echo "<b style='color: #428bca'>".$row["titulo_livro"]."</b>";
