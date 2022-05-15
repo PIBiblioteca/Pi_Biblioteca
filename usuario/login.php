@@ -73,7 +73,7 @@ include "..\usuario\componentes_funcoes\connection.php";
                     <input type="text" name="email" class="form-control" placeholder="E-mail" required="" />
                 </div>
                 <div>
-                    <input type="password" name="password" class="form-control" placeholder="Senha" required="" />
+                    <input type="password" name="senha_usuario" class="form-control" placeholder="Senha" required="" />
                 </div>
                 <div>
 
@@ -103,7 +103,7 @@ include "..\usuario\componentes_funcoes\connection.php";
     
     if (isset($_POST["submit1"])) {
         $count = 0;
-        $res = mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$_POST[email]' && password='$_POST[password]' && (status_usuario='ATIVO' OR status_usuario='SUSPENSO')");
+        $res = mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$_POST[email]' && senha_usuario='$_POST[senha_usuario]' && (status_usuario='ATIVO' OR status_usuario='SUSPENSO')");
         $count = mysqli_num_rows($res);
 
         if ($count == 0) {
@@ -113,12 +113,35 @@ include "..\usuario\componentes_funcoes\connection.php";
             </div>
     <?php
         } else {
-            $_SESSION["email"]=$_POST["email"];
-            ?>
-            <script type="text/javascript">
-                window.location="meus_emprestimos.php";
-            </script>
+            
+            while($row = mysqli_fetch_array($res)){
+                $nivel_usuario=$row["nivel_usuario"];
+            }
+            if($nivel_usuario=='usuário'){
+                $_SESSION["usuario"]=$_POST["email"];
+                ?>
+                <script type="text/javascript">
+                    window.location="../usuario/meus_emprestimos.php";
+                </script>
+            
             <?php
+            }
+            if($nivel_usuario=='bibliotecário'){
+                $_SESSION["bibliotecario"]=$_POST["email"];
+                ?>
+                <script type="text/javascript">
+                    window.location="../bibliotecario/cadastros.php";
+                </script>
+                <?php
+            }
+            if($nivel_usuario=='admin'){
+                $_SESSION["admin"]=$_POST["email"];
+                ?>
+                <script type="text/javascript">
+                    window.location="../secretaria/cadastros.php";
+                </script>
+                <?php
+            }
         }
     }
     ?>

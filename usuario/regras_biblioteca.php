@@ -35,25 +35,38 @@ include "..\usuario\componentes_funcoes\header.php";
                             </div>
                             <div class="x_content">
                                 
-                            <?php
+                           <table  style='border: none;'>
                            
+                           <?php
+                           
+                          
+                           $index = 0;   
                                 $res=mysqli_query($link, "SELECT * FROM regras_biblioteca");
                                 while($row=mysqli_fetch_array($res)) {
-                                
+                       
+          
+                                if($index%2==0){ 
+                                    echo "<tr>";
+                                    echo "<td style='background-color:#efecec; padding: 10px'>"; echo $row["id_regra"]; echo "</td>"; 
+                                    echo "<td style='background-color:#efecec; padding: 10px'>"; echo $row["regra"]; echo "</td>"; 
+                                    echo "</tr>";
+                                    
+                                 }
+                                else {                                         
+                                    echo "<tr>";
+                                    echo "<td style='padding: 10px'>"; echo $row["id_regra"]; echo "</td>"; 
+                                    echo "<td style='padding: 10px'>"; echo $row["regra"]; echo "</td>"; 
+                                    echo "</tr>";
+                                    
+                                }
+                                    
+                                $index++;      
+                                    
 
-                                echo "<table class='table table-bordered'>";
-                                echo "<tr>";
-                                echo "<th>"; echo "Id"; echo "</th>";
-                                echo "<th>"; echo "Regra"; echo "</th>";
-                                echo "</tr>";
-
-                                echo "<tr>";
-                                echo "<td>"; echo $row["id_regra"]; echo "</td>"; 
-                                echo "<td>"; echo $row["regra"]; echo "</td>"; 
                                 
-                                echo "</table>";    
+                                
                             }
-
+                            echo "</table>";  
                             ?>
 
 

@@ -30,9 +30,9 @@
       <div class="placeholder">Usuário</div>
     </div>
     <div class="textb">
-      <input type="password" id="senha" required>
+      <input type="senha_usuario" id="senha" required>
       <div class="placeholder">Senha</div>
-      <div class="show-password fas fa-eye-slash"></div>
+      <div class="show-senha_usuario fas fa-eye-slash"></div>
     </div>
 
     <div class="checkbox">
@@ -40,7 +40,7 @@
       <div class="fas fa-check"></div>
       Lembrar de mim
     </div>
-    <a href="/GitHub/Pi_Biblioteca/php/bibliotecaria/t1_retiradas.php"><button class="btn fas fa-arrow-right" disabled onclick="teste()"></button></a>
+    <a href="/GitHub/Pi_Biblioteca/php/bibliotecario/t1_retiradas.php"><button class="btn fas fa-arrow-right" disabled onclick="teste()"></button></a>
 
     <a href="#"> Esqueci minha senha </a>
   </div>
@@ -61,7 +61,7 @@
      fields[0].addEventListener("keyup", check);
      fields[1].addEventListener("keyup", check);
 
-     document.querySelector(".show-password").addEventListener("click", function () {
+     document.querySelector(".show-senha_usuario").addEventListener("click", function () {
        if (this.classList[2] == "fa-eye-slash") {
          this.classList.remove("fa-eye-slash");
          this.classList.add("fa-eye");
@@ -69,7 +69,7 @@
        } else {
          this.classList.remove("fa-eye");
          this.classList.add("fa-eye-slash");
-         fields[1].type = "password";
+         fields[1].type = "senha_usuario";
        }
      });
      
