@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["email"]))
+if(!isset($_SESSION["librarian"]))
 {
     ?>
     <script type="text/javascript">
@@ -9,8 +9,8 @@ if(!isset($_SESSION["email"]))
     </script>
     <?php
 }
-include "../users/componentes.php/header.php";
-include "connection.php";
+include "../librarian/componentes_funcoes/header.php";
+include "../librarian/componentes_funcoes/connection.php";
 ?>
 
         <!-- page content area main -->
@@ -18,7 +18,7 @@ include "connection.php";
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Recados</h3>
+                        <h3>Mudar senha</h3>
                         <br>
                     </div>
 
@@ -35,8 +35,8 @@ include "connection.php";
                             </div>
                             <div class="x_content">
                                 <?php
-                                    $email=$_SESSION['email'];
-                                    $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
+                                    $email=$_SESSION['librarian'];
+                                    $res=mysqli_query($link,"SELECT * FROM cadastro_bibliotecaria");
                                     while($row=mysqli_fetch_array($res))
                                     {
                                         $password=$row["password"];
@@ -89,7 +89,7 @@ include "connection.php";
             if (($_POST["nova_senha"])==($_POST["confirmar_senha"])) {
                 echo "Confirmação correta";
                 // ATUALIZA TABELA "cadastro_bibliotecaria"
-                mysqli_query($link, "UPDATE cadastro_usuarios SET password='$_POST[nova_senha]' WHERE email='$email'");
+                mysqli_query($link, "UPDATE cadastro_bibliotecaria SET password='$_POST[nova_senha]'");
                 ?>
                     <script type="text/javascript">
                         alert("Senha atualizada com sucesso");
@@ -123,7 +123,7 @@ include "connection.php";
 
     ?>
 <?php
-include "footer.php";
+include "../librarian/componentes_funcoes/footer.php";
 ?>
 
        

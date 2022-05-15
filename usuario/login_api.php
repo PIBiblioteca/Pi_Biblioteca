@@ -44,7 +44,7 @@ include "../users/componentes/connection.php";
                     <input type="text" id="ra" name="ra" class="form-control" placeholder="RA" required="" />
                 </div>
                 <div>
-                    <input type="senha_usuario" id="senha_usuario" name="senha_usuario" class="form-control" placeholder="Senha" required="" />
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Senha" required="" />
                 </div>
                 <div>
 
@@ -76,7 +76,7 @@ include "../users/componentes/connection.php";
 
         $.post('http://localhost:3000/login', { // depois carregar Heroku aqui
             "usuario": $("#ra").val(),
-            "senha": $("#senha_usuario").val()
+            "senha": $("#password").val()
         }, function(response) {
             if (response.result) {
                 
@@ -96,7 +96,7 @@ include "../users/componentes/connection.php";
 </html>
 
 <!-- $count = 0;
-$res = mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$_POST[email]' && senha_usuario='$_POST[senha_usuario]' && (status_usuario='ATIVO' OR status_usuario='SUSPENSO')");
+$res = mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$_POST[email]' && password='$_POST[password]' && (status_usuario='ATIVO' OR status_usuario='SUSPENSO')");
 $count = mysqli_num_rows($res); -->
 
 <!-- <div class="alert alert-danger col-lg-6 col-lg-push-3">

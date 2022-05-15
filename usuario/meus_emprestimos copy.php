@@ -10,7 +10,7 @@ if(!isset($_SESSION["email"]))
 }
 include "..\usuario\componentes_funcoes\connection.php";
 include "..\usuario\componentes_funcoes\header.php";
-include "..\bibliotecario\componentes_funcoes\contadores.php";
+include "..\bibliotecaria\componentes_funcoes\contadores.php";
 ?>
 
 

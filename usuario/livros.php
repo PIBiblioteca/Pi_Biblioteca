@@ -131,7 +131,7 @@ include "../usuario/componentes_funcoes/connection.php";
                             else // código de exibir livros
                             {
                                 $i=0;
-                                $res=mysqli_query($link, "SELECT * FROM livros"); //função de exibir somente livros disponíveis: SELECT * FROM adicionar_livros WHERE quantidade_disponivel>0
+                                $res=mysqli_query($link, "SELECT * FROM livros"); //função de exibir somente livros disponíveis: SELECT * FROM adicionar_livros WHERE available_qty>0
                                 echo "<div id='container'>";
                                 echo "<table class='table table-bordered' >";
                                 echo "<tr>";
