@@ -6,22 +6,22 @@ $email=$_SESSION['email'];
 $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
         while($row=mysqli_fetch_array($res))
         {                                
-            $image=$row["imagem_perfil_usuario"];
-            $nome_completo_usuario=$row["nome_completo_usuario"];
+            $image=$row["profile_image"];
+            $fullname=$row["fullname"];
         }
 //fim menu de usuário
 
 //Menu de recados
 $tot=0;
-$res=mysqli_query($link, "SELECT * FROM recados WHERE dusername='$nome_completo_usuario' && read1='n'");
+$res=mysqli_query($link, "SELECT * FROM recados WHERE dusername='$fullname' && read1='n'");
 $tot=mysqli_num_rows($res);
 //Fim menu de recados
 
 $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
         while($row=mysqli_fetch_array($res))
         {                                
-            $image=$row["imagem_perfil_usuario"];
-            $nome_completo_usuario=$row["nome_completo_usuario"];
+            $image=$row["profile_image"];
+            $fullname=$row["fullname"];
         }
 if($image==''){
     $image="images/astronauta.png";
@@ -89,7 +89,7 @@ if($image==''){
                     </div>
                     <div class="profile_info">
                         <span style="color: white">Olá,</span>
-                        <h2> <b><?php echo $nome_completo_usuario; ?></b></h2>
+                        <h2> <b><?php echo $fullname; ?></b></h2>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -105,10 +105,10 @@ if($image==''){
                             <li><a href="../usuario/meus_emprestimos.php"><i class="fa fa-home"></i> Meus empréstimos <span class="fa fa-chevron-down"></span></a>
                             </li>
 
-                            <li><a href="../usuario/livros.php"><i class="fa fa-book"></i> Buscar livros <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="../usuario/livros.php"><i class="fa fa-edit"></i> Buscar livros <span class="fa fa-chevron-down"></span></a>
                             </li>
                             
-                            <li><a href="../usuario/regras_biblioteca.php"><i class="fa fa-gavel"></i> Regras da biblioteca <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="../usuario/regras_biblioteca.php"><i class="fa fa-edit"></i> Regras da biblioteca <span class="fa fa-chevron-down"></span></a>
                             </li>
                         </ul>
                     </div>
@@ -131,11 +131,11 @@ if($image==''){
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="<?php echo $image; ?>" alt=""><?php echo $nome_completo_usuario; ?>
+                                <img src="<?php echo $image; ?>" alt=""><?php echo $fullname; ?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="editar_perfil.php?id=<?php echo $nome_completo_usuario; ?>"><i class="fa-solid fa-pen-to-square pull-right"></i> Editar perfil</a></li>
+                                <li><a href="componentes_funcoes/editar_perfil.php?id=<?php echo $fullname; ?>"><i class="fa-solid fa-pen-to-square pull-right"></i> Editar perfil</a></li>
                                 <li><a href="../usuario/login.php"><i class="fa fa-sign-out pull-right"></i> Sair </a></li>
                             </ul>
                             

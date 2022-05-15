@@ -36,7 +36,7 @@ include "..\usuario\componentes_funcoes\header.php";
                             <div class="x_content">
                                 
                             <?php
-                           
+                            echo "<td>"; ?> <a href="../usuario/componentes_funcoes/adicionar_regra.php">Adicionar regra</a> <?php echo "</td>";
                                 $res=mysqli_query($link, "SELECT * FROM regras_biblioteca");
                                 while($row=mysqli_fetch_array($res)) {
                                 
@@ -51,6 +51,11 @@ include "..\usuario\componentes_funcoes\header.php";
                                 echo "<td>"; echo $row["id_regra"]; echo "</td>"; 
                                 echo "<td>"; echo $row["regra"]; echo "</td>"; 
                                 
+                                
+                                echo "<td>"; ?> <a href="delete_books.php?id=<?php echo $row["id"]; ?>">Deletar</a> <?php echo "</td>";
+                                
+                                echo "<td>"; ?> <a href="editar_livro.php?id=<?php echo $row["id"]; ?>">Editar</a> <?php echo "</td>";
+                                echo "</tr>";
                                 echo "</table>";    
                             }
 

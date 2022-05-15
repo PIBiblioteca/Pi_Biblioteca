@@ -48,6 +48,7 @@
 
 
 <body class="nav-md">
+<div class="container">
 <div class="container body">
     <div class="main_container">
         <div class="col-md-3 left_col">
@@ -90,18 +91,34 @@
                         <h3>Menu</h3>
                         <ul class="nav side-menu">
                             <li><a href="cadastros.php"><i class="fa fa-home"></i> Cadastros <span class="fa fa-chevron-down"></span></a>
-                            
+
+                            </li>
+                            <li><a href="retiradas.php"><i class="fa fa-table"></i> Retiradas <span class="fa fa-chevron-down"></span></a>
+
+                            </li>
+                            <li><a href="devolucoes.php"><i class="fa fa-bar-chart-o"></i> Devoluções <span
+                                    class="fa fa-chevron-down"></span></a>
+
+                            </li>
+                            <!--
                             <li><a href="suspensoes.php"><i class="fa fa-bar-chart-o"></i> Suspensões <span
                                     class="fa fa-chevron-down"></span></a>
                             </li>
-                            
+                            -->
                             <li><a href="historico.php"><i class="fa fa-bar-chart-o"></i> Histórico <span
                                     class="fa fa-chevron-down"></span></a>
                             </li>
                             <li><a href="livros.php"><i class="fa fa-desktop"></i> Livros <span
                                     class="fa fa-chevron-down"></span></a>
+
                             </li>
-                        
+                            <li><a href="recados.php"><i class="fa fa-mail-forward"></i> Recados <span
+                                    class="fa fa-chevron-down"></span></a>
+                            
+                                    <li><a href="sig_biblioteca.php"><i class="fa fa-edit"></i> SIG Biblioteca <span class="fa fa-chevron-down"></span></a>
+                            </li>
+
+                            </li>
 
                         </ul>
                     </div>
@@ -137,6 +154,7 @@
                        
                     </ul>
                 </nav>
+            </div>
             </div>
         </div>
         <!-- /top navigation -->

@@ -8,11 +8,11 @@ if(!isset($_SESSION["librarian"]))
     </script>
     <?php
 }
-include "../secretaria/componentes_funcoes/header.php";
-include "../bibliotecaria/componentes_funcoes/connection.php";
-include "../bibliotecaria/componentes_funcoes/contadores.php";
+include "..\bibliotecaria\componentes_funcoes\header.php";
+include "..\bibliotecaria\componentes_funcoes\connection.php";
+include "..\bibliotecaria\componentes_funcoes\contadores.php";
 ?>
-
+  
         <!-- page content area main -->
         <div class="right_col" role="main">
             <div class="">
@@ -21,7 +21,7 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                         <h3>Cadastros</h3>
                     </div>
 
-                    <?php include "../bibliotecaria/componentes_funcoes/botao_pesquisar.php";?>
+                    <?php include "..\bibliotecaria\componentes_funcoes\botao_pesquisar.php";?>
                     
                 </div>
 
@@ -117,7 +117,7 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                                     echo "<td>"; echo $row["contact"]; echo "</td>";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";
                                     echo "<td>"; echo $row["status_usuario"]; echo "</td>";
-                                    echo "<td>"; ?> <a style="color: green" href="aprovar_cadastro.php?id_cadastro=<?php echo $row["id_cadastro"]; ?>">SIM</a> |
+                                    echo "<td>"; ?> <a style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px" href="aprovar_cadastro.php?id_cadastro=<?php echo $row["id_cadastro"]; ?>">SIM</a> |
                                     <a style="color: brown" href="nao_aprovar_cadastro.php?id=<?php echo $row["id_cadastro"]; ?>">NÃO</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
@@ -151,8 +151,8 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                                     echo "<td>"; echo $row["contact"]; echo "</td>";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";
                                     echo "<td>"; echo $row["status_usuario"]; echo "</td>";
-                                    echo "<td>"; ?> <a style="color: green" href="aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">SIM</a> |
-                                    <a style="color: brown" href="nao_aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">NÃO</a> <?php echo "</td>";
+                                    echo "<td>"; ?> <a style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">SIM</a> 
+                                    <a style="padding: 5px 10px; color: white; background-color: brown; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="nao_aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">NÃO</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</table>";
@@ -167,7 +167,7 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
             </div>
         </div>
         <!-- /page content -->
-
+    
 <?php
 include "../usuario/componentes_funcoes/footer.php";
 ?>

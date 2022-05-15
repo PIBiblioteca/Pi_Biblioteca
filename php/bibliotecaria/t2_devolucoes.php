@@ -31,11 +31,11 @@ $conn = $conexao->query($consulta) or die($conexao->error);
         <span id="hamburger"></span>
       </button>
       <ul id="menu" role="menu">
-        <li><a href="/GitHub/Pi_Biblioteca/php/bibliotecario/t1_retiradas.php">Retiradas</a></li>
-        <li><a class="destaque" href="/GitHub/Pi_Biblioteca/php/bibliotecario/t2_devolucoes.php">Devoluções</a></li>
-        <li><a href="/GitHub/Pi_Biblioteca/php/bibliotecario/t3_livros.php">Livros</a></li>
-        <li><a href="/GitHub/Pi_Biblioteca/php/bibliotecario/t4_suspensoes.php">Suspensões</a></li>
-        <li><a href="/GitHub/Pi_Biblioteca/php/bibliotecario/t5_recados.php">Recados</a></li>
+        <li><a href="/GitHub/Pi_Biblioteca/php/bibliotecaria/t1_retiradas.php">Retiradas</a></li>
+        <li><a class="destaque" href="/GitHub/Pi_Biblioteca/php/bibliotecaria/t2_devolucoes.php">Devoluções</a></li>
+        <li><a href="/GitHub/Pi_Biblioteca/php/bibliotecaria/t3_livros.php">Livros</a></li>
+        <li><a href="/GitHub/Pi_Biblioteca/php/bibliotecaria/t4_suspensoes.php">Suspensões</a></li>
+        <li><a href="/GitHub/Pi_Biblioteca/php/bibliotecaria/t5_recados.php">Recados</a></li>
         <li><a href="/GitHub/Pi_Biblioteca/php/t0_index.html" class="sair">Sair</a></li>
       </ul>
     </nav>
