@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["librarian"]))
+if(!isset($_SESSION["bibliotecario"]))
 {
     ?>
     <script type="text/javascript">
@@ -57,7 +57,7 @@ include "connection.php";
                                     echo "<tr>";
                                     while($row = mysqli_fetch_array($res)) {
                                         $i=$i+1;
-                                        echo "<td>"; ?> <img src="../librarian/<?php echo $row["books_image"]; ?>" height="100" width="100">  <?php 
+                                        echo "<td>"; ?> <img src="../bibliotecario/<?php echo $row["books_image"]; ?>" height="100" width="100">  <?php 
                                         echo "<br>";
                                         echo "<b>".$row["books_name"]."</b>";
                                         echo "<br>";

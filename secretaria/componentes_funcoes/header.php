@@ -1,3 +1,14 @@
+<?php
+include "connection.php";
+//menu de usuário, nome
+$email=$_SESSION['admin'];
+$res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
+        while($row=mysqli_fetch_array($res))
+        {                                
+            $nome_completo_usuario=$row["nome_completo_usuario"];
+        }
+//fim menu de usuário
+?>
 <!DOCTYPE html>
 <html lang="en">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -53,7 +64,7 @@
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="../bibliotecaria/cadastros.php" class="site_title"><img src="..\images\favicon_bibliofateca.png" alt=""style="width: 45px"> <span>Biblio<b>Fatec</b>a</span></a>
+                    <a href="../bibliotecario/cadastros.php" class="site_title"><img src="..\images\favicon_bibliofateca.png" alt=""style="width: 45px"> <span>Biblio<b>Fatec</b>a</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -75,7 +86,7 @@
                     
                         <span style="color: white">Olá,</span>
 
-                        <h2><b></b><?php echo $_SESSION["librarian"]; ?></b></h2>
+                        <h2><b></b><?php echo $nome_completo_usuario; ?></b></h2>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -95,13 +106,9 @@
                                     class="fa fa-chevron-down"></span></a>
                             </li>
                             
-                            <li><a href="historico.php"><i class="fa fa-bar-chart-o"></i> Histórico <span
+                            <li><a href="historico.php"><i class="fa fa-table-list"></i> Histórico <span
                                     class="fa fa-chevron-down"></span></a>
                             </li>
-                            <li><a href="livros.php"><i class="fa fa-desktop"></i> Livros <span
-                                    class="fa fa-chevron-down"></span></a>
-                            </li>
-                        
 
                         </ul>
                     </div>
@@ -124,13 +131,12 @@
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="..\images\astronauta.png" alt=""><?php echo $_SESSION["librarian"]; ?>
+                                <img src="..\images\astronauta.png" alt=""><?php echo $nome_completo_usuario; ?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
                             <li><a href="editar_perfil.php"><i class="fa-solid fa-pen-to-square pull-right"></i> Editar perfil</a></li>
-                            <li><a href="editar_regras.php"><i class="fa-solid fa-pen-ruler pull-right"></i> Editar regras</a></li>
-                                <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Sair </a></li>
+                                <li><a href="../secretaria/componentes_funcoes/logout.php"><i class="fa fa-sign-out pull-right"></i> Sair </a></li>
                             </ul>
                         </li>
 

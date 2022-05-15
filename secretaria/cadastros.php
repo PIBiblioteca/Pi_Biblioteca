@@ -1,16 +1,16 @@
 <?php
 session_start();
-if(!isset($_SESSION["librarian"]))
+if(!isset($_SESSION["admin"]))
 {
     ?>
     <script type="text/javascript">
-        window.location="login.php";
+        window.location="../usuario/login.php";
     </script>
     <?php
 }
 include "../secretaria/componentes_funcoes/header.php";
-include "../bibliotecaria/componentes_funcoes/connection.php";
-include "../bibliotecaria/componentes_funcoes/contadores.php";
+include "../bibliotecario/componentes_funcoes/connection.php";
+include "../bibliotecario/componentes_funcoes/contadores.php";
 ?>
 
         <!-- page content area main -->
@@ -21,7 +21,7 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                         <h3>Cadastros</h3>
                     </div>
 
-                    <?php include "../bibliotecaria/componentes_funcoes/botao_pesquisar.php";?>
+                    <?php include "../bibliotecario/componentes_funcoes/botao_pesquisar.php";?>
                     
                 </div>
 
@@ -41,36 +41,36 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                             <table style="margin:auto; font-weight: bold;">
                             <tr>
                                 <td style="padding: 30px; background-color: #2A3F54; color: white">
-                                    <?php
+                                    <a href="livros.php"><?php
                                     echo "Livros da biblioteca:" 
-                                    ?>
+                                    ?></a>
                                 </td>
                                 <td style="padding: 30px; background-color: #b20000; color: white">
-                                    <?php
+                                    <a href="livros.php"><?php
                                     echo "$contador_livros_disponiveis";
-                                    ?>
+                                    ?></a>
                                 </td>
                                 <td style="padding: 10px; background-color: white"></td>
                                 <td style="padding: 30px; background-color: #2A3F54; color: white">
-                                    <?php
+                                    <a href="historico.php"><?php
                                     echo "Livros emprestados:" 
-                                    ?>
+                                    ?></a>
                                 </td>
                                 <td style="padding: 30px; background-color: #b20000; color: white">
-                                    <?php
+                                    <a href="historico.php"><?php
                                     echo "$contador_livros_emprestados";
-                                    ?>
+                                    ?></a>
                                 </td>
                                 <td style="padding: 10px; background-color: white"></td>
-                                <td style="padding: 30px; background-color: #2A3F54; color: white">
-                                    <?php
+                                 <td style="padding: 30px; background-color: #2A3F54; color: white">
+                                    <a href="suspensoes.php"><?php
                                     echo "Alunos suspensos:" 
-                                    ?>
+                                    ?></a>
                                 </td>
                                 <td style="padding: 30px; background-color: #b20000; color: white">
-                                    <?php
+                                    <a href="suspensoes.php"><?php
                                     echo "$contador_suspensoes";
-                                    ?>
+                                    ?></a>
                                 </td>
                             </tr>
                         </table>
@@ -83,7 +83,7 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                                 if(isset($_POST["submit1"])) {
                                 //Seleciona da tabela "cadastro_usuarios"                    
                                 $res=mysqli_query($link, "SELECT * FROM cadastro_usuarios 
-                                WHERE fullname LIKE('%$_POST[t1]%') 
+                                WHERE nome_completo_usuario LIKE('%$_POST[t1]%') 
                                 OR enrollment LIKE('%$_POST[t1]%')
                                 OR email LIKE('%$_POST[t1]%')
                                 OR contact LIKE('%$_POST[t1]%')
@@ -101,10 +101,10 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                                 echo "<th>"; echo "Contato"; echo "</th>";
                                 echo "<th>"; echo "Matrícula"; echo "</th>";
                                 echo "<th>"; echo "Status"; echo "</th>";
-                                echo "<th>"; echo "Aprovar"; echo "</th>";
+                                echo "<th>"; echo "Tornar bibliotecário"; echo "</th>";
                                 echo "</tr>";
                                 $res=mysqli_query($link, "SELECT * FROM cadastro_usuarios 
-                                WHERE fullname LIKE('%$_POST[t1]%') 
+                                WHERE nome_completo_usuario LIKE('%$_POST[t1]%') 
                                 OR enrollment LIKE('%$_POST[t1]%')
                                 OR email LIKE('%$_POST[t1]%')
                                 OR contact LIKE('%$_POST[t1]%')
@@ -112,7 +112,7 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                                 ");
                                 while($row = mysqli_fetch_array($res)) {
                                     echo "<tr>";
-                                    echo "<td>"; echo $row["fullname"]; echo "</td>";
+                                    echo "<td>"; echo $row["nome_completo_usuario"]; echo "</td>";
                                     echo "<td>"; echo $row["email"]; echo "</td>";
                                     echo "<td>"; echo $row["contact"]; echo "</td>";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";
@@ -132,7 +132,7 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                                 }
                                 else // RESULTADO SEM PESQUISA
                                 { 
-                                $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios ORDER BY id_usuario DESC");
+                                $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE nivel_usuario='usuário' OR nivel_usuario='bibliotecário' ORDER BY id_usuario DESC");
                                 echo "<div id='container'>";
                                 echo "<table class='table table-bordered'>";
                                 echo "<tr>";
@@ -141,18 +141,20 @@ include "../bibliotecaria/componentes_funcoes/contadores.php";
                                 echo "<th>"; echo "Contato"; echo "</th>";
                                 echo "<th>"; echo "Matrícula"; echo "</th>";
                                 echo "<th>"; echo "Status"; echo "</th>";
-                                echo "<th>"; echo "Aprovar"; echo "</th>";
+                                echo "<th>"; echo "Nível usuário"; echo "</th>";
+                                echo "<th>"; echo "Torna bibliotecário"; echo "</th>";
                                 echo "</tr>";
                                 while($row=mysqli_fetch_array($res))
                                 {
                                     echo "<tr>";
-                                    echo "<td>"; echo $row["fullname"]; echo "</td>";
+                                    echo "<td>"; echo $row["nome_completo_usuario"]; echo "</td>";
                                     echo "<td>"; echo $row["email"]; echo "</td>";
                                     echo "<td>"; echo $row["contact"]; echo "</td>";
                                     echo "<td>"; echo $row["enrollment"]; echo "</td>";
                                     echo "<td>"; echo $row["status_usuario"]; echo "</td>";
-                                    echo "<td>"; ?> <a style="color: green" href="aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">SIM</a> |
-                                    <a style="color: brown" href="nao_aprovar_cadastro.php?id_usuario=<?php echo $row["id_usuario"]; ?>">NÃO</a> <?php echo "</td>";
+                                    echo "<td>"; echo $row["nivel_usuario"]; echo "</td>";
+                                    echo "<td>"; ?> <a style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="../secretaria/componentes_funcoes/tornar_bibliotecario.php?id_usuario=<?php echo $row["id_usuario"]; ?>">SIM</a>
+                                    <a style="padding: 5px 10px; color: white; background-color: brown; border: none; border-radius: 5px; box-shadow: none; margin: 0; " href="../secretaria/componentes_funcoes/nao_tornar_bibliotecario.php?id_usuario=<?php echo $row["id_usuario"]; ?>">NÃO</a> <?php echo "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</table>";
