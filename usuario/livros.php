@@ -24,7 +24,6 @@ include "../usuario/componentes_funcoes/connection.php";
                     </div>
                     
                     <!-- menu pesquisa -->
-
                     <form name="form1" action="" method="post">
                         <div class="title_right">
                             <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
@@ -37,38 +36,25 @@ include "../usuario/componentes_funcoes/connection.php";
                                     
                                 </div>
                             </div>
-                        </div>
-                    </form>
 
-                    <div>
-                        <details class="custom-select">
-                            <summary class="radios">
-                            <input type="radio" name="item" id="item1" title="GTI">
-                            <input type="radio" name="item" id="item2" title="G33">
-                            <input type="radio" name="item" id="item3" title="Cultura Geral">
+                            <select name="select" style="width: 150px; height: 32px; float: right; padding-left: 20px; color: #9e9fa0; background-color: white; border: none; border-radius: 5px; box-shadow: inset 0 1px 0 rgb(0 0 0 / 8%); margin: 0; margin: 5px; margin-top: 11px;">
+                            <option value="valor1" selected>Categorias</option>
+                            <option value="valor2">G3E</option>
+                            <option value="valor3">GTI</option>
+                            <option value="valor4">Cultura Geral</option>
                             </select>
-                            </summary>
 
-                            <ul class="list">
-                            <li>
-                                <label for="item1">Item 1</label>
-                            </li>
-                            <li>
-                                <label for="item2">Item 2</label>
-                            </li>
-                            <li>
-                                <label for="item3">Item 3</label>
-                            </li>
-                            </ul>
-                        </details>
-                    </div>
+                            
+                        </div>
+                        
+                    </form>
                     <!-- / menu pesquisa -->
 
                     
 
                             
                             
-               
+                </div>
 
                 <div class="clearfix"></div>
                 <div class="row" style="min-height:500px">
