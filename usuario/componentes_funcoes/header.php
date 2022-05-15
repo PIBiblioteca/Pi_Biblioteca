@@ -55,7 +55,6 @@ if($image==''){
     <link href="../usuario/css/custom.css" rel="stylesheet">
     <link href="../usuario/css/font-awesome.min.css" rel="stylesheet">
     <link href="../usuario/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../usuario/css/pesquisar.css" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src="https://use.fontawesome.com/686ced9e11.js"></script>
@@ -73,7 +72,7 @@ if($image==''){
                     <a href="../usuario/meus_emprestimos.php" class="site_title"><img src="../images/favicon_bibliofateca.png" alt=""style="width: 45px"> <span>Biblio<b>Fatec</b>a</span></a>
                 </div>
 
-               
+                <div class="clearfix"></div>
                 
                 <!-- estilo para tabelas responsivas (barra de rolagem) -->
                 <style>

@@ -3,7 +3,7 @@
             <div class="pull-right">
                 Fatec Franco da Rocha
             </div>
-           
+            <div class="clearfix"></div>
         </footer>
         <!-- /footer content -->
     </div>
