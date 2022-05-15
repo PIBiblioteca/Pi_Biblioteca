@@ -12,7 +12,7 @@ include "..\bibliotecaria\componentes_funcoes\header.php";
 include "..\bibliotecaria\componentes_funcoes\connection.php";
 include "..\bibliotecaria\componentes_funcoes\contadores.php";
 ?>
-
+  
         <!-- page content area main -->
         <div class="right_col" role="main">
             <div class="">
@@ -167,7 +167,7 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
             </div>
         </div>
         <!-- /page content -->
-
+    
 <?php
 include "../usuario/componentes_funcoes/footer.php";
 ?>

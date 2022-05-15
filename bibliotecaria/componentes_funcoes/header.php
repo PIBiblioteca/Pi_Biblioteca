@@ -48,6 +48,7 @@
 
 
 <body class="nav-md">
+<div class="container">
 <div class="container body">
     <div class="main_container">
         <div class="col-md-3 left_col">
@@ -153,6 +154,7 @@
                        
                     </ul>
                 </nav>
+            </div>
             </div>
         </div>
         <!-- /top navigation -->
