@@ -59,6 +59,7 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
 
 
 <body class="nav-md">
+<div class="container">
 <div class="container body">
     <div class="main_container">
         <div class="col-md-3 left_col">
@@ -145,4 +146,5 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
                 </nav>
             </div>
         </div>
+    </div>
         <!-- /top navigation -->

@@ -130,7 +130,7 @@ include "../usuario/componentes_funcoes/connection.php";
                                         echo "<br>";
                                     }
                                     else {
-                                    echo "<td>"; ?> <img style="width: 85px; height:120px" src="../<?php echo $row["imagem_livro"]; ?>" height="100" width="100">  <?php 
+                                    echo "<td align='center'>"; ?> <img style="width: 85px; height:120px" src="<?php echo $row["imagem_livro"]; ?>" height="100" width="100">  <?php 
                                     
                                     echo "<br>";
                                     }                                                                        

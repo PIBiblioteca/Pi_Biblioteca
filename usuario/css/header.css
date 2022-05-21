@@ -2,6 +2,10 @@ body{
     background: #b20000 !important;
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 .toggle a {
     color: #b20000 !important;
 }

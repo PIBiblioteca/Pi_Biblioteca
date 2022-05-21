@@ -1,0 +1,130 @@
+<!-- 
+
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Aula 06</title>
+     <style>
+         body {
+             background-color: rebeccapurple;
+             color: white;
+             font: normal 18pt Arial;
+         }
+         h1 {
+            color: rgb(255, 247, 0)
+         }
+     </style>
+ </head>
+ <body>
+     <h1> Teste</h1>
+     <p> Texto testes</p>
+ 
+     <div id = "teste" onmouseover = "viraVermelho()" onmouseout = "voltaNormal()" style ="margin: auto auto; width: 80%; height: 200px; background-color: white;"></div>
+
+ <!--  <script src="index.js"></script>-->  
+     <script>
+        
+        //  var n1 = window.prompt('Primeiro número: ') //strin
+        //  var n2 = window.prompt('Seundo número: ') //strin
+        //  var soma = n1+n2 // Concatenaçao: +
+        // CONVERSAO NUMBER:
+        // - Number.parseInt(n) //casa sensitive
+        // - Nmber.parseFloat(n)
+        //  var n1 = Number.parseInt(window.prompt('Primeiro número: '))
+        //  var n2 = Number.parseInt(window.prompt('Seundo número: '))
+        //  var soma = n1+n2 // soma
+        // window.alert('A soma é: ' +soma) 
+        // var n1 = Number(window.prompt('Primeiro número: '))
+        // var n2 = Number(window.prompt('Seundo número: '))
+        // var soma = n1+n2 // soma
+        // window.alert('A soma é: ' +soma) 
+        // CONVERSAO STRIN:
+        // Strin(n)
+        // n.toStrin()
+        //window.alert('A soma é: ' + String(soma)) 
+        //window.alert('A soma é: ' + soma.toString())
+
+        // INTERPOLAÇAO:
+        // 'Text: ${variavel}' //template strin
+
+        // OPERADOR DE INCREMENTO:
+        // var = ++var
+        // DECREMENTO:
+        // var = --var
+        // var1 += var2 é o mesmo q: var 1 = var1 + var2 (ou *= ou /=)
+        // COMPARAÇAO VALOR E TIPO DO DADO: === OU !==
+        // CONDIÇAO
+        // var = (tal == tal) ? "Resposta se verdadeiro" : "Resposta se falso"
+        // CONDIÇAO DUPLA
+        // var = (tal == tal && tal == tal) // possiveis respostas: true ou false
+        // OU: ||
+        // NAO: !(var == 1) 
+        // FUNÇAO:
+        // function var(valor1,valor2){
+        //     return valor1+valor2
+        // }
+        //document.getEmentById("texto").innerHTML = soma(10, 20)
+        //var total  soma(10,20)
+        //FUNÇAO COTAÇAO DOLAR
+        // function realParaDolar(real, cotacaoDolar{
+        //     return real * cotacaoDolar
+        // }
+        //FUNÇAO RECADO ACIONADO COM BOTAO
+        // function alertaOla(){
+        //     alert("Olá pessoal")
+        // }
+        // HTML: <button onclik="alertOla()">Clique aqui</button>
+        // OBJETO
+        // 
+        // const carro = {
+        //     marca: "ford",
+        //     modelo: "ka",
+        //     ano: 2015, // propriedade
+        //     buzina: function() {alert('Biiiiiiiii')} // metodo
+        //     completo: function(){
+        //         return "this.marca + this.modelo" //imprimir 
+        // }
+        // }
+        // console.log(carro) //imprimir objeto no console
+        // console.log(carro.ano) //imprimir propriedade
+        // carro.buzina() // imprimir metodo
+        // console.log(carro.completo())
+        //
+        // EVENTOS: Açoes disparadas pela interaçaode usuarios na paina
+        // EX: onclick, ondblclik
+        // HTML: <button onclik="eventoClick()">Clique aqui</button>
+        // function eventoClick(){
+        //     alert('Botao clicado')
+        // }
+        // onmouseover: sobre
+        // onmouseout: sai
+        // onmousemove: move sobre
+        // onmousedown: enquanto clica
+        // onmouseup: quando solta clique
+        // onblur:quando perde o foco
+        // onkeypress: apertar botao
+        onkeydown: soltar botao
+        
+        // function eventoClick(){
+        //     alert('Botao clicado')
+        // }
+        
+            function viraVermelho(){
+            let div = document.getElementById("teste");
+            div.style.backgroundColor="rgb(255, 247, 0)";
+        }
+        
+        function voltaNormal(){
+            let div = document.getElementById("teste");
+            div.style.backgroundColor="white";
+        }
+
+        onfocus: focar
+        
+     </script>
+ </body>
+ </html>
