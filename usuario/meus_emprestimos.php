@@ -24,8 +24,6 @@ include "..\bibliotecaria\componentes_funcoes\contadores.php";
                     </div>
 
                     <!-- menu pesquisa -->
-                    
-                    
                 </div>
 
                 <div class="clearfix"></div>
