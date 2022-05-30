@@ -55,11 +55,21 @@ include "..\usuario\componentes_funcoes\connection.php";
     }
 
     body {
-    background-color: #013a46 !important;
+    background-color: #2d2e32 !important;
     color: #1c9bb5 !important;
     font-family: sans-serif !important;
+    }
+    .logo{
+        position: sticky;
+        top:0;
+        float: right;
+        z-index: 10;
+        height: 60px;
+        width: 60px;
+        margin-right: 15px;
+        margin-top:15px;
+        margin-bottom: 0px;
 }
-
 </style>
     <div class="login_wrapper">
 
@@ -149,18 +159,6 @@ include "..\usuario\componentes_funcoes\connection.php";
 
 </body>
 
-<style>
-.logo{
-    position: sticky;
-    top:0;
-    float: right;
-    z-index: 10;
-    height: 60px;
-    width: 60px;
-    margin-right: 15px;
-    margin-top:15px;
-    margin-bottom: 0px;
-}
-</style>
+
 
 </html>

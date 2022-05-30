@@ -2,7 +2,7 @@
 session_start();
 
 //função de segurança de login
-if(!isset($_SESSION["email"]))
+if(!isset($_SESSION["usuario"]))
 {
     ?>
     <script type="text/javascript">

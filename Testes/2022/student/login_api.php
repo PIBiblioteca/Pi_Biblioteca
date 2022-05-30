@@ -1,10 +1,6 @@
 <?php
 session_start();
-<<<<<<< HEAD:usuario/login_api.php
-include "../users/componentes/connection.php";
-=======
 include "connection.php";
->>>>>>> parent of 813f659 (Tela "sig_biblioteca" criada; BD de livros oficial importado; Pastas do sistema organizadas.):Testes/2022/student/login_api.php
 ?>
 
 <!DOCTYPE html>

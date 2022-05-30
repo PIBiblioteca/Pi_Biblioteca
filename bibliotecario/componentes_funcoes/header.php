@@ -37,7 +37,18 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
 </head>
 <!--FORÇAR ALTERAÇÃO NO ESTILO (tbm é possível alterar o arquivo "custom.css")-->
 <style>
+    /* Cores do menu */
+.left_col {
+    background: #27536b !important;
+}
+.nav_title {
+    background: #27536b !important;
+}
+.toggle a {
+    color: #27536b !important;
+}
 
+/* Fim cores do menu */
     a {
         text-shadow: none !important;
         color: white;

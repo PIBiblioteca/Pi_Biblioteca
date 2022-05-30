@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../users/componentes/connection.php";
+include "..\usuario\componentes_funcoes\connection.php";
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ include "../users/componentes/connection.php";
                     <input type="text" id="ra" name="ra" class="form-control" placeholder="RA" required="" />
                 </div>
                 <div>
-                    <input type="senha_usuario" id="senha_usuario" name="senha_usuario" class="form-control" placeholder="Senha" required="" />
+                    <input type="password" id="senha_usuario" name="senha_usuario" class="form-control" placeholder="Senha" required="" />
                 </div>
                 <div>
 
@@ -63,8 +63,6 @@ include "../users/componentes/connection.php";
 
                     <div class="clearfix"></div>
                     <br />
-
-
                 </div>
         </section>
     </div>

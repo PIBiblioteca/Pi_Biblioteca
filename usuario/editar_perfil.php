@@ -39,7 +39,7 @@ include "../usuario/componentes_funcoes/header.php";
 
                             <?php
                             
-                            $email=$_SESSION['email'];
+                            $email=$_SESSION["usuario"];
                             $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
                             while($row=mysqli_fetch_array($res))
                             {                                

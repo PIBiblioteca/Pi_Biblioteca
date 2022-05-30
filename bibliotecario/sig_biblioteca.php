@@ -118,21 +118,30 @@ include "../bibliotecario/componentes_funcoes/contadores.php";
                                 include "../bibliotecario/componentes_funcoes/linha_sig_biblioteca.php";
                                 echo "</table>";
                                 echo "</div>";
-                                echo "<br>";
+                                
                                 ?>
-                                <button style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px" onclick="submitForm()">
-                                Confirmar
-                                </button>
+                               <input type="submit" value="Confirmar" 
+                                        name="submit1" style="padding: 5px 10px; color: white; background-color: green; border: none; border-radius: 5px; box-shadow: none; margin: 0; margin: 5px">
+                                
+                                
 
                                 <?php
 
                                 //CÓDIGO
                                 //$res=mysqli_query($link, "SELECT * FROM relatorio_sig_biblioteca");
                                 //while($row = mysqli_fetch_array($res)) {
-                                // if (submit) {
+                                 if (isset($_POST["submit1"])) {
+                                    ?>
+                                    <script type="text/javascript">
+                                        alert("Solicitação concluída, comparecer à biblioteca em até dias para retirada");
+                                        window.location.href="meus_emprestimos.php";
+                                    </script>
+                                    
+                                    <?php
+                              
                                 //     if($result=0) {
                                 //     insert into relatorio_sig_biblioteca
-                                // }
+                                 }
                                 // //MSGS
                                 // Preenchimento do período noturno concluído! Deseja editar os períodos manhã e tarde? Botoões: Não, manhã, tarde
                                 // //BD

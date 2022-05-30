@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION["email"]))
+if(!isset($_SESSION["usuario"]))
 {
     ?>
     <script type="text/javascript">
@@ -43,7 +43,7 @@ include "../bibliotecario/componentes_funcoes/regras_biblioteca.php";
 
                                 $date=date("mm-dd-yyyy");
                                 // puxa dados do usuário
-                                $email=$_SESSION["email"];
+                                $email=$_SESSION["usuario"];
                                 $res5=mysqli_query($link, "SELECT * FROM cadastro_usuarios WHERE email='$email'");
                                 while($row5=mysqli_fetch_array($res5))
                                 {
@@ -52,7 +52,7 @@ include "../bibliotecario/componentes_funcoes/regras_biblioteca.php";
                                     $contact=$row5["contact"];
                                     $enrollment=$row5["enrollment"];
                                     $status=$row5["status_usuario"];
-                                    $_SESSION["email"]=$email;
+                                    $_SESSION["usuario"]=$email;
                                 }
                                 
                                 //VERIFICAR VIABILIDADE DE EMPRÉSTIMO

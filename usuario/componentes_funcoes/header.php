@@ -1,6 +1,6 @@
 <?php
 include "connection.php";
-$email=$_SESSION['email'];
+$email=$_SESSION['usuario'];
 //menu de usuário, foto e nome
 
 $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
@@ -24,7 +24,7 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
             $nome_completo_usuario=$row["nome_completo_usuario"];
         }
 if($image==''){
-    $image="images/astronauta.png";
+    $image="../images/astronauta.png";
 }
 
 ?>

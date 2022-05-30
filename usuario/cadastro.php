@@ -18,7 +18,7 @@ include "../bibliotecario/componentes_funcoes/regras_biblioteca.php";
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="css/custom.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="/GitHub/Pi_Biblioteca/img/favicon_bibliofateca.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon_bibliofateca.png" type="image/x-icon">
 </head>
 
 <br>
@@ -41,7 +41,7 @@ include "../bibliotecario/componentes_funcoes/regras_biblioteca.php";
             
         
                 <br><br>
-                <h2 style="color: #181717"><b>Cadastro de Usuário</b></h2><br>
+                <h2 style="color: white; font-size: 20px"><b>Cadastro de Usuário</b></h2><br>
 
                 <div>
                     <input type="text" class="form-control" placeholder="Nome Completo" name="nome_completo_usuario" required="" />
@@ -59,7 +59,7 @@ include "../bibliotecario/componentes_funcoes/regras_biblioteca.php";
                     <input type="text" class="form-control" placeholder="RA (Registro do Aluno)" name="enrollment" required="" />
                 </div>
                 <div class="col-lg-12  col-lg-push-3">
-                    <input class="btn btn-default submit " type="submit" name="submit1" value="Registrar">
+                    <input class="btn btn-default submit" style="font-weight: bold;" type="submit" name="submit1" value="Registrar">
                 </div>
 
             </form>
@@ -98,6 +98,28 @@ include "../bibliotecario/componentes_funcoes/regras_biblioteca.php";
 
 
 <style>
+    body {
+    background-color: #2d2e32 !important;
+    }
+    a {
+        text-shadow: none !important;
+        color: white !important;
+        
+    }
+    a:hover {
+        text-shadow: none !important;
+        color: red;
+    }
+    .login_content {
+        text-shadow: none !important;
+    }
+    .login_content h1:before {
+        background: white;
+    }
+    .login_content h1:after {
+        background: white;
+    }
+
 .logo{
     position: sticky;
     top:0;
