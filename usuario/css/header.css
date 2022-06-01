@@ -1,5 +1,5 @@
 body{
-    background: #b20000 !important;
+    background: #2f2f2f !important;
 }
 
 ::-webkit-scrollbar {
@@ -7,25 +7,25 @@ body{
 }
 
 .toggle a {
-    color: #b20000 !important;
+    color: #57bd84 !important;
 }
 
 footer.rodape{
-    background: #b20000 !important;
+    background: #2f2f2f !important;
     color: white;
     font-size: 20px;
 }
 
 .left_col {
-    background: #b20000 !important;
+    background: #2f2f2f !important;
 }
 
 .nav_title {
-    background: #b20000 !important;
+    background: #2f2f2f !important;
 }
 
 .nav.side-menu>li.active, .nav.side-menu>li.current-page {
-    border-right: 6px solid #2A3F54 !important;
+    border-right: 6px solid #57bd84 !important;
 }
 
 /* Pesquisar*/
