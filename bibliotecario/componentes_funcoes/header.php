@@ -51,7 +51,7 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
 
 /* Fim cores do menu */
 body{
-    background-color: white !important;
+    background-color: #f7f7f7 !important;
 }
     a {
         text-shadow: none !important;

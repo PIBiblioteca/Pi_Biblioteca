@@ -35,7 +35,7 @@ include "..\bibliotecario\componentes_funcoes\contadores.php";
                         
                         <!-- Tabela de contadores -->
                         <div style=" overflow-x: auto;"> <!-- Função scroll tabela automático -->
-                        <table style="margin:auto; font-weight: bold">
+                        <!-- <table style="margin:auto; font-weight: bold">
                             <tr>
                                 <td style="padding: 30px; background-color: #2A3F54; color: white">
                                     <?php
@@ -70,10 +70,10 @@ include "..\bibliotecario\componentes_funcoes\contadores.php";
                                     ?>
                                 </td>
                             </tr>
-                        </table>
+                        </table> -->
                         </div>
                         <!-- Fim tabela de contadores -->
-                        <br>
+                        <!-- <br> -->
                         <?php
                         $count=0;
                         //verifica se há solicitação

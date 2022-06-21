@@ -34,5 +34,5 @@ mysqli_query($link, "UPDATE cadastro_usuarios SET status_usuario='SUSPENSO' WHER
 
 <script type="text/javascript">
     alert("Usuário suspenso <?php echo $suspensionreturndate ?>");
-    window.location = "../bibliotecario/devolucoes.php";
+    window.location = "../devolucoes.php";
 </script>
