@@ -26,7 +26,7 @@ include "../bibliotecario/componentes_funcoes/connection.php";
                 </div>
 
                 <div class="clearfix"></div>
-                <div class="row" style="min-height:750px">
+                
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
@@ -204,12 +204,19 @@ include "../bibliotecario/componentes_funcoes/connection.php";
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </div>
         <!-- /page content -->
 
-<?php
-include "../bibliotecario/componentes_funcoes/footer.php";
-?>
+<!-- jQuery -->
+<script src="../js/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../js/fastclick.js"></script>
+<!-- NProgress -->
+<script src="../js/nprogress.js"></script>
 
+<!-- Custom Theme Scripts -->
+<script src="../js/custom.min.js"></script>
        

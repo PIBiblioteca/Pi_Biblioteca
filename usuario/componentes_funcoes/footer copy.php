@@ -1,5 +1,5 @@
 <style>
-    footer.rodape {background-color: #013a46 !important;
+    footer.rodape {background-color: white !important;
     z-index: -1 !important;}
 </style>
      

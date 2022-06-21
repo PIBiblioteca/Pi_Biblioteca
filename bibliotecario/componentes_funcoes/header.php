@@ -40,6 +40,7 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
     /* Cores do menu */
 .left_col {
     background: #27536b !important;
+    
 }
 .nav_title {
     background: #27536b !important;
@@ -49,6 +50,9 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
 }
 
 /* Fim cores do menu */
+body{
+    background-color: white !important;
+}
     a {
         text-shadow: none !important;
         color: white;
@@ -110,32 +114,27 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
                     <div class="menu_section">
                         <h3>Menu</h3>
                         <ul class="nav side-menu">
-                            <li><a href="cadastros.php"><i class="fa fa-home"></i> Cadastros <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="cadastros.php"><i class="fa fa-home"></i> Cadastros </a>
 
                             </li>
-                            <li><a href="retiradas.php"><i class="fa fa-table"></i> Retiradas <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="retiradas.php"><i class="fa fa-table"></i> Retiradas </a>
 
                             </li>
-                            <li><a href="devolucoes.php"><i class="fa fa-bar-chart-o"></i> Devoluções <span
-                                    class="fa fa-chevron-down"></span></a>
+                            <li><a href="devolucoes.php"><i class="fa fa-bar-chart-o"></i> Devoluções </a>
 
                             </li>
                             <!--
-                            <li><a href="suspensoes.php"><i class="fa fa-bar-chart-o"></i> Suspensões <span
-                                    class="fa fa-chevron-down"></span></a>
+                            <li><a href="suspensoes.php"><i class="fa fa-bar-chart-o"></i> Suspensões </a>
                             </li>
                             -->
-                            <li><a href="historico.php"><i class="fa fa-table-list"></i> Histórico <span
-                                    class="fa fa-chevron-down"></span></a>
+                            <li><a href="historico.php"><i class="fa fa-table-list"></i> Histórico </a>
                             </li>
-                            <li><a href="livros.php"><i class="fa fa-book"></i> Livros <span
-                                    class="fa fa-chevron-down"></span></a>
+                            <li><a href="livros.php"><i class="fa fa-book"></i> Livros </a>
 
                             </li>
-                            <li><a href="recados.php"><i class="fa fa-mail-forward"></i> Recados <span
-                                    class="fa fa-chevron-down"></span></a>
+                            <li><a href="recados.php"><i class="fa fa-mail-forward"></i> Recados </a>
                             
-                            <li><a href="sig_biblioteca.php"><i class="fa fa-file-lines"></i> SIG Biblioteca <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="sig_biblioteca.php"><i class="fa fa-file-lines"></i> SIG Biblioteca </a>
                             </li>
 
                             </li>
@@ -177,3 +176,4 @@ $res=mysqli_query($link,"SELECT * FROM cadastro_usuarios WHERE email='$email'");
             </div>
         </div>
         <!-- /top navigation -->
+        

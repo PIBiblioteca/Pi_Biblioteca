@@ -14,7 +14,7 @@ if(!isset($_SESSION["usuario"]))
 
 include "../usuario/componentes_funcoes/header.php";
 include "../usuario/componentes_funcoes/connection.php";
-mysqli_query($link, "UPDATE recados SET read1='y' WHERE email='$_SESSION[email]'");
+mysqli_query($link, "UPDATE recados SET read1='y' WHERE email='$_SESSION[usuario]'");
 ?>
 
         <!-- page content area main -->
@@ -46,7 +46,7 @@ mysqli_query($link, "UPDATE recados SET read1='y' WHERE email='$_SESSION[email]'
                                 </tr>
 
                                 <?php
-                            $res=mysqli_query($link, "SELECT * FROM recados WHERE email='$_SESSION[email]' ORDER BY id DESC");
+                            $res=mysqli_query($link, "SELECT * FROM recados WHERE email='$_SESSION[usuario]' ORDER BY id DESC");
                             while($row=mysqli_fetch_array($res))
                             {
                                     echo "<tr>";

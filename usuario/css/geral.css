@@ -33,11 +33,11 @@ body {
 }
 
 .left_col {
-    background: #b20000 !important;
+    background: white !important;
     position: fixed !important;
 }
 .nav_title {
-    background: #b20000 !important;
+    background: white !important;
 }
 .nav-md{
     color: #b20000 !important;

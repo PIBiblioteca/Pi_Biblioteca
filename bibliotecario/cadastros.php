@@ -36,47 +36,7 @@ include "..\bibliotecario\componentes_funcoes\contadores.php";
                             </div>
                             <div class="x_content">
 
-                            <!-- Tabela de contadores -->
-                            <div style=" overflow-x: auto;"> <!-- Função scroll tabela automático -->
-                            <table style="margin:auto; font-weight: bold;">
-                            <tr>
-                                <td style="padding: 30px; background-color: #2A3F54; color: white">
-                                    <?php
-                                    echo "Livros da biblioteca:" 
-                                    ?>
-                                </td>
-                                <td style="padding: 30px; background-color: #b20000; color: white">
-                                    <?php
-                                    echo "$contador_livros_disponiveis";
-                                    ?>
-                                </td>
-                                <td style="padding: 10px; background-color: white"></td>
-                                <td style="padding: 30px; background-color: #2A3F54; color: white">
-                                    <?php
-                                    echo "Livros emprestados:" 
-                                    ?>
-                                </td>
-                                <td style="padding: 30px; background-color: #b20000; color: white">
-                                    <?php
-                                    echo "$contador_livros_emprestados";
-                                    ?>
-                                </td>
-                                <td style="padding: 10px; background-color: white"></td>
-                                <td style="padding: 30px; background-color: #2A3F54; color: white">
-                                    <?php
-                                    echo "Alunos suspensos:" 
-                                    ?>
-                                </td>
-                                <td style="padding: 30px; background-color: #b20000; color: white">
-                                    <?php
-                                    echo "$contador_suspensoes";
-                                    ?>
-                                </td>
-                            </tr>
-                        </table>
-                        </div>
-                        <!-- Fim tabela de contadores -->
-                        <br>
+                            
 
                                 <?php
                                 // RESULTADO COM PESQUISA   
@@ -161,6 +121,47 @@ include "..\bibliotecario\componentes_funcoes\contadores.php";
                                 ?>
                                 
                             </div>
+                            <!-- Tabela de contadores -->
+                            <div style=" overflow-x: auto;"> <!-- Função scroll tabela automático -->
+                            <table style="margin:auto; font-weight: bold;">
+                            <tr>
+                                <td style="padding: 30px; background-color: #2A3F54; color: white">
+                                    <?php
+                                    echo "Livros da biblioteca:" 
+                                    ?>
+                                </td>
+                                <td style="padding: 30px; background-color: #b20000; color: white">
+                                    <?php
+                                    echo "$contador_livros_disponiveis";
+                                    ?>
+                                </td>
+                                <td style="padding: 10px; background-color: white"></td>
+                                <td style="padding: 30px; background-color: #2A3F54; color: white">
+                                    <?php
+                                    echo "Livros emprestados:" 
+                                    ?>
+                                </td>
+                                <td style="padding: 30px; background-color: #b20000; color: white">
+                                    <?php
+                                    echo "$contador_livros_emprestados";
+                                    ?>
+                                </td>
+                                <td style="padding: 10px; background-color: white"></td>
+                                <td style="padding: 30px; background-color: #2A3F54; color: white">
+                                    <?php
+                                    echo "Alunos suspensos:" 
+                                    ?>
+                                </td>
+                                <td style="padding: 30px; background-color: #b20000; color: white">
+                                    <?php
+                                    echo "$contador_suspensoes";
+                                    ?>
+                                </td>
+                            </tr>
+                        </table>
+                        </div>
+                        <!-- Fim tabela de contadores -->
+                        <br>
                         </div>
                     </div>
                 </div>
@@ -168,8 +169,15 @@ include "..\bibliotecario\componentes_funcoes\contadores.php";
         </div>
         <!-- /page content -->
 
-<?php
-include "../usuario/componentes_funcoes/footer.php";
-?>
+<!-- jQuery -->
+<script src="../js/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../js/fastclick.js"></script>
+<!-- NProgress -->
+<script src="../js/nprogress.js"></script>
 
+<!-- Custom Theme Scripts -->
+<script src="../js/custom.min.js"></script>
        
