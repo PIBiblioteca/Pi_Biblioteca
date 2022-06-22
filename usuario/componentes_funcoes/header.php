@@ -103,13 +103,13 @@ if($image==''){
                     <div class="menu_section">
                         <h3>Menu</h3>
                         <ul class="nav side-menu">
-                            <li><a href="../usuario/meus_emprestimos.php"><i class="fa fa-home"></i> Meus empréstimos <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="../usuario/meus_emprestimos.php"><i class="fa fa-home"></i> Meus empréstimos </a>
                             </li>
 
-                            <li><a href="../usuario/livros.php"><i class="fa fa-book"></i> Buscar livros <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="../usuario/livros.php"><i class="fa fa-book"></i> Buscar livros </a>
                             </li>
                             
-                            <li><a href="../usuario/regras_biblioteca.php"><i class="fa fa-gavel"></i> Regras da biblioteca <span class="fa fa-chevron-down"></span></a>
+                            <li><a href="../usuario/regras_biblioteca.php"><i class="fa fa-gavel"></i> Regras da biblioteca </a>
                             </li>
                         </ul>
                     </div>

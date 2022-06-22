@@ -59,8 +59,9 @@ include "../bibliotecario/componentes_funcoes/regras_biblioteca.php";
                     <input type="text" class="form-control" placeholder="RA (Registro do Aluno)" name="enrollment" required="" />
                 </div>
                 <div class="col-lg-12  col-lg-push-3">
-                    <input class="btn btn-default submit" style="font-weight: bold;" type="submit" name="submit1" value="Registrar">
+                    <input class="btn btn-default submit" style="font-weight: bold; margin-left: 35px" type="submit" name="submit1" value="Registrar">
                 </div>
+                <a style="font-size: 15px" href="../usuario/login.php">Voltar</a>
 
             </form>
         </section>
