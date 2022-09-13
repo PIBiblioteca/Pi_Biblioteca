@@ -40,19 +40,21 @@ include "..\usuario\componentes_funcoes\connection.php";
         <section class="login_content">
                 <h1>Login de Usuário</h1>
 
-                <div>
-                    <input type="text" id="ra" name="ra" class="form-control" placeholder="RA" required="" />
-                </div>
-                <div>
-                    <input type="password" id="senha_usuario" name="senha_usuario" class="form-control" placeholder="Senha" required="" />
-                </div>
-                <div>
+                <form action="" method="post">
+                    <div>
+                        <input type="text" id="ra" name="ra" class="form-control" placeholder="RA" required="" />
+                    </div>
+                    <div>
+                        <input type="password" id="senha_usuario" name="senha_usuario" class="form-control" placeholder="Senha" required="" /> <!-- 8583ZDFmGyPMWez -->
+                    </div>
+                    <div>
 
-                    <button class="btn btn-default submit" onclick="submitForm()">
-                        Login
-                    </button>
-                    <a class="reset_pass" href="#">Perdeu sua senha?</a>
-                </div>
+                        <button class="btn btn-default submit" onclick="submitForm()">
+                            Login
+                        </button>
+                        <a class="reset_pass" href="#">Perdeu sua senha?</a>
+                    </div>
+                </form>
 
                 <div class="clearfix"></div>
 
@@ -72,7 +74,7 @@ include "..\usuario\componentes_funcoes\connection.php";
     function submitForm() {
         console.log($("#ra").val())
 
-        $.post('http://localhost:3000/login', { // depois carregar Heroku aqui
+        $.post('http://localhost:3000/login_api', { // depois carregar Heroku aqui
             "usuario": $("#ra").val(),
             "senha": $("#senha_usuario").val()
         }, function(response) {

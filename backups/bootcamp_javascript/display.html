@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex{
+            max-width: 300px;
+            padding: 10px;
+            border: 2px solid black;
+            display: flex;
+        }
+        .item{
+            background-color: aqua;
+            margin: 5px;
+        }
+        .flex-container{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
+        }
+        .flex-item{
+            background-color: blue;
+            height: 50px;
+            width: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            margin: 5px;
+        }
+        .row{
+            flex-direction: row;
+        }
+        .row-reverse{
+            flex-direction: row-reverse;
+        }
+        .column{
+            float: left;
+            flex-direction: column;
+        }
+        .column-reverse{
+            float: right;
+            flex-direction: column-reverse;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>Display Flex</h1>
+    <p>
+        diplay: torna elemento container, e seus filhos flex-itens<br>
+        display: flex; (tamanho se adapta proporcional ao conteúdo, porém, vaza do container se tiver muitos)
+        
+        flex-direction: orientação
+        flex-direction: row; (padrão)<br>
+        flex-direction: column; (colunas)<br>
+        
+        flex-wrap: quebra, ou não, de linha<br>
+        nowrap (não quebra); 
+        wrap (quebra); 
+        wrap-reverse(quebra ao contrário)
+        
+        Flex-flow: atalho para flex-direction e flex-wrap, n muito usado
+    
+        justify-content: alinhamento (flex: 1; anula efeito)
+        justify-content: flex-start;
+        Alinha os itens ao início do container.
+        justify-content: flex-end;
+        Alinha os itens ao final do container.
+        justify-content: center;
+        Alinha os itens ao centro do container.
+        justify-content: space-between;
+        Cria um espaçamento igual entre os elementos. Mantendo o primeiro grudado no início e o último no final.
+        justify-content: space-around;
+        Cria um espaçamento entre os elementos. Os espaçamentos do meio são duas vezes maiores que o inicial e final.
+    
+        align-items: alinha itens ao eixo do container
+        align-items: stretch;
+        Valor padrão, ele que faz com que os flex itens cresçam igualmente.
+        align-items: flex-start;
+        Alinha os itens ao início.
+        align-items: flex-end;
+        Alinha os itens ao final.
+        align-items: center;
+        Alinha os itens ao centro.
+        align-items: baseline;
+        Alinha os itens de acordo com a linha base da tipografia.
+    </p>
+    <div class="flex">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>   
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>   
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>   
+    </div>
+
+    <h3>Flex direction</h3>
+    <p>flex-direction: "direção" dos itens
+    <br>flex-direction: row; direção padrão (horizontal)
+    </p>
+    <ul class="flex-container row">
+        <li class="flex-item">1</li>
+        <li class="flex-item">2</li>
+        <li class="flex-item">3</li>
+        <li class="flex-item">4</li>
+        <li class="flex-item">5</li>
+    </ul>
+
+    <h3>Flex direction: row-reverse</h3>
+    <p>inverso do padrão (horizontal)</p>
+    <ul class="flex-container row-reverse">
+        <li class="flex-item">1</li>
+        <li class="flex-item">2</li>
+        <li class="flex-item">3</li>
+        <li class="flex-item">4</li>
+        <li class="flex-item">5</li>
+    </ul>
+
+    <h3>flex-direction: column e column-reverse (vertical)</h3>
+    <p>uma linha por elemento</p>
+    <ul class="flex-container column">
+        <li class="flex-item">1</li>
+        <li class="flex-item">2</li>
+        <li class="flex-item">3</li>
+        <li class="flex-item">4</li>
+        <li class="flex-item">5</li>
+    </ul>
+
+    <ul class="flex-container column-reverse">
+        <li class="flex-item">1</li>
+        <li class="flex-item">2</li>
+        <li class="flex-item">3</li>
+        <li class="flex-item">4</li>
+        <li class="flex-item">5</li>
+    </ul>
+    <h2>Flex wrap</h2>
+
+</body>
+</html>
+
+<!-- 
+
+
+
+-->

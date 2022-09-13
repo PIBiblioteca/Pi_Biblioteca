@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Wrap</title>
+    <style>
+        .blue {
+            background-color: blue;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .flex-container {
+            display: flex;
+            height: 150px;
+            border: 2px solid black;
+            max-width: 300px;
+            flex-direction: row;
+        }
+
+        .item {
+            font-size: 24px;
+            color: white;
+            height: 50%;
+            text-align: center;
+            min-width: 100px;
+            line-height: 50px;
+        }
+
+        .nowrap {
+            flex-wrap: nowrap;
+        }
+
+        .wrap {
+            flex-wrap: wrap;
+        }
+
+        .wrap-reverse {
+            flex-wrap: wrap-reverse;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+    diplay: torna elemento container, e seus filhos flex-itens<br>
+    display: flex; (tamanho se adapta proporcional ao conteúdo, porém, vaza do container se tiver muitos)
+    
+    flex-direction: orientação
+    flex-direction: row; (padrão)<br>
+    flex-direction: column; (colunas)<br>
+    
+    flex-wrap: quebra, ou não, de linha<br>
+    nowrap (não quebra); 
+    wrap (quebra); 
+    wrap-reverse(quebra ao contrário)
+    
+    Flex-flow: atalho para flex-direction e flex-wrap, n muito usado
+
+
+
+    </p>
+    <h2>No wrap</h2>
+    <p>
+        flex-wrap: nowrap; padrão (se adapta mas vaza quando não cabe)
+    </p>
+    <div class="flex-container nowrap">
+        <div class="item orange">1</div>
+        <div class="item green">2</div>
+        <div class="item blue">3</div>
+        <div class="item orange">2</div>
+    </div>
+    <h3>Wrap</h3>
+    <p>
+        flex-wrap: wrap; (quebra linha quando não cabe)
+    </p>
+    <div class="flex-container wrap">
+        <div class="item green">1</div>
+        <div class="item blue">2</div>
+        <div class="item orange">3</div>
+        <div class="item blue">4</div>
+    </div>
+    <h3>Wrap-reverse</h3>
+    <p>
+        flex-wrap: wrap-reverse; (quebra linha acima quando não cabe)
+    </p>
+    <div class="flex-container wrap-reverse">
+        <div class="item green">1</div>
+        <div class="item blue">2</div>
+        <div class="item orange">3</div>
+        <div class="item blue">4</div>
+    </div>
+</body>
+
+</html>

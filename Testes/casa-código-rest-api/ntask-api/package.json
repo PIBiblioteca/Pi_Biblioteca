@@ -1,0 +1,7 @@
+{
+  "name": "ntask-api",
+  "version": "1.0.0",
+  "description": "API de gestão de tarefas",
+  "main": "index.js",
+  "author": "Jean Paulo"
+}

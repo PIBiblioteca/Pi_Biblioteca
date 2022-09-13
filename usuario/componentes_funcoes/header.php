@@ -111,6 +111,9 @@ if($image==''){
                             
                             <li><a href="../usuario/regras_biblioteca.php"><i class="fa fa-gavel"></i> Regras da biblioteca </a>
                             </li>
+
+                            <li><a href="https://www.fatecfrancodarocha.edu.br/                                                    "><i class="fa fa-book"></i> Artigos Fatec </a>
+                            </li>
                         </ul>
                     </div>
 
